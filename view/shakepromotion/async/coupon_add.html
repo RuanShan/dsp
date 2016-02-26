@@ -1,0 +1,37 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog" style="max-width:440px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">选择优惠券类型</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" checked="checked" data-url="coupon_ed1.html">折扣券<br />
+                            <span class="small text-muted">
+                                可为用户提供消费折扣
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" data-url="coupon_ed2.html">代金券<br />
+                            <span class="small text-muted">
+                                可为用户提供抵扣现金服务。可设置成为“满*元，减*元”
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="toDetail">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <p>光棍节专场 活动审核</p><a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <footer class="panel-footer bg-white no-padder">
+              <div class="row text-center no-gutter bg-light lter">
+                <div class="col-xs-3 b-r b-l b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">10,450</span>
+                  <strong class="m-b block">报名店铺数</strong>
+                </div>
+                <div class="col-xs-3 b-r b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">21,230</span>
+                  <strong class="m-b block">报名商品数</strong>
+                </div>
+                <div class="col-xs-3 b-r b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">7,230</span>
+                  <strong class="m-b block">已通过商品数</strong>
+                </div>
+                 <div class="col-xs-3 b-r b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">7,230</span>
+                  <strong class="m-b block">待审核商品数</strong>
+                </div>
+
+              </div>
+            </footer>
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="btn-group m-r-xs">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                            </button>
+                            
+                        </div>
+                        <button type="button" data-trigger="batch"  class="btn btn-default btn-sm"   disabled="">导出</button>
+                        <button type="button" data-trigger="batch"  class="btn btn-default btn-sm" data-toggle="ajaxModal" data-remote="async/agree.html" disabled="">批量通过</button>
+                        <button type="button" data-trigger="batch"  class="btn btn-default btn-sm" data-toggle="ajaxModal" data-remote="async/refuse.html" disabled="">批量拒绝</button>
+
+
+                    </div>
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="input-group col-sm-3" style="float: right">
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="商品名称/店铺名称" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索"> <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="btn-group" style="float: right">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">商品名称</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li >
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="">商品名称</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="1">店铺名称</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right: 10px;">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">一级类目</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li >
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="">一级类目</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="1">食品</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="2">美妆</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="3">母婴</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right: 10px;">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部店铺类型</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li >
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="">全部店铺类型</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="1">旗舰店</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="2">专卖店</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="3">专营店</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="4">未认证店铺</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="5">全球购</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right: 10px;">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部商品</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li >
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="">全部商品</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="1">待审核商品</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="2">已通过商品</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="3">已拒绝商品</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float: right; margin-right: 10px;">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">按报名时间降序</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li >
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="1">按报名时间降序</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="2">按折扣升序</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="3">按活动价升序</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="" />
+
+            </form>
+            <section class="panel panel-default m-t-xs">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th >商品名称</th>
+                                <th >活动图片</th>
+                                <th class="mn90">店铺名称</th>
+                                <th class="mn70">总销量</th>
+                                <th class="mn90">活动库存</th>
+                                <th class="mn70">市场价</th>
+                                <th class="mn70">活动价</th>
+                                <th class="mn70">折扣</th>
+                                <th class="mn90">佣金比例</th>
+                                <th class="mn90">审核状态</th>
+                                <th class="mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+                                </td>
+
+                                <td>
+                                    <div>
+                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                                    </div>
+                                   <!--  <small class="text-muted">
+                                       <span class="money">199800.00</span>
+                                   </small> -->
+                                </td>
+                                <td >
+                                    <ul class="gallery" data-toggle="frescos">
+                                        <li>
+                                            <img src="/assets/images/avatar12.jpg" data-src="/assets/images/avatar12.jpg" class="js_frescos"  alt="" style="max-width:60px"/>
+                                            <div class="extras">
+                                                <div class="extras-inner">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                                <td>店铺名称</td>
+                                <td>10000</td>
+                                <td>122</td>
+                                <td>122</td>
+                                <td>￥10</td>
+                                <td>66%</td>
+                                 <td>66%</td>
+                                <td>待审核</td>
+                                <td>
+                                    <a href="goods_detail.html" class="btn btn-link-herf btn-link-color" title="详情">
+                                        详情
+                                    </a>
+                                    <a href="javascript:;" class="btn btn-link-herf btn-link-color" data-remote="/api/Form/ajaxRemove/1" data-msg="确定通过该商品的活动申请？" data-toggle="ajaxPost"  title="通过">
+                                        通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/refuse.html" class="btn btn-link-herf btn-link-color" data-toggle="ajaxModal"  title="拒绝">
+                                        拒绝
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/set_up2.html" class="btn btn-link-herf btn-link-color" data-toggle="ajaxModal"  title="拒绝">
+                                        设置
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                                    </div>
+                                  
+                                </td>
+                                <td >
+                                    <ul class="gallery" data-toggle="frescos">
+                                        <li>
+                                            <img src="/assets/images/avatar12.jpg" data-src="/assets/images/avatar12.jpg" class="js_frescos"  alt="" style="max-width:60px"/>
+                                            <div class="extras">
+                                                <div class="extras-inner">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                                <td>店铺名称</td>
+                                <td>10000</td>
+                                <td>122</td>
+                                <td>122</td>
+                                <td>￥10</td>
+                                <td>66%</td>
+                                 <td>66%</td>
+                                <td>已通过</td>
+                                <td>
+                                    <a href="goods_detail.html" class="btn btn-link-herf btn-link-color" title="详情">
+                                        详情
+                                    </a>
+                                   
+                                    <a href="javascript:;" data-remote="async/refuse.html" class="btn btn-link-herf btn-link-color" data-toggle="ajaxModal"  title="拒绝">
+                                        拒绝
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/set_up.html" class="btn btn-link-herf btn-link-color" data-toggle="ajaxModal"  title="拒绝">
+                                        设置
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="3" />
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                                    </div>
+                                </td>
+                                <td >
+                                    <ul class="gallery" data-toggle="frescos">
+                                        <li>
+                                            <img src="/assets/images/avatar12.jpg" data-src="/assets/images/avatar12.jpg" class="js_frescos"  alt="" style="max-width:60px"/>
+                                            <div class="extras">
+                                                <div class="extras-inner">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                                <td>店铺名称</td>
+                                <td>10000</td>
+                                <td>122</td>
+                                <td>122</td>
+                                <td>￥10</td>
+                                <td>66%</td>
+                                 <td>66%</td>
+                                <td>已拒绝</td>
+                                <td>
+                                    <a href="goods_detail.html" class="btn btn-link-herf btn-link-color" title="详情">
+                                        详情
+                                    </a>
+                                   
+                                    <a href="javascript:;" class="btn btn-link-herf btn-link-color" data-remote="/api/Form/ajaxRemove/1" data-msg="确定通过该商品的活动申请？" data-toggle="ajaxPost"  title="通过">
+                                        通过
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="3" />
+                                </td>
+                                <td>
+                                    <div>
+                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                                    </div>
+                                </td>
+                                <td >
+                                    <ul class="gallery" data-toggle="frescos">
+                                        <li>
+                                            <img src="/assets/images/avatar12.jpg" data-src="/assets/images/avatar12.jpg" class="js_frescos"  alt="" style="max-width:60px"/>
+                                            <div class="extras">
+                                                <div class="extras-inner">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                                <td>店铺名称</td>
+                                <td>10000</td>
+                                <td>122</td>
+                                <td>122</td>
+                                <td>￥10</td>
+                                <td>66%</td>
+                                 <td>66%</td>
+                                <td>已拒绝</td>
+                                <td>
+                                    <a href="goods_detail.html" class="btn btn-link-herf btn-link-color" title="详情">
+                                        详情
+                                    </a>
+                                   <a href="javascript:;" class="btn btn-link-herf btn-link-color" data-remote="/api/Form/ajaxRemove/1" data-msg="确定通过该商品的活动申请？" data-toggle="ajaxPost"  title="通过">
+                                        通过
+                                    </a>
+                                </td>
+                            </tr>
+                            <!--  <tr>
+                            <td  colspan="12" class="nodata">暂无数据</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+    <footer class="footer bg-white b-t">
+        <div class="row text-center-xs">
+            <div class="col-md-6 hidden-sm">
+                <p class="text-muted m-t">总共321条 当前为第1页</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/audit/init.js","dist/commission/init.js"])</script>
+
+</body>
+
+</html>

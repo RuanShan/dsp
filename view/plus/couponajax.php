@@ -1,0 +1,149 @@
+<?php 
+$type=$_REQUEST["type"];
+$page=$_POST["page"];
+if("coupon"==$type){
+	if($page==1){
+		$s='{
+			"status":0,
+			"message":"",
+			"data":{
+				"count":800,
+			    "currentPage":1,
+			    "totalPage":89,
+				"items":[
+					{
+						"id":"g2222",
+						"name":"满100减10",
+						"circulation":"50",
+						"condition":"满100元",
+						"value":"10",
+						"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+						"limit":"1"
+					},
+					{
+						"id":"g3333",
+						"name":"满199减20",
+						"circulation":"50",
+						"condition":"满199元",
+						"value":"20",
+						"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+						"limit":"4"
+					},
+					{
+						"id":"g4444",
+						"name":"满299减30",
+						"circulation":"50",
+						"condition":"满299元",
+						"value":"30",
+						"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+						"limit":"5"
+					},
+					{
+						"id":"g55",
+						"name":"满399减40",
+						"circulation":"50",
+						"condition":"满399元",
+						"value":"40",
+						"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+						"limit":"5"
+					}
+				]
+			}
+		}';
+	}else{
+		$s='{
+		"status":0,
+		"message":"",
+		"data":{
+			"count":800,
+		    "currentPage":2,
+		    "totalPage":89,
+			"items":[
+				{
+					"id":"g6666",
+					"name":"满499减50",
+					"type":"优惠券",
+					"value":"50",
+					"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+					"status":"正常"
+				},
+				{
+					"id":"g7777",
+					"name":"满599减60",
+					"type":"优惠券",
+					"value":"60",
+					"date":"2014/11/10 00:00 - 2014/12/31 23:59",
+					"status":"正常"
+				}
+			]
+		}
+	}';
+	}
+	
+}else if("goods"==$type){
+	if($page==1){
+		$s='{
+			"status":0,
+			"message":"",
+			"data":{
+				"count":800,
+			    "currentPage":1,
+			    "totalPage":89,
+				"items":[
+					{
+						"id":"g2222",
+						"name":"2015冬装1",
+						"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+						"price":"120"
+					},
+					{
+						"id":"g2223",
+						"name":"2015冬装2",
+						"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+						"price":"120"
+					},
+					{
+						"id":"g2224",
+						"name":"2015冬装3",
+						"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+						"price":"120"
+					},
+					{
+						"id":"g2225",
+						"name":"2015冬装4",
+						"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+						"price":"120"
+					}
+				]
+			}
+		}';
+	}else{
+		$s='{
+		"status":0,
+		"message":"",
+		"data":{
+			"count":800,
+		    "currentPage":2,
+		    "totalPage":89,
+			"items":[
+				{
+					"id":"2g2222",
+					"name":"22015冬装1",
+					"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+					"price":"120"
+				},
+				{
+					"id":"2g2223",
+					"name":"22015冬装2",
+					"img":"http://www.vdian-admin.com/Resource/../attached/image/20150629/20150629142724_0230.jpg",
+					"price":"120"
+				}
+			]
+		}
+	}';
+	}
+}
+
+
+echo $s;
+?>

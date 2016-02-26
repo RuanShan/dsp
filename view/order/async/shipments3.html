@@ -1,0 +1,239 @@
+﻿<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">发货信息</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom: 0;">
+             
+                <div class="alert alert-warning m-b">
+                    <p>订单编号：<span class="m-l-xs">951339513395133</span></p>
+                    <p>下单时间：<span class="m-l-xs">2014年6月22日 22:43:33</span></p> 
+                    <p>收货信息：<span class="m-l-xs">宋玉杰，18217328644，上海市宝山区逸仙路2816号</span></p>
+                 
+                </div>
+                <div class="bs-example bs-example-tabs">
+                    <ul id="myTab" class="nav nav-tabs js_shipments_select_tab">
+                        <li class="active"><a href="#logistics" data-toggle="tab" data-type="logistics">物流信息</a></li>
+                        <li><a href="#nlogistics" data-toggle="tab" data-type="nlogistics">无需物流</a></li> 
+                    </ul>
+                    <div id="myTabContent" class="tab-content" style="overflow-x: hidden;">
+                        <div class="tab-pane m-t fade in active" id="logistics">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">发货地址</label>
+                                <div class="col-sm-10 must">
+                                    <select class="form-control " data-toggle="chosen" name="select_tag" data-placeholder="选择规格" data-rule-required="true">
+                                        <option value="32">宋玉杰，18217328644，上海市宝山区逸仙路2816号</option>
+                                        <option value="345">宋玉杰2，18217628644，上海市宝山区逸仙路295号</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">快递公司</label>
+                                <div class="col-sm-7 must">
+                                    <select class="form-control" name="courierCompany" data-rule-required="true">
+                                        <option value="">请选择快递</option>
+                                        <option value="21000052004">燕文上海</option>
+                                        <option value="21000052006">燕文深圳</option>
+                                        <option value="21000053045">递四方深圳仓</option>
+                                        <option value="21000051006">燕文义乌</option>
+                                        <option value="21000052038">递四方厦门仓</option>
+                                        <option value="21000051029">递四方上海仓</option>
+                                        <option value="21000056003">递四方新邮</option>
+                                        <option value="21000056005">递四方广州仓</option>
+                                        <option value="1216">全峰快递</option>
+                                        <option value="1259">全一快递</option>
+                                        <option value="1269">广东EMS</option>
+                                        <option value="3">EMS经济快递</option>
+                                        <option value="2">EMS</option>
+                                        <option value="101">圆通速递</option>
+                                        <option value="1121">飞远(爱彼西)配送</option>
+                                        <option value="103">宅急送</option>
+                                        <option value="106">联邦快递</option>
+                                        <option value="505">顺丰速运</option>
+                                        <option value="1195">龙邦速递</option>
+                                        <option value="1204">快捷快递</option>
+                                        <option value="1185">黑猫宅急便</option>
+                                        <option value="1192">能达速递</option>
+                                        <option value="1207">优速快递</option>
+                                        <option value="-1">其他</option>
+                                        <option value="507">亚风</option>
+                                        <option value="511">长宇</option>
+                                        <option value="512">大田</option>
+                                        <option value="513">长发</option>
+                                        <option value="1137">东方汇</option>
+                                        <option value="1138">首业</option>
+                                        <option value="1139">远长</option>
+                                        <option value="1237">发网</option>
+                                        <option value="200427">飞远配送 </option>
+                                        <option value="204897">测试服务商</option>
+                                        <option value="204926">贝海国际速递</option>
+                                        <option value="21000007003">美国速递</option>
+                                        <option value="21000007007">天猫商家测试香港01</option>
+                                        <option value="21000007011">邮科院</option>
+                                        <option value="21000007013">中通速递BJ</option>
+                                        <option value="21000007015">递四方</option>
+                                        <option value="21000007017">上邮函件</option>
+                                        <option value="21000019013">buyfine海外旗舰店</option>
+                                        <option value="21000019015">sneakerhead海外店</option>
+                                        <option value="21000019017">天竣购物海外旗舰店</option>
+                                        <option value="21000019019">香港卓悦官方旗舰店</option>
+                                        <option value="21000019021">玉山台湾美食旗舰店</option>
+                                        <option value="21000019023">shirohato海外旗舰店</option>
+                                        <option value="21000019025">thejany海外旗舰店</option>
+                                        <option value="21000019027">stylenanda海外旗舰店</option>
+                                        <option value="21000019029">miamasvin海外旗舰店</option>
+                                        <option value="21000019031">youngdream海外旗舰店</option>
+                                        <option value="21000019033">luxidream海外旗舰店</option>
+                                        <option value="21000020006">洋码头海外旗舰店</option>
+                                        <option value="21000020008">axonus海外旗舰店</option>
+                                        <option value="21000020010">大都会海外旗舰店</option>
+                                        <option value="21000020012">草莓网海外旗舰店</option>
+                                        <option value="21000020014">东森严选海外旗舰店</option>
+                                        <option value="21000020016">jkos海外旗舰店</option>
+                                        <option value="21000020018">kenko海外旗舰店 </option>
+                                        <option value="21000020020">moximoxi海外旗舰店</option>
+                                        <option value="21000020022">nissen海外旗舰店</option>
+                                        <option value="21000020024">sohoo海外旗舰店</option>
+                                        <option value="21000020028">thejamy海外旗舰店</option>
+                                        <option value="21000020030">天猫海外测试日本01</option>
+                                        <option value="21000035003">派易-电商海外转运</option>
+                                        <option value="21000035009">4px进口业务咨询</option>
+                                        <option value="21000035020">skyshop海外专营店</option>
+                                        <option value="21000037002">4px转运服务店</option>
+                                        <option value="21000038002">派易国际物流77</option>
+                                        <option value="21000046013">A.J World Wide</option>
+                                        <option value="21000046015">美联华</option>
+                                        <option value="21000046017">日本邮局</option>
+                                        <option value="21000046019">ChinzLogistics</option>
+                                        <option value="21000046021">EFS</option>
+                                        <option value="21000046023">上海邮政速递</option>
+                                        <option value="21000046025">速达快递</option>
+                                        <option value="21000046027">同舟速递</option>
+                                        <option value="21000046029">香港骏辉物流</option>
+                                        <option value="21000046031">新干线快递</option>
+                                        <option value="21000046033">新亚物流</option>
+                                        <option value="21000046035">易达通快递</option>
+                                        <option value="21000046037">中国邮政集团公司</option>
+                                        <option value="21000046039">法国邮政</option>
+                                        <option value="21000046041">飞洋快递</option>
+                                        <option value="21000046043">富腾达快递</option>
+                                        <option value="21000046045">联通快递</option>
+                                        <option value="21000046047">晋越</option>
+                                        <option value="21000047006">xchange海外专营店</option>
+                                        <option value="21000047008">qqg海外旗舰店</option>
+                                        <option value="21000047013">明大快递</option>
+                                        <option value="21000047015">日本邮政EMS</option>
+                                        <option value="21000047017">EMS日本</option>
+                                        <option value="21000047019">順豐速遞（台湾）</option>
+                                        <option value="21000047021">順豐速運（香港）</option>
+                                        <option value="21000047023">新西兰邮政</option>
+                                        <option value="21000047025">银河快递</option>
+                                        <option value="21000047027">royalmail</option>
+                                        <option value="21000047029">长江国际速递</option>
+                                        <option value="21000047031">中华邮政</option>
+                                        <option value="21000047033">澳邮中国快运</option>
+                                        <option value="21000047035">比利时邮政</option>
+                                        <option value="21000047037">方舟速递</option>
+                                        <option value="21000047039">POSTNL</option>
+                                        <option value="21000047041">华通快运</option>
+                                        <option value="21000047043">联纵国际快递</option>
+                                        <option value="21000047045">DHL</option>
+                                        <option value="21000048010">君美氏海外专营店</option>
+                                        <option value="21000048020">美亚/AAE</option>
+                                        <option value="21000048022">AustralianPost</option>
+                                        <option value="21000048024">申通快递</option>
+                                        <option value="21000048026">TNT</option>
+                                        <option value="21000048028">新顺丰国际速递</option>
+                                        <option value="21000048030">UBX</option>
+                                        <option value="21000048032">UCSAustralia</option>
+                                        <option value="21000048034">亚瑟仕国际快递</option>
+                                        <option value="21000048036">UPS</option>
+                                        <option value="21000048038">安创</option>
+                                        <option value="21000048040">中华快递</option>
+                                        <option value="21000048042">程光快递</option>
+                                        <option value="21000049013">平安快递</option>
+                                        <option value="21000049015">秦远国际物流</option>
+                                        <option value="21000049017">台灣万丰国际货运</option>
+                                        <option value="21000049019">万泰国际物流</option>
+                                        <option value="21000049021">GSMNtoN</option>
+                                        <option value="21000049023">香港邮政</option>
+                                        <option value="21000049025">SG-post</option>
+                                        <option value="21000049027">海顺物流</option>
+                                        <option value="21000049029">英中物流</option>
+                                        <option value="21000049031">永杰物流</option>
+                                        <option value="21000049033">傲世速递</option>
+                                        <option value="21000049035">畅灵国际物流</option>
+                                        <option value="21000049037">德尔速递</option>
+                                        <option value="21000049039">广联</option>
+                                        <option value="21000049041">美通快递</option>
+                                        <option value="21000049043">美联快递</option>
+                                        <option value="21000050002">美国购物网海外旗舰店</option>
+                                        <option value="21000050004">德浩洋行海外专营店</option>
+                                        <option value="21000051021">晋越快递</option>
+                                        <option value="21000052018">环球e站海外专营店</option>
+                                        <option value="21000052032">hanjinexpress</option>
+                                        <option value="21000052034">epost</option>
+                                        <option value="21000053015">payeasy海外旗舰店</option>
+                                        <option value="21000053037">保宏物流</option>
+                                        <option value="21000054012">康美化妆品海外专营店</option>
+                                        <option value="21000057002">我买网</option>
+                                        <option value="21000066003">斑马物联网</option>
+                                        <option value="1262">城市100</option>
+                                        <option value="500">中通快递</option>
+                                        <option value="102">韵达快递</option>
+                                        <option value="504">天天快递</option>
+                                        <option value="502">百世汇通</option>
+                                        <option value="100">申通快递</option>
+                                        <option value="21000009040">德邦快递</option>
+                                        <option value="202857">凡宇速递</option>
+                                        <option value="1214">联昊通</option>
+                                        <option value="201174">速尔</option>
+                                        <option value="1056">佳吉快递</option>
+                                        <option value="105">百世物流</option>
+                                        <option value="108">华强物流</option>
+                                        <option value="1152">中铁物流</option>
+                                        <option value="1016">中铁快运</option>
+                                        <option value="202855">信丰物流</option>
+                                        <option value="1191">天地华宇</option>
+                                        <option value="200734">邮政国内小包</option>
+                                        <option value="1186">新邦物流</option>
+                                        <option value="1208">增益速递</option>
+                                        <option value="200143">国通快递</option>
+                                        <option value="107">德邦物流</option>
+                                        <option value="200740">E速宝</option>
+                                        <option value="204838">卡行天下</option>
+                                        <option value="203104">安能物流</option>
+                                        <option value="100005">佳吉快运</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">快递单号</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" data-rule-required="true" name="Name" />
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane m-t fade" id="nlogistics">
+                            <p>如果该物品无需物流运送(如虚拟产品)</p>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+
+                <div class="modal-footer">
+                    <input type="hidden" value="12306" name="id" />
+                    <input type="hidden" value="logistics" name="shipmentsselect" class="js_shipments_select"/>
+                    <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

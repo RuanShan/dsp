@@ -1,0 +1,40 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">优质商家设置</h4>
+            </div>
+            <div class="modal-body">
+                <div class="js_group">
+                    <div class="form-group">
+                        <label class="col-sm-offset-3 col-sm-7 js_error" style="color:red;"></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">供货商ID</label>
+                        <div class="col-sm-7">                     
+                             <input type="text" class="form-control js_blur" data-path="/plus/audit_config.php" name="id" data-rule-required="true" />
+                        </div>  
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">公司名称</label>
+                        <div class="col-sm-7">                     
+                             <input type="text" class="form-control js_name" readonly="" name="name" data-rule-required="true" data-msg-required="请输入正确的供货商ID" />
+                        </div>  
+                    </div>
+                </div>
+           </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+ 
+  
+
+

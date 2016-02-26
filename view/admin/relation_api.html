@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+<section class="vbox">
+    <header class="header bg-white b-b b-light">
+        <p>关联API</p>
+        <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+    </header>
+    <section class="scrollable  wrapper">
+        <section class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <section class="panel panel-default ">
+                                <div class="table-responsive">
+                                    <table class="table m-b-none">
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="8" class="b-r v-middle b-light"><label class="checkbox-inline"><input type="checkbox" id="first1" class="js_first" name="spam[]" data-rule-required="true" />关联API</label></td>
+                                         
+                                                <td rowspan="4" class="b-r v-middle b-light">
+                                                   <label class="checkbox-inline"><input type="checkbox" data-fid="first1" id="second1" class="js_first1 js_second" />商品接口</label>
+                                                </td>
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second1" class="js_second1 js_first1 js_third" />kdt.item.add 新增一个商品</label></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>kdt.item.delete 删除一个商品</label></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>kdt.item.get 得到单个商品信息</label></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>kdt.item.sku.update 更新SKU信息</label></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4" class="b-r v-middle b-light">
+                                                   <label class="checkbox-inline"><input type="checkbox" data-fid="first1" id="second2" class="js_first1 js_second"/>商品类目接口</label>
+                                                </td>
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />kdt.itemcategories.get 获取商品分类二维列表</label></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third"/>kdt.itemcategories.promotions.get 获取商品推广栏目列表</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third"/>kdt.itemcategories.tags.get 获取商品自定义标签列表</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third"/>kdt.itemcategories.tags.getpage 分页获取商品自定义标签列表</label></td>
+                                            </tr>
+                                         </tbody>
+                                    </table>
+                                </div>
+                            </section> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                            <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+</section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/admin/init.js"]);
+    </script>
+
+
+</body>
+
+</html>

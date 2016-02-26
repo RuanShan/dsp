@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+  <style type="text/css">
+      .small-img img{max-width:150px;margin-right:15px;}
+      .big-img img{max-width: 260px;margin-right:15px;}
+    </style>
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>统计详情</p>
+      <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+      </a>
+
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body">
+          <form class="talbe-horizontal" method="post" action="/api/Page/list">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">消息概况</div>
+              <div class="panel-body">
+                
+                
+                <footer class="panel-footer bg-white no-padder m-t-sm">
+                  <div class="row text-center no-gutter">
+                    <div class="col-xs-2 b-r b-l b-b b-light">
+                      <span class="m-t block">发送人数</span> <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                      <span class="m-t block">点击次数（PV）</span> <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                      <span class="m-t block">点击人数（UV）</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-2 b-r b-b b-light">
+                      <span class="m-t block">商品点击数</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-2 b-r b-b b-light">
+                      <span class="m-t block">订单量</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                  </div>
+                  <div class="row text-center no-gutter">
+                    <div class="col-xs-2 b-r b-l b-b b-light">
+                      <span class="m-t block">送达人数</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                      <span class="m-t block">APP分享数</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                      <span class="m-t block">H5分享数</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-2 b-r b-b b-light">
+                      <span class="m-t block">分享总数</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                    <div class="col-xs-2 b-r b-b b-light">
+                      <span class="m-t block">总金额（元）</span>
+                      <strong class="h5 font-bold m-b block text-danger m-t-xs">10,450</strong>
+                    </div>
+                  </div>
+                </footer>
+
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">消息统计图表</div>
+              <div class="panel-body">
+                <div id="sales_charts" style="height: 310px" data-path="/plus/v_charts.php?page=9">
+                  <div class="load">数据加载中...</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">
+                消息统计明细
+
+                <a class="btn btn-default btn-sm pull-right m-t-n-xs js_table_type js_table_type_1" href="javascript:;" >
+                  <i class="fa fa-cloud-download m-r-xs"></i>
+                  下载表格
+                </a>
+                <a class="btn btn-default btn-sm pull-right m-t-n-xs js_table_type js_table_type_2 hide" href="javascript:;" >
+                  <i class="fa fa-cloud-download m-r-xs"></i>
+                  下载表格
+                </a>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default btn-sm active  js_table_type_select" data-type="1">日期统计</button>
+                      <button type="button" class="btn btn-default btn-sm js_table_type_select " data-type="2">商品统计</button>
+                    </div>
+                  </div>
+                </div>
+                <section class="panel panel-default m-t-sm">
+                  <div class="table-responsive">
+                    <table class="table table-striped m-b-none js_table_type js_table_type_1">
+                      <thead>
+                        <tr>
+                          <th>发布日期</th>
+                          <th>发送人数</th>
+                          <th>送达人数</th>
+                          <th>点击次数（PV）</th>
+                          <th>点击人数（UV）</th>
+                          <th>APP分享数</th>
+                          <th>H5分享数</th>
+                          <th>商品点击数</th>
+                          <th>订单量</th>
+                          <th>总金额（元）</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2015-6-25</td>
+                          <td>999</td>
+                          <td>99</td>
+                          <td>50</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>19</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                        <tr>
+                          <td>2015-6-25</td>
+                          <td>999</td>
+                          <td>99</td>
+                          <td>50</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>19</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-striped m-b-none js_table_type js_table_type_2 hide">
+                      <thead>
+                        <tr>
+                          <th>商品</th>
+                          <th>浏览量（PV）</th>
+                          <th>访客数（UV）</th>
+                          <th>订单量</th>
+                          <th>已支付订单量</th>
+                          <th>销售量（件）</th>
+                          <th>销售额（￥）</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span class="pull-left thumb-sm m-r-xs " style="height:60px;width:60px">
+                              <img style="height:60px;width:60px" src="/assets/images/goods/2.jpg" alt="John said"></span>
+                            <div class="media-body m-t-xs">
+                              <div>
+                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                              </div>
+                              <div class="text-danger m-t-xs">
+                                  ￥100000.00
+                              </div>
+                            </div>
+                          </td>
+                          
+                          <td>19</td>
+                          <td>36</td>
+                          <td>19</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                        <tr>
+                          <td><span class="pull-left thumb-sm m-r-xs" style="height:60px;width:60px">
+                              <img style="height:60px;width:60px" src="/assets/images/goods/2.jpg" alt="John said"></span>
+                            <div class="media-body m-t-xs">
+                              <div>
+                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                              </div>
+                              <div class="text-danger m-t-xs">
+                                  ￥100000.00
+                              </div>
+                            </div></td>
+                         
+                          <td>19</td>
+                          <td>36</td>
+                          <td>19</td>
+                          <td>19</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </section>
+
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </section>
+</section>
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/count/init.js"])</script>
+
+</body>
+
+</html>

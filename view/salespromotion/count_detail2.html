@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/activitycenter/chart.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+    .shop_type{width: 100px;height: 20px;line-height: 20px;padding-left: 24px;background: url(/assets/images/goods/shop_bg.jpg) no-repeat;display: inline-block;color: #fff;text-align: center;}
+    </style>
+</head>
+<body>
+    <section class="vbox chart">
+        <header class="header bg-white b-b clearfix">
+            <p>专题效果统计</p>
+            <a class="text-muted pull-right m-t pointer" href="subject_count.html" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        
+        <section class="scrollable wrapper w-f">
+            <footer class="panel-footer bg-white no-padder m-t-sm">
+                <div class="row text-center no-gutter">
+                    <div class="col-xs-3 b-r b-l b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">10</span> 
+                        <strong class="m-b block">活动店铺数</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">33</span> 
+                        <strong class="m-b block">活动商品数</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">浏览量（PV）</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">访客数（UV）</strong>
+                    </div>
+                </div>
+                <div class="row text-center no-gutter">
+                    <div class="col-xs-3 b-r b-l b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">订单量</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">已支付订单量</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">销售量（件）</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">销售额（￥）</strong>
+                    </div>
+                </div>
+            </footer>
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <a href="count_detail.html">日期统计</a>
+                            </li>
+                            <li class="active">
+                                <a href="#classify">商品统计</a>
+                            </li>
+                            <li>
+                                <a href="count_detail3.html">店铺统计</a>
+                            </li>
+                        </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="classify" style="overflow-x:hidden">
+                            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                                <div class="row">
+                                    <div class="col-sm-8 text-right">
+                                        <div class="btn-group">
+                                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              全部店铺类型
+                                              <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="1" checked="checked">全部店铺类型</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="2" >旗舰店</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="3">专卖店</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="4">专营店</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="5">全球购旗舰店</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="6">全球购专卖店</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="7">全球购专营店（经销）</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="8">全球购专营店（平台及其他）</a>
+                                              </li>
+                                              <li>
+                                                <a href="javascript:;">
+                                                  <input type="radio" name="orderType" value="9">品牌特卖店</a>
+                                              </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              一级类目
+                                              <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                                <li>
+                                                  <a href="javascript:;">
+                                                    <input type="radio" name="fristCategory" value="1" checked="checked">一级类目</a>
+                                                </li>
+                                                <li>
+                                                  <a href="javascript:;">
+                                                    <input type="radio" name="fristCategory" value="2" >一级类目2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              二级类目
+                                              <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                                <li>
+                                                  <a href="javascript:;">
+                                                    <input type="radio" name="secondCategory" value="1" checked="checked">二级类目</a>
+                                                </li>
+                                                <li>
+                                                  <a href="javascript:;">
+                                                    <input type="radio" name="secondCategory" value="2" >二级类目2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 pull-right">
+                                        <div class="input-group">
+                                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="请输入店铺名称">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                                <input type="hidden" name="order" id="order" value="" />
+                            </form>
+                            <section class="panel panel-default m-t-md">                                                            
+                                <div class="table-responsive">
+                                    <table class="table table-bordered m-b-none">
+                                        <thead class="bg-light">
+                                            <tr>
+                                                <th class="col-sm-3">商品</th>
+                                                <th style="min-width: 90px;">店铺名称</th>
+                                                <th style="min-width: 100px;">类目</th>
+                                                <th>
+                                                    浏览量（PV）
+                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="商品详情页的浏览次数">
+                                                    <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                    </a>
+                                                </th>
+                                                <th>
+                                                    访客数（UV）
+                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="商品详情页的访问人数">
+                                                    <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                    </a>
+                                                </th>
+                                                 <th style="min-width: 90px;">点赞数</th>
+                                                <th style="min-width: 90px;">分享数</th>
+                                                <th class="col-sm-1">
+                                                    订单量
+                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="包括未完成支付的订单">
+                                                    <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                    </a>
+                                                </th>
+                                                <th class="col-sm-1">已支付<br>订单量</th>
+                                                <th>销售量<br>（件）</th>
+                                                <th>销售额<br>（￥）</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="left">
+                                                    <div class="media">
+                                                        <span class="pull-left thumb-sm">
+                                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                                                        <div class="media-body">
+                                                            <div>
+                                                                <a href="#">【天价】萌宠 呆萌傲娇腹黑毒舌健气天然抖S废柴炸毛小狗狗</a>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                <span>活动价：<span class="money"></span>100000.00</span>
+                                                                <span class="pull-right text-danger">5.0折</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="m-b-xs">汪星一号店</div>
+                                                    <span class="shop_type">旗舰店</span>
+                                                </td>
+                                                <td>食品>地方特产</td>
+                                                <td>1164</td>
+                                                <td>267</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>30</td>
+                                                <td>4355</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left" rowspan="2">
+                                                    <div class="media">
+                                                        <span class="pull-left thumb-sm">
+                                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                                                        <div class="media-body">
+                                                            <div>
+                                                                <a href="#">【天价】萌宠 呆萌傲娇腹黑毒舌健气天然抖S废柴炸毛小狗狗</a>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                <span>活动价：<span class="money"></span>100000.00</span>
+                                                                <span class="pull-right text-danger">5.0折</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="m-b-xs">汪星一号店</div>
+                                                    <span class="shop_type">旗舰店</span>
+                                                </td>
+                                                <td>食品>地方特产地方特产</td>
+                                                <td>1164</td>
+                                                <td>267</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>30</td>
+                                                <td>4355</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="m-b-xs">汪星一号店</div>
+                                                    <span class="shop_type">旗舰店</span>
+                                                </td>
+                                                <td>食品>地方特产地方特产</td>
+                                                <td>1164</td>
+                                                <td>267</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>30</td>
+                                                <td>4355</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">
+                                                    <div class="media">
+                                                        <span class="pull-left thumb-sm">
+                                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                                                        <div class="media-body">
+                                                            <div>
+                                                                <a href="#">【天价】萌宠 呆萌傲娇腹黑毒舌健气天然抖S废柴炸毛小狗狗</a>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                <span>活动价：<span class="money"></span>100000.00</span>
+                                                                <span class="pull-right text-danger">5.0折</span>
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="m-b-xs">汪星一号店</div>
+                                                    <span class="shop_type">旗舰店</span>
+                                                </td>
+                                                <td>食品>地方特产地方特产</td>
+                                                <td>1164</td>
+                                                <td>267</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>26</td>
+                                                <td>30</td>
+                                                <td>4355</td>
+                                            </tr>                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>                    
+            </section>               
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+
+    <script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

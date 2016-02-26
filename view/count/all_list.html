@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <p class="m-t-sm font-bold">萌主总数明细</p>
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <a class="text-muted pull-right m-t-xs pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+                        </a>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="sort" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+
+                                <th>日期</th>
+                                <th>
+                                    新增V客数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="当日新增V客数量"> <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    V客减少数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="当日V客减少数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    V客净增数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="当日净增V客数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    V客总数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止当日的V客总数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th>
+                                    V客累计数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截至当日累计的V可数量，包含流失的V客。">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>2015-6-24</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>25</td>
+                                <td>30</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>2015-6-23</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>25</td>
+                                <td>30</td>
+
+                            </tr>
+                            <!--  <tr>
+                            <td  colspan="6" class="nodata">暂无数据</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+    <footer class="footer bg-white b-t">
+        <div class="row text-center-xs">
+            <div class="col-md-6 hidden-sm">
+                <p class="text-muted m-t">总共321条 当前为第1页</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="1" data-page-current="1"></ul>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use("dist/application/app.js") </script>
+
+</body>
+
+</html>

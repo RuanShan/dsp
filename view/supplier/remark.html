@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>供货商信息备注</p><a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxformarr">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注类型：</label>
+                            <div class="col-sm-3">
+                                <select name="type" class="form-control">
+                                    <option value="">请选择</option>
+                                    <option value="1">特批</option>
+                                    <option value="2">其他</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">备注内容：</label>
+                          <div class="col-sm-6">
+                            <textarea rows="4" class="form-control" name="content" placeholder="最多500字" data-rule-byteRangeLength="500"></textarea>
+                          </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label" >图片附件：</label>
+                          <div class="col-sm-10">
+                              <div class="js_upload_container">
+                                  <div class="js_file_upload must">
+                                      <button type="button" class="btn btn-default js_new_upload" data-submitname="GoodsImages" data-count="5" data-uploadpath="/api/form/uploadImg" data-delpath="/api/form/removeImg" data-data="{'cid':'YY'}" style="position: relative; ">添加附件</button>
+                                      <span class="help-inline">
+                                          （最多5张图片）
+                                      </span>
+                                  </div>
+                                  <div class="uploadify-queue js_file_upload_queue"></div>
+                                  <ul class="ipost-list ui-sortable js_fileList" data-required="true">
+                                      <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                          <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                          <input type="hidden" value="10001" name="GoodsImages[0].id">
+                                          <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[0].path">
+                                          <span class="item_box">
+                                              <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                                      </li>
+                                      <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                          <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                          <input type="hidden" value="10001" name="GoodsImages[1].id">
+                                          <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[1].path">
+                                          <span class="item_box">
+                                              <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script> 
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/pluploadv/init.js"]);
+    </script>
+
+
+
+</body>
+
+</html>

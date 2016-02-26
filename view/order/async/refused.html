@@ -1,0 +1,24 @@
+﻿<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">拒绝退款<!--拒绝退款退货--></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">拒绝原因</label>
+                    <div class="col-sm-8 must"> 
+                        <textarea rows="4" class="form-control" data-rule-rangelength="[1,200]"  name="Name"></textarea>
+                    </div>
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

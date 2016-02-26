@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>vshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="form-inline talbe-search js_form" method="post" action="/api/Page/list">
+
+                <div class="row m-t-sm">
+                    <div class="col-sm-8">
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部类型</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="全部" checked="checked" />
+                                        全部类型
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="折扣券" />
+                                        折扣券
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="折扣券" />
+                                        代金券
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部状态</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="全部" checked="checked" />
+                                        全部状态
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="已提交" />
+                                        已提交
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="审核中" />
+                                        审核中
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="未通过" />
+                                        未通过
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="待投放" />
+                                        待投放
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="status" value="已投放" />
+                                        已投放
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">店铺名称</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active">
+                                        <a href="#">
+                                            <input type="radio" value="1" name="searchBy" checked="checked">店铺名称
+                                        </a>
+                                    </li>
+                                    <!--<li><a href="#">
+                                        <input type="radio" value="0" name="searchBy" checked="checked">订单编号</a>
+                                    </li>-->
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true">
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc"/>
+                <input type="hidden" name="order" id="order" value="depart" />
+            </form>
+
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                   <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th>优惠券名称</th>
+                                <th>类型</th>
+                                <th>商家店铺名</th>
+                                <th>有效期</th>
+                                <th>状态</th>
+                                <th>库存</th>  
+                                <th class="col-sm-3 mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>九折券</td>
+                                <td>折扣券</td> 
+                                <td>新秀丽旗舰店</td>
+                                <td>2015.08.06-2015.08.13</td>
+                                <td>已提交</td> 
+                                <td>100</td> 
+                                <td>
+                                    <a href="coupon_details.html" class="btn btn-default btn-sm">
+                                        详情
+                                    </a>
+                                    <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否审核通过?">审核通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/coupon_refuse.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">拒绝
+                                    </a>
+                                    <!--<a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否停止投放?">停止投放
+                                    </a>
+                                    <a href="coupon_record.html" class="btn btn-default btn-sm">
+                                        报表
+                                    </a>-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>满100减50</td>
+                                <td>代金券</td> 
+                                <td>新秀丽旗舰店</td>
+                                <td>2015.08.06-2015.08.13</td>
+                                <td>审核中</td> 
+                                <td>100</td> 
+                                <td>
+                                    <a href="coupon_details.html" class="btn btn-default btn-sm">
+                                        详情
+                                    </a>
+                                    <!--<a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否审核通过?">审核通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/coupon_refuse.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">拒绝
+                                    </a>
+                                    <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否停止投放?">停止投放
+                                    </a>
+                                    <a href="coupon_record.html" class="btn btn-default btn-sm">
+                                        报表
+                                    </a>-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>礼品券</td>
+                                <td>礼品券</td> 
+                                <td>新秀丽旗舰店</td>
+                                <td>2015.08.06-2015.08.13</td>
+                                <td>未通过</td> 
+                                <td>100</td> 
+                                <td>
+                                    <a href="coupon_details.html" class="btn btn-default btn-sm">
+                                        详情
+                                    </a>
+                                    <!--<a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否审核通过?">审核通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/coupon_refuse.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">拒绝
+                                    </a>
+                                    <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否停止投放?">停止投放
+                                    </a>
+                                    <a href="coupon_record.html" class="btn btn-default btn-sm">
+                                        报表
+                                    </a>-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>优惠券</td>
+                                <td>优惠券</td> 
+                                <td>新秀丽旗舰店</td>
+                                <td>2015.08.06-2015.08.13</td>
+                                <td>待投放</td> 
+                                <td>100</td> 
+                                <td>
+                                    <a href="coupon_details.html" class="btn btn-default btn-sm">
+                                        详情
+                                    </a>
+                                    <!--<a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否审核通过?">审核通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/coupon_refuse.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">拒绝
+                                    </a>
+                                    <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否停止投放?">停止投放
+                                    </a>
+                                    <a href="coupon_record.html" class="btn btn-default btn-sm">
+                                        报表
+                                    </a>-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>优惠券</td>
+                                <td>优惠券</td> 
+                                <td>新秀丽旗舰店</td>
+                                <td>2015.08.06-2015.08.13</td>
+                                <td>已投放</td> 
+                                <td>100</td> 
+                                <td>
+                                    <a href="coupon_details.html" class="btn btn-default btn-sm">
+                                        详情
+                                    </a>
+                                    <!--<a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否审核通过?">审核通过
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/coupon_refuse.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">拒绝
+                                    </a>-->
+                                    <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否停止投放?">停止投放
+                                    </a>
+                                    <a href="coupon_record.html" class="btn btn-default btn-sm">
+                                        报表
+                                    </a>
+                                </td>
+                            </tr>
+                            <!--  <tr>
+                                        <td  colspan="6" class="nodata">暂无数据</td>
+                                    </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

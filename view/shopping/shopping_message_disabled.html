@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--<link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />-->
+    <link href="/assets/stylesheets/plugins/select2/4.0.0/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/material.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .popover{width:300px;}
+    </style>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>新建群发</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+
+        <section class="scrollable wrapper">
+            <section>
+                <div class="alert alert-danger m-b" style="padding:6px">
+                    <p>
+                        <i class="fa fa-exclamation-circle fa-3x m-l-sm m-r-sm text-danger"></i>
+                        <span style="position:relative;top:-6px;">
+                            您的购物号功能因 XXXXXX（暂停原因） 被暂停使用 XX（暂停期限） 。2015年12月31日 12:48 起可正常使用。如有疑问，请联系萌店运营团队。
+                        </span>
+                    </p>
+                </div>
+            </section>
+            <section class="panel panel-default reply_rule_list js_reply_rule_list">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/Plus/succes.php" data-action="/api/form/ajaxformurl">
+                        <div class="form-group m-b-sm m-t-n-xs">
+                            <div class="col-sm-2">
+                                <label class="control-label">群发对象</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <select class="form-control js_send_type" name="target" disabled="disabled">
+                                    <option value="0" checked="checked">全部</option>
+                                    <option value="1">买家</option>
+                                    <option value="2">萌主</option>
+                                    <option value="3">按分组选择</option>
+                                </select>
+                            </div>
+
+                            <div class="js_type js_type3 hide">
+                                <div class="col-sm-1 m-l-n">
+                                    <button type="button" class="btn btn-default js_show_group_dialog">选择分组</button>
+                                    <input class="js_groupIds" type="hidden" name="groupIds" value="" />
+                                </div>
+                                <div class="col-sm-8 m-l-xs">
+                                    <label class="control-label" style="text-align:left;">
+                                        <span class="js_all_select_group hide">
+                                            已选择全部分组</span>
+                                        <span class="js_some_select_group hide">
+                                            已选择分组：
+                                            <span class="js_some_select_group_label"></span>
+                                        </span>
+                                        <span class="js_no_select_group">
+                                            还未选择分组</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="form-group m-b-none">
+                            <div class="col-sm-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" style="padding:4px 15px;">
+                                        <div class="form-group m-b-none">
+                                            <div class="col-sm-12 js_reply_select1 m-b-xs">
+                                                <label class="radio-inline">
+                                                    <!--<input type="radio" name="replytype" data-type="graphic" value="1" class="hide" checked="checked"/>-->
+                                                    <i class="fa fa-picture-o m-r-xs m-l-n-md"></i>
+                                                    图文消息
+                                                </label>
+                                                <!--<label class="radio-inline text-muted">
+                                                    <input type="radio" name="replytype" value="0" data-type="text"  class="hide"/>
+                                                    <i class="fa fa-pencil m-r-xs m-l-n-md"></i>
+                                                    文字
+                                                </label>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group m-b-none">
+                                            <!--<div class="col-sm-12 js_replay_type_div js_replay_type_text hide">
+                                                <textarea name="content" data-toggle="kindeditor" class="form-control js_replay_textarea" data-config="reply"></textarea>
+                                                <span class="help-block">最多600字</span>
+                                            </div>-->
+                                            <div class="col-sm-12 js_replay_type_div js_replay_type_graphic">
+                                                    <div class="appmsg_list js_appmsg_list hide">
+                                                        <div class="appmsg_col1 show_item" style="margin-right:2%;border:1px solid #e7e7eb;">
+                                                            <input type="hidden" name="graphicid" value="1"/>
+                                                            <div class="inner">
+                                                                <div class="js_appmsgitem">
+                                                                    <div class="appmsg multi">
+                                                                        <div class="appmsg_content">
+                                                                            <div class="appmsg_info"> <em class="appmsg_date">09月08日</em>
+                                                                            </div>
+                                                                            <div class="cover_appmsg_item">
+                                                                                <h4 class="appmsg_title js_title">22</h4>
+                                                                                <div class="appmsg_thumb_wrp">
+                                                                                    <img src="/assets/images/avatar12.jpg" alt="" class="appmsg_thumb"></div>
+                                                                            </div>
+
+                                                                            <div class="appmsg_item">
+                                                                                <img src="/assets/images/scene.jpg" alt="" class="appmsg_thumb">
+                                                                                <h4 class="appmsg_title js_title">2323</h4>
+                                                                            </div>
+                                                                            <div class="appmsg_opr">
+                                                                                <ul>
+                                                                                    <li class="appmsg_opr_item grid_item size1of2 no_extra" style="width:100%;">
+                                                                                        <a href="javascript:;"  class="js_graphic_del" title="删除">
+                                                                                            <i class="fa fa-trash-o text-muted" style="border-right:0"></i>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row js_graphic_select" style="margin:15px 0px;">
+                                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                                            <a href="javascript:;">
+                                                                <div class="text-center" style="padding:90px 0;border:2px dashed #cfcfcf;">
+                                                                    <span>
+                                                                        <i class="fa fa-plus text-muted" style="font-size:20px;line-height:30px;"></i>
+                                                                        <br/>
+                                                                        <span class="text-muted" style="font-size:14px;">从素材库中选择</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-4 col-lg-3">
+                                                            <a href="javascript:;">
+                                                                <div class="text-center" style="padding:90px 0;border:2px dashed #cfcfcf;">
+                                                                    <span>
+                                                                        <i class="fa fa-plus text-muted" style="font-size:20px;line-height:30px;"></i>
+                                                                        <br/>
+                                                                        <span class="text-muted" style="font-size:14px;">新建图文消息</span>
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="line line-dashed line-lg pull-in m-t-none"></div>-->
+
+                        <div class="form-group m-b-xs">
+                            <div class="col-sm-12 m-l">
+                                <div class="pull-left">
+                                    <!--<input type="hidden" id="timing" name="timing" value="">-->
+                                    <button type="submit" class="btn btn-primary m-r-sm js_quick_send" data-loading-text="发送中..." disabled="disabled">立即发送</button>
+                                    <!--<button type="button" class="btn btn-primary js_fixed_send">定时发送</button>-->
+                                    <button id="date_btn" type="submit" class="btn btn-primary m-r-sm hide js_fix_time_send" data-loading-text="提交中...">定时发送</button>
+                                    <label class="checkbox-inline" style="position:relative;top:-3px;">
+                                        <input type="checkbox" class="js_fix_time" name="fixTime" value="1" disabled="disabled">定时发送
+                                    </label>
+                                </div>
+                                <div class="pull-left m-l-xs hide js_fix_time_send" style="width:200px;"> 
+                                    <div class="input-group">
+                                        <input type="text" class="form-control js_select_send_time" name="send_time" data-rule-required="true" readonly="readonly" value="" data-before="#solddate" data-toggle="datetimepicker" data-startdate="now" data-position="top-right" />
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-none hide">
+                            <div class="col-sm-4 m-l">
+                                <span class="text-muted">您今天还可群发 <span class="text-danger font-bold">1</span> 条消息。</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+        </section>
+
+    </section>
+
+    <!--<div class="modal fade in" id="selectSendTimeModal" tabindex="-1" role="dialog">
+        <form class="form-horizontal form-validate form-modal">
+            <div class="modal-dialog" style="max-width:440px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">定时发送</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for="title">日期：</label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <input type="text" class="form-control js_select_send_time" name="send_time" data-rule-required="true" readonly="readonly" value="" data-before="#solddate" data-toggle="datetimepicker" data-startdate="now" />
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="date_btn">确定</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+                   
+            </div>
+        </form>
+    </div>-->
+
+    <script type="text/html" id="js_graphic_list_template">
+      <div class="appmsg_col show_item" style="margin-right:4px;margin-left:4px">
+        <input type="hidden" name="graphicid" value="{{zitem.id}}"/>
+        <div class="inner">
+          <div class="js_appmsgitem">
+            <div class="appmsg multi">
+              <div class="appmsg_content">
+                <div class="appmsg_info">
+                  {{if zitem.title}}
+                  <p> <strong>{{zitem.title}}</strong>
+                  </p>
+                  {{/if}} <em class="appmsg_date">{{zitem.date}}</em>
+                </div>
+                <div class="cover_appmsg_item">
+                  <h4 class="appmsg_title js_title">{{zitem.subtitle}}</h4>
+                  <div class="appmsg_thumb_wrp">
+                    <img src="{{zitem.img}}" alt="" class="appmsg_thumb"></div>
+                </div>
+                {{if zitem.item}}
+                    {{each zitem.item as sitem}}
+                <div class="appmsg_item">
+                  <img src="{{sitem.img}}">
+                  <h4 class="appmsg_title js_title">{{sitem.title}}</h4>
+                </div>
+                {{/each}}
+                  {{/if}}
+                <div class="appmsg_opr">
+                  <ul>
+                    <li class="appmsg_opr_item grid_item size1of2 no_extra" style="width:100%;">
+                       <a href="javascript:;"  class="js_graphic_del" title="删除"> <i class="fa fa-trash-o text-muted" style="border-right:0"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/html" id="add_groups_tmp">
+        <div class="js_tag_list hide">
+            <div class="row m-b-sm">
+                <div class="col-sm-12">
+                    <label class="checkbox-inline">
+                        <input class="js_select_all_group" type="checkbox" name="allgroup" />全部分组
+                    </lable>
+                </div>
+            </div>
+            <div class="row js_group_lists" style="border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding-bottom:8px;height:210px;overflow:auto;">
+                {{each list as val}}
+                    <div class="col-sm-6">
+                        <label class="checkbox-inline">
+                            <input class="js_select_group" data-groupid="{{val.groupId}}" data-label="{{val.label}}" type="checkbox" name="group" />{{val.label}}
+                        </lable>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="row m-t-sm">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-sm btn-primary pull-right js_close_group_dialog">确定</button>
+                </div>
+            </div>
+
+        </div>
+    </script>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        window.userGroups = [
+            {groupId: 1,label: '分组一分组一'},
+            {groupId: 2,label: '分组二分组二'},
+            {groupId: 3,label: '分组三分组三'},
+            {groupId: 4,label: '分组四分组四'},
+            {groupId: 5,label: '分组五分组五'},
+            {groupId: 6,label: '分组六分组六'},
+            {groupId: 7,label: '分组七分组七'},
+            {groupId: 8,label: '分组八分组八'},
+            {groupId: 9,label: '分组九分组九'},
+            {groupId: 10,label: '分组十分组十'},
+            {groupId: 11,label: '分组十分组十一'},
+            {groupId: 12,label: '分组十分组十二'},
+            {groupId: 13,label: '分组十分组十三'},
+            {groupId: 14,label: '分组十分组十四'},
+            {groupId: 15,label: '分组十分组十五'}
+        ];
+        window.selectGroupIds = [];
+        window.selectGroupLabels = [];
+    </script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/shopping/init.js"]);
+    </script>
+
+</body>
+
+</html>

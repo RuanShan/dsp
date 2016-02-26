@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/formwizard.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+<style type="text/css">
+    .couponUL{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    .selected-sign{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width:0;
+        height:0;
+        border-width:12px;
+        border-style:solid;
+        border-color:transparent #65bd77 #65bd77 transparent;
+    }
+    .selected-sign-i{
+        color: #ffffff;
+        position: absolute;
+        bottom: 0px;
+    }
+    .couponli{
+        position:relative;
+        float: left;
+        width: 80px;
+        height: 36px;
+        line-height:36px;
+        text-align:center;
+        border: solid 1px rgb(238,238,238);
+        margin-right: 20px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+          <p>编辑优惠券</p>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate form-wizard" method="post" action="/Plus/free2.php?step=1">
+
+                        <div class="step" id="firstStep">
+                            <ul class="wizard-steps steps-2">
+                                <li class='active'>
+                                    <div class="single-step">
+                                        <span class="title">1</span>
+                                        <span class="circle">
+                                            <span class="active"></span>
+                                        </span>
+                                        <span class="description">设置活动信息
+                                        </span>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="single-step">
+                                        <span class="title">2</span>
+                                        <span class="circle"></span>
+                                        <span class="description">选择活动商品
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="step-forms">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">活动名称：</label>
+                                    <div class="col-sm-4 must">
+                                        <input type="text" class="form-control" data-rule-required="true" name="Name" data-rule-rangelength="[2,15]"/>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">优惠券名称须由2-15个汉字或字符组成</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">推广方式：</label>
+                                    <div class="col-sm-9">
+                                        <div class="btn-group">
+                                        <ul class="couponUL">
+                                            <li class="couponli1 couponli">买家领取
+                                                <span class="selected-sign"></span>
+                                                <i class="fa fa-check selected-sign-i"></i>
+                                                 <!--买家领取/卖家发放标志-->
+                                                <input type="hidden" class="js_sign_input" name="couponTab" id="" value="0" />
+
+                                            </li>
+                                            <li class="couponli2 couponli">卖家发放
+                                                <span class="selected-sign hide"></span>
+                                                <i class="fa fa-check selected-sign-i hide"></i>
+                                                <!--买家领取/卖家发放标志-->
+                                                <input type="hidden" class="js_sign_input" name="couponTab" id="" value="1" disabled="" />
+                                            </li>
+                                        </ul></div><div class="btn-group">
+                                        <span class="form-control-static"><span class="help-inline">(仅支持店铺券)</span></span>
+                                            </div>
+                                    </div>
+                                </div>
+
+                               
+
+                                <div class="coupon_panel1">
+                                <div class="form-group">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-9">
+                                        <label class="radio-inline">
+                                            <input class="js_select_url_type coupon_panel1_1select" type="radio" checked="true"  name="coupon_panel1" value="1">无门槛领取
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input class="js_select_url_type coupon_panel1_2select"  type="radio" name="coupon_panel1" value="2">下单后分享领取
+                                        </label>
+                                        <div class="btn-group coupon_panel1_2 hide">
+                                            <span class="pull-left m-r-xs" style="margin-top:7px">&nbsp;&nbsp;每单可分享</span>
+                                            <input type="text" name="couponyhq" style="width:80px" data-rule-required="true" data-rule-digits="true" class="form-control pull-left">
+                                        </div>
+                                        <div class="btn-group coupon_panel1_2 hide">
+                                            <span class="pull-left m-r-xs">&nbsp;&nbsp;张优惠券</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                              <div class="form-group">
+                                  <div class="col-sm-2"></div>
+                                  <div class="col-sm-10">
+                                      <p class="form-control-static coupon_panel1_1"><span class="help-inline">买家可在购物车、商品详情页或店铺首页等位置领取，或通过领券链接领取</span></p>
+                                      <p class="form-control-static coupon_panel1_2 hide"><span class="help-inline">买家下单成功后，通过订单详情页分享店铺红包给好友，自己同时可领取一张</span></p>
+                                  </div>
+                              </div>
+
+
+                                    <div class="data_lingqu">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">使用时间：</label>
+                                    <div class="col-sm-4 must">
+                                        <div class="input-group"> 
+                                            <input type="text" class="form-control" name="date" data-rule-required="true" data-min-date="2016/01/25" data-time-picker-increment="1" readonly="readonly" value="" id="solddate" data-toggle="daterangepicker" /><span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">活动开始时间需小于活动结束时间</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">开始领取时间：</label>
+                                    <div class="col-sm-4 must">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="date" data-rule-required="true" data-especially="solddate" data-especially-msg="请先选择使用时间" readonly="readonly" value="" data-toggle="datetimepicker" data-position="bottom-right" data-enddate="now"/>
+                                            <span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">优惠券失效前均可领取</span></p>
+                                    </div>
+                                </div>
+                                    </div>
+
+                                <div class="form-group form_sel">
+                                    <label class="col-sm-2 control-label">使用条件：</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group1" style="display: inline-block">
+                                                <label class="radio-inline">
+                                                    <input class="js_select_url_type" checked="true" type="radio"  name="wpms_1" value="0">
+                                                    <span class="pull-left m-r-xs">满</span></label>
+                                        <div class="btn-group">
+                                        <input type="text" name="wpms_2" style="width:170px" data-rule-required="true" data-rule-min="0" data-rule-number="true" class="form-control pull-left">
+                                         </div>
+                                        <div class="btn-group">
+                                            <span class="pull-left m-r-xs">元使用</span>
+                                        </div>
+                                        </div>
+
+                                        <label class="radio-inline">
+                                            <input class="js_select_url_type condselect" type="radio"   name="wpms_1" value="1">无条件使用
+                                        </label>
+
+                                        <div class="btn-group addselecttip hide">
+                                            <span class="form-control-static"><span class="help-inline">单笔订单金额高于优惠券面值即可使用</span></span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">面值：</label>
+                                    <div class="col-sm-4 must">
+                                        <div class="input-group">
+                                            <input type="text" name="couponface"  data-rule-required="true" data-rule-decimal="2" data-rule-max="10000" class="form-control">
+                                            <span class="input-group-addon" >元</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">必须填写整数且不超过10000</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">发行量：</label>
+                                    <div class="col-sm-4 must">
+                                        <div class="input-group">
+                                        <input type="text" name="couponnum" data-rule-required="true" data-rule-digits="true" data-rule-max="100000" class="form-control">
+                                            <span class="input-group-addon" >张</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">必须填写整数且不超过100000张</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">每人限领：</label>
+                                    <div class="col-sm-4">
+                                        <div class="input-group">
+                                        <input type="text" name="couponlimit" data-rule-required="true" data-rule-digits="true" data-rule-number="true" class="form-control">
+                                            <span class="input-group-addon" >张</span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="coupon_panel1_2 hide">
+                                <div class="form-group">
+                                    <div class="col-sm-2 control-label">
+                                        <div style="background-color: #65bd77;border-color: #65bd77;color: #ffffff;width: 70px;float: right;height: 30px;line-height: 30px;">微信分享：</div>
+                                    </div>
+                                    <div class="col-sm-4 must">
+                                        <span class="pull-left m-r-xs" style="margin-top:7px">标题&nbsp;&nbsp;</span>
+                                        <input type="text" name="couponweixin" placeholder="萌店店铺10元优惠券，赶紧来领取吧~ " style="width:300px" data-rule-required="true" data-rule-number="true" class="form-control pull-left">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p class="form-control-static"><span class="help-inline">不能超过28个字</span></p>
+                                    </div>
+                                </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-4 must">
+                                            <span class="pull-left m-r-xs" style="margin-top:7px">内容&nbsp;&nbsp;</span>
+                                            <input type="text" name="weixincon" placeholder="X元店铺优惠券，此时 不领，更待何时~ " style="width:300px" data-rule-required="true" data-rule-number="true" class="form-control pull-left">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p class="form-control-static"><span class="help-inline">不能超过44个字</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2 control-label">
+                                            <div style="background-color: #65bd77;border-color: #65bd77;color: #ffffff;width: 85px;float: right;height: 30px;line-height: 30px;">
+                                                朋友圈分享：
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 must">
+                                            <span class="pull-left m-r-xs" style="margin-top:7px">内容&nbsp;&nbsp;</span>
+                                            <input type="text" name="couponpengyq" placeholder="【萌店店铺优惠券】X元店铺优惠券，此时不领，更待何时~" style="width:300px" data-rule-required="true" data-rule-number="true" class="form-control pull-left">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <p class="form-control-static"><span class="help-inline">不能超过44个字</span></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+                                <div class="coupon_panel2 hide">
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-9">
+                                            <label class="radio-inline">
+                                                <input class="js_select_url_type coupon_panel2_1select"  type="radio" checked="true"  name="coupon_panel2" value="1">满就送
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input class="js_select_url_type coupon_panel2_2select"  type="radio" name="coupon_panel2" value="2">购物号发送
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static coupon_panel2_1"><span class="help-inline">创建满送活动后关联到此优惠券，满足满送条件后优惠券将自动发放给买家</span></p>
+                                            <p class="form-control-static coupon_panel2_2 hide"><span class="help-inline">创建好优惠券后，通过购物号发送给指定粉丝</span></p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">使用时间：</label>
+                                        <div class="col-sm-4 must">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="date" data-rule-required="true"  readonly="readonly" id="solddate2" data-toggle="daterangepicker" /><span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <p class="form-control-static"><span class="help-inline">活动开始时间需小于活动结束时间</span></p>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group form_sel">
+                                        <label class="col-sm-2 control-label">使用条件：</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group1" style="display: inline-block">
+                                            <label class="radio-inline">
+                                                <input class="js_select_url_type" checked="true" type="radio"  name="wpms_12" value="0">
+                                                <span class="pull-left m-r-xs">满</span></label>
+                                            <div class="btn-group">
+                                                <input type="text" name="wpms_2_2" style="width:170px" data-rule-required="true" data-rule-min="0" data-rule-number="true" class="form-control pull-left">
+                                            </div>
+                                            <div class="btn-group">
+                                                <span class="pull-left m-r-xs">元使用</span>
+                                            </div>
+                                            </div>
+                                            <label class="radio-inline">
+                                                <input class="js_select_url_type condselect" type="radio"   name="wpms_12" value="1">无条件使用
+                                            </label>
+
+                                            <div class="btn-group addselecttip hide">
+                                                <span class="form-control-static"><span class="help-inline">单笔订单金额高于优惠券面值即可使用</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">面值：</label>
+                                        <div class="col-sm-4 must">
+                                            <div class="input-group">
+                                                <input type="text" name="couponmianzhi"  data-rule-required="true" data-rule-decimal="2" data-rule-max="10000" class="form-control">
+                                                <span class="input-group-addon" >元</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <p class="form-control-static"><span class="help-inline">必须填写整数且不超过10000</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">发行量：</label>
+                                        <div class="col-sm-4 must">
+                                            <div class="input-group">
+                                            <input type="text" name="coupon_faxl"  data-rule-required="true" data-rule-digits="true" data-rule-max="100000" class="form-control">
+                                                <span class="input-group-addon" >张</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <p class="form-control-static"><span class="help-inline">必须填写整数且不超过100000张</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="coupon_panel2_2 hide">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">每人限领：</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                            <input type="text" name="couponxianfa" data-rule-required="true" data-rule-digits="true" data-rule-number="true" class="form-control">
+                                                <span class="input-group-addon" >张</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                        </div>
+
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                      <div class="line line-dashed line-lg pull-in"></div>
+                      <div class="form-group">
+                          <div class="col-sm-4 col-sm-offset-2">
+                            <a href="event_list.html" class="btn btn-default">取消</a>
+                            <button type="submit" class="btn btn-primary">下一步</button>
+                          </div>
+                      </div>
+
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/coupon/init.js"])
+    </script>
+</body>
+</html>
+
+
+

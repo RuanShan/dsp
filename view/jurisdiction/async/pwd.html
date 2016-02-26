@@ -1,0 +1,30 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxform">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">重置密码</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">输入新密码：</label>
+                    <div class="col-sm-5 ">
+                        <input type="password" class="form-control" data-rule-required="true" name="pwd" id="pwd" data-rule-rangelength="[6,16]" data-rule-strength="2" data-msg-strength="密码为6位以上大写字母、小写字母或数字组合而成"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">确认密码：</label>
+                    <div class="col-sm-5 ">
+                        <input type="password" class="form-control" data-rule-required="true" name="pwd1" id="pwd1" data-rule-equalTo="#pwd"/>
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+

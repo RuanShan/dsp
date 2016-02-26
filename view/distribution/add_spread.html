@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/design.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <p>新增推广活动</p>
+        </header>
+        <section class="scrollable wrapper form-horizontal">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="alert alert-info">
+                        请准确填写表单项目，提交之前请认真、仔细检查。
+                    </div>
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动名称：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" data-rule-require="true" name="name"/>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动时间：</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="time" value="2014/05/12 00:00 - 2014/06/12 23:59" data-rule-required="true" data-position="top-right" data-toggle="daterangepicker" />
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <!-- <div class="col-sm-2 m-t-sm"  style="color:#999">
+                                指定时间内发放积分
+                            </div> -->
+                        </div>
+                        <!-- <div class="form-group">
+                            <label class="col-sm-2 control-label">活动时间：</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                <input type="text" class="form-control" name="soldoutdate" id="solddate" data-after="#groundingdate" value="2014-08-27 18:00" data-offsetday="2" data-startdate="now" data-toggle="datetimepicker" data-position="bottom-right"/>
+                                <span class="input-group-addon" >
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            </div>
+                        </div>  -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动规则：</label>
+                            <div class="col-sm-4">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动预算：</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" data-rule-require="true" data-rule-number="true" name="budget"/>
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">邀请一个有效用户赠送红包数：</label>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                <input type="text" class="form-control" data-rule-require="true" data-rule-number="true" name="num"/>
+                                <span class="input-group-addon ">
+                                    个
+                                </span>
+                                </div>
+                            </div>
+                            <label class="col-sm-2 form-control-static m-l-n">＊必须是>0的正整数</label>
+                        </div> 
+                        <div class="form-group gift">
+                            <label class="col-sm-3 control-label">赠送红包金额：</label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline"><input type="radio" data-add="formDis1" data-remove="formDis" class="condition" name="gift" checked="" />固定金额</label>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -70px;">
+                                <div class="input-group" style="width:225px;">
+                                    <input type="text" class="form-control formDis" data-rule-number="true" data-rule-required="false" name="pay1"/>
+                                    <span class="input-group-addon ">
+                                        元/个
+                                    </span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-group gift">
+                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline"><input type="radio" data-add="formDis" data-remove="formDis1" class="condition" name="gift" />随机金额</label>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -70px;">
+                                <div class="input-group">
+                                <span class="input-group-addon ">
+                                    随机区间
+                                </span>
+                                <input type="text" class="form-control formDis1" data-rule-number="true" data-rule-required="false" name="giftfrom" style="width:115px;" disabled/>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 radio-inline" style="margin-left: -70px;">
+                            ~
+                            </div>
+                            <div class="col-sm-2" style="margin-left: -70px;">
+                                <div class="input-group">
+                                <input type="text" class="form-control formDis1" data-rule-number="true" data-rule-required="false" name="giftto" disabled/>
+                                <span class="input-group-addon ">
+                                    元/个
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group new">
+                            <label class="col-sm-3 control-label">新用户可领取的红包金额：</label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline"><input type="radio" data-add="formDis1" data-remove="formDis" class="condition" name="new" checked />固定金额</label>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -70px;">
+                                <div class="input-group" style="width:225px;">
+                                    <input type="text" class="form-control formDis" data-rule-number="true" data-rule-required="false" name="pay2" />
+                                    <span class="input-group-addon ">
+                                        元/个
+                                    </span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form-group new">
+                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-sm-2">
+                                <label class="radio-inline"><input type="radio" data-add="formDis" data-remove="formDis1" class="condition" name="new" />随机金额</label>
+                            </div>
+                            <div class="col-sm-3" style="margin-left: -70px;">
+                                <div class="input-group">
+                                <span class="input-group-addon ">
+                                    随机区间
+                                </span>
+                                <input type="text" class="form-control formDis1" data-rule-number="true" data-rule-required="false" name="newfrom" style="width:115px;" disabled/>
+                                </div>
+                            </div>
+                            <div class="col-sm-1 radio-inline" style="margin-left: -70px;">
+                            ~
+                            </div>
+                            <div class="col-sm-2" style="margin-left: -70px;">
+                                <div class="input-group">
+                                <input type="text" class="form-control formDis1" data-rule-number="true" data-rule-required="false" name="newto" disabled/>
+                                <span class="input-group-addon ">
+                                    元/个
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">获得红包后有效期：</label>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                <input type="text" class="form-control" data-rule-require="true" data-rule-number="true" name="num"/>
+                                <span class="input-group-addon ">
+                                    天
+                                </span>
+                                </div>
+                            </div>
+                            <label class="col-sm-2 form-control-static m-l-n">＊设0表示不限</label>
+                        </div> 
+                            
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <input type="hidden" value="0" id="js_store_way"/>
+                                <button type="submit" data-confirm="true" data-confirm-msg="" class="btn btn-primary js_save_submit" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+    // window.extraUploadPath="http://www.baidu.com/upload.php";
+    seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+</body>
+
+</html>

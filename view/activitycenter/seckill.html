@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                            </button>
+
+                        </div>
+                        <a href="javascript:;" data-remote="async/select.html" data-toggle="ajaxModal" class="btn btn-sm btn-default"> <i class="fa fa-plus m-r-xs"></i>
+                            新增活动
+                        </a>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部报名状态</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="">全部报名状态</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="1">报名未开始</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="2">报名已开始</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type" value="3">报名进行中</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部活动状态</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type2" value="">全部活动状态</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type2" value="1">活动未开始</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type2" value="2">活动已开始</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="type2" value="3">活动进行中</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部活动类型</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50 mhx250" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" checked="" name="activitytype" value="" />                        
+                                        全部活动类型
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="activitytype" value="1" />                                
+                                        一元购
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="activitytype" value="2" />                                
+                                        全民疯抢
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="activitytype" value="3" />                                
+                                        综合专场
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="activitytype" value="4" />                                
+                                        单品牌专场
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="activitytype" value="5" />                                
+                                        高佣金
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <div class="input-group pull-left" style="width:80px;">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                        <span class="dropdown-label">活动时间</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-select" data-change="submit">
+                                        <li class="active">
+                                            <a href="#">
+                                                <input type="radio" value="0" name="dateSelect" checked="checked" />
+                                                活动时间
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <input type="radio" value="1" name="dateSelect" />
+                                                报名时间
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <a class="btn btn-default btn-sm " data-toggle="reportrange" data-change="submit" style="border-left:0">
+                                <i class="fa fa-calendar fa-lg"></i>
+                                <small>时间</small>
+                                <span>2014/06/1 - 2014/08/2</span> <b class="caret"></b>
+                                <input type="hidden" value="2014/06/1 - 2014/08/2" id="reportrange" name="reportrange" />
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">活动名称</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                                    <li>
+                                        <a href="javascript:;" class="active">
+                                            <input type="radio" name="orderType" value="1">活动名称</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="orderType" value="2">活动ID</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="" />
+
+            </form>
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th >活动ID</th>
+                                <th >活动名称</th>
+                                <th >活动类型</th>
+                                <th >活动时间</th>
+                                <th >报名时间</th>
+                                <th >报名店铺数</th>
+                                <th >报名商品数</th>
+                                <th >报名状态</th>
+                                <th style="text-align:center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th >1</th>
+                                <td>七夕秒杀</td>
+                                <td>秒杀</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>32</td>
+                                <td>123</td>
+                                <td>未开始</td>
+                                <td style="text-align:center;">
+                                    <a href="department_ed_addsub.html" class="btn btn-link-herf btn-link-color" title="编辑">编辑</a>
+
+                                    <a href="goods_audit.html" class="btn btn-link-herf btn-link-color" title="商品审核">商品审核</a>
+
+                                    <a href="chart.html" class="btn btn-link-herf btn-link-color" title="活动统计">活动统计</a>
+
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="该秒杀活动正在进行中，如果提前关闭活动会影响前台用户正常购买，请谨慎操作！建议提前告知说明并作好相应的准备。确定要提前关闭活动？" class="btn btn-link-herf btn-link-color" title="关闭">关闭</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th >2</th>
+                                <td>光棍节专场</td>
+                                <td>综合专场</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>32</td>
+                                <td>123</td>
+                                <td>未开始</td>
+                                <td style="text-align:center;">
+                                    <a href="synthesize_special_ed.html" class="btn btn-link-herf btn-link-color" title="编辑">编辑</a>
+
+                                    <a href="goods_audit.html" class="btn btn-link-herf btn-link-color" title="商品审核">商品审核</a>
+
+                                    <a href="chart.html" class="btn btn-link-herf btn-link-color" title="活动统计">活动统计</a>
+
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="该秒杀活动正在进行中，如果提前关闭活动会影响前台用户正常购买，请谨慎操作！建议提前告知说明并作好相应的准备。确定要提前关闭活动？" class="btn btn-link-herf btn-link-color" title="关闭">关闭</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th >3</th>
+                                <td>nick专场</td>
+                                <td>单品牌专场</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>2015.11.01-2015.11.11</td>
+                                <td>32</td>
+                                <td>123</td>
+                                <td>未开始</td>
+                                <td style="text-align:center;">
+                                    <a href="brand_special_ed.html" class="btn btn-link-herf btn-link-color" title="编辑">编辑</a>
+
+                                    <a href="goods_audit.html" class="btn btn-link-herf btn-link-color" title="商品审核">商品审核</a>
+
+                                    <a href="chart.html" class="btn btn-link-herf btn-link-color" title="活动统计">活动统计</a>
+
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="该秒杀活动正在进行中，如果提前关闭活动会影响前台用户正常购买，请谨慎操作！建议提前告知说明并作好相应的准备。确定要提前关闭活动？" class="btn btn-link-herf btn-link-color" title="关闭">关闭</a>
+                                </td>
+                            </tr>
+                            <!-- 
+                                     <tr>                            
+                            <td  colspan="8" class="nodata">暂无数据</td>
+                            </tr>
+                            -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<form id="recom" class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">增加预算</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">增加预算：</label>
+                    <div class="col-sm-7 must">
+                        <input type="text" class="form-control" data-rule-required="true" data-rule-number="true" data-rule-positive="true" name="budget" />
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

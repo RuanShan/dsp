@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/category.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>添加商品</p>
+        </header>
+        <section class="scrollable  wrapper w-f">
+
+            <section class="panel panel-default">
+                <header class="panel-heading">
+                    选择类目
+                </header>
+                <div class="panel-body">
+                    <div class="row wrapper">
+                        <div class="form-group form-horizontal ">
+                            <label class="pull-left control-label">
+                                选择常用类目
+                            </label>
+                            <div class="col-sm-7 category-dropdown-div js_category_lsit_div">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle form-control category-dropdown-toggle" style="text-align: left;">
+                                    <span class="dropdown-label category-dropdown-label">精品男装 >T恤/衬衫/针织/卫衣/马甲 >男士T恤/POLO衫 >leve 4.1</span>
+                                    <span class="caret category-dropdown-caret"></span>
+                                </a>
+                                <ul class="dropdown-menu category-dropdown-select" >
+                                    <li>
+                                        <a href="javascript:;">
+                                         选择常用类目</a>
+                                    </li>
+                                    <li class="active" data-id="537892913,538114648,537114627,1234561">
+                                        <a href="/View/goods/add_goods_ed.html?ids=11,22,33,44">
+                                         精品男装 >T恤/衬衫/针织/卫衣/马甲 >男士T恤/POLO衫 >leve 4.1</a>
+                                        <a href="javascript:;" class="category-del-btn js_category_del " data-path="/plus/categorydel.php"><i class="fa fa-times text-muted"></i></a>
+                                    </li>
+                                    <li data-id="s11,s22,s33,s44">
+                                        <a href="/View/goods/add_goods_ed.html?ids=11,22,33,44">
+                                         xxxxxxxxxxxxxxxxxxxxxxxxxx</a>
+                                        <a href="javascript:;" class="category-del-btn js_category_del " data-path="/plus/categorydel.php"><i class="fa fa-times text-muted"></i></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/html" id="js_addcategory_temp">
+                        <li class="active" data-id="{{id}}">
+                            <a href="/View/goods/add_goods_ed.html?ids={{id}}">{{name}}</a>
+                            <a href="javascript:;" class="category-del-btn js_category_del " data-path="/plus/categorydel.php"> <i class="fa fa-times text-muted"></i>
+                            </a>
+                        </li>
+                    </script>   
+
+                    <div class="row wrapper">
+                       你当前选择的是：<span class="js_selected_text">请选择</span> （
+                       <small>商品上架后不可修改，请谨慎选择</small>）
+                       <a href="javascript:;" class="btn btn-default btn-sm m-l-sm js_add_common_category hide" data-path="/plus/category.php"><i class="fa fa-plus m-r-xs"></i>加为常用类目</a>
+                       <span class="text-success m-l-sm js_used_category hide"><i class="fa fa-check m-r-xs"></i>已加为常用类目</span>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="category_item_wrp " data-toggle="category">
+                            <div class="category_search">
+                                <a href="javascript:void(0);" class="buuton_search"><i class="fa fa-search"></i></a>
+                                <input type="text" placeholder="请输入类目名称" value="" class="input_search">
+                            </div>
+                            <ul class="category_items ">  
+                            </ul>
+                        </div>
+                        <div class="category_item_wrp hd" data-toggle="category">
+                            <div class="category_search">
+                                <a href="javascript:void(0);" class="buuton_search"><i class="fa fa-search"></i></a>
+                                <input type="text" placeholder="请输入类目名称" value="" class="input_search" />
+
+                            </div>
+                            <ul class="category_items">
+                            </ul>
+                          <!--  <div class="loading hd"></div>
+                            <div class="overlay hd"></div>-->
+                        </div>
+
+                        <div class="category_item_wrp hd" data-toggle="category">
+                            <div class="category_search">
+                                <a href="javascript:void(0);" class="buuton_search"><i class="fa fa-search"></i></a>
+                                <input type="text" placeholder="请输入类目名称" value="" class="input_search">
+                            </div>
+                            <ul class="category_items">
+                            </ul>
+                        </div>
+                        <div class="category_item_wrp hd" data-toggle="category">
+                            <div class="category_search">
+                                <a href="javascript:void(0);" class="buuton_search"><i class="fa fa-search"></i></a>
+                                <input type="text" placeholder="请输入类目名称" value="" class="input_search">
+                            </div>
+                            <ul class="category_items">
+                            </ul>
+
+                        </div>
+                        <div class="category_item_wrp hd" data-toggle="category">
+                            <div class="category_search">
+                                <a href="javascript:void(0);" class="buuton_search"><i class="fa fa-search"></i></a>
+                                <input type="text" placeholder="请输入类目名称" value="" class="input_search">
+                            </div>
+                            <ul class="category_items">
+                            </ul>
+
+                        </div>
+                    </div>
+                   
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t text-center">
+            <button type="submit" class="btn btn-primary" data-remote="/view/goods/goods_ed.html?categoryId={0}" data-loading-text="保存中..." disabled>确定</button>
+        </footer>
+    </section>
+    <script type="text/javascript">
+        window.category = {
+            data: [{
+                "key": "538072052",
+                "val": "MP3\/MP4\/录音笔\/电纸书"
+            }, {
+                "key": "537892413",
+                "val": "ZIPPO\/瑞士军刀\/眼镜"
+            }, {
+                "key": "537898958",
+                "val": "办公\/电子辞典\/文具"
+            }, {
+                "key": "538112995",
+                "val": "保健食品"
+            }, {
+                "key": "538112937",
+                "val": "笔记本\/台式\/一体\/平板电脑"
+            }, {
+                "key": "538112978",
+                "val": "彩妆\/香水\/美妆工具"
+            }, {
+                "key": "538096864",
+                "val": "成人用品\/避孕\/计生用品"
+            }, {
+                "key": "538100515",
+                "val": "宠物\/宠物食品及用品"
+            }, {
+                "key": "537870913",
+                "val": "电脑硬件\/周边\/网络设备"
+            }, {
+                "key": "538096552",
+                "val": "电玩\/游戏机\/配件\/游戏软件"
+            }, {
+                "key": "537876982",
+                "val": "户外运动\/登山野营\/旅行装备"
+            }, {
+                "key": "537906649",
+                "val": "家纺-床品\/抱枕\/毛巾\/拖鞋"
+            }, {
+                "key": "537898966",
+                "val": "家具-床\/沙发\/桌\/柜\/箱架"
+            }, {
+                "key": "538112993",
+                "val": "家饰-装饰\/摆设\/布艺\/十字绣"
+            }, {
+                "key": "537898965",
+                "val": "家用电器"
+            }, {
+                "key": "537898967",
+                "val": "家用-居家日用\/餐厨用品\/清洁洗护"
+            }, {
+                "key": "537898968",
+                "val": "家装-灯饰\/厨卫\/建材\/五金\/涂料"
+            }, {
+                "key": "537892913",
+                "val": "精品男装"
+            }, {
+                "key": "538112979",
+                "val": "美发护发\/假发"
+            }, {
+                "key": "537890913",
+                "val": "美容护肤\/美体\/精油"
+            }, {
+                "key": "538104511",
+                "val": "奶粉\/辅食\/营养品"
+            }, {
+                "key": "537905079",
+                "val": "男鞋"
+            }, {
+                "key": "538112994",
+                "val": "男装配件"
+            }, {
+                "key": "537898070",
+                "val": "女士内衣\/男士内衣\/家居服\/袜子"
+            }, {
+                "key": "537891913",
+                "val": "女士配件\/围巾\/帽子\/眼镜\/手套"
+            }, {
+                "key": "537891948",
+                "val": "女鞋"
+            }, {
+                "key": "537072692",
+                "val": "品牌手表\/流行手表"
+            }, {
+                "key": "538371746",
+                "val": "品牌手机"
+            }, {
+                "key": "537879913",
+                "val": "汽车\/配件\/改装\/摩托"
+            }, {
+                "key": "537876913",
+                "val": "球类\/运动器械\/瑜伽健身游泳"
+            }, {
+                "key": "538082593",
+                "val": "热销女包\/男包\/箱包皮具"
+            }, {
+                "key": "538071212",
+                "val": "食品\/茶叶\/特产\/滋补品"
+            }, {
+                "key": "537891413",
+                "val": "时尚女装\/中老年装\/婚纱礼服"
+            }, {
+                "key": "537872913",
+                "val": "时尚饰品"
+            }, {
+                "key": "537894413",
+                "val": "书籍\/报纸\/杂志"
+            }, {
+                "key": "537898921",
+                "val": "数码配件"
+            }, {
+                "key": "537874913",
+                "val": "数码相机\/摄像机\/单反\/器材"
+            }, {
+                "key": "537893413",
+                "val": "童装\/童鞋\/亲子装\/配饰"
+            }, {
+                "key": "538088633",
+                "val": "玩具\/模型\/动漫\/早教\/益智"
+            }, {
+                "key": "537894913",
+                "val": "鲜花蛋糕\/园艺\/礼品\/服务"
+            }, {
+                "key": "537878913",
+                "val": "邮币\/古董\/字画\/收藏"
+            }, {
+                "key": "538104513",
+                "val": "孕产妇服饰\/用品\/营养品"
+            }, {
+                "key": "537905439",
+                "val": "运动服饰\/配件\/包袋"
+            }, {
+                "key": "537876929",
+                "val": "运动鞋"
+            }, {
+                "key": "538104512",
+                "val": "纸尿裤\/洗护\/喂哺\/推车床"
+            }, {
+                "key": "537903127",
+                "val": "珠宝钻石"
+            }],
+            url: "/api/json/category/{0}",
+            selected: [537892913, 538114648,537114627,1334561,1234561]
+        }
+    </script>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/goodsv/init.js"])
+    </script>
+
+</body>
+
+</html>

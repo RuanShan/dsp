@@ -1,0 +1,100 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog" style="width:780px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">修改价格</h4>
+            </div>
+            <div class="modal-body">
+             
+                <div class="table-responsive ">
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>商品信息</th>
+                                <th style="width: 45px">数量</th>
+                                <!--<th class="col-sm-2">优惠信息</th>-->
+                                <th style="width: 80px">原价</th>
+                                <!--<th style="width: 70px">优惠</th>-->
+                                <th style="width: 90px">实收款</th>
+                                <th style="width:80px">运费</th>
+                                <th style="width:80px">总计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">0.01</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="v-middle">
+                                    11
+                                </td>
+                                <!--<td class="v-middle" rowspan="2">
+                                    活动：年终大奖促￥10.00;<br/>
+                                    积分抵扣金额￥20.00
+                                </td>-->
+                                <td class="v-middle">
+                                    100
+                                </td>
+                                <!--<td class="v-middle">
+                                    10.67
+                                </td>-->
+                                <td class="v-middle">
+                                     <input type="text" name="subtotal"  style="padding-left: 5px;padding-right: 0;"  data-rule-decimal="2" value="89.33" class="form-control  js_price_input" data-rule-range="[0,100]"/> 
+                                </td>
+                                <td class="v-middle" rowspan="2">
+
+                                    <input type="text" style="padding-left: 5px;padding-right: 0;" name="freight" data-rule-decimal="2" value="15.00" class="form-control  js_price_input"/>
+                                </td>
+                                <td class="v-middle js_total_show" rowspan="2">
+                                   283
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">10.67</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="v-middle">
+                                    2
+                                </td>
+                                <td>
+                                    200
+                                </td>
+                                <!--<td>21.33</td>-->
+                                <td class="v-middle">
+                                   <input type="text" style="padding-left: 5px;padding-right: 0;" name="subtotal" data-rule-decimal="2" data-rule-range="[0,200]" value="178.67" class="form-control js_price_input"/> 
+                                </td>
+                               
+                            </tr>
+
+                            <!--    <tr>
+                                        <td  colspan="5" class="nodata">暂无数据</td>
+                                    </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!--<span class="help-block">*订单中使用的优惠金额已经均摊至每个商品，并从相应商品的待付金额里扣除</span>-->
+               <input type="hidden" name="total" class="js_total" />
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

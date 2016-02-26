@@ -1,0 +1,333 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+  <style type="text/css">
+      .mag_r{margin-right: 10px;}
+      .modal-dialog{width: 900px;}
+      .modal-body{padding-top: 0;}
+      .form-horizontal .form-group_sp{margin-bottom: 0;}
+      .form-horizontal .times{margin-left:15px;    width: 856px;}
+    </style>
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>类目明细</p>
+      <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+      </a>
+
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body">
+          <form class="talbe-horizontal" method="post" action="/api/Page/list">
+
+            <div class="panel panel-default">
+            <div class="panel-heading font-bold">
+              <label>商家运营明细：</label>
+              <label>【美妆-美妆护肤】</label>
+            </div>
+
+            <div class="panel-body">
+              <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row">
+                  <div class="col-sm-11">
+                    <div class="form-group">
+                      <label>数据展示截止时间：</label>
+                      <a class="btn btn-default btn-sm" data-toggle="datepickersub" data-end-date="now" data-format="yyyy-MM-dd"  data-change="submit" > <i class="fa fa-calendar fa-lg"></i>
+                        <small>选择月份</small>
+                        <span>2014-06</span> <b class="caret"></b>
+                        <input type="hidden" value="2014-06" name="datepickersub" />
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0">
+              </form>
+              <section class="panel panel-default ">
+                <div class="table-responsive">
+                  <table class="table table-striped m-b-none">
+                    <thead>
+                    <tr>
+                      <th >店铺名称</th>
+                      <th >公司名称</th>
+                      <th >所在省份</th>
+                      <th >
+                        上架SPU数（件）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该商户在该类目中处于上架状态的SPU总数">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th>
+                        推广SPU数（件）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该商户在该类目中处于推广计划的SPU总数">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th>
+                        代销SPU数（件）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该商户在该类目中被萌主代销的SPU总数。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th>
+                        萌主数（人）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="代销该商户商品的萌主总数。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th>
+                        萌主的认证比例。
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="萌主认证率（%）">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                      <td>上元美妆</td>
+                      <td>合肥经济技术开发区上元化妆品商行</td>
+                      <td>江苏</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>37000</td>
+                      <td>78.23</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="sjqq" class="btn btn-link-herf btn-link-color">
+                          查看商家详情
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>happyface</td>
+                      <td>上海百中草本商贸有限公司</td>
+                      <td>上海</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>81843</td>
+                      <td>82.57</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="sjqq" class="btn btn-link-herf btn-link-color">
+                          查看商家详情
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <footer class="footer bg-white b-t">
+                    <div class="row text-center-xs">
+                      <div class="col-md-6 hidden-sm">
+                        <p class="text-muted m-t">总共321条 当前为第1页</p>
+                      </div>
+                      <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                        <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </section>
+
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </section>
+</section>
+
+  <div class="modal fade in js_sjqq_modal_time"   tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" >商家详情&nbsp;&nbsp;【上元美妆】</h4>
+          </div>
+          <div class="modal-body">
+            <row class="row">
+              <div class="col-sm-11">
+                <div class="form-group form-group_sp">
+                  <label>公司名称：合肥经济技术开发区上元化妆品商行</label>
+                  <label> 所在地：江苏</label>
+                  </div>
+              </div>
+            </row>
+            <div class="row">
+              <div class="col-sm-11 times">
+                <div class="form-group">
+                  <a class="btn btn-default btn-sm" data-toggle="reportrangecount" data-change="submit">
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <small>选择时间</small>
+                    <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                    <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange">
+                  </a>
+
+                  <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                    <i class="fa fa-cloud-download m-r-xs"></i>
+                    导出csv文件
+                  </a>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+
+            <section class="panel panel-default ">
+              <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                  <thead>
+                  <tr>
+                    <th style="width: 100px;">上架SPU数（件）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止所选日期最后一天，该商户在该类目中处于上架状态的SPU历史总数。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      推广SPU数（件）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止所选日期最后一天，该商户在该类目中处于推广计划的SPU历史总数">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      代销SPU数（件）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止所选日期最后一天，该商户在该类目中被萌主代销的SPU历史总数。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      萌主数（人）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="代销该商户商品的萌主总数。数据为截止所选日期最后一天的历史总数。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      萌主认证率（%）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止所选日期最后一天，，萌主的认证比例平均值。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                    </th>
+                    <th style="width: 100px;">
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  <tr>
+                    <td>100</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>37000</td>
+                    <td>78.23</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+                <table class="table table-striped m-b-none">
+                  <thead>
+                  <tr>
+                    <th style="width: 100px;">
+                      已支付订单额（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目已完成支付的订单总金额。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      订单数（笔）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有已支付订单总数。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      已支付订单均价（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有已支付订单平均金额。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      已支付订单均价（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有已支付订单平均金额。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      销售额（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有下单总金额。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      佣金额（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有已分佣金额。含三级分佣。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                    <th style="width: 100px;">
+                      退款额（元）
+                      <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所选时段内，该商户所有退款总金额。">
+                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                      </a>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  <tr>
+                    <td>99</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>99</td>
+                    <td>999</td>
+                    <td>9</td>
+                    <td>12</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/datastatistics/init.js"])</script>
+
+</body>
+
+</html>

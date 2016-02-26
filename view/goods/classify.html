@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/nestable/nestable.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>
+                分组管理<small>拖拽后保存生效</small>
+            </p> 
+        </header>
+        <section class="scrollable  wrapper w-f">
+            <section class="panel panel-default">
+                <header class="panel-heading"> 
+                    <a href="javascript:;" data-remote="async/edclassify.html" data-toggle="ajaxModal" class="btn btn-sm btn-default"><i class="fa fa-plus m-r-xs"></i>添加分组</a>
+                    <button id="nestableMenu" class="btn btn-sm btn-default " data-toggle="class:show">
+                        <span class="text-active">展开全部</span>
+                        <span class="text">折叠全部</span>
+                    </button>
+
+
+                </header>
+                <div class="panel-body">
+
+                    <div class="col-sm-12">
+
+                        <div class="dd" id="dragClassify" data-toggle="nestable">
+                            <ol class="dd-list">
+                                <li class="dd-item" data-id="1">
+                                    <div class="dd-handle">
+                                         <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />手机/配件/运营商 
+                                       
+                                        <span class="pull-right">
+                                            <a href="async/edclassify.html" data-toggle="ajaxModal" ><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="async/edclassify.html?pid=1" data-toggle="ajaxModal" ><i class="fa fa-plus icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 手机/配件/运营商 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="dd-item" data-id="2">
+                                    <div class="dd-handle">
+                                        <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />服装/服饰
+                                        <span class="pull-right">
+                                            <a href="async/edclassify.html"  data-toggle="ajaxModal" ><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="async/edclassify.html?pid=1" data-toggle="ajaxModal" ><i class="fa fa-plus icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 服装/服饰 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                        </span>
+                                    </div>
+                                    <ol class="dd-list">
+                                        <li class="dd-item" data-id="3">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />男装
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 男装 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="dd-item" data-id="4">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />女装
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 女装 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                    </ol>
+                                </li>
+                                <li class="dd-item" data-id="5">
+                                    <div class="dd-handle">
+                                        <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />商务服务
+                                        <span class="pull-right">
+                                            <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="async/edclassify.html?pid=1" data-toggle="ajaxModal" ><i class="fa fa-plus icon-muted fa-fw m-r-xs"></i></a>
+                                            <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 商务服务 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                        </span>
+                                    </div>
+                                    <ol class="dd-list">
+                                        <li class="dd-item" data-id="6">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />公司注册
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 公司注册 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="dd-item" data-id="7">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />财务服务
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 财务服务 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <li class="dd-item" data-id="8">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />代理记账
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 代理记账 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+
+                                        </li>
+                                        <li class="dd-item" data-id="9">
+                                            <div class="dd-handle">
+                                                <img  src="http://stc.weimob.com//img/template/lib/home-150150.jpg"  />知识产权
+                                                <span class="pull-right">
+                                                    <a href="async/edclassify.html" data-toggle="ajaxModal"><i class="fa fa-pencil icon-muted fa-fw m-r-xs"></i></a> 
+                                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 知识产权 分类 ?"><i class="fa fa-trash-o icon-muted fa-fw"></i></a>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="alert fade in hide" id="noClassify">
+                            暂无分类 ...
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t text-center">
+            <button type="submit" class="btn btn-primary" data-loading-text="保存中..." data-remote="/api/form/ajaxformurl" id="save_class">保存</button>
+                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/goodsv/init.js"])
+    </script>
+
+</body>
+
+</html>

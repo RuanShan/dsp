@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>店铺搬家</p>
+            <a class="text-muted pull-right m-t pointer" href="move_record.html">搬家记录</a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/plus/move1.php">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">搬家类型：</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input checked="checked" type="radio" name="mode" />
+                                    旺铺搬家
+                                    <span class="m-l-xl">一键复制微盟旺铺的所有商品数据到供货商中心。<a href="move_explain.html">了解更多</a></span>
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" disabled="" />
+                                    淘宝搬家（敬请期待）
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <h4 class="col-sm-2 control-label">店铺账号验证</h4>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">账号：</label>
+                            <div class="col-sm-5 must">
+                                <input type="text" class="form-control" data-rule-required="true" name="user" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">密码：</label>
+                            <div class="col-sm-5 must">
+                                <input type="password" class="form-control" data-rule-required="true" name="pwd" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-1">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">下一步</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+    seajs.use("dist/application/app.js")
+    </script>
+
+</body>
+
+</html>

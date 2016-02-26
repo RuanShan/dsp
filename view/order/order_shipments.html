@@ -1,0 +1,655 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-9 m-b-xs">
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                    <i class="fa fa-refresh"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled>
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">20</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="10" />10
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="20" checked="checked" />20
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="50" />50
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="100" />100
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">待发货</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="orderType" value="1" checked="checked">待发货</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="orderType" value="2">已发货</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- <div class="btn-group">
+                            
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">全部状态</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />待付款
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="2" />已付款
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="3" />已发货
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="4" />交易关闭
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="5" />交易完成
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="6" />待付款，已发货
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                            <!--   <div class="btn-group m-r">
+                              <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                  <span class="dropdown-label">全部来源</span>
+                                  <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                  <li>
+                                      <a href="javascript:;">
+                                          <input type="radio" name="source" value="1" />二维码
+                                      </a>
+                                  </li>
+                                  <li class="active">
+                                      <a href="javascript:;">
+                                          <input type="radio" name="source" value="2" checked="checked" />商品促销
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <input type="radio" name="source" value="3" />提醒营销
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <input type="radio" name="source" value="4" />推广营销
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div> -->
+                        </div>
+
+                        <div class="form-group">
+                            <a class="btn btn-default btn-sm " data-toggle="reportrangebus" data-change="submit" data-format="YYYY/MM/DD HH:mm" data-time-picker-increment="1">
+                                <i class="fa fa-calendar fa-lg"></i>
+                                <small>下单时间</small>
+                                <span>2014/06/1 12:00 - 2014/06/30 12:00</span> <b class="caret"></b>
+                                <input type="hidden" value="2014/06/1 12:00 - 2014/06/30 12:00" name="reportrange" id="reportrange" />
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="javascript:;" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="导出筛选条件内的订单，建议每次导出订单的筛选时长不超过1个月">
+                                导出
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select-50">
+                                <li>
+                                    <a href="javascript:;" data-toggle="download" data-set="download" data-times="30" data-msg="操作过于频繁，请{0}秒后再试" data-action="/api/Page/list" class="" title="订单">订单</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-toggle="download" data-set="download" data-action="/api/Page/list" class="" title="对账单">对账单</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" data-trigger="batch" disabled>
+                                批量操作
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-select-50">
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-action="/api/Page/list" class="js_multy_dispatch" title="打印配送单" disabled="disabled">打印配送单</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-remote="async/express.html" data-toggle="ajaxModal" data-confirm="false" class="" title="打印快递单" disabled="disabled">打印快递单</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-remote="async/add_flag.html" data-toggle="ajaxModal" data-confirm="false" class="" title="标记" disabled="disabled">标记</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="javascript:;" data-remote="async/shipments.html" data-toggle="ajaxModal" class="btn btn-default btn-sm">
+                            批量发货
+                        </a>
+                        <!--<button type="button" data-trigger="batch" data-action="/api/Page/list" class="js_multy_dispatch btn btn-default btn-sm" title="批量打印配送单" disabled="disabled"><i class="fa fa-print m-r-xs"></i>打印配送单</button>
+                        <button type="button" data-trigger="batch" data-remote="async/express.html" data-toggle="ajaxModal" data-confirm="false" class="btn btn-default btn-sm" title="批量打印快递单" disabled="disabled"><i class="fa fa-print m-r-xs"></i>打印快递单</button>-->
+                    </div>
+
+                    <div class="col-sm-3 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">商品名称</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active">
+                                        <a href="#">
+                                            <input type="radio" value="0" name="searchBy" checked="checked" />商品名称
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="1" name="searchBy" />商家编码
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="2" name="searchBy" />订单编号
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="4" name="searchBy" />收货人姓名
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="5" name="searchBy" />收货人电话
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="6" name="searchBy" />支付单号
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="7" name="searchBy" />商户订单号
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th>商品信息</th>
+                                <th class="col-sm-2">实收款</th>
+                                <th class="col-sm-3">收货地址及备注</th>
+                                <th class="col-sm-1 mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">下单时间：2014-04-24 14:39:44</span>
+                                    <a href="javascript:;" data-remote="async/add_flag.html" data-toggle="ajaxModal" title="标记信息标记信息标记信息标记信息标记信息" class="pull-right m-l-sm">
+                                      <i class="fa fa-flag fa-lg text-muted m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-danger m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-warning m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-primary m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-info m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-blue m-r-xs"></i>
+                                    </a>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group no-borders">
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/1.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">199800.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p class="money m-b-xs">19140.00</p>
+                                    <small class="text-muted">[含运费:40.00]</small>
+                                </td>
+                               
+                                <td>
+                                    <p>宋玉杰 18217328644</p>
+                                    <p>上海市黄浦区政益路8号五角丰达28号楼1106-1107室</p>
+                                    <p>备注：发票抬头：上海晖硕信息科技有限公司，工作日送货，谢谢</p>
+                                </td>
+
+                                <td>
+                                    <a href="javascript:;" data-remote="async/shipments.html" data-confirm-msg="<p style='padding:15px'>订单中有正在维权的商品，进行发货操作将会拒绝所有的维权申请，请再次确认!</p>" data-confirm="true" data-toggle="ajaxModal" data-confirm-text="确认发货" class="m-xs" title="发货">
+                                        <i class="fa fa-truck text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95134</span>
+                                    <span class="m-r">下单时间：2014-04-24 14:39:44</span>
+                                    <a href="javascript:;" data-remote="async/add_flag.html" data-toggle="ajaxModal" title="标记信息标记信息标记信息标记信息标记信息" class="pull-right m-l-sm">
+                                      <i class="fa fa-flag fa-lg text-muted m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-danger m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-warning m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-primary m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-info m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-blue m-r-xs"></i>
+                                    </a>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group no-borders">
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/1.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">199800.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p class="money m-b-xs">19140.00</p>
+                                    <small class="text-muted">[含运费:40.00]</small>
+                                </td>
+                               
+                                <td>
+                                    <p>宋玉杰 18217328644</p>
+                                    <p>上海市黄浦区政益路8号五角丰达28号楼1106-1107室</p>
+                                    <p>备注：发票抬头：上海晖硕信息科技有限公司，工作日送货，谢谢</p>
+                                </td>
+
+                                <td>
+                                    <a href="javascript:;" data-remote="async/shipments.html" data-toggle="ajaxModal" class="m-xs" title="发货">
+                                        <i class="fa fa-truck text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">下单时间：2014-04-24 14:39:44</span>
+                                    <a href="javascript:;" data-remote="async/add_flag.html" data-toggle="ajaxModal" title="标记信息标记信息标记信息标记信息标记信息" class="pull-right m-l-sm">
+                                      <i class="fa fa-flag fa-lg text-muted m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-danger m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-warning m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-primary m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-info m-r-xs"></i>
+                                      <i class="fa fa-flag fa-lg text-blue m-r-xs"></i>
+                                    </a>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group no-borders">
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/1.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    <i class="fa fa-gavel m-l-xs m-r-xs"></i>已退款
+                                                </div>
+                                                <div class="pull-right">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">199800.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    <i class="fa fa-gavel text-primary m-l-xs m-r-xs"></i>已退款
+                                                </div>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/3.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                       <a href="#">迎馨 床品家纺被芯 双人馨雅型玉米纤维春秋被子200*230cm 米黄色</a>
+                                                       <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/4.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Sharp 夏普 LCD-40DS10A-BK 40英寸 LED液晶电视</a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item item1 hide">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                        <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a>
+                                                        <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item item1 hide">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/3.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div>
+                                                       <a href="#">迎馨 床品家纺被芯 双人馨雅型玉米纤维春秋被子200*230cm 米黄色</a>
+                                                       <br /><span class="text-muted">[商家编码：78987]</span>
+                                                    </div>
+                                                    <small class="text-muted">单价：
+                                                        <span class="money">228.00</span>
+                                                        <span class="m-l-xs">[颜色：水晶银 发动机：V10]</span>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href=".item1" class="btn btn-xs btn-default pull-left" data-toggle="class:show">
+                                                <i class="fa fa-plus text"></i>
+                                                <span class="text">全部</span>
+                                                <i class="fa fa-minus text-active"></i>
+                                                <span class="text-active">收起</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <p class="money m-b-xs">19140.00</p>
+                                    <small class="text-muted">[含运费:40.00]</small>
+                                </td>
+                               
+                                <td>
+                                    <p>宋玉杰 18217328644</p>
+                                    <p>上海市黄浦区政益路8号五角丰达28号楼1106-1107室</p>
+                                </td>
+                                <td>
+                                    圆通快递 <br />23456677<br />
+                                    <a href="javascript:;" data-remote="async/change_shipments_info.html" data-toggle="ajaxModal" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                </td>
+
+
+                            </tr>
+
+
+                            <!--    <tr>
+                                            <td  colspan="7" class="nodata">暂无规格</td>
+                                        </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js", "dist/print/init.js", "dist/order/init.js"])
+    </script>
+
+</body>
+
+</html>

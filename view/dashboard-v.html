@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <section class="scrollable padder">
+            <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
+                <li>
+                    <a href="javascript:;"> <i class="fa fa-dashboard"></i>
+                        V店首页
+                    </a>
+                </li>
+            </ul>
+            <section class="panel panel-default m-t">
+
+                <div class="row m-l-none m-r-none bg-light lter">
+                    <div class="col-sm-6 col-md-2 padder-v b-r b-light">
+                        <span class="fa-stack fa-2x pull-left m-r-sm"> <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-truck fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="/View/order/order_shipments.html">
+                            <span class="h3 block m-t-xs"> <strong>52,000</strong>
+                            </span>
+                            <small class="text-muted text-uc">待发货</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-2 padder-v b-r b-light lt">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                            <i class="fa fa-ticket fa-stack-1x text-white"></i>
+                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4" data-track-color="#fff" data-scale-color="false" data-size="50" data-line-cap='butt' data-animate="2000" data-target="#bugs" data-update="3000"></span>
+                        </span>
+                        <a class="clear" href="/view/order/order_list.html">
+                            <span class="h3 block m-t-xs"> <strong id="bugs">468</strong>
+                            </span>
+                            <small class="text-muted text-uc">昨日订单</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-2 padder-v b-r b-light">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                            <i class="fa fa-user  fa-stack-1x text-white"></i>
+                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4" data-track-color="#f5f5f5" data-scale-color="false" data-size="50" data-line-cap='butt' data-animate="3000" data-target="#firers" data-update="5000"></span>
+                        </span>
+                        <a class="clear" href="javascript:;">
+                            <span class="h3 block m-t-xs">
+                                <strong id="firers">359</strong>
+                            </span>
+                            <small class="text-muted text-uc">我的V客数</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x icon-muted"></i>
+                            <i class="fa fa-yen fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="javascript:;">
+                            <span class="h3 block m-t-xs">
+                                <strong>500.00</strong>
+                            </span>
+                            <small class="text-muted text-uc">昨日成交金额</small>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-3 padder-v b-r b-light" style="height:82px;">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-success"></i>
+                            <i class="fa fa-star fa-stack-1x text-white"></i>
+                            <span class="easypiechart pos-abt" data-percent="100" data-line-width="4" data-track-color="#f5f5f5" data-scale-color="false" data-size="50" data-line-cap='butt' data-animate="3000" data-target="#firers" data-update="5000"></span>
+                        </span>
+                        <a class="clear pull-left m-r-md" href="javascript:;">
+                            <span class="h3 block m-t-xs">
+                                <strong id="firers">4.8</strong>
+                            </span>
+                            <small class="text-muted text-uc">我的店铺评分</small>
+                        </a>
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="<p style='color:#999'>
+                            <strong style='color:#333'>店铺评分：</strong>
+                            根据描述相符、服务质量、发货速度三项计算平均分；
+                        </p>
+                        <p style='color:#999'>
+                            <strong style='color:#333'>描述相符：</strong>
+                            买家对店铺所有商品的描述相符评分计算平均分；
+                        </p>
+                        <p style='color:#999'>
+                            <strong style='color:#333'>服务质量：</strong>
+                            买家对店铺所有订单的服务评分计算平均分；
+                        </p>
+                        <p style='color:#999'>
+                            <strong style='color:#333'>发货速度：</strong>
+                            买家对店铺所有订单的发货速度评分计算平均分。
+                        </p>" style="position:absolute;top:18px;left:130px;">
+                            <i class="fa fa-question-circle fa-lg m-l-xs"></i>
+                        </a>
+                        <span class="pull-left">
+                            <small class="text-muted text-uc">
+                                描述相符:  4.8<br />
+                                服务质量:  4.8<br />
+                                发货速度:  4.8
+                            </small>
+                        </span>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col-md-8">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold">
+                            7天访问数据
+                            <small>（2014-09-20至2014-09-26）</small>
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="<p style='color:#999'>
+                                <strong style='color:#333'>下单数：</strong>
+                                每日提交的订单数；
+                            </p>
+                            <p style='color:#999'>
+                                <strong style='color:#333'>成交数：</strong>
+                                每日成交的订单数（线上支付的统计每日已支付的订单，线下支付的统计每日确认收货的订单）；
+                            </p>
+                            <p style='color:#999'>
+                                <strong style='color:#333'退单数：</strong>每日申请的退单数。</p>
+                                ">
+                                <i class="fa fa-question-circle fa-lg m-l-xs"></i>
+                            </a>
+                        </header>
+                        <div class="panel-body">
+                            <div id="visit_charts" style="height: 210px" data-path="/plus/visit_charts.php">
+                                <div class="load">数据加载中...</div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer bg-white no-padder">
+                            <div class="row text-center no-gutter">
+                                <div class="col-xs-4 b-r b-light">
+                                    <span class="h4 font-bold m-t block">10,450</span>
+                                    <small class="text-muted m-b block">下单数</small>
+                                </div>
+                                <div class="col-xs-4 b-r b-light">
+                                    <span class="h4 font-bold m-t block">21,230</span>
+                                    <small class="text-muted m-b block">成交数</small>
+                                </div>
+                                <div class="col-xs-4">
+                                    <span class="h4 font-bold m-t block">7,230</span>
+                                    <small class="text-muted m-b block">退单数</small>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <section class="panel panel-default">
+                        <header class="panel-heading font-bold">
+                            7天交易数据
+                            <small>（2014-09-20至2014-09-26）</small>
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="<p style='color:#999'> <strong style='color:#333'>成交金额：</strong>
+                                7天内总的成交金额（线上支付的统计7天内已支付的实收款，线下支付的统计7天内确认收货的实收款）；
+                            </p>
+                            <p style='color:#999'> <strong style='color:#333'>退款金额：</strong>
+                                7天内成功退款的金额总数；
+                            </p>
+                            <p style='color:#999'>
+                                <strong style='color:#333'>实际收入：</strong>
+                                7天内的实际收入=成交金额—退款金额。
+                            </p>
+                            ">
+                            <i class="fa fa-question-circle fa-lg m-l-xs"></i>
+                        </a>
+                    </header>
+                    <div class="bg-light dk wrapper">
+
+                        <div class="text-center m-b-n m-t-sm">
+                            <div class="js_turnover" style="height: 100px" data-path="/plus/turnover.php">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="js_refund inline" style="height: 50px" data-path="/plus/refund.php">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <span class="text-muted">总金额</span>
+                            <span class="h3 block money">2500.00</span>
+                        </div>
+                        <div class="line pull-in"></div>
+                        <div class="row m-t-sm">
+                            <div class="col-xs-6">
+                                <small class="text-muted block">成交额</small>
+                                <span class="money">1500.00</span>
+                            </div>
+                            <div class="col-xs-6">
+                                <small class="text-muted block">退款</small>
+                                <span class="money">600.00</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <section class="panel panel-default">
+                    <header class="panel-heading font-bold">
+                        <div class="row">
+                            <div class="col-sm-10 m-t-xs">公告</div>
+                            <div class="col-sm-2 text-right">
+                                <div class="form-group m-n">
+                                    <a class="btn btn-default btn-sm " href="/View/letter/letter_list.html" >更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="panel-body">
+
+                        <ul class="list-group">
+                            <li class="list-group-item text-danger">
+                                <span class="m-l pull-right">2014年5月19日</span>
+                                微商城支付方式增加银联全民付和微盟支付，需先在微盟后台-支付方式管理中填写银联全民付基本信息或开通微盟支付
+                                <a class="btn btn-info btn-xs m-l" href="javascript:;" >new</a>
+                            </li>
+
+                            <li class="list-group-item text-danger">
+                                <span class="m-l pull-right">2014年4月23日</span>
+                                微商城打通会员会员卡，增加会员营销板块，可享受会员等级，使用积分、代金券、余额进行消费；增加订单物流信息查询功能，微信端及后台均可查看
+                                <a class="btn btn-info btn-xs m-l" href="javascript:;" >new</a>
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="m-l pull-right">2014年3月26日</span>
+                                微商城支付方式增加微支付，需先在微盟后台-支付方式管理中填写微支付基本信息
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="m-l pull-right">2014年3月5日</span>
+                                管理后台-订单管理订单列表中增加付款状态及配送状态筛选；订单导出功能优化，增加导出项；商城前台-收货地址增加海外地区选择，支持已知海外电话填写
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="m-l pull-right">2014年1月27日</span>
+                                优化导航及分类展示；优化商品单次购买上限，允许商家自定义；修复商品规格数据同步问题；修复库存返回问题；优化订单列表，增加订单状态显示
+                            </li>
+                        </ul>
+
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section class="panel panel-default">
+                    <header class="panel-heading font-bold">
+                        消息中心
+                    </header>
+                    <div class="panel-body">
+                        <div>
+                            <h5 class="font-bold">订单消息</h5>
+                            <div class="row">
+                                <div class="col-xs-6 m-t-sm">
+                                    待发货订单：<a class="text-blue" href="order/order_shipments.html">13</a>
+                                </div>
+                                <div class="col-xs-6 m-t-sm">
+                                    待退款订单：<a class="text-blue" href="order/order_refund.html">0</a>
+                                </div>
+                                <div class="col-xs-6 m-t-sm">
+                                    买家催发货：<a class="text-blue" href="letter/letter_list.html">99+</a>
+                                </div>
+                                <div class="col-xs-6 m-t-sm">
+                                    其他订单消息：<a class="text-blue" href="letter/letter_list.html">99+</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line pull-in"></div>
+                        <div>
+                            <h5 class="font-bold">商品消息</h5>
+                            <div class="row">
+                                <div class="col-xs-6 m-t-sm">
+                                    商品审核：<a class="text-blue" href="letter/letter_list2.html">13</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line pull-in"></div>
+                        <div>
+                            <h5 class="font-bold">其他消息</h5>
+                            <div class="row">
+                                <div class="col-xs-6 m-t-sm">
+                                    其他消息：<a class="text-blue" href="letter/letter_list4.html">0</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </section>
+</section>
+<a href="javascript:;" data-toggle="loadAlert" data-msg="为保障您和消费者在V店平台的利益，2015年5月14日V店平台正式启动供货商招商入驻系统，请参照V店平台具体招商要求提供相关资质及申请单（<a href='javascript:;' class='text-ul text-blue' target='_blank'>申请单下载</a>
+），以压缩包形式发送至：vdaudit@weimob.com，截止时间为2015年6月31日，所需资质请登录V店官方招商页面（
+<a href='http://zs.vd.cn' class='text-ul text-blue' target='_blank'>http://zs.vd.cn</a>
+）查看，如有咨询请拨打小V电话：021-36386066-8093" class="btn btn-sm btn-default">
+</a>
+
+<div class="modal fade in" id="js_changename_modal" tabindex="-1" role="dialog" style="z-index:1051">
+    <div class="modal-dialog" style="width:780px">
+        <div class="modal-content">
+            <form class="form-horizontal form-modal" action="#">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">关于萌店2.3版本“三级分佣”的公告</h4>
+                </div>
+                <div class="modal-body" style="max-height: 380px; overflow-y: auto">
+                    <p>尊敬的用户：</p>
+                    <p style="text-indent: 2em">您好！</p>
+                    <p style="text-indent: 2em">萌店（原V店正式更名为萌店）2.3版本已于8月18日上线，三级分销返佣模式震撼来袭。</p>
+                    <p style="text-indent: 2em">
+                        新版本将做重大改版，全面实行三级分佣制度，助力供应商高粘度、快速将自媒体转化为自有分销商，大大地扩展销售渠道和提升商品及品牌的知名度。
+                    </p>
+                    <p style="text-indent: 2em">
+                        在这个分销模式中，萌主（原V客）可无限邀请下线，但佣金分配最多3级。因此，原有的分佣规则也将相应进行调整，
+                        <strong>具体如下：</strong>
+                    </p>
+                    <p style="text-indent: 2em">萌店平台设定的分佣比例分别为60%、20%、20%。</p>
+                    <p style="text-indent: 2em">一级分佣：直接售出分销商品后，视为一级分佣获得者，可获得供货商所设佣金总额的60%；</p>
+                    <p style="text-indent: 2em">二级分佣：即一级分佣获得者的直属上级，可获得供货商所设佣金总额的20%；</p>
+
+                    <p style="text-indent: 2em">三级分佣：即二级分佣获得者的直属上级，可获得供货商所设佣金总额的20%。</p>
+                    <p class="text-center">
+                        <img src="/assets/images/changename.png" style="max-width:700px"></p>
+                    <p style="text-indent: 2em">
+                        <strong class="text-danger">温馨提醒：关于佣金比例的设置，请提前确定好，可适当调高哦！</strong>
+                    </p>
+                    <p class="text-right">
+                        <strong>萌店团队</strong>
+                    </p>
+                    <p class="text-right">
+                        <strong>2015年8月12号</strong>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+
+<script type="text/javascript">seajs.use(["dist/application/app.js", "dist/homev/init.js"])</script>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">编辑商品活动信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">商品名称：</label>
+                    <div class="col-sm-6 must">
+                        <input type="text" placeholder="输入商品名称" class="form-control js_brand" data-rule-required="true" name="designation1" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">商品图片：</label>
+                    <div class="col-sm-9">
+                        <img class="thumb_img" src="http://stc.weimob.com/img/template/lib/home-150150.jpg" style="max-height: 100px;">
+                        <input class="hide" type="text" name="logo" value="" data-rule-required="true" aria-required="true">
+                        <button class="btn btn-default" type="button" data-toggle="selectimg">选择图片</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">商品库存</label>
+                    <div class="col-sm-10">
+                        <div class="table-responsive ">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr class="bg-light">
+                                    <th class="col-sm-1">规格1</th>
+                                    <th class="col-sm-1">规格2</th>
+                                    <th class="col-sm-1">当前基础库存（件）</th>
+                                    <th class="col-sm-1">当前活动库存（件）</th>
+                                    <th class="col-sm-1">减少互动量库存（件）</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="v-middle">大型犬</td>
+                                    <td class="v-middle">白色</td>
+                                    <td class="v-middle">2000</td>
+                                    <td class="v-middle">1000</td>
+
+                                    <td class="v-middle">
+                                        <input type="text" name="price[0]"data-rule-positiveInteger="true" data-rule-required="true" value="10" class="form-control js_commission_money_input" aria-required="true">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-middle">大型犬</td>
+                                    <td class="v-middle">金色</td>
+                                    <td class="v-middle">2000</td>
+                                    <td class="v-middle">1000</td>
+
+                                    <td class="v-middle">
+                                        <input type="text" name="price[1]" data-rule-required="true" data-rule-positiveInteger="true" value="13" class="form-control js_commission_money_input" aria-required="true">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-middle">大型犬</td>
+                                    <td class="v-middle">黑色</td>
+                                    <td class="v-middle">2000</td>
+                                    <td class="v-middle">1000</td>
+
+                                    <td class="v-middle">
+                                        <input type="text" name="price[2]" data-rule-required="true" data-rule-positiveInteger="true" value="12" class="form-control js_commission_money_input" aria-required="true">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-middle">小型犬</td>
+                                    <td class="v-middle">白色色</td>
+                                    <td class="v-middle">2000</td>
+                                    <td class="v-middle">1000</td>
+
+                                    <td class="v-middle">
+                                        <input type="text" name="price[2]" data-rule-required="true" data-rule-positiveInteger="true" value="12" class="form-control js_commission_money_input" aria-required="true">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-middle">小型犬</td>
+                                    <td class="v-middle">黑色</td>
+                                    <td class="v-middle">2000</td>
+                                    <td class="v-middle">1000</td>
+
+                                    <td class="v-middle">
+                                        <input type="text" name="price[2]" data-rule-required="true" data-rule-positiveInteger="true"  value="12" class="form-control js_commission_money_input" aria-required="true">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

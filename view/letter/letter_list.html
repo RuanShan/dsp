@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .form-group .m-t-sm{margin-left: 20px;}
+        .form-group .btnsa{color:#007aff;}
+        .fa{font-size: 18px;margin-left: 10px;}
+        .letter_sign{font-style: normal;font-size: 18px;}
+        .readtip-12{color: #2e3e4e}
+    </style>
+</head>
+
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>消息中心</p>
+            <a  class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#classify">订单消息<span class="text-danger">(13)</span></a>
+                        </li>
+                        <li>
+                            <a href="letter_list2.html">商品消息<span class="text-danger">(13)</span></a>
+                        </li>
+                        <li>
+                            <a href="letter_list3.html">公告<span class="text-muted">(0)</span></a>
+                        </li>
+                        <li>
+                            <a href="letter_list4.html">其他消息<span class="text-muted">(0)</span></a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <form class="talbe-search" method="post" action="/api/Page/list">
+                        <div class="entity-panel-body form-horizontal js_lett">
+                            <div class="form-group padding-left">
+                                <div class="col-sm-12">
+                                    <div class="btn-group">
+                                        <button title="全部标为已读" class="btn btn-sm btn-default js_all_read" data-id="10" data-remote="/plus/succes.php" type="button">全部标为已读</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                            <span class="dropdown-label">全部订单消息</span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-select dropdown-select-50 mhx250" data-change="submit">
+                                            <li class="active">
+                                                <a href="javascript:;">
+                                                    <input type="radio" checked="" name="lettertype" value="0" />
+                                                    全部订单消息
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <input type="radio" name="lettertype" value="1" />
+                                                    待支付
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <input type="radio" name="lettertype" value="2" />
+                                                    待发货
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <input type="radio" name="lettertype" value="3" />
+                                                    催发货
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <input type="radio" name="lettertype" value="4" />
+                                                    退货款
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <input type="radio" name="lettertype" value="5" />
+                                                    确认收货
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="col-sm-12">
+                                <div class="js_read_show">
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="1">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign text-danger">●</em>
+                                            <a href="javascript:;" class="js_mess_read">
+                                                【订单消息】买家正催您发货，订单编号1558764467893467890。
+                                                <a href="javascript:;" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="2">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign text-danger">●</em>
+                                            <a href="letter_detail.html" class="js_mess_read">
+                                                【订单消息】您有一笔订单支付完成，订单编号155115110608416，请尽快发货
+                                                <a href="letter_detail.html" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="3">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign">●</em>
+                                            <a href="letter_detail.html" class="js_mess_read">
+                                                【订单消息】您有一笔订单支付完成，订单编号155115110608416，请尽快发货
+                                                <a href="letter_detail.html" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="4">
+                                        <div class="col-sm-12">
+                                            <p class="form-control-static" data-path="/Plus/goLetter.php">
+                                                <em class="letter_sign text-danger">●</em>
+                                                <span class="readtip-12">恭喜您，您的供货商上海微盟线上化测试有限公司帐号已开通</span>
+                                                <span class="pull-right m-t-xs">2015-09-01 10:31<i class="fa fa-angle-down"></i></span>
+                                                <p class="content m-t-sm" style="overflow: hidden; display: none;color: #2e3e4e;">恭喜您，您的供货商上海微盟线上化测试有限公司帐号已开通，<a href="letter_detail.html" class="btnsa m-l-sm">点此查看</a>
+                                                </p>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="line line-dashed line-lg"></div>
+                                </div>
+                            </table>
+                        </div>
+                        <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                        <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                        <input type="hidden" name="order" id="order" value="" />
+                    </form>  
+                </div>
+            </section> 
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共123条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        window.msg_paths = "/Plus/goLetter.php";
+        seajs.use(["dist/application/app.js","dist/sys_msg/init.js"])
+    </script>
+
+</body>
+
+</html>

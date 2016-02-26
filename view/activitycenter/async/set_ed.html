@@ -1,0 +1,118 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">设置活动信息</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">商品活动名称</label>
+                    <div class="col-sm-5 must">
+                        <input type="text" class="form-control" data-rule-required="true" name="name" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">店铺A</label>
+                    <div class="col-sm-9">
+                        <p class="form-control-static">开钻石小猫开钻石小猫开钻石小猫开钻石小猫</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">活动图片</label>
+                    <div class="col-sm-8">
+                        <img class="thumb_img" src="http://stc.weimob.com/img/template/lib/home-150150.jpg" style="max-height: 60px;" />
+                        <input class="hide" type="text" name="logo" value="http://stc.weimob.com/img/template/lib/home-150150.jpg" />
+                        <button class="btn btn-default btn-sm" type="button" data-toggle="selectimg">上传图片</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">意象活动时间</label>
+                    <div class="col-sm-5 must">
+                        <div class="input-group">
+                              <input type="text" class="form-control " name="date" data-rule-required="true"   readonly="readonly"  value="2015-08-27" data-startdate="now" data-toggle="datepicker"/>
+                              <span class="input-group-addon" >
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">活动库存</label>
+                    <div class="col-sm-5 must">
+                        <div class="input-group">
+                            <input type="text" class="form-control hdkc" data-rule-positiveInteger="true" data-rule-range="[2,10]" data-rule-min="2" data-rule-max="5" data-rule-required="true"  name="store" value="10" />
+                            <span class="input-group-addon ">件</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">活动价</label>
+                    <div class="col-sm-5 must">
+                        <div class="input-group">
+                           <!--  <input type="text" class="form-control js_commission_money_input" data-rule-decimal="2" data-rule-required="true"   data-rule-max="30" name="price" value="10" /> -->
+                           <select class="form-control js_commission_money_select" data-rule-required="true" name="price">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                              </select>
+                            <span class="input-group-addon ">元</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">佣金比例</label>
+                    <div class="col-sm-5 must">
+                        <div class="input-group">
+                            <input type="text" class="form-control js_commission_percent" data-rule-decimal="2" data-rule-required="true" data-rule-range="[0,100]"  name="percent" value="10" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                </div>
+                <h5><strong class="m-l-md">分佣比例</strong><a href="javascript:;" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover"  data-content="<p><strong>待发货订单：</strong>发货管理中所有待发货的订单数；</p><p><strong>待处理维权：</strong>维权管理列表所有处于维权中的维权单数；</p><p><strong>昨日下单数：</strong>昨日提交的订单总数；</p><p><strong>昨日成交金额：</strong>昨日总的成交金额（线上支付的统计昨日已支付的实收款，线下支付的统计昨日确认收货的实收款）。</p>"><i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i></a>
+                </h5>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">一级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.6"  class="form-control js_level_commission" readonly="readonly"  name="firstpercent" value="6" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0.60）</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">二级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.2" class="form-control js_level_commission" readonly="readonly"  name="secondpercent" value="2" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0.20）</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">三级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.2" class="form-control js_level_commission" readonly="readonly"  name="thirdpercent" value="2" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0.20）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

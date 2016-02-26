@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-7">
+                    <p style="margin-top: 8px;">
+                        分享者赠送红包记录
+                        </p>
+                        
+                      </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="请输入手机号搜索" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 m-b-xs">
+                        <a class="text-muted pull-right pointer" style="margin-top:8px;" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+                        </a>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        
+        <section class="scrollable wrapper w-f">
+
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-6">
+                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                    <i class="fa fa-refresh"></i> 刷新
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm" title="导出订单"><i class="fa fa-cloud-download"></i> 导出赠送纪录</button>
+                </div>
+                </div>
+            </div>
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="th-sortable">赠送金额（元）</th>
+                                <th class="th-sortable">赠送时间</th>
+                                <th class="th-sortable">赠送店铺</th>
+                                <th class="th-sortable">绑定手机号</th>
+                                <th class="th-sortable">店铺邀请好友数</th>
+                                <th class="th-sortable">店铺邀请的有效好友数</th>
+                                <th class="th-sortable">红包状态</th>
+                                <th class="th-sortable">红包时效</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10.00</td>
+                                <td>2015-02-09  12:00:23</td>
+                                <td>mia的大饼店</td>
+                                <td>18910201928</td>
+                                <td>34</td>
+                                <td>23</td>
+                                <td>等待登录激活</td>
+                                <td>有效</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+
+</body>
+
+</html>

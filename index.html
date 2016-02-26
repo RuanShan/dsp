@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app frameset">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <base target="mainFrame" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/admin.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            //www_head = "//stc.dev.iwork365.com",
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+         .hidden-bsection {
+            display: none;
+        }
+
+        .pageload-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #fff;
+            z-index: 1000;
+        }
+
+        #loading_done {
+            background: url('/assets/images/loading2.gif') no-repeat left top;
+            position: fixed;
+            width: 52px;
+            height: 72px;
+            top: 50%;
+            left: 50%;
+            margin-left: -52px;
+            margin-top: -72px;
+            z-index: 1001;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <section class="vbox hidden-bsection">
+        <header class="bg-dark bmsg dk header navbar navbar-fixed-top-xs">
+            <div class="navbar-header">
+                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="view/dashboard.html" class="navbar-brand" data-toggle="fullscreen">
+                    V店运营后台</a>
+                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+                    <i class="fa fa-cog"></i>
+                </a>
+            </div>
+            <div class="msgbox"></div>
+            <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user">
+              
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                       超级管理员 admin <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <span class="arrow top"></span>
+
+                        <li>
+                            <a href="#">修改密码</a>
+                        </li>
+                        <li>
+                            <a href="http://www.weimob.com/site/help?help=12#12_1" target="_blank">帮助</a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <li>
+                            <a href="modal.lockme.html" data-toggle="ajaxModal" target="_self">退出</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section>
+            <section class="hbox stretch">
+
+                <!-- .aside -->
+                <aside class="bg-dark lter  aside-md hidden-print hidden-xs" id="nav">
+                    <section class="vbox">
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+
+                                <!-- nav -->
+                                <nav class="nav-primary hidden-xs">
+                                    <ul class="nav">
+                                        <li class="active ">
+                                            <a href="view/dashboard.html" class="active">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>首页</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-inbox icon">
+                                                    <b class="bg-dark"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>商品管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/goods/goods_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>商品审核</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/audit_config_1.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>审核配置</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/goods_lists.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>商品列表</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/keywords_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>关键词管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/check_records.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>审核记录</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/ranking_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>人工排名</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/category/category_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>类目管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/goods/brand_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>品牌管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-inbox icon">
+                                                    <b class="bg-dark"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>订单管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/order/order_list3.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>订单列表</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/order/right_order_lists.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                            <span>维权订单</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/order/global_order_lists.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>全球购支付订单</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-film icon">
+                                                    <b class="bg-primary"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>供货商管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/supplier/audit_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>供货商资质审核</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/supplier_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>供货商管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/commision_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>供货商列表</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/self_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>自营店铺管理</span>
+                                                    </a>
+                                                </li>
+                                               <!--  <li>
+                                                   <a href="View/supplier/self_manage2.html">
+                                                       <i class="fa fa-angle-right"></i>
+                                                       <span>自营供货方管理</span>
+                                                   </a>
+                                               </li> -->
+                                                <li>
+                                                    <a href="View/supplier/thirdstorage_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>第三方仓储管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/choose_category.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>商品类目选择</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/shopname_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>店铺名称审核</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/aptitude.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>资质配置</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/supplier/issue_msg.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>购物号管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-heart icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>丘比特</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+
+                                                    <a href="View/cupid/member_count.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>会员画像</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/cupid/roles_admin.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>人群管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/cupid/material_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>素材管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+
+                                                    <a href="javascript:;">
+                                                        <i class="fa fa-angle-down text-active"></i>
+                                                        <i class="fa fa-angle-up text "></i>
+                                                        <span>推广管理</span>
+                                                    </a>
+                                                    <ul class="nav lt">
+                                                        <li>
+                                                            <a href="View/cupid/generalize_list.html">
+                                                                <i class="fa fa-angle-right"></i>
+                                                                <span>推广列表</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="View/cupid/message_ed.html">
+                                                                <i class="fa fa-angle-right"></i>
+                                                                <span>新增短信推广</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+
+                                                    <a href="View/cupid/generalize_report.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>推广报告</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-cogs icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>角色管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/roles/roles_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>角色管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-gift icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>公告管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/announcement/announcement_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>公告管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>促销管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/salespromotion/homemodal_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>首页弹窗管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/specialselling_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>特卖置顶标题</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/advertising_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>广告位管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/material_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>素材管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/subject_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>专题管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/subject_count.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>专题统计</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/coupon_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>优惠券管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/deployment_management.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>投放管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/salespromotion/doubleeleven.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>双十一统筹控制</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>活动管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/activitycenter/seckill.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>管理活动</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/activitycenter/summary.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>1元夺宝</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>数据统计</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/datastatistics/salessurvey.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>销售概况</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/datastatistics/categorylist.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>类目明细</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/datastatistics/commoditydata.html?0">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>商品数据</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-user icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>用户管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/users/users_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>用户管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!--<li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-user icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>商品类目管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/category/category_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>类目管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>-->
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-gear icon">
+                                                    <b class="bg-primary"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>系统配置</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/system/department_config.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>部门管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/system/option_config.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>操作配置</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/system/task_config.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>任务配置</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/system/secondary.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>二级类目配置</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/system/share_config.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>分享设置</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-gear icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>开放平台</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/admin/api.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>开发者中心</span>
+                                                    </a>
+                                                </li>
+                                                <!-- <li>
+                                                    <a href="View/admin/interface.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>线上接口调试工具</span>
+                                                    </a>
+                                                </li> -->
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-gear icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>管理后台</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/admin/api_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>API管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/admin/level_manage.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>等级管理</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>三级分销</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/distribution/recommend.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>推荐师傅</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/distribution/shoper_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>店主管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/distribution/rule.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>规则设置</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="View/distribution/app_spread.html">
+                                                <i class="fa fa-gear icon">
+                                                    <b class="bg-info"></b>
+                                                </i>
+                                                 <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>app推广</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/distribution/app_spread.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>app推广</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/distribution/big_v.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>萌主干预列表</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>报名管理</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/activity/open.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>报名开放</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/activity/check.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>报名审核</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>双11红包</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/activity/bonus_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>红包列表</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/activity/bonus_give.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>红包发放记录</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>test</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/activity/test_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>test_list</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/activity/bonus_give.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>红包发放记录</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="fa fa-group icon">
+                                                    <b class="bg-warning"></b>
+                                                </i>
+                                                <span class="pull-right">
+                                                    <i class="fa fa-angle-down text"></i>
+                                                    <i class="fa fa-angle-up text-active"></i>
+                                                </span>
+                                                <span>供货商官网设置</span>
+                                            </a>
+                                            <ul class="nav lt">
+                                                <li>
+                                                    <a href="View/web/recommend.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>推荐位管理</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/web/investment_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>招商资讯</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="View/web/public_page_list.html">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        <span>公关页面设置</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="view/open/dashboard-o.html" class="active">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>开发者概况</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="view/open/create_app.html" class="active">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>创建应用</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="view/open/app_list.html" class="active">
+                                                <i class="fa fa-dashboard icon">
+                                                    <b class="bg-danger"></b>
+                                                </i>
+                                                <span>应用列表</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- / nav -->
+                            </div>
+                        </section>
+
+                        <footer class="footer lt hidden-xs b-t b-dark">
+
+                            <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark  btn-icon">
+                                <i class="fa fa-angle-left text"></i>
+                                <i class="fa fa-angle-right text-active"></i>
+                            </a>
+                            <div class="copyright hidden-nav-xs">
+                                Copyright © weimob
+                            </div>
+                        </footer>
+                    </section>
+                </aside>
+                <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <iframe id="mainFrame" name="mainFrame" src="View/dashboard.html" frameborder="0" height="100%" width="100%" style="background: url('/Assets/images/loading.gif') center no-repeat; height: 100%; width: 100%; border: 0px;"></iframe>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+    </section>
+    <div class="pageload-overlay show"></div>
+    <div id="loading_done"></div>
+   
+   
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use("dist/frameset_admin/init.js")
+    </script>
+</body>
+
+</html>

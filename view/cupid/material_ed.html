@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/graphic.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>编辑图文素材</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">
+            
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="row">
+                            <div class="col-md-4" id="appmsg_box">
+
+                                <a onclick="return false;" class="create_access_primary add_prize" data-temp="js_list_temp" data-parentid="#parent_box" data-max="8" title="新增" href="javascript:void(0);"> <i class="fa fa-plus m-r-xs"></i>
+                                </a>
+
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <input type="hidden" id="method" name="submittype" >
+                                        <input type="hidden" id="js_pre_phone" name="submipre" >
+                                        <button type="submit"  class="btn btn-primary js_bsubmit" data-filed="save" data-loading-text="保存中...">保存</button>
+                                        <button type="button"  class="btn btn-default js_bsubmit_pre" data-filed="prev" data-toggle="ajaxModal" data-remote="async/pre.html" data-loading-text="预览中...">预览</button>
+                                        <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7" id="parent_box"></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
+        </section>
+    </section>
+
+    <script type="text/html" id="js_rules_temp">
+        {{each data as item index}}
+        <div class="cover_appmsg_item {{if item.cid > 0}} js_appmsg_item {{/if}} {{if item.cid == 0}}on{{/if}}">
+
+            <h4 class="appmsg_title"><a href="javascript:void(0);" onclick="return false;" target="_blank">{{if item==""}} 标题{{else}}{{item.title}}{{/if}}</a></h4>
+            <div class="appmsg_thumb_wrp">
+                <img class="js_appmsg_thumb appmsg_thumb" src="{{item.picurl}}">
+            </div>
+            <div class="appmsg_edit_mask">
+                <a class="icon18_common edit_gray js_move_up hide" data-size="{{item.cid}}" data-parentid="#js_list_temp" href="javascript:;"><i class="fa fa-arrow-up fa-2x text-muted" title="上移"></i></a>
+                <a class="icon18_common edit_gray js_move_down" data-size="{{item.cid}}" href="javascript:;" data-parentid="#js_list_temp" href="javascript:;"><i class="fa fa-arrow-down fa-2x text-muted" title="下移"></i></a>
+                <a class="icon18_common edit_gray js_edit" data-size="{{item.cid}}" href="javascript:;"><i class="fa fa-pencil text-muted"></i></a> 
+                
+                <a class="icon18_common edit_gray js_del {{if item.cid == 0}}hide{{/if}}" data-size="{{item.cid}}" data-parentid="#js_list_temp"  href="javascript:;"><i class="fa fa-trash-o text-muted"></i></a>
+               
+            </div>      
+        </div>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="js_list_temp">
+        {{each data as item index}}
+            <div class="prize-list{{if item.cid > 0}} hide{{/if}} js_articles_list" id="list{{item.cid}}">
+                <i class="arrow arrow_in"></i>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label must">标题：</label>
+                    <div class="col-sm-6">
+                        <input type="text" data-find-name="title" class="form-control title-change" data-rule-required="true" data-rule-maxLength="64" value="{{item.title}}" name="articles[{{item.cid}}].title" id="articles[{{item.cid}}].title" />
+                        <span class="help-block">最多64个字</span>
+                    </div>
+                </div>
+                <input type="hidden" data-find-name="mid" class="form-control"  value="{{item.mid}}" name="articles[{{item.cid}}].mid" id="articles[{{item.mid}}].mid" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">作者：</label>
+                    <div class="col-sm-6">
+                        <input type="text" data-find-name="author" class="form-control" data-rule-maxLength="8" value="{{item.author}}" name="articles[{{item.cid}}].author" id="articles[{{item.cid}}].author" />
+                        <span class="help-block">最多8个字</span>
+                    </div>
+                </div>
+                {{if item.cid == 0}}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label must">消息类型：</label>
+                    <div class="col-sm-6">
+                        <select type="text" data-find-name="messagetype" class="form-control js_message_messagetype" data-rule-required="true" name="articles[{{item.cid}}].messagetype" id="articles[{{item.cid}}].messagetype">
+                            <option value="">请选择消息类型</option>
+                            {{each messageTypeList as message}}
+                                <option value="{{message.key}}" {{if message.key==item.messagetype}}selected="selected"{{/if}}>{{message.value}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">选择样式：</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline"><input type="radio" {{if item.style==0 || item.style==""}}checked="checked"{{/if}} class="js_style_select_articles" data-type="imgtext" data-find-name="style" name="articles[{{item.cid}}].style" value="0" checked/>图文样式</label>
+                        <label class="radio-inline"><input type="radio" class="js_style_select_articles" data-type="link" {{if item.style==1}}checked="checked"{{/if}} data-find-name="style" name="articles[{{item.cid}}].style" value="1"/>链接样式</label>
+                    </div>
+                </div>
+                <div class="js_style_articles_show js_style_articles_link hide">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">选择跳转页</label>
+                        <div class="col-sm-2" style="width:140px">
+                            <label class="radio-inline">
+                                <input type="radio" data-add="formDis1" data-remove="formDis" {{if item.link==0 || item.link==""}}checked="checked"{{/if}} class="condition" data-find-name="link" name="articles[{{item.cid}}].link" value="0"/>                
+                                商品页
+                            </label>
+                        </div>
+                        <label class="col-sm-2 control-label" style="margin-left:-75px;">商品ID</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" data-find-name="goodid" name="articles[{{item.cid}}].goodid" {{if item.link==0}}value="{{item.linkvalue.value}}"{{/if}} />                
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-2" style="width:140px">
+                            <label class="radio-inline">
+                                <input type="radio" data-add="formDis1" data-remove="formDis" class="condition" {{if item.link==1}}checked="checked"{{/if}} data-find-name="link" name="articles[{{item.cid}}].link"  value="1"/>                
+                                店铺页
+                            </label>
+                        </div>
+                        <label class="col-sm-2 control-label" style="margin-left:-74px;">店铺ID</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" data-rule-required="true" data-find-name="storeid" name="articles[{{item.cid}}].storeid" disabled {{if item.link==1}}value="{{item.linkvalue.value}}"{{/if}}/>                
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-2" style="width:140px">
+                            <label class="radio-inline">
+                                <input type="radio" data-add="formDis1" data-remove="formDis" class="condition" data-find-name="link" name="articles[{{item.cid}}].link" {{if item.link==2}}checked="checked"{{/if}}  value="2" />                
+                                链接
+                            </label>
+                        </div>
+                        <div class="col-sm-6" style="margin-left:-18px;">
+                            <input type="text" class="form-control" data-rule-url="true" data-rule-required="true" data-find-name="urlid" name="articles[{{item.cid}}].urlid" disabled {{if item.link==2}}value="{{item.linkvalue.value}}"{{/if}}/>                
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-2" style="width:140px">
+                            <label class="radio-inline">
+                                <input type="radio" data-add="formDis1" data-remove="formDis" class="condition" data-find-name="link" name="articles[{{item.cid}}].link" {{if item.link==3}}checked="checked"{{/if}}  value="3"/>                
+                                专题页
+                            </label>
+                        </div>
+                        <div class="col-sm-3" style="margin-left:-18px;">
+                            <select class="form-control js_subject_type" data-find-name="subjecttype" data-rule-required="true" id="articles[{{item.cid}}].subjecttype" data-child="{{item.linkvalue.child}}" name="articles[{{item.cid}}].subjecttype"  disabled>
+                                <option value="">请选择专题类型</option>
+                                {{each subjectTypeList as subject}}
+                                    <option value="{{subject.key}}" data-ischild="{{subject.isChild+''}}" {{if item.link==3&&item.linkvalue.value==subject.key}}selected="selected"{{/if}}>{{subject.value}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="col-sm-3 js_subjects">
+                            <select class="form-control hide" data-find-name="subjectlist" data-rule-required="true" data-empty="请选择专题"  id="articles[{{item.cid}}].subjectlist" name="articles[{{item.cid}}].subjectlist"  disabled>
+                               
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-2" style="width:140px">
+                            <label class="radio-inline">
+                                <input type="radio" data-add="formDis1" data-remove="formDis" class="condition" data-find-name="link" name="articles[{{item.cid}}].link" {{if item.link==5}}checked="checked"{{/if}}  value="5" />                
+                                原生APP
+                            </label>
+                        </div>
+                        <div class="col-sm-3" style="margin-left:-18px;">
+                            <select class="form-control" data-find-name="applink" data-rule-required="true" id="articles[{{item.cid}}].applink"  name="articles[{{item.cid}}].applink"  disabled>
+                                <option value="">请选择页面</option>
+                                {{each applinkList as applink}}
+                                    <option value="{{applink.key}}"  {{if item.link==5&&item.linkvalue.value==applink.key}}selected="selected"{{/if}}>{{applink.value}}</option>
+                                {{/each}}
+                            </select>                
+                        </div>
+                    </div>
+                </div>
+                <div class="js_style_articles_show js_style_articles_imgtext">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label must">消息内容：</label>
+                        <div class="col-sm-10">
+                            <textarea rows="13" class="form-control" data-toggle="kindeditor" data-find-name="content" data-rule-rangelength="[1,10000]" id="articles[{{item.cid}}].content" name="articles[{{item.cid}}].content">{{item.content}}</textarea>
+
+                        </div>
+                    </div>
+                     <div class="form-group">
+                         <label class="col-sm-2 control-label"></label>
+                         <div class="col-sm-10">
+                             <label class="checkbox inline">
+                                 <input type="checkbox" data-find-name="original" {{if item.original}}checked="checked"{{/if}} class="js_original_select" name="articles[{{item.cid}}].original" value="1" {{if item.original}} checked {{/if}} /> 
+                                 原文链接
+                             </label>
+                            <input type="text" class="form-control m-l js_original_select_url" data-rule-required="true" data-rule-url="true" data-find-name="originalurl" style="width:300px;display:inline-block;" name="articles[{{item.cid}}].originalurl" value="{{item.originalurl}}"  {{if !item.original}}disabled{{/if}}/>                
+                        </div>
+                     </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <h4 class="m-l-lg">发布样式编辑</h4>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">封面：</label>
+                    <div class="col-sm-10 small-img">
+                    <img class="thumb_img" src="{{item.picurl}}" style="max-height: 100px;" />
+                        <input class="hide" data-find-name="picurl" type="text" name="articles[{{item.cid}}].picurl" value="{{item.picurl}}" />
+                        <button class="btn btn-default" type="button" data-targetimg=".cover_appmsg_item.on img.js_appmsg_thumb"  {{if item.add}}data-toggle="selectimg2"{{else}}data-toggle="selectimg"{{/if}}>上传图片</button>
+                        <span class="help-inlne text-muted">封面图片建议尺寸：{{if item.cid > 0}}640像素 * 320像素 {{else}} 640像素 * 320像素 {{/if}} 大小不超过500kb</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <label class="checkbox inline">
+                            <input type="checkbox" data-find-name="show_cover_pic" name="articles[{{item.cid}}].show_cover_pic" value="{{item.show_cover_pic}}" {{if item.show_cover_pic == 1}} checked {{/if}} />
+                            封面图片显示在正文中 
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">摘要：</label>
+                    <div class="col-sm-6">
+                    <textarea rows="4" data-find-name="abstract" class="form-control" data-rule-maxLength="120"  name="articles[{{item.cid}}].abstract" id="articles[{{item.cid}}].abstract" >{{item.abstract}}</textarea>
+                        <span class="help-block">选填，如果不填写会默认抓取正文前54个字，最多填写120个字</span>
+                    </div>
+                </div>
+                
+            </div>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="delivery_city_tem">
+        {{each data as item}}
+            <option value="{{item.id}}" {{if item.id==child}}selected="selected"{{/if}} >{{item.name}}</option>
+        {{/each}}
+    </script>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        window.selectlist={
+            applinkList:[{
+                key:"1",
+                value:"全球购"
+            },{
+                key:"2",
+                value:"自营"
+            },{
+                key:"3",
+                value:"xx"
+            }],
+            messageTypeList:[{
+                key:"1",
+                value:"萌店商学院"
+            },{
+                key:"2",
+                value:"系统公告"
+            },{
+                key:"3",
+                value:"每日推荐"
+            }],
+            subjectTypeList:[{
+                key:"1",
+                value:"单品牌",
+                isChild:false
+            },{
+                key:"2",
+                value:"综合",
+                isChild:true
+            },{
+                key:"3",
+                value:"全民疯抢",
+                isChild:false
+            }]
+        }
+        window.graphic_add = {
+            "data":[
+                {
+                    "title": "",
+                    "add":true,
+                    "picurl": "http://img.weimob.com/static/c3/e8/78/image/20130816/20130816220610_88488.jpg",
+                    "intro":"",
+                    "show_cover_pic": 0,
+                    "content":"",
+                    "messagetype":"",
+                    "style":"",
+                    "link":"",
+                    "linkvalue":{
+                        "value":"",
+                        "child":""
+                    },
+                    "original":"",
+                    "originalurl":"",
+                    "abstract":"",
+                    "mid":"0",
+                    "cid":""
+                }
+            ]
+        };
+       
+        window.subjectUrl = "/plus/deliveryLocation_type.php";
+       
+        window.graphic_set = {
+            "data":[
+                {
+                    "title": "e2ewqd",
+                    "picurl": "http://img.weimob.com/static/c3/e8/78/image/20130816/20130816220610_88488.jpg",
+                    "author":"柏程炜0",
+                    "messagetype":"2",
+                    "style":"1",
+                    "link":"1",
+                    "linkvalue":{
+                        "value":"2",
+                        "child":""
+                    },
+                    "original":"",
+                    "originalurl":"",
+                    "show_cover_pic": 1,
+                    "content":"这里是html代码编辑器，131多么神器的东西啊~~~222",
+                    "abstract":"摘要",
+                    "mid":"12",
+                    "cid": 0    
+                },
+                {
+                    "title": "e2ewqd21212",
+                    "picurl": "http://img.weimob.com/static/c3/e8/78/image/20130816/20130816220610_88488.jpg",
+                    "author":"柏程炜2",
+                    "messagetype":"1",
+                    "style":"1",
+                    "link":"3",
+                    "linkvalue":{
+                        "value":"2",
+                        "child":"2"
+                    },
+                    "original":"",
+                    "originalurl":"",
+                    "show_cover_pic": 0,
+                    "content":"这里是html代码编辑器，22222多么神器的东西啊~~~",
+                    "abstract":"摘要",
+                    "mid":"13",
+                    "cid": 1
+                },
+                {
+                    "title": "e2ewqd34343",
+                    "picurl": "http://img.weimob.com/static/c3/e8/78/image/20130816/20130816220610_88488.jpg",
+                    "author":"柏程炜",
+                    "messagetype":"1",
+                    "style":"0",
+                    "link":"",
+                    "linkvalue":{
+                        "value":"",
+                        "child":""
+                    },
+                    "original":"1",
+                    "originalurl":"http://www.weimob.com/",
+                    "show_cover_pic": 1,
+                    "content":"这里是html代码编辑器，33132多么神器的东西啊~~~",
+                    "abstract":"摘要",
+                    "mid":"14",
+                    "cid": 2
+                }
+            ]
+        };
+
+
+        window.cxSelectAdd = [
+                
+        ];
+
+        seajs.use(["dist/application/app.js","dist/add_graphic/init.js","dist/cupid/init.js"])
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                    <i class="fa fa-refresh"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled>
+                                    <i class="fa fa-trash-o"></i>
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    批量操作
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">批量发货</a>
+                                    </li>
+                                    <li><a href="#">批量标记</a>
+                                    </li>
+                                    <li><a href="#">批量改价</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">20</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="10" />10</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="20" checked="checked" />20</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="50" />50</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="100" />100</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">全部状态</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />待付款</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="2" />已付款</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="3" />已发货</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="4" />交易关闭</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="5" />交易完成</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="6" />待付款，已发货</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn-group m-r">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">全部来源</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="source" value="1" />二维码</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="source" value="2" checked="checked" />商品促销</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="source" value="3" />提醒营销</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="source" value="4" />推广营销</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <a class="btn btn-default btn-sm " data-toggle="reportrange" data-change="submit">
+                                <i class="fa fa-calendar fa-lg"></i>
+                                <small>下单时间</small>
+                                <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                                <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">订单编号</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active">
+                                        <a href="#">
+                                            <input type="radio" value="0" name="searchBy" checked="checked" />订单编号</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="1" name="searchBy" />粉丝昵称</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="2" name="searchBy" />商品名称或编号</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr style="background: #f5f5f5;">
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th>商品信息</th>
+                                <th>单价</th>
+                                <th>数量</th>
+                                <th class="col-sm-2">实收款</th>
+                                <th>粉丝</th>
+                                <th class="col-sm-1 mn70">支付方式</th>
+                                <th class="col-sm-1 mn70">状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f9f9f9;">
+
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="9"><span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">下单时间：2014-04-24 14:39:44</span><span class="m-r">订单来源：二维码</span>
+                                    <a href="#" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted"><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td><span class="money">199800.00</span></td>
+                                <td>3</td>
+                                <td rowspan="2" style=" border: 1px solid #f1f1f1; ">
+                                    <p class="money m-b-xs">19140.00</p>
+                                    <small class="text-muted">[含运费:40.00]</small>
+                                </td>
+
+                                                 <td  rowspan="2" style=" border: 1px solid #f1f1f1; ">微信支付</td>
+                                <td>退款  
+                                                        <button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦" data-original-title="" title=""><i class="fa fa-bullhorn"></i></button>
+                                </td>
+               
+
+                                <td>已拒绝
+                                    <button type="button" class="btn btn-default btn-xs  m-l-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="哥就是不想退给你"><i class="fa fa-bookmark"></i></button>
+                                </td>
+
+
+                            </tr>
+                            <tr> 
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="money">199800.00</span></td>
+                                <td>3</td> 
+                                <td>退款  
+                                                        <button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦" data-original-title="" title=""><i class="fa fa-bullhorn"></i></button>
+                                </td>
+                                 
+                                <td>已退货退款
+                                </td>
+                            </tr>
+
+                            <tr style="background: #f9f9f9;">
+
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="9"><span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">下单时间：2014-04-24 14:39:44</span><span class="m-r">订单来源：二维码</span>
+                                    <a href="#" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>       <td rowspan="2"></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted"><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td><span class="money">199800.00</span></td>
+                                <td>3</td>
+                                <td rowspan="2" style=" border: 1px solid #f1f1f1; ">
+                                    <p class="money m-b-xs">19140.00</p>
+                                    <small class="text-muted">[含运费:40.00]</small>
+                                </td>
+                                <td>退款  
+                                                        <button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦" data-original-title="" title=""><i class="fa fa-bullhorn"></i></button>
+                                </td>
+                                <td  rowspan="2" style=" border: 1px solid #f1f1f1; ">微信支付</td>
+
+                                <td>已拒绝
+                                    <button type="button" class="btn btn-default btn-xs  m-l-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="哥就是不想退给你"><i class="fa fa-bookmark"></i></button>
+                                </td>
+
+
+                            </tr>
+                            <tr> 
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="money">199800.00</span></td>
+                                <td>3</td> 
+                                <td>退款  
+                                                        <button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦" data-original-title="" title=""><i class="fa fa-bullhorn"></i></button>
+                                </td>
+                                 
+                                <td>已退货退款
+                                </td>
+                            </tr>
+
+                            <!--    <tr>
+                                        <td  colspan="7" class="nodata">暂无规格</td>
+                                    </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use("dist/application/app.js")
+    </script>
+
+</body>
+
+</html>

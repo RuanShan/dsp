@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <ul class="nav nav-pills m-t-xs">
+                <li>
+                    <a href="coupon_management.html">优惠券管理</a>
+                </li>
+                <li class="active">
+                    <a href="promotionaccount.html">推广账户</a>
+                </li>
+            </ul>
+        </header>
+        <header class="header bg-white b-b clearfix">
+            <div class="row">
+                <div class="col-sm-4 m-t">
+                    账户余额<a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="您推广账户目前的剩余金额" class="m-l-xs m-r-xs text-black" data-original-title="" title=""><strong>[?]</strong></a>
+                    <strong class="text-danger">¥ 19000.00 元</strong>
+                </div>
+                <div class="col-sm-4 m-t">
+                    待消费余额<a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="您即将投放的金额" class="m-l-xs m-r-xs text-black" data-original-title="" title=""><strong>[?]</strong></a>
+                    <strong class="text-danger">¥ 996.00 元</strong>  
+                </div>
+            </div>
+        </header>
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row">
+                    <div class="col-sm-9 m-t-sm">
+                        <span class="m-r-sm">消费明细</span>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部类型</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="1" checked="checked">全部类型</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="2">折扣券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="3">代金券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="4">礼品券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="5">团购券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="6">通用券</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 m-t-sm">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="输入优惠券名称"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索"> <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f" style="top:150px;">
+            <section class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th>优惠券名称</th>
+                                <th>类型</th>
+                                <th>投放时间</th>
+                                <th>投放数量（已领/总数）</th>
+                                <th>已消费金额（元）</th>
+                                <th>待销费余额（元）</th>
+                                <th class="mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8折优惠卡</td>
+                                <td>折扣券</td>
+                                <td>/</td>
+                                <td>0/100</td>
+                                <td>0</td>
+                                <td>1000</td>
+                                <td>
+                                    <a href="account_details.html" class="btn btn-default btn-xs pull-left" title="查看明细">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>查看明细
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20元现金优惠券</td>
+                                <td>代金券</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>10/100</td>
+                                <td>40</td>
+                                <td>960</td>
+                                <td>
+                                    <a href="account_details.html" class="btn btn-default btn-xs pull-left" title="查看明细">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>查看明细
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20元现金优惠券</td>
+                                <td>代金券</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>0/50</td>
+                                <td>40</td>
+                                <td>960</td>
+                                <td>
+                                    <a href="account_details.html" class="btn btn-default btn-xs pull-left" title="查看明细">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>查看明细
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+
+    <script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

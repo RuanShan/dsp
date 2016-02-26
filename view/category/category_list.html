@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="btn-group">
+                            <a href="add_category.html" class="btn btn-sm btn-default"><i class="fa fa-plus m-r-xs"></i>新增类目</a>
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                <i class="fa fa-refresh"></i>
+                            </button>
+                            <!--<button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled>
+                                <i class="fa fa-trash-o"></i>
+                            </button>-->
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm" title="导出"> <i class="fa fa-cloud-download"></i>
+                                导出
+                            </button>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="validType" value="1" checked="checked">全部</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="validType" value="2">有效</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="validType" value="3">无效</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <div class="m-b-xs">
+                <a class="text-info" href="#">大类</a>&gt;
+                <a class="text-info" href="#">美妆</a>&gt;
+                <a class="text-info" href="#">美容护肤</a>&gt;
+                <span>护肤/美体</span>
+            </div>
+            <section class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <!--<th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>-->
+                                <th class="th-sortable">ID</th>
+                                <th class="th-sortable">类别名称</th>
+                                <th class="th-sortable">创建时间</th>
+                                <th class="th-sortable">更新时间</th>
+                                <th class="th-sortable">有效性</th>
+                                <th style="text-align:center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!--<td>
+                                    <input type="checkbox" value="2" />
+                                </td>-->
+                                <td class="js_id">1</td>
+                                <td><a class="text-info" href="#">洁面</a></td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>无效</td>
+                                <td style="text-align:center;">
+                                    <!--<a href="add_category.html" class="m-xs" title="新增">
+                                        <i class="fa fa-plus text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>-->
+                                    <a href="add_category.html" class="m-xs">
+                                        <!--<i class="fa fa-edit text-muted">编辑</i>-->
+                                        <span class="text-muted">编辑</span>
+                                    </a>
+                                    <a href="attributes_list.html" class="m-xs">
+                                        <!--<i class="fa fa-list-alt text-muted">属性</i>-->
+                                        <span class="text-muted">属性</span>
+                                    </a>
+                                    <a href="specifications_list.html" class="m-xs">
+                                        <!--<i class="fa fa-code-fork text-muted">规格</i>-->
+                                        <span class="text-muted">规格</span>
+                                    </a>
+                                    <a href="brand_list.html" class="m-xs">
+                                        <!--<i class="fa fa-cogs text-muted">品牌</i>-->
+                                        <span class="text-muted">品牌管理</span>
+                                    </a>
+                                    <a href="javascript:;" class="m-xs js_set_valid" data-remote="/plus/succes.php">
+                                        <span class="text-muted">设为有效</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--<td>
+                                    <input type="checkbox" value="2" />
+                                </td>-->
+                                <td class="js_id">2</td>
+                                <td><a class="text-info" href="#">化妆水/爽肤水</a></td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>有效</td>
+                                <td style="text-align:center;">
+                                    <!--<a href="add_category.html" class="m-xs" title="新增">
+                                        <i class="fa fa-plus text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>-->
+                                    <a href="add_category.html" class="m-xs">
+                                        <span class="text-muted">编辑</span>
+                                    </a>
+                                    <a href="attributes_list.html" class="m-xs">
+                                        <span class="text-muted">属性</span>
+                                    </a>
+                                    <a href="specifications_list.html" class="m-xs">
+                                        <span class="text-muted">规格</span>
+                                    </a>
+                                    <a href="brand_list.html" class="m-xs">
+                                        <span class="text-muted">品牌管理</span>
+                                    </a>
+                                    <a href="javascript:;" class="m-xs js_set_invalid" data-remote="/plus/succes.php" data-valid="/plus/succes.php">
+                                        <span class="text-muted">设为无效</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--<td>
+                                    <input type="checkbox" value="2" />
+                                </td>-->
+                                <td class="js_id">3</td>
+                                <td><a class="text-info" href="#">面部精华</a></td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>2015-05-12 12:20:10</td>
+                                <td>无效</td>
+                                <td style="text-align:center;">
+                                    <!--<a href="add_category.html" class="m-xs" title="新增">
+                                        <i class="fa fa-plus text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>-->
+                                    <a href="add_category.html" class="m-xs">
+                                        <span class="text-muted">编辑</span>
+                                    </a>
+                                    <a href="attributes_list.html" class="m-xs">
+                                        <span class="text-muted">属性</span>
+                                    </a>
+                                    <a href="specifications_list.html" class="m-xs">
+                                        <span class="text-muted">规格</span>
+                                    </a>
+                                    <a href="brand_list.html" class="m-xs">
+                                        <span class="text-muted">品牌管理</span>
+                                    </a>
+                                    <a href="javascript:;" class="m-xs js_set_valid" data-remote="/plus/succes.php">
+                                        <span class="text-muted">设为有效</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js", "dist/category/init.js"]);
+    </script>
+
+</body>
+
+</html>

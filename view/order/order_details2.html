@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>订单详情</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxformurl">
+                <div class="alert alert-warning">
+                    <h5 class="m-l-xs">
+                        当前订单状态：已支付，已发货
+                    </h5>
+                    <div class="m-l-xs m-b-xs">
+                        标记： <i class="fa fa-flag fa-lg text-muted m-r-xs"></i>
+                        <i class="fa fa-flag fa-lg text-danger m-r-xs"></i>
+                        <i class="fa fa-flag fa-lg text-warning m-r-xs"></i>
+                        <i class="fa fa-flag fa-lg text-primary m-r-xs"></i>
+                        <i class="fa fa-flag fa-lg text-info m-r-xs"></i>
+                        <i class="fa fa-flag fa-lg text-blue m-r-xs"></i>
+                        <span class="m-l-xs">标记信息</span>
+                    </div>
+                </div>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#tabinfo" data-toggle="tab">订单信息</a>
+                            </li>
+                            <li>
+                                <a href="#tabdescribe" data-toggle="tab">物流信息</a>
+                            </li>
+                            <li>
+                                <a href="#payinfo" data-toggle="tab">支付信息</a>
+                            </li>
+                            <li>
+                                <a href="#routingInfo" data-toggle="tab">分账信息</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabinfo">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">订单编号</label>
+                                            <div class="col-sm-10 form-control-static">438293525884637</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">下单时间</label>
+                                            <div class="col-sm-10 form-control-static">2014-04-24 14:39:44</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">订单来源</label>
+                                            <div class="col-sm-10 form-control-static">V店-V店名称（联系方式：15266778876）</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">支付时间</label>
+                                            <div class="col-sm-10 form-control-static">2014-04-24 14:39:44</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">发货时间</label>
+                                            <div class="col-sm-10 form-control-static">2014-04-24 14:39:44</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">完成时间</label>
+                                            <div class="col-sm-10 form-control-static">2014-04-24 14:39:44</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">自动确认收货时间</label>
+                                            <div class="col-sm-10 form-control-static">2014-04-24 14:39:44</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 table-responsive">
+
+                                    <table class="table table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>商品信息</th>
+                                                <th>商品ID</th>
+                                                <th>单价</th>
+                                                <th>数量</th>
+                                                <!--<th>优惠信息</th>-->
+                                                <th class="col-sm-2">实收款</th>
+                                                <th>总计</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="media">
+                                                        <span class="pull-left thumb-sm">
+                                                            <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                                                        <div class="pull-right">x1</div>
+                                                        <div class="media-body">
+                                                            <div>
+                                                                <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                供货商：XXX旗舰店
+                                                            </small>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>35355</td>
+                                                <td>
+                                                    <span class="money">199800.00</span>
+                                                </td>
+                                                <td>1</td>
+                                                <!--<td rowspan="2">-</td>-->
+                                                <td>
+                                                    <p class="money m-b-xs">
+                                                        100.00
+                                                    </p>
+
+                                                </td>
+                                                <td rowspan="2">
+                                                    <p class="money">
+                                                        210.00<br/>【含运费:<span class="money">10.00</span>】
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="media">
+                                                        <span class="pull-left thumb-sm">
+                                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                                        <div class="pull-right">x2</div>
+                                                        <div class="media-body">
+                                                            <div>
+                                                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                                                            </div>
+                                                            <small class="text-muted">
+                                                                供货商：XXX旗舰店
+                                                            </small>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
+                                                <td>35355</td>
+                                                <td>
+                                                    <span class="money">199800.00</span>
+                                                </td>
+                                                <td>1</td>
+                                                <td>
+                                                    <p class="money m-b-xs">100.00</p>
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="payinfo">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-10 form-control-static">
+                                                应付款:120.00
+                                                <span class="m-l-lg">已收款:20.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-12 table-responsive">
+
+                                    <table class="table table-bordered table-striped m-b-xl">
+                                        <thead>
+                                            <tr>
+                                                <th>支付时间</th>
+                                                <th>支付单号</th>
+                                                <th>支付流水号|商户订单号</th>
+                                                <th>支付金额</th>
+                                                <th>支付方式</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>111111222222</td>
+                                                <td>2222223333</td>
+                                                <td>10.00</td>
+                                                <td>支付宝(微盟支付)</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>111111222222</td>
+                                                <td>2222223333</td>
+                                                <td>10.00</td>
+                                                <td>支付宝</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>111111222222</td>
+                                                <td>2222223333</td>
+                                                <td>10.00</td>
+                                                <td>微信支付</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>111111222222</td>
+                                                <td>2222223333</td>
+                                                <td>10.00</td>
+                                                <td>财付通</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>111111222222</td>
+                                                <td>2222223333</td>
+                                                <td>10.00</td>
+                                                <td>银联全民付</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabdescribe" style="overflow:hidden">
+                                <section class="panel panel-default">
+                                    <header class="panel-heading bg-light">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#package1" data-toggle="tab">包裹一</a>
+                                            </li>
+                                            <li>
+                                                <a href="#package2" data-toggle="tab">包裹二</a>
+                                            </li>
+                                        </ul>
+                                    </header>
+                                    <div class="panel-body tab-content">
+                                        <div class="tab-pane active" id="package1">
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">收货地址</label>
+                                                <div class="col-sm-11 form-control-static">宋玉杰，18217328644，上海市宝山区逸仙路2816号</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">配送方式</label>
+                                                <div class="col-sm-11 form-control-static">快递</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">备注</label>
+                                                <div class="col-sm-11 form-control-static">请工作日送货</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">快递公司</label>
+                                                <div class="col-sm-11 form-control-static">圆通快递</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">快递单号</label>
+                                                <div class="col-sm-11 form-control-static">100266217987</div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="package2">
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">收货地址</label>
+                                                <div class="col-sm-11 form-control-static">李有龙，18217328644，上海市宝山区逸仙路2816号</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">配送方式</label>
+                                                <div class="col-sm-11 form-control-static">快递</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">备注</label>
+                                                <div class="col-sm-11 form-control-static">请工作日送货</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">快递公司</label>
+                                                <div class="col-sm-11 form-control-static">圆通快递</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">快递单号</label>
+                                                <div class="col-sm-11 form-control-static">100266217987</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </section>
+                            </div>
+
+                            <div class="tab-pane" id="routingInfo">
+                                <div class="col-sm-12 table-responsive">
+                                    <table class="table table-bordered table-striped m-b-xl">
+                                        <thead>
+                                            <tr>
+                                                <th>分账时间</th>
+                                                <th>分账金额</th>
+                                                <th>供货商佣金</th>
+                                                <th>V客佣金总额</th>
+                                                <th>一级分佣</th>
+                                                <th>二级分佣</th>
+                                                <th>三级分佣</th>
+                                                <th>供货商收入</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>100.00</td>
+                                                <td>80.00</td>
+                                                <td>10.00</td>
+                                                <td>6.00</td>
+                                                <td>2.00</td>
+                                                <td>2.00</td>
+                                                <td>1.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </section>
+    </section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

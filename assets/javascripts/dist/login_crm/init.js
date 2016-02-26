@@ -1,0 +1,3 @@
+/*! weimob_vshop_admin
+*author:<a.b.c@hd3p.com> */
+define("dist/login_crm/init",["$"],function(a){"use strict";var b=a("$");b("#login_btn").on("click",function(){var a=b(this),c=b("#forms").attr("action");if(a.closest("form").valid()){a.attr("disabled","disabled").val("提交中....");var d=a.closest("form").serialize();b.ajax({type:"POST",url:c,data:d,dataType:"json",success:function(c){0==c.status?window.location.href=c.url:(b(".error_msg").html(c.message),a.removeAttr("disabled"),a.val(a.hasClass("aut")?"授权":"登录"))},error:function(b){alert("网络异常 请重试..."),a.removeAttr("disabled").val("登录"),console.log(b)}})}})});

@@ -1,0 +1,91 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxform">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">新建短信推广</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">单元名称：</label>
+                    <div class="col-sm-6 ">
+                        <input type="text" class="form-control" data-rule-required="true" name="title"  data-rule-maxlength="20" placeholder="请输入名称，20字以内。">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">推广人群：</label>
+                    <div class="col-sm-6 ">
+                        <select class="form-control" name="persons" data-rule-required="true">
+                            <option value="">请选择</option>
+                            <option value="1">全部</option>
+                            <option value="2">会员计划</option>
+                            <option value="3">优惠计划</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">推广端：</label>
+                    <div class="col-sm-6 ">
+                        <p class="form-control-static">短信</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">短信内容：</label>
+                    <div class="col-sm-6 ">
+                       <textarea rows="4" name="info" data-url-length="8" data-list-number="70" data-division="3" data-offset="4" data-maxlength="1000" id="js_generalize_message_text" class="form-control" placeholder="请输入短信内容，长度(包含签名)最多1000字符，超过70个字符，将拆分成多条发送。">请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度请输入短信内容，长度</textarea>
+
+                    </div>
+                    <div class="col-sm-3 ">
+                        <p class="form-control-static">
+                           <!--  <div>当前字数：<span class="text-danger">4</span></div> -->
+                            <div>短信条数：<span class="text-danger js_message_number">1</span></div>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                       <button type="button" class="btn btn-default btn-sm" data-remote="/plus/sensitive.php" data-toggle="ajaxPost">敏感词检测</button><span class="js_sensitive_word error m-l-xs hide"></span>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">跳转链接：</label>
+                    <div class="col-sm-6 ">
+                        <input type="text" class="form-control js_message_inner_url" name="url"  data-rule-url="true" placeholder="请输入URL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">短信签名：</label>
+                    <div class="col-sm-6 ">
+                        <select class="form-control" name="persons" data-rule-required="true">
+                            <option selected="" value="0">萌店</option>
+                            <option value="1">微盟</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">推送时间：</label>
+                    <div class="col-sm-6 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="date"  readonly="readonly"  value="2016-01-08 18:00" data-toggle="datetimepicker"  data-startdate="now"/>
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">状态：</label>
+                    <div class="col-sm-8 ">
+                       <label for="" class="radio-inline"><input type="radio" name="status" value="0" checked="">启用</label>
+                       <label for="" class="radio-inline"><input type="radio" name="status" value="1">停用</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary js_message_submit" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

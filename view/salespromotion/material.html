@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>素材管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <a href="material_ed.html" class="btn btn-sm btn-default m-r"><i class="fa fa-plus m-r-xs"></i>添加素材</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a class="text-muted pull-right m-t-sm pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th >排序</th>
+                                <th>素材编号</th>
+                                <th>素材名称</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>升序/降序</th>
+                                <th class="col-sm-1 mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                               
+                                <td>
+                                    <p class="idname" style="display: none">007</p>
+                                    <span class="showmx">01</span>
+                                    <input class="showmxing input-sm form-control" type="text" style="display: none;  width: 40px;margin: 0;float: left;height: 20px;" value="" />
+                                    <a href="javascript:;" data-bj="0" class="m-xs px_bj" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                        <i class="fa fa-check text-muted" style="display: none"></i>
+                                    </a>
+                                </td>
+                               
+                                <td>
+                                   A001
+
+                                </td>
+                                <td>降价啦降价</td>
+                                <td>2015.06.20</td>
+                                <td>2015.07.20</td>
+                                <td>
+                                    <a href="roles_ed.html" class="m-xs" title="上移" data-remote="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-loading-text="保存中...">
+                                        <i class="fa fa-long-arrow-up text-muted"></i>
+                                    </a>
+                                    <a href="roles_ed.html" class="m-xs" title="下移" data-remote="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-loading-text="保存中...">
+                                        <i class="fa fa-long-arrow-down text-muted"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="material_time.html" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 此素材？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <!-- 
+                                     <tr>
+                                        <td  colspan="4" class="nodata">暂无</td>
+                                    </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js", "dist/material/init.js"]);
+        window.SETNUMBER='/Plus/setnumber.php';
+    </script>
+
+</body>
+
+</html>

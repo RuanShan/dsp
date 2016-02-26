@@ -1,0 +1,53 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl?{0}">
+    <div class="modal-dialog" style="width:680px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">修改价格和库存</h4>
+            </div>
+            <div class="modal-body">
+             
+                <div class="table-responsive ">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="col-sm-1">归属地</th>
+                                <th class="col-sm-2">销售价<span class="maroon">*</span></th>
+                                <th class="col-sm-2">库存<span class="maroon">*</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="v-middle">
+                                    上海
+                                </td>
+                                <td class="v-middle">
+                                   <input type="text" name="price[0]" data-rule-decimal="2" data-rule-required="true" value="10" class="form-control"/> 
+                                </td>
+                                <td class="v-middle">
+                                    <input type="text" name="store[0]" data-rule-required="true" data-rule-digits="true" value="25" class="form-control "/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="v-middle">
+                                    长沙
+                                </td>
+                                <td class="v-middle">
+                                   <input type="text" name="price[1]" data-rule-required="true" data-rule-decimal="2" value="12" class="form-control"/> 
+                                </td>
+                                <td class="v-middle">
+                                    <input type="text" name="store[1]" data-rule-required="true" data-rule-digits="true" value="15" class="form-control "/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary js_search_add_submit" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+.qyqrs {
+  line-height: 150%;
+}
+.qyqrs .title {
+  font-size: 24px;
+  text-align: center;
+}
+.qyqrs .max {
+  font-size: 18px;
+  line-height: 150%;
+}
+.qyqrs p {
+  margin: 0;
+  padding: 0;
+}
+.qyqrs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.qyqrs ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.qyqrs .ban_ul {
+  overflow: auto;
+}
+.qyqrs .ban_ul li {
+  float: left;
+  width: 49%;
+}
+.qyqrs .three_ul {
+  overflow: auto;
+}
+.qyqrs .three_ul li {
+  float: left;
+  width: 24%;
+}
+.qyqrs .sure {
+  text-indent: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.qyqrs .bottom {
+  text-align: right;
+}

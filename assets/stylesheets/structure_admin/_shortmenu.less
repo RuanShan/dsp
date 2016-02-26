@@ -1,0 +1,112 @@
+﻿html {
+}
+
+.shortmenu-ul {
+    margin-top: -10px;
+
+    li {
+        margin: 10px 9px 0 0;
+        padding-right: 0;
+        padding-left: 0;
+        float: left;
+        width: 130px;
+    }
+}
+
+#showShortcutMenuModal {
+    .shortmenu-ul {
+        li {
+            a {
+                width: 130px;
+                padding-right: 0;
+                padding-left: 10px;
+                display: block;
+                text-align: left;
+            }
+        }
+    }
+}
+
+#shortmenuShow {
+    a {
+        position: relative;
+        zoom: 1;
+    }
+
+    i {
+        position: absolute;
+        right: 3px;
+        top: 8px;
+    }
+}
+
+#shortcutMenuList {
+    .shortmenu-ul {
+        li {
+            a {
+                background: #f7f7f7;
+                color: #666;
+            }
+        }
+    }
+
+    .show-disabled {
+        color: #999!important;
+    }
+
+    h6 {
+        font-weight: bold;
+        color: #000;
+    }
+}
+
+.tabbable {
+    *zoom: 1;
+}
+
+    .tabbable:before, .tabbable:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+
+    .tabbable:after {
+        clear: both;
+    }
+
+.tab-content {
+    overflow: auto;
+}
+
+.tabs-left > .nav-tabs {
+    border-bottom: 0;
+    float: left;
+    margin-right: 19px;
+    border-right: 1px solid #ddd;
+}
+
+    .tabs-left > .nav-tabs > li, .tabs-right > .nav-tabs > li {
+        float: none;
+    }
+
+        .tabs-left > .nav-tabs > li > a, .tabs-right > .nav-tabs > li > a {
+            min-width: 74px;
+            margin-right: 0;
+            margin-bottom: 3px;
+        }
+
+        .tabs-left > .nav-tabs > li > a {
+            margin-right: -1px;
+            -webkit-border-radius: 4px 0 0 4px;
+            -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+        }
+
+            .tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+                border-color: #eee #ddd #eee #eee;
+            }
+
+    .tabs-left > .nav-tabs .active > a, .tabs-left > .nav-tabs .active > a:hover, .tabs-left > .nav-tabs .active > a:focus {
+        border-color: #ddd transparent #ddd #ddd;
+        *border-right-color: #fff;
+    }

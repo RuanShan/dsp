@@ -1,0 +1,28 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">上传营业执照</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label class="col-sm-3 control-label must">营业执照</label>
+                  <div class="col-sm-9">
+                      <!--编辑页面有图片链接时把下面img中的hide样式去掉-->
+                      <img class="thumb_img hide" src="" style="max-height: 100px;">
+                      <input class="hide" type="text" name="logo" data-rule-required="true" data-msg="请上传营业执照" value="">
+                      <button class="btn btn-default btn-sm" type="button"  data-toggle="selectimg">上传营业执照</button>
+                      <span class="help-block">请上传营业执照，文件格式为bmp、png、jpeg、jpg或gif</span>
+                  </div>
+                </div>  
+                
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

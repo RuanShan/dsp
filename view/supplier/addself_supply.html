@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>新增、编辑、查看自营供货方</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+                www_version = 1201405081146;
+    </script>
+    <style>
+        .left{    margin: 10px 0 0 21%;}
+        .form-group .area{    width: 480px;height: 90px;}
+    </style>
+</head>
+
+<body>
+
+<section class="vbox">
+<header class="header bg-white b-b b-light">
+    <p>新建自营供货方</p>
+</header>
+<section class="scrollable  wrapper">
+<form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+
+<section class="panel panel-default">
+<div class="panel-body">
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">公司名称：</label>
+        <div class="col-sm-3 must">
+
+                <input type="text" name="companyname"    class="form-control "  data-rule-required="true" >
+        </div>
+        <div class="col-sm-4">
+            <p class="form-control-static"><span class="help-inline">按公司营业执照填写</span></p>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">联系人：</label>
+        <div class="col-sm-3 must">
+                <input type="text" name="selfcontacts"  class="form-control "  data-rule-required="true" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">联系方式：</label>
+        <div class="col-sm-3 must">
+                <input type="text" name="selfmode" data-rule-phone="true"   class="form-control "  data-rule-required="true" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">提现方式：</label>
+        <div class="col-sm-3">
+                <select class="form-control selfpay"  name="selfpay">
+                    <option value="" checked="checked" data-type="selfpaytype_qxz">请选择</option>
+                    <option value="0" data-type="selfpaytype_zfb">支付宝</option>
+                    <option value="1" data-type="selfpaytype_yhk">银行卡</option>
+                    <option value="2" data-type="selfpaytype_gjzh">国际账号</option>
+                </select>
+        </div>
+    </div>
+
+    <div class="selfcon_zfb hide">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">支付宝账号：</label>
+        <div class="col-sm-3">
+                <input type="text" name="selfzfbaccount"    class="form-control "  >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">支付宝姓名：</label>
+        <div class="col-sm-3">
+                <input type="text" name="selfzfbname"   class="form-control pull-left"  >
+        </div>
+    </div>
+    </div>
+
+    <div class="selfcon_yhk hide">
+        <div data-toggle="location">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">开户省：</label>
+            <div class="col-sm-3">
+                    <select class="form-control mn140"  data-selected="110000" name="provinces" id="provinces" data-rule-required="true" data-location="provinces" ></select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">开户市：</label>
+            <div class="col-sm-3">
+                    <select class="form-control mn140"   name="city" id="city" data-rule-required="true" data-location="city"></select>
+              </div>
+            <div class="col-sm-3">
+                <select class="form-control mn140"   name="district" id="district" data-rule-required="true" data-location="district"></select>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">银行类型：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfyhk_type"    class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">支付信息：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfyhk_infor"    class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">银行账号：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfyhk_account"    class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">开户名：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfyhk_name"   class="form-control "  >
+            </div>
+        </div>
+    </div>
+
+
+    <div class="selfcon_gjzh hide">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">姓名：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_name" placeholder="英文或拼音"   class="form-control "  >
+            </div>
+        </div>
+
+        <!--<div class="form-group">-->
+            <!--<label class="col-sm-2 control-label">国家地区：</label>-->
+            <!--<div class="col-sm-3">-->
+                <!--<div class="btn-group">-->
+                    <!--<select class="form-control" style="width: 220px;" name="selfgjzh_shen">-->
+                        <!--<option value="" checked="checked">请选择</option>-->
+                        <!--<option value="0">亚洲</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="form-group" data-toggle="overseas">
+            <label class="col-sm-2 control-label">国家地区：</label>
+            <div class="controls">
+                <div class="col-sm-3 ">
+                    <select name="data_continent" id="data_continent" class="form-control pull-left  m-r-xs" >
+                    </select>
+                    </div>
+                <div class="col-sm-3 ">
+                    <select name="data_country" id="data_country" class="form-control pull-left m-r-xs"  >
+                    </select>
+                    </div>
+                <div class="col-sm-3 ">
+                    <select name="data_city" id="data_city" class="form-control pull-left m-r-xs" >
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">银行地址：</label>
+            <div class="col-sm-3">
+                    <textarea class="form-control" cols="40" rows="3" name="selfgjzh_yhaddress" ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">银行：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_yhname"   class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">账号：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_yhaccount"  class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">swift code：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_code"   class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">收货人地址：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_shraddress"    class="form-control "  >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">分区代号：</label>
+            <div class="col-sm-3">
+                    <input type="text" name="selfgjzh_fqcode"    class="form-control "  >
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label" >商品图片:</label>
+        <div class="col-sm-10">
+            <div class="js_upload_container">
+                <div class="js_file_upload must">
+                    <button type="button" class="btn btn-default js_new_upload" data-submitname="GoodsImages" data-count="5" data-uploadpath="/api/form/uploadImg" data-delpath="/api/form/removeImg" data-data="{'cid':'YY'}" style="position: relative; ">商品图片</button>
+                    <span class="maroon">*</span>
+                            <span class="help-inline">
+                                建议尺寸为640像素x640像素，大小不超过500kb 默认显示第1张图片，最多5张 (
+                                <small>可拖拽图片调整显示顺序</small>
+                                )
+                            </span>
+                </div>
+                <div class="uploadify-queue js_file_upload_queue"></div>
+                <ul class="ipost-list ui-sortable js_fileList" data-required="true">
+                    <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                        <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                        <input type="hidden" value="10001" name="GoodsImages[0].id">
+                        <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[0].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                    </li>
+                    <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                        <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                        <input type="hidden" value="10001" name="GoodsImages[1].id">
+                        <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[1].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                    </li>
+                    <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                        <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                        <input type="hidden" value="10001" name="GoodsImages[2].id">
+                        <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[2].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+        <button type="submit" id="sub_btn" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+        <button type="button" class="btn btn-default mark_btn-default" data-toggle="back">取消</button>
+    </div>
+</div>
+
+</div>
+
+
+
+
+</section>
+</form>
+</section>
+</section>
+
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+
+<script type="text/javascript">
+    seajs.use(["dist/application/app.js", "dist/pluploadv/init.js","dist/supplier/init.js", "dist/form/data_country.js"]);
+</script>
+
+</body>
+</html>

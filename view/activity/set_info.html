@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>V店</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/page/goods.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/page/formwizard.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+  <style type="text/css">
+    .btn_none{color: #333;}
+    .sytishi{margin: 10px auto; width: 94%;color: #B5B4B4;}
+    .sytishi_mr{display: none;}
+    .sytishi_sp{     margin: 10px auto 0;}
+  </style>
+
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b clearfix">
+      <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+        <div class="row m-t-sm">
+          <div class="col-sm-4 m-b-xs">
+            <div class="btn-group m-r-xs">
+              <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+              </button>
+            </div>
+            <div class="btn-group m-r-xs">
+              <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                <span class="dropdown-label">全部</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                <li class="active">
+                  <a href="javascript:;">
+                    <input type="radio" name="type" value="0" checked/>
+                    全部
+                  </a>
+                </li>
+                <li class="active">
+                  <a href="javascript:;">
+                    <input type="radio" name="type" value="1" />
+                    食品
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <input type="radio" name="type" value="2" />
+                    美妆
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                <span class="dropdown-label">全部</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                <li class="active">
+                  <a href="javascript:;">
+                    <input type="radio" name="type2" value="0" checked/>
+                    全部
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    <input type="radio" name="type2" value="1" />
+                    二级类目
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-8 text-right m-b-xs">
+            价格：
+            <input type="text" name="price1" style="width:60px;display: inline-block" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="form-control input-sm">
+            至
+            <input type="text" name="price2" style="width:60px;display: inline-block" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="form-control input-sm">
+            
+
+            <div class="btn-group m-l-xs" >
+              <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle" style="border-right:0">
+                <span class="dropdown-label">商品名称</span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                <li class="active">
+                  <a href="javascript:;">
+                    <input type="radio" name="type3" value="0" checked/>
+                    商品名称
+                  </a>
+                </li>
+                <li class="active">
+                  <a href="javascript:;">
+                    <input type="radio" name="type3" value="1" />
+                    商家编码
+                  </a>
+                </li>
+              </ul>
+            </div><input type="text" style="width:180px;display: inline-block" class="input-sm form-control" name="putkey" placeholder="" />
+
+            <button class="btn btn-sm btn-default" type="submit" title="搜索"> <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+        <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+        <input type="hidden" name="order" id="order" value="" />
+
+      </form>
+    </header>
+
+    <section class="scrollable  wrapper w-f">
+
+      <section class="panel panel-default m-t-xs">
+        <div class="table-responsive">
+          <table class="table table-striped m-b-none">
+            <thead>
+              <tr>
+                <th class="with-checkbox">
+                  <input type="checkbox" />
+                </th>
+                <th>
+                  商品名称
+                  <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="<p style='width:200px'>你可为商品单独设置活动名称，该名称仅用于活动期间的商品展示。</p>
+                  ">
+                  <i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i>
+                </a>
+              </th>
+              <th class="mn90">所属分类</th>
+              <th class="mn90">价格</th>
+              <th class="mn90">总库存</th>
+              <th class="mn90">总销量</th>
+              <th class="mn90">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" value="0"></td>
+              <td>
+                <input type="hidden" name="goodsid[0]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" class="btn btn-link-herf btn-link-color js_enter" data-remote="/plus/succes.php" data-id="1" title="立即报名">立即报名</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="0"></td>
+              <td>
+                <input type="hidden" name="goodsid[0]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" data-remote="async/set_ed5.html" data-toggle="ajaxModal" class="btn btn-link-herf btn-link-color" title="立即报名">立即报名</a>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox"  value="1"></td>
+              <td>
+                <input type="hidden" name="goodsid[0]" value="1">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" data-remote="async/set_ed.html" data-toggle="ajaxModal" class="btn btn-link-herf btn-link-color" title="立即报名">立即报名</a>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="2"></td>
+              <td>
+                <input type="hidden" name="goodsid[1]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" data-remote="async/set_ed2.html" data-toggle="ajaxModal" class="btn btn-link-herf btn-link-color" title="立即报名">立即报名</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="2"></td>
+              <td>
+                <input type="hidden" name="goodsid[1]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" data-remote="async/set_ed3.html" data-toggle="ajaxModal" class="btn btn-link-herf btn-link-color" title="立即报名">立即报名</a>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="2"></td>
+              <td>
+                <input type="hidden" name="goodsid[1]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <p  class="btn_none" title="立即报名">立即报名</p>
+                <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover" data-content="<p style='width:150px'>该商品已报名　“【天天疯抢】2015.10.30第一场”，由于活动时间冲突，无法报名该活动。</p>" data-original-title="" title="">
+                  <i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i>
+                </a>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="2"></td>
+              <td>
+                <input type="hidden" name="goodsid[1]" value="2">
+                <div class="media">
+                  <span class="pull-left thumb-sm">
+                    <img src="/assets/images/goods/1.jpg" alt="John said"></span>
+                  <div class="media-body">
+                    <div>
+                      <a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</a>
+                    </div>
+
+                  </div>
+                </div>
+              </td>
+              <td>XXX>XXX</td>
+              <td>￥10000000.00</td>
+              <td>5</td>
+              <td>￥10</td>
+              <td>
+                <a href="javascript:;" data-remote="async/set_ed4.html" data-toggle="ajaxModal" class="btn btn-link-herf btn-link-color" title="立即报名">立即报名</a>
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </section>
+  <footer class="footer bg-white b-t">
+    <div class="row text-center-xs">
+      <div class="col-md-6 hidden-sm">
+        <p class="text-muted m-t">总共321条 当前为第1页</p>
+      </div>
+      <div class="col-md-6 col-sm-12 text-right text-center-xs">
+        <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+      </div>
+    </div>
+  </footer>
+</section>
+<div class="modal fade in apply_complete_modal"   tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+        <div class="modal-header" style="border-bottom: 0">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="col-sm-12 text-center js_tips_text"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="goods_list.html" class="btn btn-default">查看已报名商品</a>
+          <button type="submit" class="btn btn-primary">确认</button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/activity/init.js","dist/commission/init.js"])</script>
+
+</body>
+
+</html>

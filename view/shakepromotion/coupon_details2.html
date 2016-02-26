@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <p>领取/核销记录查询</p>
+            <a href="coupon_management.html" class="text-muted pull-right m-t pointer" title="返回">
+                <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="coupon_details.html">领取记录</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;">核销记录</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="classify" style="overflow-x:hidden">
+                            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                                <div class="row">
+                                    <div class="col-sm-9 m-b-xs">
+                                        <div class="form-group">
+                                            <div class="btn-group">
+                                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                                    <span class="dropdown-label">全部类型</span>
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                                    <li class="active">
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="1" checked="checked">全部类型</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="2">折扣券</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="3">代金券</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="4">礼品券</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="5">团购券</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType" value="6">通用券</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <a class="btn btn-default btn-sm m-l-xs" data-toggle="reportrange" data-change="submit"> 
+                                                <i class="fa fa-calendar fa-lg"></i>
+                                                <small>核销时间</small>
+                                                <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                                                <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange">
+                                            </a>
+                                            <button type="button" data-remote="/Api/Form/ajaxPost/1" data-toggle="ajaxPost" class="btn btn-sm btn-default m-l-xs">
+                                                <i class="fa fa-cloud-download m-r-xs"></i>导出
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 m-b-xs">
+                                        <div class="input-group">
+                                              <div class="input-group-btn">
+                                                  <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                      <span class="dropdown-label">券code</span>
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                                                    <li class="active">
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType3" value="1">券code</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType3" value="2">券名称</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <input type="radio" name="couponType3" value="3">订单号</a>
+                                                    </li>
+                                                </ul>
+                                              </div>
+                                              <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="请输入关键词">
+                                              <span class="input-group-btn">
+                                                  <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                                      <i class="fa fa-search"></i>
+                                                  </button>
+
+                                              </span>
+                                          </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                                <input type="hidden" name="order" id="order" value="" />
+                            </form>
+                            <section class="panel panel-default">
+                                <div class="table-responsive">
+                                    <table class="table table-striped m-b-none">
+                                        <thead>
+                                            <tr>
+
+                                                <th>券code</th>
+                                                <th>券类型</th>
+                                                <th>券名称</th>
+                                                <th>核销时间</th>
+                                                <th>所属订单</th>
+                                                <th>订单金额（元）</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>1408271702183648710753</td>
+                                                <td>抵扣券</td>
+                                                <td>良品铺子双十一促销</td>
+                                                <td>2015-8-27 17:02:41</td>
+                                                <td>20150730001</td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>140827163457676115153f</td>
+                                                <td>代金券</td>
+                                                <td>良品铺子双十一促销</td>
+                                                <td>2015-8-27 17:02:41</td>
+                                                <td>20150730002</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <!-- 
+                                            <tr>                                            
+                                            <td colspan="7" class="nodata">暂无数据</td>
+                                            </tr>
+                                            -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+
+    <script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

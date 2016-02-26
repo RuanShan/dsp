@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+    
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>结算信息
+                <small><a class="text-ul m-l-sm" style="color:blue" href="../management/agreement_confirm.html">签约确认书</a></small>
+            </p>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default panel-max-width">
+                <div class="panel-body">
+                    <div class="entity-panel-body form-horizontal">
+                        <form class="form-horizontal form-validate" method="post"  action="/api/form/ajaxformurl">
+                            <div class="alert alert-success bg-light" role="alert"> <strong class="m-l-sm">结算银行信息</strong>
+                            </div>
+                            <div class="row-fluid bank_info">
+                                <!-- 国内账户
+                                <dl class="dl-horizontal">
+                                    <dt>企业名称</dt>
+                                    <dd>北京星湖</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>结算银行</dt>
+                                    <dd>太湖支行</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>开户行详细</dt>
+                                    <dd>上海市杨浦区建设支行</dd>
+                                </dl>
+
+                                <dl class="dl-horizontal">
+                                    <dt>收款帐号</dt>
+                                    <dd>**** **** **** 2261</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>开户名</dt>
+                                    <dd>上海晖硕科技信息有限公司</dd>
+                                </dl>
+                                -->
+                                <!-- 国际账户 -->
+                                <dl class="dl-horizontal">
+                                    <dt>账户类型</dt>
+                                    <dd>国际账户</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>姓名</dt>
+                                    <dd>xueqiang</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>国家/地区</dt>
+                                    <dd>United  Status (the)  美国</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>地址</dt>
+                                    <dd>white house</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>银行</dt>
+                                    <dd>BOFAUS3N Bank of America N.A</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>账号</dt>
+                                    <dd>622718901234</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>swift code</dt>
+                                    <dd>uirtyuio</dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt>提现币种</dt>
+                                    <dd>美元</dd>
+                                </dl>
+
+                            </div>
+                            <div class="alert alert-success bg-light" role="alert"> <strong class="m-l-sm">结算费率等信息</strong>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-11 col-sm-offset-1">
+                                    <span>微信支付 费率：1.0% ;</span>
+                                    <span class="m-l">支付宝 费率：2.5%;</span>
+                                    <span  class="m-l">银联全民付 费率：1.0%</span>
+                                    <span  class="m-l">财付通 费率：1.5% ;</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- 国内账户 
+                                <div class="col-sm-11 col-sm-offset-1">支付周期：T+3</div>
+                                -->
+                                <!-- 国际账户 -->
+                                <div class="col-sm-11 col-sm-offset-1">支付周期：T+15</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-11 col-sm-offset-1">
+                                    <span>最低结算费用：1000元人民币</span>
+                                    <span  class="m-l">保证金：2000元人民币</span>
+                                    <span  class="m-l">交易手续费：1%</span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group">
+                                <div class="col-sm-11 col-sm-offset-1">
+                                    <p>说明</p>
+                                    <p>1、支付周期是指申请提现至微盟财务打款之间的时间，例如支付周期T+3，微盟会在申请提现以后三个工作日完成打款。</p>
+                                    <p>2、申请提现的金额必须≥最低结算费用才可提现。</p>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">seajs.use("dist/application/app.js")</script>
+
+</body>
+
+</html>

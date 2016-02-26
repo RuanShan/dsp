@@ -1,0 +1,247 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+  <style type="text/css">
+      .small-img img{max-width:150px;margin-right:15px;}
+      .big-img img{max-width: 260px;margin-right:15px;}
+    </style>
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>销售统计</p>
+      <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+      </a>
+
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body">
+          <form class="talbe-horizontal" method="post" action="/api/Page/list">
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">销售统计图表</div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-sm-4 m-b-sm">
+                    <div class="input-group">
+                       <span class="input-group-addon"> <i class="fa fa-calendar m-r-xs"></i>选择时间
+                      </span>
+                      <input type="text" class="form-control" name="datepickersub" data-change="submit" readonly="readonly" value="2014-08-26 18:00" data-toggle="datetimepicker" data-position="bottom-right" data-enddate="now"/>                    
+                     
+                    </div>
+                   
+                  </div>
+                </div>
+                <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="0"  data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=0">销售额</button>
+                       <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="4"  data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=4">成交额</button>
+                      <button type="button" class="btn btn-default btn-sm  js_interact_echarts" data-type="1" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=3&type=1">销售量</button>
+                      <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="2" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=2">订单量</button>
+                      <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="3" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=3&type=3">客单价</button>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-right">
+                    <button type="button" data-toggle="compare"  class="btn btn-default btn-sm">对比时段</button>
+                  </div>
+                </div>
+                <div id="sales_charts" style="height: 310px" data-path="/plus/v_charts.php?page=2">
+                  <div class="load">数据加载中...</div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold">
+                销售统计明细
+                <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                  <i class="fa fa-cloud-download m-r-xs"></i>
+                  导出csv文件
+                </a>
+              </div>
+              <div class="panel-body">
+                <section class="panel panel-default ">
+                  <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                      <thead>
+                        <tr>
+                          <th>日期</th>
+                          <th>
+                            销售额（元）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所有商品的销售金额，含分佣。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            销售额（元）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所有商品的销售金额，含分佣。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            成交额（元）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所有商品的已支付金额，含分佣。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            成交量（件）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="所有商品的销量。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            订单量（笔）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="用户的订单数量，含未支付订单。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            客单价（元）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="每单订单的平均价格。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            已支付订单（笔）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="已支付订单">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+                          <th>
+                            成交比例（%）
+                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="统计当日订单的已支付订单的比例。">
+                              <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                            </a>
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>2015-6-25</td>
+                          <td>999</td>
+                          <td>99</td>
+                          <td>50</td>
+                          <td>19.98</td>
+                          <td>36</td>
+                          <td>19.98</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                        <tr>
+                          <td>2015-6-24</td>
+                          <td>999</td>
+                          <td>99</td>
+                          <td>50</td>
+                          <td>19.98</td>
+                          <td>36</td>
+                          <td>19.98</td>
+                          <td>36</td>
+                          <td>72.0</td>
+                        </tr>
+                        <tr>
+                          <td><strong>汇总</strong></td>
+                          <td><strong>999</strong></td>
+                          <td><strong>99</strong></td>
+                          <td><strong>5</strong></td>
+                          <td><strong>19.98</strong></td>
+                          <td><strong>36</strong></td>
+                          <td><strong>19.98</strong></td>
+                          <td><strong>36</strong></td>
+                          <td><strong>72.0</strong></td>
+                        </tr>
+
+                        <!-- 
+                                     <tr>
+                        <td  colspan="9" class="nodata">暂无数据</td>
+                      </tr>
+                      -->
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </section>
+</section>
+<div class="modal fade in js_compare_modal_time"   tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">对比时段</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-sm-2 control-label">时间选择</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" class="form-control" name="groundingdate"  readonly="readonly"  value=""  data-toggle="datepicker" data-format="yyyy-mm" data-end-date="now" data-rule-notEqual="2015-06"/>
+                <span class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- <div class="form-group js_date_show hide">
+          <label class="col-sm-2 control-label">已选择时间</label>
+          <div class="col-sm-8">
+            <p class="form-control-static"></p>
+            <input type="hidden" name="datesave" />
+          </div>
+        </div>
+        -->
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+        <button type="submit" class="btn btn-primary"  data-loading-text="保存中...">确认</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+</div>
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/count/init.js"])</script>
+
+</body>
+
+</html>

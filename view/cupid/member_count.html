@@ -1,0 +1,144 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>会员画像</p>
+      <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+      </a>
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body" id="coupons_set">
+          <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+            <footer class="panel-footer bg-white no-padder m-t-sm">
+              <div class="row text-center no-gutter">
+                <div class="col-xs-4 b-r b-l b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">1500w</span> <strong class="m-b block m-t-xs">会员总数</strong>
+                </div>
+                <div class="col-xs-4 b-r b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">1500w</span> <strong class="m-b block m-t-xs">昨日活跃用户数</strong>
+                </div>
+                <div class="col-xs-4 b-r b-b b-light">
+                  <span class="h5 font-bold m-t block text-danger">1500w</span>
+                  <strong class="m-b block m-t-xs">昨日有订单人数</strong>
+                </div>
+              </div>
+            </footer>
+            <div class="row m-t">
+              <div class="col-md-12">
+                <section class="panel panel-default">
+                  <header class="panel-heading font-bold">行为数据</header>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <div id="pie_charts" style="height:300px" data-toggle="listCharts" data-type="pie" data-path="/plus/cupid.php?type=1">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="mixture_charts" style="height: 300px" data-toggle="listCharts" data-type="mixture" data-path="/plus/cupid.php?type=2">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="columnr_charts" style="height:360px" data-toggle="listCharts" data-type="columnr" data-path="/plus/cupid.php?type=3">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="polar_charts" style="height: 360px" data-toggle="listCharts" data-type="polar" data-unit="%" data-path="/plus/cupid.php?type=4">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="columnarea_charts" style="height:300px" data-toggle="listCharts" data-type="columnarea" data-path="/plus/cupid.php?type=5">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+            <div class="row m-t">
+              <div class="col-md-12">
+                <section class="panel panel-default">
+                  <header class="panel-heading font-bold">消费能力</header>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <div id="column1_charts" style="height:300px" data-toggle="listCharts" data-type="column" data-path="/plus/cupid.php?type=6">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="colum2_charts" style="height: 300px" data-toggle="listCharts" data-type="column" data-path="/plus/cupid.php?type=7">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+            <div class="row m-t">
+              <div class="col-md-12">
+                <section class="panel panel-default">
+                  <header class="panel-heading font-bold">代销能力</header>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <div id="pie22_charts" style="height:300px" data-toggle="listCharts" data-type="pie" data-path="/plus/cupid.php?type=8">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="xx2_charts" style="height: 300px" data-toggle="listCharts" data-type="column" data-path="/plus/cupid.php?type=9">
+                        <div class="load">数据加载中...</div>
+                      </div>
+                    </div>
+                   
+                  </div>
+
+                </section>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+  <script src="/assets/javascripts/seajs_config.js"></script>
+  <script type="text/javascript">seajs.use(["dist/application/app.js",'dist/cupid/init.js'])</script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">请填写商家的打款信息</h4>
+            </div>
+            <div class="modal-body" style="max-height:400px;overflow-y:auto;">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">业务类型</label>
+                    <div class="col-sm-7"> 
+                        <select class="form-control" name="">
+                            <option value="1">开通</option>
+                            <option value="2">续费</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">支付方式</label>
+                    <div class="col-sm-7"> 
+                        <select class="form-control js_change_bank" name="">
+                            <option value="1" data-box="js_bank">银行卡</option>
+                            <option value="2" data-box="js_alipay">支付宝</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="js_bank js_hide">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">开户名称</label>
+                        <div class="col-sm-7"> 
+                            <input class="form-control" name="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">开户银行<br/>（到支行）</label>
+                        <div class="col-sm-7"> 
+                            <input class="form-control" name="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">银行账户</label>
+                        <div class="col-sm-7"> 
+                            <input class="form-control" name="" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="js_alipay js_hide hide">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">支付宝账号</label>
+                        <div class="col-sm-7"> 
+                            <input class="form-control" name="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">姓名</label>
+                        <div class="col-sm-7"> 
+                            <input class="form-control" name="" value="">
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="modal-title">资费信息</h4>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">保证金</label>
+                    <div class="col-sm-7"> 
+                        <input class="form-control" name="" value="">
+                    </div>
+                    <label class="col-sm-1 control-label m-l-n-md">元</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">技术服务费</label>
+                    <div class="col-sm-7"> 
+                        <input class="form-control" name="" value="">
+                    </div>
+                    <label class="col-sm-1 control-label m-l-n-md">元</label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">备注</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control" rows="6" name="">
+                        </textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

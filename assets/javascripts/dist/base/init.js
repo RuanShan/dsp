@@ -1,0 +1,3 @@
+/*! weimob_vshop_admin
+*author:<a.b.c@hd3p.com> */
+define("dist/base/init",["$","dist/application/app"],function(a){"use strict";var b=a("$"),c=a("dist/application/app"),d=(c.config,c.method);if(b(".js_change_data").length){b(".js_change_data").on("change",function(){var a=b(this).data("url"),c=b(this).attr("name");b(".js_change_box").addClass("hide"),b(this).find("option:selected").val()&&e(b(this).find("option:selected").val(),a,c)});var e=function(a,c,e){var f={};f[e]=a,d.postd(c,function(a){if(a.data.length){b(".js_change_box").removeClass("hide");var c=template("opt_tmp",a);b(".js_change_box").find("div.js_append_box").empty().append(c)}},f)}}});

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/goods.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>商品详情</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <header class="header bg-white b-b b-light">
+            <a href="spread_details.html" class="btn btn-sm btn-default">
+                <i class="fa fa-search m-r-xs"></i>查看推广计划</a>
+        </header>
+        <section class="scrollable  wrapper" style="top:100px;">
+            <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        基本信息
+                    </header>
+                    <div class="panel-body">
+                        <div class="form-group m-b-none">
+                            <label class="col-sm-2 control-label">商品类目</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">地方特产——米/面粉/杂粮——国产大米</p>
+                            </div>
+                            <label class="col-sm-2 control-label">商品属性（选填）</label>
+                            <div class="col-sm-10">
+                                <div class="panel panel-default bg-light m-t-sm m-b-sm">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        品牌<span class="m-l">XX品牌</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        包装方式<span class="m-l">XX包装方式</span>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        食品产地<span class="m-l">XX食品产地</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        包装方式<span class="m-l">XX包装方式</span>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="row">
+                                                    <div class="col-sm-11 col-sm-offset-1">
+                                                        食品产地<span class="m-l">XX食品产地</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-sm-2 control-label">商品名称</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">【天价】萌宠 呆萌傲娇腹黑毒舌健气天然抖S废柴炸毛小狗狗</p>
+                            </div>
+                            <label class="col-sm-2 control-label">商品规格</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">多规格</p>
+                            </div>
+                            <label class="col-sm-2 control-label">价格库存</label>
+                            <div class="col-sm-10">
+                                <table class="table table-striped table-bordered m-t-sm m-b-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>尺码</th>
+                                            <th>颜色</th>
+                                            <th>销售价</th>
+                                            <th>市场价</th>
+                                            <th>库存</th>
+                                            <th>重量</th>
+                                            <th>体积</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="2">L</td>
+                                            <td>黑色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>白色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">M</td>
+                                            <td>黑色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>白色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">S</td>
+                                            <td>黑色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr>
+                                            <td>白色</td>
+                                            <td><span class="money">100</span></td>
+                                            <td><span class="money">160</span></td>
+                                            <td>999</td>
+                                            <td>11</td>
+                                            <td>22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <label class="col-sm-2 control-label">商品图片</label>
+                            <div class="col-sm-10 m-b-sm m-t-xs">
+                                <p class="form-control-static">
+                                    <span class="pull-left m-r-sm">
+                                        <img style="max-width:60px" src="/assets/images/goods/3.jpg" alt="John said">
+                                    </span>
+                                    <span class="pull-left m-r-sm">
+                                        <img style="max-width:60px" src="/assets/images/goods/3.jpg" alt="John said">
+                                    </span>
+                                </p>
+                            </div>
+                            <label class="col-sm-2 control-label">商品详情</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        物流信息
+                    </header>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">运费计算方式</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">粉丝承担运费</p>
+                            </div>
+                            <label class="col-sm-2 control-label">发货地址</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">北京市东城区XX路XX号</p>
+                            </div>
+                            <label class="col-sm-2 control-label">计价方式</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">按件数</p>
+                            </div>
+                            <label class="col-sm-2 control-label">运送方式</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">快递</p>
+                            </div>
+                            <label class="col-sm-2 control-label">运费设置</label>
+                            <div class="col-sm-10 m-t-sm">
+                                <table class="table table-striped table-bordered m-b-none">
+                                    <thead>
+                                        <tr>
+                                            <th>配送区域</th>
+                                            <th>首件（个）</th>
+                                            <th>运费（元）</th>
+                                            <th>续件（个）</th>
+                                            <th>运费（元）</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>全国默认区域</td>
+                                            <td>5</td>
+                                            <td>10</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>上海、江苏省、浙江省</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>上海、江苏省、浙江省</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        其他信息
+                    </header>
+                    <div class="panel-body">
+                        <div class="form-group m-b-none">
+                            <label class="col-sm-2 control-label">商品限购</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">限购 5</p>
+                            </div>
+                            <label class="col-sm-2 control-label">库存计算方式</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">支付减库存</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js"]);
+    </script>
+
+
+</body>
+
+</html>

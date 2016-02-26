@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>修改投放规则</p><a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <p class="form-control-static m-l">
+                                渠道名称：<span class="m-l-lg">微信摇TV</span>
+                            </p>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <p class="form-control-static m-l">推送规则：</p>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">推送频率：</label>
+                            <div class="col-sm-2 must">
+                                <input type="text" name="duration" class="form-control" data-rule-required="true" data-rule-digits="true" />
+                            </div>
+                            <div class="col-sm-1">
+                                <p class="form-control-static">天/次</p>
+                            </div>
+                            <label class="col-sm-1 control-label">提前</label>
+                            <div class="col-sm-2">
+                                <input type="text" name="preDuration" class="form-control" data-rule-required="true" data-rule-digits="true" />
+                            </div>
+                            <div class="col-sm-2">
+                                <p class="form-control-static">天推送至微摇</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">每天固定推送时间：</label>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <select class="form-control" name="sendhour">
+                                    <option value=""></option><option value="0" selected>0</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                                    </select>
+                                    <span class="input-group-addon ">
+                                        小时
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                <select class=" form-control" name="sendminute"><option value=""></option><option value="0" >0</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5" selected>05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>
+                                <span class="input-group-addon ">
+                                    分钟
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">每天可投放的优惠券总数：</label>
+                            <div class="col-sm-2">
+                                <input type="text" name="sales"  data-rule-digits="true" class="form-control" data-rule-required="true" data-rule-digits="true" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">其中包括：</label>
+                            <div class="col-sm-2">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="weimob">萌店优惠券数
+                                </label>
+                            </div>
+                            <div class="col-sm-2 m-l-n-lg">
+                                <input type="text" class="form-control" name="weimobNumber" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-3">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="O2O">O2O优惠券数
+                                </label>
+                            </div>
+                            <div class="col-sm-2 m-l-n-lg">
+                                <input type="text" class="form-control" name="O2ONumbers" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <p class="form-control-static m-l">收费规则：</p>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">单价:</label>
+                            <div class="col-sm-2">
+                                <input type="text" name="price" data-rule-required="true" data-rule-number="true" class="form-control" />
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="form-control-static">元/张</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script> 
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js"]);
+    </script>
+
+
+
+</body>
+
+</html>

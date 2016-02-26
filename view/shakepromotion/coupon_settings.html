@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .m-t-s{margin-top:3px;}
+    </style>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>投放设置</p>
+            <a href="coupon_management.html" class="text-muted pull-right m-t pointer" title="返回">
+                <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/Plus/success.php">
+                        <div class="form-group">
+                            <div class="col-sm-10 m-l">
+                                <div class="row">
+                                    <div class="col-sm-12 m-r-n-lg">
+                                        <p class="form-control-static">
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fa fa-stack-1x text-white">1</i>
+                                            </span>
+                                            <span class="pull-left text-black m-t-s">
+                                                <strong>添加优惠券</strong>
+                                            </span>
+                                            <span class="pull-left text-black">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-r-sm m-t-none"></i>
+                                            </span>
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fa fa-stack-1x text-white">2</i>
+                                            </span>
+                                            <span class="pull-left text-black m-t-s">
+                                                <strong>选择商品</strong>
+                                            </span>
+                                            <span class="pull-left text-black">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-r-sm m-t-none"></i>
+                                            </span>
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fa fa-stack-1x text-white">3</i>
+                                            </span>
+                                            <span class="pull-left text-black m-t-s">
+                                                <strong>投放设置</strong>
+                                            </span>
+                                            <span class="pull-left text-black">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-r-sm m-t-none"></i>
+                                            </span>
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-light"></i>
+                                                <i class="fa fa-stack-1x text-white">4</i>
+                                            </span>
+                                            <span class="pull-left text-light m-t-s">提交审核</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">投放数量</label>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control js_input_number" data-rule-required="true" data-rule-digits="true" data-rule-min="1001" data-msg-min="请输入大于 1000 的数值" name="number" value="1001" />
+                                    <span class="input-group-addon">
+                                        张
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 m-l-n">
+                                <p class="form-control-static">*起投量需大于1000张</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">投放时间</label>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="time" value="2015/10/01 - 2015/10/30" readonly data-rule-required="true" data-position="top-right" data-toggle="daterangepicker" data-format="YYYY/MM/DD">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 m-l-n">
+                                <p class="form-control-static">*投放时间需提前2天</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group m-b-sm">
+                            <label class="col-sm-2 control-label">投放渠道</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <p class="form-control-static">已选：</p>
+                                    </div>
+                                    <div class="col-sm-10 m-l-n js_city_container">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-2">
+                                <table class="table table-bordered m-b-xs">
+                                    <tr>
+                                        <td colspan="2">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="all" value="all" class="js_select_all">
+                                                <span>全部渠道</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="直辖市" class="js_select_dist">
+                                                <span>直辖市</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="北京" class="js_select_city">
+                                                <span>北京</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="上海" class="js_select_city">
+                                                <span>上海</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="天津" class="js_select_city">
+                                                <span>天津</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="重庆" class="js_select_city">
+                                                <span>重庆</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="华东" class="js_select_dist">
+                                                <span>华东</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="山东" class="js_select_city">
+                                                <span>山东</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="江苏" class="js_select_city">
+                                                <span>江苏</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="浙江" class="js_select_city">
+                                                <span>浙江</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="安徽" class="js_select_city">
+                                                <span>安徽</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="华南" class="js_select_dist">
+                                                <span>华南</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="广东" class="js_select_city">
+                                                <span>广东</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="福建" class="js_select_city">
+                                                <span>福建</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="广西" class="js_select_city">
+                                                <span>广西</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="海南" class="js_select_city">
+                                                <span>海南</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="东北" class="js_select_dist">
+                                                <span>东北</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="辽宁" class="js_select_city">
+                                                <span>辽宁</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="吉林" class="js_select_city">
+                                                <span>吉林</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="黑龙江" class="js_select_city">
+                                                <span>黑龙江</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-sm-2 col-sm-offset-2">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="西南" class="js_select_dist">
+                                                <span>西南</span>
+                                            </label>
+                                        </td>
+                                        <td class="col-sm-8">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="四川" class="js_select_city">
+                                                <span>四川</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="云南" class="js_select_city">
+                                                <span>云南</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="贵州" class="js_select_city">
+                                                <span>贵州</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="西藏" class="js_select_city">
+                                                <span>西藏</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="华北" class="js_select_dist">
+                                                <span>华北</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="河北" class="js_select_city">
+                                                <span>河北</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="山西" class="js_select_city">
+                                                <span>山西</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="内蒙古" class="js_select_city">
+                                                <span>内蒙古</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="district" value="西北" class="js_select_dist">
+                                                <span>西北</span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="陕西" class="js_select_city">
+                                                <span>陕西</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="新疆" class="js_select_city">
+                                                <span>新疆</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="甘肃" class="js_select_city">
+                                                <span>甘肃</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="宁夏" class="js_select_city">
+                                                <span>宁夏</span>
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="source" value="青海" class="js_select_city">
+                                                <span>青海</span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">预计投放费用</label>
+                            <div class="col-sm-10">
+                                <table class="table m-b-xs">
+                                    <thead>
+                                        <tr>
+                                            <th>优惠券名称</th>
+                                            <th>类型</th>
+                                            <th>数量（张）</th>
+                                            <th></th>
+                                            <th>渠道单价（元）</th>
+                                            <th></th>
+                                            <th>投放费用（元）</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>良品铺子双十一促销</td>
+                                            <td>折扣券</td>
+                                            <td class="js_number"></td>
+                                            <td>X</td>
+                                            <td class="js_price">1.00</td>
+                                            <td>=</td>
+                                            <td>
+                                                <strong class="text-danger">
+                                                    ¥ <span class="js_total_price"></span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2 js_tips_container">
+                                <p class="form-control-static text-muted js_amount_tips">
+                                    *该¥<span class="text-danger js_total_price"></span>元投放费用，将暂时冻结。开始投放时将自动开始扣除。若审核不通过，该金额会返还到账户余额中。
+                                </p>
+                                <p class="form-control-static text-muted">
+                                    *最终投放时间与渠道，以实际投放为准。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">确认，并提交审核</button>
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script type="text/html" id="cityTemplate">
+        <div class="btn-group m-r-sm m-b-sm">
+            <a href="javascript:;" class="btn btn-default btn-sm" disabled>{{city}}</a>
+            <a href="javascript:;" class="btn btn-default btn-sm js_del" title="删除" data-city="{{city}}">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </script>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        window.aid = '123456';
+        window.account = '/Plus/account2.php';
+        seajs.use(["dist/application/app.js", "dist/coupon/init.js"]);
+    </script>
+
+
+</body>
+
+</html>

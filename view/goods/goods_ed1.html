@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>添加商品</p>
+        </header>
+        <section class="scrollable  wrapper">
+            <form class="form-horizontal form-validate" method="post" data-ignore="[]" action="/api/form/ajaxform">
+                <div class="alert alert-warning errorContainer hd">
+                    <h5><i class="fa fa-bell-o m-r-xs"></i><b>以下信息填写有误,请重新填写!</b>
+                    </h5>
+                    <div class="errorLabelContainer m-l-md"></div>
+                </div>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tabinfo" data-toggle="tab">基本信息</a>
+                            </li>
+                            <li><a href="#tabdescribe" data-toggle="tab">商品描述</a>
+                            </li>
+                            <li><a href="#tabspecifications" data-toggle="tab">商品规格</a>
+                            </li>
+                            <li><a href="#tabparameter" data-toggle="tab">属性参数</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabinfo">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">系统分类</label>
+                                    <div class="col-sm-3 must">
+                                        <select class="ww hd" name="sysClassify" data-rule-required="true" data-msg-required="请选择系统分类" data-toggle="select2" data-placeholder="请选择系统分类">
+                                            <option value=""></option>
+                                          
+                                                <option value="5">大家电</option>
+                                                <option value="6">影音电器</option>
+                                                <option value="7">生活电器</option>
+                                                <option value="8">厨房电器</option>
+                                                <option value="9">个人护理</option>
+                                         
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">自定义分类</label>
+                                    <div class="col-sm-3 must">
+                                        <select class="ww hd" name="classifyId" multiple="multiple" data-maxcount="3" data-rule-required="true" data-msg-required="请选择自定义分类" data-toggle="select2" data-placeholder="请选择系统分类">
+                                            <option value=""></option>
+                                            <optgroup label="服装鞋包">
+                                                <option value="1">男装</option>
+                                                <option value="2">流行男鞋</option>
+                                                <option value="3">女装</option>
+                                                <option value="4">女鞋</option>
+                                            </optgroup>
+                                            <optgroup label="家用电器">
+                                                <option value="5">大家电</option>
+                                                <option value="6">影音电器</option>
+                                                <option value="7">生活电器</option>
+                                                <option value="8">厨房电器</option>
+                                                <option value="9">个人护理</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">商品名称</label>
+                                    <div class="col-sm-3 must">
+                                        <input type="text" class="form-control" data-rule-required="true" data-msg-required="商品名称不能为空" name="Name">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">标签</label>
+                                    <div class="col-sm-3 ">
+                                        <select class="ww hd" name="tags" multiple="multiple" data-maxcount="10" data-rule-required="true" data-toggle="select2" data-placeholder="选择商品标签">
+                                            <option value=""></option>
+                                            <option value="1">新片</option>
+                                            <option value="2">特价</option>
+                                            <option value="3">返利</option>
+                                            <option value="4">打折</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">货号</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="ProductsSn" title="若留空则由系统自动生成">
+                                    </div>
+                                    <div class="help-inline">若留空则由系统自动生成</div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">销售价</label>
+                                    <div class="col-sm-2 must">
+                                        <input type="text" class="form-control" name="SellPrice" data-rule-ismoney="true" data-rule-required="true" data-msg-required="销售价不能为空">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">市场价</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="MarketPrice" data-rule-ismoney="true">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">库存</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="Inventory" data-rule-digits="true">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">重量</label>
+                                    <div class="col-sm-2">
+
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="Weight" data-rule-positive="true">
+                                            <span class="input-group-addon">kg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">体积</label>
+                                    <div class="col-sm-2">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="Volume" data-rule-positive="true">
+                                            <span class="input-group-addon">m³</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">是否上架:</label>
+                                    <div class="col-sm-2">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_up" checked="checked" />是
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="is_up" />否
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">商品图片:</label>
+                                    <div class="col-sm-10">
+                                        <div id="upimg_main">
+                                            <input id="file_upload" type="file" data-toggle="uploadify" />
+                                            <ul class="ipost-list ui-sortable" id="fileList">
+                                            </ul>
+                                            <div id="file_upload_queue" class="uploadifyQueue">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabdescribe">
+                                <textarea rows="13" data-toggle="kindeditor" data-rule-rangelength="[1,10000]" data-rule-required="true" data-msg-required="简介不能为空" name="Logistics">
+                                </textarea>
+                            </div>
+                            <div class="tab-pane" id="tabspecifications">
+
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="enableSpecifications" id="enablespecifications" />启用规格
+                                </label>
+                                <button class="btn btn-default btn-sm " data-toggle="modal" data-target="#specificationsList_modal" disabled="disabled" id="specificationsbutton">
+                                    添加规格
+                                </button>
+                                <span class="help-inline">开启规格前先填写以上价格等信息，可自动复制信息到货品</span>
+                                <div class="line line-dashed line-lg pull-in "></div>
+                                <table class="table table-bordered" id="specificationstable">
+                                    <thead>
+                                        <tr>
+                                            <th>颜色
+                                            </th>
+                                            <th>发动机
+                                            </th>
+                                            <th class="col-sm-2">货号</th>
+                                            <th class="col-sm-1 mn70">销售价</th>
+                                            <th class="col-sm-1 mn70">市场价</th>
+                                            <th class="col-sm-1 mn70">库存</th>
+                                            <th class="col-sm-1 mn70">重量</th>
+                                            <th class="col-sm-1 mn70">体积</th>
+                                            <th class="col-sm-1"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <td>
+                                            土豪金
+                                        </td>
+                                        <td>250</td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-default delrow" type="button">
+                                                <i class="fa fa-trash-o text-muted"></i>
+                                            </button>
+                                        </td>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="tab-pane" id="tabparameter">settings</div>
+                            <div class="line line-dashed line-lg pull-in"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                    <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </form>
+        </section>
+    </section>
+    <div class="modal fade in" id="specificationsList_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">选择规格值</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal form-validate form-modal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">选择规格</label>
+                            <div class="col-sm-7">
+                                <select class="input-xls selectSpecifications_list" data-selected="1102" name="selectSpecifications" multiple="multiple" data-maxlength="10" data-placeholder="选择规格" data-remote="/api/form/specificationList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group SpecVal" id="SpecVal_1102">
+                            <label class="col-sm-2 control-label">版本[5s]
+                                <input type="hidden" value="1102" name="SpecVal[0].SpecId">
+                            </label>
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="SpecVal[0].Ids" value="224" title="开放版">开放版</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="SpecVal[0].Ids" value="225" title="联通版">联通版</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="SpecVal[0].Ids" value="226" title="移动版">移动版</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="SpecVal[0].Ids" value="227" title="电信版">电信版</label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="generatespecifications">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+    window.uploadSetting = {
+        count: 20,
+        data: null, //自定义提交数据 {id:11,key:"hxsq22dl"}
+        upload_path: "/api/form/uploadImg",
+        delete_path: "/api/form/removeImg",
+        swf_path: "/assets/swf/uploadify.swf",
+        maxlength: "2MB"
+    }
+    </script>
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/goodsv/init.js", "dist/uploadify/init.js"]) 
+    </script>
+
+
+</body>
+
+</html>

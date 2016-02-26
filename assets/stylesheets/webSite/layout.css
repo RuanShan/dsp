@@ -1,0 +1,31 @@
+/* 
+author:brian
+组件css 复用框架*/
+.w1170{width: 1170px;margin: auto}
+.bodyer{min-height: 300px;}
+
+.hd-box{height: 60px;}
+.hd-box .logo{float: left;width: 120px;height: 60px;background: #ececec;}
+.hd-box .nav-box{float: right;width: 720px;height: 60px;}
+.hd-box .nav-list{margin-left:30px;}
+.hd-box ul.nav-list li{float: left;display: block;font-size: 16px;color: #333333;}
+.hd-box ul.nav-list li{float: left;display: block;}
+	ul.nav-list li a.item{display: block;font-size: 16px;color: #333333;padding:18px;}
+	ul.nav-list li.register-item{padding:10px 0px 0px 12px;}
+	ul.nav-list li.login-item{padding:10px 0px 0px 12px;}
+.footer{min-width: 1170px;overflow: hidden;background: #fff;height: 250px;}
+.foot-content{padding: 10px 0px;}
+
+.footer .foot-logo{width: 220px;float: left;height: 30px;background: #ececec;margin-right: 150px; }
+.foot-info {float: left;}
+.foot-info dl{float: left;margin-right: 60px;}
+.foot-info dt{font-weight: bold;font-size: 16px;}
+.foot-info dd{line-height: 30px;}
+.footer .copyright{text-align: center;color: #8b8b8b;}
+
+
+
+a.btn{display: block;width: 78px;height: 40px;border-radius: 4px;-webkit-border-radius:4px;-o-border-radius:4px;line-height: 40px;color: #fff;text-align: center;}
+a.primary{background: #1283ff;}
+a.login{background: #4ab293;}
+.hide{display: none;}

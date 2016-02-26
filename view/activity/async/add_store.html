@@ -1,0 +1,41 @@
+<form id="recom" class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">追加活动库存</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">商品名称：</label>
+                    <div class="col-sm-8 ">
+                        <p class="form-control-static">【天然】Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">当前普通库存（件）：</label>
+                    <div class="col-sm-8 ">
+                        <p class="form-control-static">1000</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">当前活动库存（件）：</label>
+                    <div class="col-sm-8 ">
+                        <p class="form-control-static">200</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label must">追加活动库存（件）：</label>
+                    <div class="col-sm-5 ">
+                        <input type="text" class="form-control" data-rule-required="true" data-rule-positiveInteger="true" name="stores"  data-rule-range="[0,1200]">
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>确认追加</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>vshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <form class="form-inline talbe-search js_form" method="post" action="/api/Page/list">
+            <header class="header bg-white b-b clearfix">          
+                <div class="row m-t-sm">
+                    <div class="col-sm-7">
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">母婴</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="category" value="母婴" checked="checked" />母婴</a></li>
+                                <li class="active"><a href="javascript:;">
+                                    <input type="radio" name="category" value="女装" />女装</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="category" value="箱包" />箱包</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="category" value="全部" />全部</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">奶粉</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="subcategory" value="奶粉" checked="checked" />奶粉</a></li>
+                                <li class="active"><a href="javascript:;">
+                                    <input type="radio" name="subcategory" value="玩具" />玩具</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="subcategory" value="孕妇装" />孕妇装</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="subcategory" value="全部" />全部</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">待审核</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="status" value="待审核"  />待审核</a></li>
+                                <li class="active"><a href="javascript:;">
+                                    <input type="radio" name="status" value="已修改待审核" />已修改待审核</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="status" value="已通过" />已通过</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="status" value="已拒绝" checked="checked" />已拒绝</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="status" value="已关闭" />全部</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="btn-group">
+                            <a class="btn btn-primary btn-sm js_filter" href="javascript:;" >
+                               筛选条件 
+                               <i class="fa fa-angle-double-down m-l-xs"></i>
+                               <i class="fa fa-angle-double-up hide m-l-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">搜商品</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active">
+                                        <a href="#">
+                                            <input type="radio" value="0" name="searchBy" checked="checked" />搜商品
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="1" name="searchBy" />搜店铺
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="button" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="js_filter_container">
+                <header class="header bg-white b-b clearfix">
+                    <div class="row m-t-sm">
+                        <div class="col-sm-1 m-t-xs">
+                            <label class="control-label">佣金比例：</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <button class="btn btn-default btn-sm" type="button" data-start="" data-end="">全部</button> 
+                            <button class="btn btn-default btn-sm" type="button" data-start="0" data-end="1">0%-1%</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="1" data-end="5">1%-5%</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="5" data-end="15">5%-15%</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="15" data-end="30">15%-30%</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="30" data-end="50">30%-50%</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="50" data-end="">50%以上</button>
+                            <input size="10" class="input-sm form-control m-l-lg js_start" type="text" name="start" />
+                            <label class="control-label"> - </label>
+                            <input size="10" class="input-sm form-control js_end" type="text" name="end" />
+                            <button class="btn btn-default btn-sm js_custom_number" type="button">确认</button>
+                            <input type="hidden" name="custom_charges" value="" />
+                        </div>
+                    </div>
+                    <div class="row m-t-sm">
+                        <div class="col-sm-1 m-t-xs">
+                            <label class="control-label">库存量：</label>
+                        </div>
+                        <div class="col-sm-10"> 
+                            <button class="btn btn-default btn-sm" type="button" data-start="" data-end="">全部</button>
+                            <button class="btn btn-primary btn-sm" type="button" data-start="0" data-end="100">0-100</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="100" data-end="1000">100-1000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="1000" data-end="5000">1000-5000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="5000" data-end="10000">5000-10000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="10000" data-end="">10000以上</button>
+                            <input size="10" class="input-sm form-control m-l-lg js_start" type="text" name="start" />
+                            <label class="control-label"> - </label>
+                            <input size="10" class="input-sm form-control js_end" type="text" name="end" />
+                            <button class="btn btn-default btn-sm js_custom_number" type="button">确认</button>
+                            <input type="hidden" name="custom_storageNumber" value="" />
+                        </div>
+                    </div>
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-sm-1 m-t-xs">
+                            <label class="control-label">销量：</label>
+                        </div>
+                        <div class="col-sm-10"> 
+                            <button class="btn btn-default btn-sm" type="button" data-start="" data-end="">全部</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="0" data-end="50">0-50</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="50" data-end="100">50-100</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="100" data-end="1000">100-1000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="1000" data-end="10000">1000-10000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="10000" data-end="">10000以上</button>
+                            <input size="10" class="input-sm form-control m-l-lg js_start" type="text" name="start" />
+                            <label class="control-label"> - </label>
+                            <input size="10" class="input-sm form-control js_end" type="text" name="end" />
+                            <button class="btn btn-default btn-sm js_custom_number" type="button">确认</button>
+                            <input type="hidden" name="custom_salesNumber" value="" />
+                        </div>
+                    </div>
+                    <div class="row m-b-sm m-t-sm">
+                        <div class="col-sm-1 m-t-xs">
+                            <label class="control-label">售价：</label>
+                        </div>
+                        <div class="col-sm-10"> 
+                            <button class="btn btn-default btn-sm" type="button" data-start="" data-end="">全部</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="0" data-end="50">0-50</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="50" data-end="100">50-100</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="100" data-end="500">100-500</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="500" data-end="1000">500-1000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="1000" data-end="5000">1000-5000</button>
+                            <button class="btn btn-default btn-sm" type="button" data-start="5000" data-end="">5000以上</button>
+                            <input size="10" class="input-sm form-control m-l-lg js_start" type="text" name="start" />
+                            <label class="control-label"> - </label>
+                            <input size="10" class="input-sm form-control js_end" type="text" name="end" />
+                            <button class="btn btn-default btn-sm js_custom_number" type="button">确认</button>
+                            <input type="hidden" name="custom_prices" value="" />
+                        </div>
+                    </div>
+                </header>
+                <header class="header bg-white b-b clearfix">
+                    <div class="row m-t-sm">
+                        <div class="col-sm-6">
+                            <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否批量通过?" disabled="disabled">批量通过</a>
+                            <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-remote="async/check_refuse.html" data-toggle="ajaxModal" disabled="disabled">批量拒绝</a>
+                            <a class="btn btn-default btn-sm" href="javascript:;" data-trigger="batch" data-remote="async/close_reason.html" data-toggle="ajaxModal" disabled="disabled">批量关闭</a>
+                            <a class="btn btn-default btn-sm m-l-lg" href="goods_detail_new.html">开始审核</a>
+                        </div>
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <p class="m-t-xs">
+                                商品共 32056 个，待审核 <span class="text-info">10</span> 个 ，通过 20 个，拒绝 5 个，关闭 1 个 
+                            </p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+            <input type="hidden" name="orderBy" id="orderBy" value="desc"/>
+            <input type="hidden" name="order" id="order" value="depart" />     
+        </form>
+
+        <section class="scrollable wrapper w-f js_user_list" style="top:290px;">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th width="1%">
+                                    <input type="checkbox" />
+                                </th>
+                                <th width="8%">商品名称</th>
+                                <th width="6.8%" class="th-sortable" data-sort-name="depart">商品状态</th>
+                                <th width="5%" class="th-sortable" data-sort-name="depart">库存</th>
+                                <th width="5%" class="th-sortable" data-sort-name="depart">销量</th>
+                                <th width="6.5%" class="th-sortable" data-sort-name="depart">销售价</th>
+                                <th width="7%" class="th-sortable" data-sort-name="depart">佣金比例</th>
+                                <th width="5%" class="th-sortable" data-sort-name="depart">佣金</th>
+                                <th width="11%">提交时间</th>
+                                <th width="6%">计划名称</th>
+                                <th width="4%">状态</th>
+                                <th width="8.6%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2">
+                                </td>
+                                <td>
+                                    牛肉干牛肉干
+                                </td>
+                                <td>
+                                    上架中
+                                </td>
+                                <td>
+                                    10000
+                                </td>
+                                <td>
+                                    10000
+                                </td>
+                                <td>
+                                    ￥200.00
+                                </td>
+                                <td>
+                                    5%-15%
+                                </td>
+                                <td>
+                                    ￥5.00
+                                </td>
+                                <td>
+                                    2014/12/22 22:22:22
+                                </td>
+                                <td>
+                                    张三
+                                </td>
+                                <td>
+                                    待审核
+                                </td>
+                                <td>
+                                	<a class="btn btn-default btn-sm" href="javascript:;" title="越权">越权</a>
+                                    <a class="btn btn-default btn-sm" href="goods_detail.html" title="详细">详细</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/goods/init.js"])
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+    <style>
+      ul.list-template li{float: left;margin: 0 0 20px 20px;width: 170px;height: 383px;text-align: center;
+background: url("../../Assets/images/template/radio_iphone0.png") no-repeat center top;position: relative;cursor: pointer;}
+      ul.list-template li.selected{}
+      .list-template li.selected, .list-template li:hover {background: url(../../Assets/images/template/radio_iphone.png) no-repeat center top;}
+      .list-template li img{position: absolute;top: 68px;left: 14px;width: 144px;height: 225px;cursor: pointer;}
+      .list-template li .radio{cursor: pointer;position: absolute;top: 355px;left: 50px}
+      ul.list-template-bottom li{width: 120px;height: 100px;background: none;}
+      ul.list-template-bottom img{width: 120px;height: 100px;top: 0px;left: 0px;}
+      .list-template-bottom li.selected, .list-template-bottom li:hover{background: none;}
+      .list-template-bottom li .radio{top: 100px;margin-left:-25px;}
+    </style>
+</head>
+
+<body>
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>添加专题</p>
+      <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+      </a>
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body" id="coupons_set">
+          <form class="form-horizontal form-validate" method="post" action="/plus/page.php?step=1">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">选择模板</label>
+              <div class="col-sm-10">
+                <p class="m-t-sm">从下面选择一个模板或者风格来创建专题页面</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">选择模板</label>
+              <div class="col-sm-10">
+                <div id="template_lists" class="carousel slide" data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner" style="margin-left:60px;">
+                    <div class="item active">
+                      <ul class="m-b-n list-template list-unstyled js_no_submit_template" style="float:left;">
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="1" class="v-bottom js_radio">
+                              <span>模板一（竖版）</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="1" class="v-bottom js_radio">
+                              <span>模板一（竖版）</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="3" class="v-bottom js_radio">
+                              <span>文章专场</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="4" class="v-bottom js_radio">
+                              <span>单品牌模板</span>
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <ul class="m-b-n list-template list-unstyled js_no_submit_template" style="float:left;">
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="5" class="v-bottom js_radio">
+                              <span>秒杀模板</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="7" class="v-bottom js_radio">
+                              <span>1元购</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="6" class="v-bottom js_radio">
+                              <span>综合专场</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="8" class="v-bottom js_radio">
+                              <span>分会场1</span>
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="item">
+                      <ul class="m-b-n list-template list-unstyled js_no_submit_template" style="float:left;">
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+
+                            <div class="radio">
+                              <input type="radio" name="list" value="8" class="v-bottom js_radio">
+                              <span>分会场2</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="8" class="v-bottom js_radio">
+                              <span>分会场3</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="8" class="v-bottom js_radio">
+                              <span>分会场4</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="8" class="v-bottom js_radio">
+                              <span>分会场5</span>
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="item">
+                      <ul class="m-b-n list-template list-unstyled js_no_submit_template" style="float:left;">
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="9" class="v-bottom js_radio">
+                              <span>分会场6</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="10" class="v-bottom js_radio">
+                              <span>国家馆</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="11" class="v-bottom js_radio">
+                              <span>黑五会场</span>
+                            </div>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <img class="m-b-xs" src="/Assets/images/template/3.jpg">
+                            <div class="radio">
+                              <input type="radio" name="list" value="12" class="v-bottom js_radio">
+                              <span>内容专场</span>
+                            </div>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a class="left carousel-control" href="#template_lists" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  </a>
+                  <a class="right carousel-control" href="#template_lists" role="button" data-slide="next">
+                    <i class="fa fa-arrow-circle-right fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <p class="m-t-sm">从下面选择一个模板或者风格来创建商品图片上的专题标签</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <ul class="list-template list-unstyled list-template-bottom">
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/4.jpg">
+                      <div  class="radio" style="width: 130px;margin-left:-50px;">
+                        <input type="radio" name="list2" value="1" class="v-bottom js_radio">
+                        <span>模板一（无标签）</span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/5.jpg">
+                      <div  class="radio">
+                        <input type="radio" name="list2" value="2" class="v-bottom js_radio">
+                        <span>模板二</span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/6.jpg">
+                      <div  class="radio">
+                        <input type="radio" name="list2" value="3" class="v-bottom js_radio">
+                        <span>模板三</span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/7.jpg">
+                      <div  class="radio">
+                        <input type="radio" name="list2" value="4" class="v-bottom js_radio">
+                        <span>模板四</span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/8.jpg">
+                      <div  class="radio">
+                        <input type="radio" name="list2" value="5" class="v-bottom js_radio">
+                        <span>模板五</span>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <img class="m-b-xs" src="/Assets/images/template/9.jpg">
+                      <div  class="radio">
+                        <input type="radio" name="list2" value="6" class="v-bottom js_radio">
+                        <span>模板六</span>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary js_page_edit_submit" data-loading-text="保存中..." disabled>下一步</button>
+                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+  <script src="/assets/javascripts/seajs_config.js"></script>
+  <script type="text/javascript">seajs.use(["dist/application/app.js","dist/subject/init.js"])</script>
+
+</body>
+
+</html>

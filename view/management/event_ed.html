@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/formwizard.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+          <p>编辑满减/满送活动</p>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate form-wizard" method="post" action="/Plus/free.php?step=1">   
+
+                        <div class="step" id="firstStep">
+                            <ul class="wizard-steps steps-3">
+                                <li class='active'>
+                                    <div class="single-step">
+                                        <span class="title">1</span>
+                                        <span class="circle">
+                                            <span class="active"></span>
+                                        </span>
+                                        <span class="description">设置活动信息
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-step">
+                                        <span class="title">2</span>
+                                        <span class="circle"></span>
+                                        <span class="description">设置活动详情
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single-step">
+                                        <span class="title">3</span>
+                                        <span class="circle"></span>
+                                        <span class="description">选择活动商品
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="step-forms">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">活动名称：</label>
+                                    <div class="col-sm-4 must">
+                                        <input type="text" class="form-control" data-rule-required="true" name="Name" data-rule-rangelength="[2,30]"/>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">请输入2-30个字</span></p>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">活动时间：</label>
+                                    <div class="col-sm-4 must">
+                                        <div class="input-group"> 
+                                            <input type="text" class="form-control" name="date" data-rule-required="true"  readonly="readonly" id="solddate" data-toggle="daterangepicker" /><span class="input-group-addon" ><i class="fa fa-calendar"></i></span>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <p class="form-control-static"><span class="help-inline">活动开始时间需小于活动结束时间</span></p>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">活动标签：</label>
+                                    <div class="col-sm-2">
+                                        <select class="form-control" data-rule-required="true" name="module"  style="width:180px;">
+                                            <option value="" selected="">请选择</option>
+                                            <option data-val="1" value="1">满减</option>
+                                            <option data-val="1" value="2">满折</option>
+                                            <option data-val="1" value="3">满送</option>
+                                            <option data-val="2" value="4">满包邮</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-offset-2">
+                                        <p class="form-control-static">
+                                            <span class="help-inline">一个商品只能参加一个活动；<br>您所选择的活动类型在商品详情中显示，示意如下：</span>
+                                            <span class="help-block">
+                                                <span class="bg-warning padder m-r-sm pull-left">满减</span>
+                                                <span class="pull-left">2015年11月18日-2015年12月31日<br>满300元减10元</span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed line-lg pull-in"></div>
+                            </div>
+                        </div>
+
+                      <div class="line line-dashed line-lg pull-in"></div>
+                      <div class="form-group">
+                          <div class="col-sm-4 col-sm-offset-2">
+                            <a href="event_list.html" class="btn btn-default">取消</a>
+                            <button type="submit" class="btn btn-primary">下一步</button>
+                          </div>
+                      </div>
+
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+      seajs.use("dist/application/app.js")
+    </script>
+</body>
+</html>
+
+
+

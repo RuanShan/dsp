@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .m-t-s{margin-top:3px;}
+    </style>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>添加优惠券</p>
+            <a href="coupon_management.html" class="text-muted pull-right m-t pointer" title="返回">
+                <i class="fa fa-reply"></i>
+            </a>
+            <!--<a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>-->
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <div class="col-sm-10 m-l-sm">
+                                <div class="row">
+                                    <div class="col-sm-3 m-r-n-lg">
+                                        <p class="form-control-static">
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fa fa-stack-1x text-white">1</i>
+                                            </span>
+                                            <span class="pull-left text-black m-t-s">
+                                                <strong>添加优惠券</strong>
+                                            </span>
+                                            <span class="pull-left text-black">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-t-none"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 m-r-n-xl m-l-n-xl">
+                                        <p class="form-control-static">
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-light"></i>
+                                                <i class="fa fa-stack-1x text-white">2</i>
+                                            </span>
+                                            <span class="pull-left text-light m-t-s">
+                                                <strong>选择商品</strong>
+                                            </span>
+                                            <span class="pull-left text-light">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-t-none"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 m-r-n-xl m-l-n-xl">
+                                        <p class="form-control-static">
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-light"></i>
+                                                <i class="fa fa-stack-1x text-white">3</i>
+                                            </span>
+                                            <span class="pull-left text-light m-t-s">
+                                                <strong>投放设置</strong>
+                                            </span>
+                                            <span class="pull-left text-light">
+                                                <i class="fa fa-2x fa-long-arrow-right m-l-sm m-t-none"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-3 m-l-n-xl">
+                                        <p class="form-control-static">
+                                            <span class="fa-stack fa-1x pull-left m-r-sm m-t-n-xxs"> 
+                                                <i class="fa fa-circle fa-stack-2x text-light"></i>
+                                                <i class="fa fa-stack-1x text-white">4</i>
+                                            </span>
+                                            <span class="pull-left text-light m-t-s">提交审核</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <section class="panel panel-default">
+                                    <header class="panel-heading bg-light">
+                                        折扣券设置
+                                    </header>
+                                    <div class="panel-body">
+                                        <div class="line line-dashed line-lg pull-in"></div>
+                                        <div class="form-group">
+                                            <div class="col-sm-3 col-sm-offset-9">
+                                                <button type="button" class="btn btn-primary">预览</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <div class="col-sm-8">
+                                <section class="panel panel-default">
+                                    <header class="panel-heading bg-light">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#tabinfo" data-toggle="tab">券面信息</a>
+                                            </li>
+                                            <li>
+                                                <a href="#tabsetting" data-toggle="tab">领券设置</a>
+                                            </li>
+                                            <li>
+                                                <a href="#tabdetail" data-toggle="tab">折扣券详情</a>
+                                            </li>
+                                        </ul>
+                                    </header>
+                                    <div class="panel-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tabinfo">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            商家名称
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <p class="form-control-static">微盟Weimob</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            商家Logo
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <p class="form-control-static">
+                                                                <span class="pull-left m-r-sm">
+                                                                    <img style="max-width:100px" src="/assets/images/goods/3.jpg" alt="">
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            卡券颜色
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <p class="form-control-static">
+                                                                <span class="pull-left m-r-sm">
+                                                                    <img style="max-width:100px" src="/assets/images/goods/3.jpg" alt="">
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            折扣额度
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" data-rule-digits="true" name="number">
+                                                                <span class="input-group-addon">
+                                                                    折
+                                                                </span>
+                                                            </div>
+                                                            <span>
+                                                                请填写1-9.9之间的数字，精确到小数点后1位
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            折扣券名称
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" data-rule-digits="true" name="number">
+                                                                <span class="input-group-addon">
+                                                                    张
+                                                                </span>
+                                                            </div>
+                                                            <span class="help-block">
+                                                                每个用户领券上限，如不填，则默认为1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            副标题
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <p class="form-control-static">
+                                                                <span class="pull-left m-r-sm">
+                                                                    <img style="max-width:100px" src="/assets/images/goods/3.jpg" alt="">
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            有效期
+                                                        </label>
+                                                        <div class="col-sm-2">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="" />
+                                                                固定日期
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" name="time" value="2014/05/12 00:00 - 2014/06/12 23:59" data-rule-required="true" readonly="readonly" data-position="top-right" data-toggle="daterangepicker" aria-required="true">
+                                                                <span class="input-group-addon">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-4 col-sm-offset-2">
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="" />
+                                                                领取后
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tabsetting">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">
+                                                            领券限制<br />(选填)
+                                                        </label>
+                                                        <div class="col-sm-5">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" data-rule-digits="true" name="number">
+                                                                <span class="input-group-addon">
+                                                                    张
+                                                                </span>
+                                                            </div>
+                                                            <span class="help-block">
+                                                                每个用户领券上限，如不填，则默认为1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-5 col-sm-offset-2">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" name="share" >用户可以分享领券链接
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-sm-5 col-sm-offset-2">
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" name="send" >用户领券后可转赠其他好友
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tabdetail">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label must">
+                                                            使用须知
+                                                        </label>
+                                                        <div class="col-sm-8">
+                                                            <textarea rows="6" class="form-control" name="info" data-rule-required="true"></textarea>
+                                                            <span class="help-block">
+                                                                （限300个汉字）
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label must">
+                                                            客服电话
+                                                        </label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control" name="name" data-rule-required="true">
+                                                            <span class="help-block">
+                                                                手机或固话
+                                                            </span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-4">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存并选择商品</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+
+            
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/coupon/init.js"]);
+    </script>
+
+
+</body>
+
+</html>

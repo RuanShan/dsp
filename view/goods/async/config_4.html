@@ -1,0 +1,33 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">默认抽检比例设置</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">默认抽检比例</label>
+                    <div class="col-sm-7">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="proportion" data-rule-required="true" data-rule-positiveInteger="true" />
+                            <span class="input-group-addon">%</span>
+                        </div>                     
+                        
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+ 
+  
+
+

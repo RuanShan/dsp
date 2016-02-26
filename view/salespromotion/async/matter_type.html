@@ -1,0 +1,49 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog" style="max-width:440px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">选择一个素材类型</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" checked="checked" data-url="matter_ed.html">常规图片素材<br />
+                            <span class="small text-muted">各个位置banner使用</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" data-url="matter_goods_ed.html">商品素材<br />
+                            <span class="small text-muted">每日推荐商品使用</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" data-url="matter_brand_ed.html">品牌素材<br />
+                            <span class="small text-muted">品牌馆使用</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" data-url="matter_load_ed.html">APP启动页<br />
+                            <span class="small text-muted">按机型设置图片</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-toggle="toDetail">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

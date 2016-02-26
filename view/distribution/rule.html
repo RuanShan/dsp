@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <section class="scrollable  wrapper">
+            <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxformurl">
+
+                <section class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">自营商品分销</label>
+                            <div class="col-sm-10">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="radiotype" id="radio1" value="radio1" checked>
+                                    开启认证大V自营分销
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="radiotype" id="radio2" value="radio2">
+                                    开启所有V店主自营分销
+                                  </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">合伙人规则：</label>
+                            <div class="col-sm-10">
+                                <textarea rows="13" class="hd" data-toggle="kindeditor" data-tongji="remain" data-tongji-target=".js_kindeditor_tongji" data-rule-rangelength="[1,50000]" data-rule-required="true" data-msg-required="简介不能为空" name="Logistics"></textarea>
+                                <p class="pull-right js_kindeditor_tongji">还可输入{0}字</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">大V自营商品分销说明：</label>
+                            <div class="col-sm-10">
+                                <textarea rows="13" class="hd" data-toggle="kindeditor" data-tongji="remain" data-tongji-target=".js_kindeditor_tongji" data-rule-rangelength="[1,50000]" data-rule-required="true" data-msg-required="简介不能为空" name="Logistics"></textarea>
+                                <p class="pull-right js_kindeditor_tongji">还可输入{0}字</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公告标题：</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" data-rule-required="true" name="title" placeholder=""/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公告内容：</label>
+                            <div class="col-sm-3">
+                                <textarea rows="4" class="form-control" name="rule" data-rule-required="true" placeholder="" aria-required="true" aria-invalid="true"></textarea>                            
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <input type="hidden" value="0" id="js_store_way"/>
+                                <button type="submit" data-confirm="true" data-confirm-msg="" class="btn btn-primary js_save_submit" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+
+</body>
+
+</html>

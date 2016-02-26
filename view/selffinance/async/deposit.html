@@ -1,0 +1,31 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">申请提现</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label must">请输入提现的金额</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control js_pay_input" data-rule-required="true" data-rule-ismoney="true" name="money" id="money" data-rule-range="[1000,1200.39]" placeholder="本次最多可提现1200.39元" />
+                    </div>
+                    <div class="col-sm-1 m-t-sm m-l-n-md"><span class="help-inlien">元</span></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <p class="form-control-static">
+                            <h4>本次提现金额为：￥10000.00</h4>
+                        </p>
+                        <input type="hidden"  name="money" value="10000" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer"> 
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled >保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

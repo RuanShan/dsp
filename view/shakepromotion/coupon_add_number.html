@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>补充投放数量</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">输入投放数量</label>
+                            <div class="col-sm-2">
+                                <div class="input-group">
+                                    <input type="text" class="form-control js_input_number" data-rule-required="true" data-rule-digits="true" data-rule-min="501" data-msg-min="请输入大于 500 的数值" name="number" value="501" />
+                                    <span class="input-group-addon">
+                                        张
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 m-l-n">
+                                <p class="form-control-static">*起投量需大于500张</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">投放时间</label>
+                            <div class="col-sm-3">
+                                <p class="form-control-static">2015/5/24 - 2013/6/24</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">投放渠道</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <p class="form-control-static">已选：</p>
+                                    </div>
+                                    <div class="col-sm-10 m-l-n">
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>北京</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>广东</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>吉林</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>内蒙古</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>上海</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>天津</a>
+                                        </div>
+                                        <div class="btn-group m-r-xs m-b-xs">
+                                            <a href="javascript:;" class="btn btn-default btn-sm" disabled>重庆</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">预计投放费用</label>
+                            <div class="col-sm-10">
+                                <table class="table m-b-xs">
+                                    <thead>
+                                        <tr>
+                                            <th>优惠券名称</th>
+                                            <th>类型</th>
+                                            <th>数量（张）</th>
+                                            <th></th>
+                                            <th>渠道单价（元）</th>
+                                            <th></th>
+                                            <th>投放费用（元）</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>良品铺子双十一促销</td>
+                                            <td>折扣券</td>
+                                            <td class="js_number">100</td>
+                                            <td>X</td>
+                                            <td class="js_price">1.00</td>
+                                            <td>=</td>
+                                            <td>
+                                                <strong class="text-danger">
+                                                    ¥ <span class="js_total_price">1001.00</span>
+                                                </strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2 js_tips_container">
+                                <p class="form-control-static text-muted js_amount_tips">
+                                    *该¥<span class="text-danger js_total_price">1000</span>元投放费用，将暂时冻结。开始投放时将自动开始扣除。若审核不通过，该金额会返还到账户余额中。
+                                </p>
+                                <p class="form-control-static text-muted">
+                                    *最终投放时间与渠道，以实际投放为准。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">确认投放</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+
+            
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        window.aid = '123456';
+        window.account = '/Plus/account2.php';
+        seajs.use(["dist/application/app.js", "dist/coupon/init.js"]);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">确认退款</h4>
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                <h3>退款请求已反馈至微盟财务</h3>
+                <p>退款操作会在3个工作日内完成</p>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,47 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">标记</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">标记</label>
+                    <div class="col-sm-7">
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="danger" checked="checked" /><i class="fa fa-flag fa-lg text-muted"></i>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="warning" /><i class="fa fa-flag fa-lg text-danger"></i>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="primary" /><i class="fa fa-flag fa-lg text-warning"></i>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="info" /><i class="fa fa-flag fa-lg text-primary"></i>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="default" /><i class="fa fa-flag fa-lg text-info"></i>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="flagname" value="default" /><i class="fa fa-flag fa-lg text-blue"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">标记信息</label>
+                    <div class="col-sm-8">
+                        <textarea rows="3" name="flaginfo" class="form-control" placeholder="请填写标记信息" data-rule-maxlength="50"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" data-toggle="ajaxPost" data-remote="/api/form/ajaxformurl" class="btn btn-default" data-confirm="false" title="删除此标记">删除</button>
+            </div>
+        </div>
+    </div>
+</form>

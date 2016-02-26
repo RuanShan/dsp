@@ -1,0 +1,89 @@
+<?php 
+$type=$_POST['type'];
+$params=$_GET['params'];
+if($params=="value"){
+	if($type==1){
+		$s='{
+			"status":0,
+			"message":"",
+			"data":[
+				{
+					"id":"1",
+					"name":"10M"
+				},
+				{
+					"id":"2",
+					"name":"20M"
+				},
+				{
+					"id":"3",
+					"name":"30M"
+				}
+			]
+		}';
+	}else{
+		$s='{
+			"status":0,
+			"message":"",
+			"data":[
+				{
+					"id":"1",
+					"name":"10元"
+				},
+				{
+					"id":"2",
+					"name":"20元"
+				},
+				{
+					"id":"3",
+					"name":"30元"
+				}
+			]
+		}';
+	}
+}else{
+	if($type==1){
+		$s='{
+			"status":0,
+			"message":"",
+			"data":[
+				{
+					"id":"1",
+					"name":"连连（可用）"
+				},
+				{
+					"id":"2",
+					"name":"能良（不可用）"
+				},
+				{
+					"id":"3",
+					"name":"流田"
+				}
+			]
+		}';
+	}else{
+		$s='{
+			"status":0,
+			"message":"",
+			"data":[
+				{
+					"id":"1",
+					"name":"连连（不可用）"
+				},
+				{
+					"id":"2",
+					"name":"能良（可用）"
+				},
+				{
+					"id":"3",
+					"name":"流田"
+				}
+			]
+		}';
+	}
+}
+
+
+echo $s;
+
+?>

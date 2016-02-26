@@ -1,0 +1,27 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/plus/goods.php?type=group">
+    <div class="modal-dialog" style="width:780px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">销售趋势图<small class="m-l-sm">店铺名称：良品铺子</small></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="1"  data-chartid="sale_modal_echarts" data-path="/plus/v_charts.php?page=3&type=1">成交额</button>
+                       <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="2"  data-chartid="sale_modal_echarts" data-path="/plus/v_charts.php?page=3&type=2">成交量</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="sale_modal_echarts" data-toggle="echartsLineArea" data-echartid="sale_modal_echarts" data-type="line" style="height: 310px" data-path="/plus/v_charts.php?page=3&type=1">
+                    <div class="load">数据加载中...</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</form>

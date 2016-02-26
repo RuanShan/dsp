@@ -1,0 +1,32 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/plus/goods.php?type=group">
+    <div class="modal-dialog" style="width:780px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">产品趋势图</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">商品名称：</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">【瑞士凯琳斯蒂】矿物蚕丝科技蚕丝面膜补水保湿美白淡斑精致面膜贴1盒/共5片正品</p>
+                    </div>
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <p class="form-control-static">
+                            <span class="m-l-xs">价格：</span>
+                            <span class="money">228.00</span>
+                            <span class="m-l-md">库存：20</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="tendency_echarts" data-toggle="echartsLineArea" data-echartid="tendency_echarts"  style="height: 310px" data-path="/plus/v_charts.php?page=5">
+                    <div class="load">数据加载中...</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</form>

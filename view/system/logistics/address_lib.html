@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                <i class="fa fa-refresh"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled>
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="btn-group m-r">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">20</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="pageSize" value="10" />10</a></li>
+                                <li class="active"><a href="javascript:;">
+                                    <input type="radio" name="pageSize" value="20" checked="checked" />20</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="pageSize" value="50" />50</a></li>
+                                <li><a href="javascript:;">
+                                    <input type="radio" name="pageSize" value="100" />100</a></li>
+                                District                  
+                            </ul>
+                        </div> 
+                        <a href="javascript:;" data-remote="async/add_addres.html" data-toggle="ajaxModal"   class="btn btn-sm btn-default"><i class="fa fa-plus m-r-xs"></i>新增地址库</a>
+                         <a href="javascript:;"  data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="<div style='width: 130px'>最多添加20条 地址库</div>"   class="btn btn-sm btn-default"><i class="fa fa-plus m-r-xs"></i>新增地址库</a>
+                    </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="keyword" placeholder="联系人" data-rule-required="true" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="sort" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th class="th-sortable" data-sort-name="Name">联系人</th>
+                                <th class="th-sortable" data-sort-name="Sort">地址</th>
+                                <th>电话</th>
+                                <th>公司名称</th>
+                                <th>发货地址</th>
+                                <th>退货地址</th>
+                                <th class="col-sm-1 mn70"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+                                </td>
+
+                                <td>宋玉杰</td>
+                                <td  data-toggle="address" data-location="[360000,360900,360902]"> 
+                                    逸仙路2816号华滋奔腾大厦A幢15楼</td>
+                                <td>402402</td>
+                                <td>上海晖硕信息科技有限公司</td>
+                                <td><i class="fa fa-check text-success "></i>
+                                </td>
+                                <td><i class="fa fa-times text-danger"></i>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" data-remote="async/ed_addres.html" data-toggle="ajaxModal" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 新品 标签" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+                                </td>
+
+                                <td>宋玉杰</td>
+                                <td>上海市宝山区逸仙路2816号华滋奔腾大厦A幢15楼</td>
+                                <td>402402</td>
+                                <td>上海晖硕信息科技有限公司</td>
+                                <td><i class="fa fa-times text-danger"></i>
+                                </td>
+                                <td><i class="fa fa-check text-success "></i>
+                                </td>
+                                <td>
+                                    <a href="javascript:;" data-remote="async/ed_addres.html" data-toggle="ajaxModal" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 新品 标签" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            <!--  <tr>
+                                        <td  colspan="5" class="nodata">暂无标签</td>
+                                    </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="1" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/location/init.js"]);
+
+    </script>
+
+</body>
+
+</html>

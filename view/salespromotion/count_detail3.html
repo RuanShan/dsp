@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/activitycenter/chart.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .shop_type{width: 64px;height: 20px;line-height: 20px;padding-left: 24px;background: url(/assets/images/goods/shop_type.png) no-repeat;display: inline-block;color: #fff;}
+    </style>
+</head>
+<body>
+    <section class="vbox chart">
+        <header class="header bg-white b-b clearfix">
+            <p>专题效果统计</p>
+            <a class="text-muted pull-right m-t pointer" href="subject_count.html" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <footer class="panel-footer bg-white no-padder m-t-sm">
+                <div class="row text-center no-gutter">
+                    <div class="col-xs-3 b-r b-l b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">10</span> 
+                        <strong class="m-b block">活动店铺数</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">33</span> 
+                        <strong class="m-b block">活动商品数</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">浏览量（PV）</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">访客数（UV）</strong>
+                    </div>
+                </div>
+                <div class="row text-center no-gutter">
+                    <div class="col-xs-3 b-r b-l b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">订单量</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">已支付订单量</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span> 
+                        <strong class="m-b block">销售量（件）</strong>
+                    </div>
+                    <div class="col-xs-3 b-r b-b b-light">
+                        <span class="h5 font-bold m-t block text-danger">1000000</span>
+                        <strong class="m-b block">销售额（￥）</strong>
+                    </div>
+                </div>
+            </footer>
+
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="count_detail.html">日期统计</a>
+                        </li>
+                        <li>
+                            <a href="count_detail2.html">商品统计</a>
+                        </li>
+                        <li class="active">
+                            <a href="#classify">店铺统计</a>
+                        </li>
+                    </ul>
+                </header>
+                <form class="talbe-search form-inline" method="post" action="/api/Page/list">             
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="classify" style="overflow-x:hidden">
+                                <section class="panel panel-default m-t-md">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped m-b-none">
+                                            <thead>
+                                                <tr>
+                                                    <th>店铺</th>
+                                                    <th>活动商品数</th>
+                                                    <th>
+                                                        订单量
+                                                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="包括未完成支付的订单">
+                                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                        </a>
+                                                    </th>
+                                                    <th>已支付订单量</th>
+                                                    <th>销售量（件）</th>
+                                                    <th>销售额（￥）</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="left">
+                                                        <div class="media">
+                                                            <span class="pull-left thumb-sm">
+                                                                <img style="height:36px" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" alt="John said" >
+                                                            </span>
+                                                            <div class="media-body">
+                                                                <div>汪星一号店</div>
+                                                                <small class="text-muted">
+                                                                    <span class="shop_type m-r-xs">旗舰店</span>
+                                                                    <span class="m-l-sm">评分：4.8</span>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>50</td>
+                                                    <td>40</td>
+                                                    <td>26</td>
+                                                    <td>30</td>
+                                                    <td>4355</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <div class="media">
+                                                            <span class="pull-left thumb-sm">
+                                                                <img style="height:36px" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" alt="John said" >
+                                                            </span>
+                                                            <div class="media-body">
+                                                                <div>汪星一号店</div>
+                                                                <small class="text-muted">
+                                                                    <span class="shop_type m-r-xs">旗舰店</span>
+                                                                    <span class="m-l-sm">评分：4.8</span>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>50</td>
+                                                    <td>40</td>
+                                                    <td>26</td>
+                                                    <td>30</td>
+                                                    <td>4355</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <div class="media">
+                                                            <span class="pull-left thumb-sm">
+                                                                <img style="height:36px" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" alt="John said" >
+                                                            </span>
+                                                            <div class="media-body">
+                                                                <div>汪星一号店</div>
+                                                                <small class="text-muted">
+                                                                    <span class="shop_type m-r-xs">旗舰店</span>
+                                                                    <span class="m-l-sm">评分：4.8</span>
+                                                                </small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>50</td>
+                                                    <td>40</td>
+                                                    <td>26</td>
+                                                    <td>30</td>
+                                                    <td>4355</td>
+                                                </tr>         
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                    <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                    <input type="hidden" name="order" id="order" value="Name" />
+                </form>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+
+    <script type="text/javascript">seajs.use(["dist/application/app.js"])</script>
+
+</body>
+
+</html>

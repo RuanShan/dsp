@@ -1,0 +1,1272 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/goods.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .inputWidth{width:154px;}
+        .vbox .text{    width: 100px;text-align: left;height: 30px;margin: 0 5px; display: inline;}
+        .vbox .tixin{    margin-left: 50px;color: rgba(122,122,122,0.9);}
+        .vbox .slleft{margin-left: 30px;}
+        #sl_0 .help-block{margin-left: 30px;}
+        #sl_1 .help-block{margin-left: 30px;}
+
+        .tgfs_select .select2-arrow b:after{
+            color: rgb(113,113,113) !important;
+        }
+        .tgfs_select a .select2-chosen{
+            color: rgb(113,113,113);
+        }
+        .tgfs_select a.select2-choice{
+            border-color: rgb(218,218,218);
+            background-color: rgb(250,250,250);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>编辑商品</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">基本信息</header>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品类目</label>
+                            <div class="col-sm-10">
+                                <p class="form-control-static">
+                                    胶原蛋白
+                                    <a href="add_goods_ed.html" class="text-info">修改</a>
+                                </p>
+                                <input type="hidden" value="537114627" name="categoryId" />
+                                <span class="help-block">商品上架后不可修改，请谨慎选择</span>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group js_brashow">
+                            <label class="pull-left control-label col-sm-2">品牌</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" data-rule-required="true" name="module">
+                                    <option value="" selected="">请选择</option>
+                                    <option value="1">索尼</option>
+                                    <option value="2">佳能</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">
+                                商品属性(
+                                <small>必填</small>
+                                )
+                            </label>
+                            <div class="col-sm-10">
+                                <div data-toggle="attribute"> <i class="fa fa-spinner fa-spin"></i>
+                                </div>
+                                <span class="help-block">商品上架后不可修改，请谨慎选择</span>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品名称</label>
+                            <div class="col-sm-3 must">
+                                <input type="text" class="form-control" data-rule-required="true" data-msg-required="商品名称不能为空" name="Name"></div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group"  id="gzgg">
+                            <label class="col-sm-2 control-label">包装规格</label>
+                            <div class="col-sm-10">
+                                <div class="input-group" style="display: block;">
+                                    <label class="radio-inline  radio_br">
+                                        <input type="radio" name="gzggxx" class="ui-wizard-content ui-helper-reset ui-state-default check_0">
+                                        单件
+                                    </label>
+                                </div>
+                                <div class="input-group" style="display: block">
+                                    <label class="radio-inline  radio_br" style="    line-height: 30px;">
+                                        <input   checked="checked"  type="radio" style="margin-top: 9px;" name="gzggxx" class="ui-wizard-content ui-helper-reset ui-state-default check_1">
+                                        多件:
+                                        <input type="text" name="wpms_1" data-msg-min="请输入大于1的正整数"  data-msg-positiveInteger="请输入大于1的正整数" style="float: none;" data-rule-min="2"  data-rule-positiveInteger="true" class="form-control text wpms_1">
+                                        件装
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品规格</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" name="isSpecificationEnabled" value="0" checked="checked" data-toggle="specification-enable" data-enable="false" />
+                                    统一规格
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="isSpecificationEnabled" value="1" data-toggle="specification-enable" data-enable="true" />
+                                    多规格
+                                </label>
+                                <div data-toggle="specifications" class="hd">
+                                    <i class="fa fa-spinner fa-spin"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in specificationstable hd"></div>
+                        <div class="form-group specificationstable hd">
+                            <label class="col-sm-2 control-label">价格&库存</label>
+                            <div class="col-sm-10 table-responsive tab-content" data-toggle="specificationstable">
+                                <span class="help-block">请选择规格</span>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group m-t-xs">
+                                    <label class="col-sm-2 control-label">佣金比例=</label>
+                                    <div class="col-sm-5 must">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control js_commission_percents" data-rule-decimal="2" data-rule-required="true" data-rule-range="[0,100]"  name="percent" value="10" />
+                                            <span class="input-group-addon ">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">
+                                        <h5> <strong class="m-l-md">分佣比例</strong>
+                                            <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover"  data-content="<p> <strong>待发货订单：</strong>
+                                                发货管理中所有待发货的订单数；
+                                            </p>
+                                            <p>
+                                                <strong>待处理维权：</strong>
+                                                维权管理列表所有处于维权中的维权单数；
+                                            </p>
+                                            <p>
+                                                <strong>昨日下单数：</strong>
+                                                昨日提交的订单总数；
+                                            </p>
+                                            <p>
+                                                <strong>昨日成交金额：</strong>
+                                                昨日总的成交金额（线上支付的统计昨日已支付的实收款，线下支付的统计昨日确认收货的实收款）。
+                                            </p>
+                                            ">
+                                            <i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i>
+                                            </a>
+                                        </h5>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">一级分拥比例</label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" data-percent="0.6"  class="form-control js_level_commissions" readonly="readonly"  name="firstpercent" value="6" />
+                                            <span class="input-group-addon ">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p class="form-control-static js_money_commissions">（0.60）</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">二级分拥比例</label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" data-percent="0.2" class="form-control js_level_commissions" readonly="readonly"  name="secondpercent" value="2" />
+                                            <span class="input-group-addon ">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p class="form-control-static js_money_commissions">（0.20）</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">三级分拥比例</label>
+                                    <div class="col-sm-5">
+                                        <div class="input-group">
+                                            <input type="text" data-percent="0.2" class="form-control js_level_commissions" readonly="readonly"  name="thirdpercent" value="2" />
+                                            <span class="input-group-addon ">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p class="form-control-static js_money_commissions">（0.20）</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="nospecifications">
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商家编码</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="ProductsSn" />
+                            </div>
+                            <!--<div class="help-inline">若留空则由系统自动生成</div>
+                        -->
+                    </div>
+
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">售价包税</label>
+                            <div class="col-sm-10" id="sls">
+                                <div class="input-group sp_sl" data-nums="0"  style="display: block;">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="xsbs" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                        包税
+                                        <span class="tixin">*平台会根据商品税率进行关税优化，如单件关税大于50也不加收关税</span>
+                                    </label>
+                                </div>
+                                <div id="sl_0" style="display: none;">
+                                <div class="input-group slleft" style="display: block;">
+                                    <label class="radio-inline  radio_br">
+                                        <input type="radio" name="gsmrsz" class="ui-wizard-content ui-helper-reset ui-state-default check_0">
+                                        默认税率
+                                    </label>
+                                </div>
+                                <div class="input-group slleft" style="display: block">
+                                    <label class="radio-inline  radio_br" style="    line-height: 30px;">
+                                        <input checked="checked" type="radio" style="margin-top: 9px;" name="gsmrsz" class="ui-wizard-content ui-helper-reset ui-state-default check_1">
+                                        自定义税率<input type="text"  style="float: none;" name="wpms_2" data-msg-notEqual="请输入0-100的数字，最多保留2位小数" data-msg-max="请输入0-100的数字，最多保留2位小数" data-msg-decimal="请输入0-100的数字，最多保留2位小数" data-rule-notEqual="0"  data-rule-max="100"  data-rule-decimal="2" class="form-control text wpms_1">%
+                                    </label>
+                                </div>
+                                </div>
+                                <div class="input-group sp_sl" data-nums="1" style="display: block">
+                                    <label class="radio-inline" style="    line-height: 30px;">
+                                        <input  checked="checked" type="radio" style="margin-top: 9px;" name="xsbs" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                        不包税
+                                        <span class="tixin">*平台会根据商品税率进行关税优化，如单件关税大于50则加收关税</span>
+                                    </label>
+                                </div>
+                                <div id="sl_1">
+                                <div class="input-group slleft" style="display: block;">
+                                    <label class="radio-inline  radio_br">
+                                        <input checked="checked" type="radio" name="bgsmrsz" class="ui-wizard-content ui-helper-reset ui-state-default check_0">
+                                        默认税率
+                                    </label>
+                                </div>
+                                <div class="input-group slleft" style="display: block">
+                                    <label class="radio-inline  radio_br" style="    line-height: 30px;">
+                                        <input type="radio" style="margin-top: 9px;" name="bgsmrsz" class="ui-wizard-content ui-helper-reset ui-state-default check_1">
+                                        自定义税率<input type="text" style="float: none;" name="wpms_3" data-msg-notEqual="请输入0-100的数字，最多保留2位小数" data-msg-max="请输入0-100的数字，最多保留2位小数" data-msg-decimal="请输入0-100的数字，最多保留2位小数"  data-rule-notEqual="0"  data-rule-max="100"  data-rule-decimal="2" class="form-control text wpms_1">%
+                                    </label>
+                                </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+
+                        <!--自营显示区-->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">自营供货方</label>
+                            <div class="col-sm-3">
+                                <div class="btn-group m-r-xs">
+                                    <select name="classifyId" class="hd tgfs_select" style="width: 220px;" data-toggle="select2" data-placeholder="请选择" >
+                                        <option value=""></option>
+                                        <optgroup label="">
+                                            <option value="1">特步自营供货方</option>
+                                            <option value="2">海澜之家自营供货方</option>
+                                            <option value="3">TCL自营供货方</option>
+                                            <option value="4">海尔自营供货方</option>
+                                            <option value="5">三星自营供货方</option>
+                                            <option value="6">苹果自营供货方</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">最高佣金比例</label>
+                            <div class="col-sm-3">
+                                <div class="input-group" style="width: 220px;">
+                                    <input type="text" data-percent="1" data-rule-decimal="2" data-rule-max="100" class="form-control js_level_commission"  name="selfmax_percents" value="10" />
+                                    <span class="input-group-addon ">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品扣点比例</label>
+                            <div class="col-sm-3">
+                                <div class="input-group" style="width: 220px;">
+                                    <input type="text" data-percent="1" data-rule-decimal="2" data-rule-max="100"  class="form-control js_level_commission"  name="selfcommodity_percents" value="10" />
+                                    <span class="input-group-addon ">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">仓储选择</label>
+                            <div class="col-sm-3">
+                                <div class="btn-group">
+                                    <select class="form-control" style="width: 220px;" name="select_storage">
+                                        <option value="" checked="checked">请选择</option>
+                                        <option value="0">广州仓储</option>
+                                        <option value="1">长沙仓储</option>
+                                        <option value="2">上海仓储</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">销售价</label>
+                        <div class="col-sm-2 must">
+                            <input type="text" class="form-control js_salesprice js_commission_money_input" name="SellPrice" data-rule-ismoney="true" data-rule-required="true" data-msg-required="销售价不能为空"></div>
+                        <div class="col-sm-5">
+                            <p class="form-control-static">
+                                <span class="help-block" style="margin-top:-5px">注：商品折扣=销售价/市场价X会员等级折扣率</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">佣金比例=</label>
+                        <div class="col-sm-5 must">
+                            <div class="input-group">
+                                <input type="text" class="form-control js_commission_percent" data-rule-decimal="2" data-rule-required="true" data-rule-range="[0,100]"  name="percents" value="10" />
+                                <span class="input-group-addon ">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            <h5>
+                                <strong class="m-l-md">分佣比例</strong>
+                                <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="top" data-trigger="hover"  data-content="<p>
+                                    <strong>待发货订单：</strong>
+                                    发货管理中所有待发货的订单数；
+                                </p>
+                                <p>
+                                    <strong>待处理维权：</strong>
+                                    维权管理列表所有处于维权中的维权单数；
+                                </p>
+                                <p>
+                                    <strong>昨日下单数：</strong>
+                                    昨日提交的订单总数；
+                                </p>
+                                <p>
+                                    <strong>昨日成交金额：</strong>
+                                    昨日总的成交金额（线上支付的统计昨日已支付的实收款，线下支付的统计昨日确认收货的实收款）。
+                                </p>
+                                ">
+                                <i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i>
+                            </a>
+                        </h5>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">一级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.6"  class="form-control js_level_commission" readonly="readonly"  name="firstpercents" value="6" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0~0.6）</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">二级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.2" class="form-control js_level_commission" readonly="readonly"  name="secondpercents" value="2" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0~0.20）</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">三级分拥比例</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input type="text" data-percent="0.2" class="form-control js_level_commission" readonly="readonly"  name="thirdpercents" value="2" />
+                            <span class="input-group-addon ">%</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <p class="form-control-static js_money_commission">（0~0.20）</p>
+                    </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">市场价</label>
+                    <div class="col-sm-2 must">
+                        <input type="text" class="form-control" name="MarketPrice" data-rule-ismoney="true" data-rule-required="true" data-msg-required="市场价不能为空" data-rule-isGreatThanPrev="true" data-msg-isGreatThanPrev="市场价不能低于销售价!"></div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">库存</label>
+                    <div class="col-sm-2 must">
+                        <input type="text" class="form-control" name="Inventory" data-rule-digits="true" data-rule-required="true" data-msg-required="库存不能为空"></div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">重量</label>
+                    <div class="col-sm-2">
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="Weight" data-rule-positive="true">
+                            <span class="input-group-addon">kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">体积</label>
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="Volume" data-rule-positive="true">
+                            <span class="input-group-addon">m³</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">国际编码/商品条码</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="Intecode" data-rule-number="true" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">HS编码</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="Hscode" data-rule-number="true" data-rule-maxlength="10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">商品备案号</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="Filing">
+                    </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <!-- <div class="form-group">
+                    <label class="col-sm-2 control-label">商品计量单位</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" data-rule-required="true" name="module">
+                            <option value="" selected="">请选择</option>
+                            <option value="1">件</option>
+                            <option value="2">个</option>
+                            <option value="3">罐</option>
+                            <option value="4">箱</option>
+                        </select>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">商品计量单位</label>
+                    <div class="col-sm-2 must">
+                        <select class="form-control " data-toggle="chosen" name="select_tag" data-placeholder="选择规格" data-rule-required="true">
+                            <option value="" selected="">请选择</option>
+                            <option value="1">件</option>
+                            <option value="2">个</option>
+                            <option value="3">罐</option>
+                            <option value="4">箱</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" >商品图片:</label>
+                <div class="col-sm-10">
+                    <div class="js_upload_container">
+                        <div class="js_file_upload must">
+                            <button type="button" class="btn btn-default js_new_upload" data-submitname="GoodsImages" data-count="6" data-uploadpath="/api/form/uploadImg" data-delpath="/api/form/removeImg" data-data="{'cid':'YY'}" style="position: relative; ">商品图片</button>
+                            <span class="maroon">*</span>
+                            <span class="help-inline">
+                                建议尺寸为640像素x640像素，大小不超过500kb 默认显示第1张图片，最多20张 (
+                                <small>可拖拽图片调整显示顺序</small>
+                                )
+                            </span>
+                        </div>
+                        <div class="uploadify-queue js_file_upload_queue"></div>
+                        <ul class="ipost-list ui-sortable js_fileList" data-required="true">
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[0].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[0].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[1].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[1].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[2].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[2].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[3].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[3].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[4].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[4].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                            <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                                <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                                <input type="hidden" value="10001" name="GoodsImages[5].id">
+                                <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[5].path">
+                                <span class="item_box">
+                                    <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">商品详情:</label>
+                <div class="col-sm-10">
+                    <textarea rows="13" class="hd" data-toggle="kindeditor" data-tongji="remain" data-tongji-target=".js_kindeditor_tongji" data-rule-rangelength="[1,50000]" data-rule-required="true" data-msg-required="简介不能为空" name="Logistics"></textarea>
+                    <p class="pull-right js_kindeditor_tongji">还可输入{0}字</p>
+                </div>
+            </div>
+            <div class="line line-dashed line-lg pull-in"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">商品分组</label>
+                <div class="col-sm-3 must">
+                    <select class="col-sm-11 hd js_goods_group" name="classifyId" multiple="multiple" data-maxcount="3" data-rule-required="true" data-msg-required="请选择商品分组" data-toggle="chosen" data-placeholder="请选择系统分类" data-width="999px">
+                        <option value=""></option>
+                        <optgroup label="服装鞋包" id="group1">
+                            <option value="1">男装</option>
+                            <option value="2">流行男鞋</option>
+                            <option value="3">女装</option>
+                            <option value="4">女鞋</option>
+                        </optgroup>
+                        <optgroup label="家用电器" id="group2">
+                            <option value="5">大家电</option>
+                            <option value="6">影音电器</option>
+                            <option value="7">生活电器</option>
+                            <option value="8">厨房电器</option>
+                            <option value="9">个人护理</option>
+                        </optgroup>
+
+                    </select>
+                </div>
+                <div class="col-sm-3 m-l-sm ">
+                    <button type="button" class="btn btn-default btn-sm" data-toggle="ajaxModal" data-remote="async/group_ed.html">添加分组</button>
+                </div>
+            </div>
+            <!--<div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">商品标签</label>
+            <div class="col-sm-3 ">
+                <select class="col-sm-11  hd js_goods_label" name="tags" multiple="multiple" data-maxcount="10" data-toggle="chosen" data-placeholder="请选择商品标签">
+                    <option value=""></option>
+                    <option value="1">新片</option>
+                    <option value="2">特价</option>
+                    <option value="3">返利</option>
+                    <option value="4">打折</option>
+                </select>
+            </div>
+            <div class="col-sm-3 m-l-sm ">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="ajaxModal" data-remote="async/label_ed.html">添加标签</button>
+            </div>
+        </div>
+        -->
+    </section>
+    <section class="panel panel-default">
+        <header class="panel-heading bg-light">物流信息</header>
+        <div class="panel-body">
+            <!--<div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">退货地址</label>
+            <div class="col-sm-3 must">
+                <select name="address" class="form-control js_address_edit" data-rule-required="true">
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="col-sm-3 m-l-sm ">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="ajaxModal" data-remote="async/address.html">添加地址</button>
+            </div>
+        </div>
+        -->
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">运费计算方式</label>
+            <div class="col-sm-10">
+                <label class="radio-inline">
+                    <input type="radio" name="undertake" value="0" checked="checked" class="js_undertake" />
+                    卖家承担运费
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="undertake" value="1" class="js_undertake js_freight_container_show" />
+                    粉丝承担运费
+                </label>
+                <div class="panel panel-default m-t bg-light hd js_freight_container">
+                    <div class="panel-body lt ">
+                        <label class="radio-inline">
+                            <input type="radio" name="freight_type" value="0" checked="checked" class="js_freight_type js_unify_container_show" />
+                            统一运费
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="freight_type" value="1" class="js_freight_type js_template_container_show" />
+                            使用运费模板
+                        </label>
+                        <div class="js_unify_container form-inline m-t ">
+                            <dl class="dl-horizontal dl-xs">
+                                <dt>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="freight_item" value="1" class="js_freight_item" />
+                                        快递
+                                    </label>
+                                </dt>
+                                <dd>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="freight_express" data-rule-required="true" data-rule-ismoney="true" disabled />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal dl-xs">
+                                <dt>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="freight_item" value="1" class="js_freight_item" />
+                                        EMS
+                                    </label>
+                                </dt>
+                                <dd>
+                                    <div class="input-group ">
+                                        <input type="text" class="form-control" name="freight_ems" data-rule-required="true" data-rule-ismoney="true" disabled />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal dl-xs">
+                                <dt>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="freight_item" value="1" class="js_freight_item" />
+                                        平邮
+                                    </label>
+                                </dt>
+                                <dd>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="freight_post" data-rule-required="true" data-rule-ismoney="true" disabled />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                        </div>
+                        <div class="js_template_container form-inline m-t hd">
+                            <div class="form-group  input-group">
+                                <div class="col-sm-10">
+
+                                    <i class="fa fa-spinner fa-spin js_freight_template_loading hd"></i>
+                                    <select class="form-control mn140 js_freight_template" name="freight_template" data-rule-required="true">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="/view/system/freight/freight_ed.html" target="_blank" title="新建运费模版">
+                                            <i class="fa fa-plus m-r-xs text-muted"></i>新建运费模版
+                                        </a>
+                                        <a class="btn btn-default js_freight_template_refresh" href="/plus/activity2.php?id=111" title="刷新模版">
+                                            <i class="fa fa-refresh m-r-xs text-muted"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="panel panel-default">
+    <header class="panel-heading bg-light">分享设置</header>
+    <div class="panel-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                分享名称
+                <a href="javascript:;" data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true"  data-content="推荐给V客分享时的参考名称" class="text-muted">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="shareName" data-rule-maxlength="30"></div>
+        </div>
+        <div class="line line-dashed line-lg pull-in"></div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">
+                分享图片
+                <a href="javascript:;" data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true"  data-content="推荐给V客分享时的参考图片" class="text-muted">
+                    <i class="fa fa-question-circle"></i>
+                </a>
+            </label>
+            <div class="col-sm-10">
+                <div class="js_upload_container">
+                    <div class="js_file_upload must">
+                        <button type="button" class="btn btn-default js_new_upload" data-submitname="ShareImages" data-count="9" data-uploadpath="/api/form/uploadImg" data-delpath="/api/form/removeImg" data-data="{'cid':'YY'}" style="position: relative; ">上传图片</button>
+                    </div>
+                    <div class="uploadify-queue js_file_upload_queue"></div>
+                    <ul class="ipost-list ui-sortable js_fileList" data-required="true">
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[0].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[0].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[1].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[1].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[2].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[2].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[3].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[3].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[4].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[4].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                        <li class="imgbox" data-post-id="10001" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg">
+                            <a class="item_new_close item_close" href="javascript:void(0)" data-delpath="/api/form/removeImg" data-progressid="" title="删除" data-path="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" data-post-id="10001"></a>
+                            <input type="hidden" value="10001" name="GoodsImages[5].id">
+                            <input type="hidden" value="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg" name="GoodsImages[5].path">
+                            <span class="item_box">
+                                <img src="http://img.weimob.com/static/c3/e8/78/image/20140604/20140604175533_53429.jpg"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+<section class="panel panel-default">
+<header class="panel-heading bg-light">其他信息</header>
+<div class="panel-body">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">商品来源</label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                <input type="radio" name="source" value="0" checked="checked" class="js_source">国内</label>
+            <label class="radio-inline">
+                <input type="radio" name="source" value="1" class="js_source js_source_show" />
+                海外
+            </label>
+        </div>
+    </div>
+    <div class="form-group hide js_source_hide">
+        <label class="col-sm-2 control-label">发货地</label>
+        <div class="col-sm-2 ">
+            <select class="form-control js_delivery_type" data-rule-required="true" id="delivery_type" name="delivery_type">
+                <option value="" selected="">请选择</option>
+                <option value="1" data-type="js_City">保税仓</option>
+                <option value="2" data-type="js_Country">海外仓</option>
+            </select>
+        </div>
+
+        <div class="col-sm-2 js_bs hide">
+            <select class="inputWidth js_delivery_city" name="city" data-toggle="select2" disabled data-id=""></select>
+        </div>
+        <div class="col-sm-2 js_subjects hide js_bs"></div>
+
+        <div class="col-sm-2 js_rj hide">
+            <select class="inputWidth js_delivery_Country" data-toggle="select2" disabled name="originLocation" data-id="">
+            </select>
+        </div>
+        <div class="col-sm-2 js_subjects2 js_rj hide"></div>
+    </div>
+
+    <div class="form-group hide js_rj">
+        <label class="col-sm-2 control-label">入境口岸</label>
+        <div class="col-sm-2">
+            <select class="inputWidth js_delivery_city jsrjdiv" name="city" data-toggle="select2" disabled data-id=""></select>
+        </div>
+        <div class="col-sm-2 js_subjects hide"></div>
+    </div>
+
+    <div class="form-group hide js_source_hide">
+        <label class="col-sm-2 control-label">原产地</label>
+        <div class="col-sm-2">
+            <select class="inputWidth" data-toggle="select2" name="originLocation">
+                <option value="">请选择</option>
+                <option value="1">日本</option>
+                <option value="2">韩国</option>
+                <option value="3">香港</option>
+                <option value="4">美国</option>
+                <option value="5">澳大利亚</option>
+                <option value="6">英国</option>
+                <option value="7">德国</option>
+            </select>
+        </div>
+    </div>
+    <div class="line line-dashed line-lg pull-in"></div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">商品限购</label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                <input type="radio" name="quota" value="0" checked="checked" class="js_quota">不限购</label>
+            <label class="radio-inline">
+                <input type="radio" name="quota" value="1" class="js_quota js_quota_show" />
+                限购
+            </label>
+            <div class="js_quota_container hd  v-top">
+                <!--inline hd-->
+                <input class="form-control input-xs input-sm" type="text" data-rule-required="true" name="quotanums" data-rule-positive="true" />
+            </div>
+        </div>
+    </div>
+    <!--<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">会员优惠</label>
+    <div class="col-sm-10">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="preferential1" value="1">会员价格</label>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="preferential2" value="1" />
+            积分抵扣
+        </label>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="preferentia3" value="1" />
+            优惠券
+        </label>
+
+    </div>
+</div>
+-->
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">库存计算方式</label>
+    <div class="col-sm-10">
+        <label class="radio-inline">
+            <input type="radio" name="store" value="0" checked="checked" class="js_way_select">下单减库存</label>
+        <label class="radio-inline" style="padding-left:0">
+            <a href="javascript:;" data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true"  data-content="买家下单后即减少库存，存在<span class='maroon'>恶意下单</span>
+            风险。秒杀、超低价等热销商品，如需避免超卖可选此方式。" class="text-muted">
+            <i class="fa fa-question-circle"></i>
+        </a>
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="store"  value="1" class="js_way_select" />
+        支付减库存
+    </label>
+    <label class="radio-inline" style="padding-left:0">
+        <a href="javascript:;" data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true"  data-content="买家下单并完成支付操作后方可减少库存，存在<span class='maroon'>超卖</span>
+        风险。如需减少恶意下单、提高回款效率，可选此方式。
+" class="text-muted">
+        <i class="fa fa-question-circle"></i>
+    </a>
+</label>
+</div>
+</div>
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+<label class="col-sm-2 control-label">上架时间</label>
+<div class="col-sm-10">
+<label class="radio">
+    <input type="radio" name="shelves" value="1" checked="checked" />
+    立即上架
+    <span class="text-danger">(上架后商品类目、商品属性及商品名称将不能再修改，请确认已填写无误)</span>
+</label>
+<label class="radio">
+    <input type="radio" name="shelves" value="0">暂不上架，放入仓库中</label>
+
+</div>
+<!--<div class="col-sm-10 col-sm-offset-2">
+<div class="pull-left">
+<label class="radio-inline">
+    <input type="radio" name="shelves" value="3"/>
+    设定商品上下架时间
+</label>
+</div>
+<div class="col-sm-2" style="width:80px;padding-right:0">
+<label class="checkbox-inline">上架</label>
+</div>
+<div class="col-sm-3">
+<div class="input-group">
+    <input type="text" class="form-control" name="groundingdate"  readonly="readonly" id="groundingdate" value="2014-08-26 18:00" data-before="#solddate" data-toggle="datetimepicker" data-position="top-right" data-startdate="now"/>
+    <span class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+    </span>
+</div>
+</div>
+<div class="col-sm-2" style="width:80px;padding-right:0">
+<label class="checkbox-inline">下架</label>
+</div>
+<div class="col-sm-3">
+<div class="input-group">
+    <input type="text" class="form-control" name="soldoutdate"   readonly="readonly" id="solddate" data-after="#groundingdate" value="2014-08-27 18:00" data-offsetday="2" data-startdate="now" data-toggle="datetimepicker" data-position="top-right"/>
+    <span class="input-group-addon" >
+        <i class="fa fa-calendar"></i>
+    </span>
+</div>
+</div>
+
+</div>
+-->
+</div>
+<div class="line line-dashed line-lg pull-in"></div>
+<div class="form-group">
+<div class="col-sm-4 col-sm-offset-2">
+<input type="hidden" value="0" id="js_store_way"/>
+<button type="submit" data-confirm="true"  data-confirm-msg="当前有买家下单还未付款，将库存计算方式修改为 “下单减库存” 可能会引起库存的急剧减少，请及时补充库存" class="btn btn-primary js_save_submit" data-loading-text="保存中...">保存</button>
+<button type="button" class="btn btn-default" data-toggle="back">取消</button>
+</div>
+</div>
+</div>
+
+</section>
+</form>
+</section>
+</section>
+<script type='text/html' id="attribute_template">
+        <div class="panel panel-default m-n bg-light">
+            <div class="panel-body lt js_custom_list_contair">
+                {{each data as item index}}
+                <dl class="dl-horizontal inline dl-sm custom-attr-dl-horizontal {{if item.required}}must{{/if}}">
+                    <dt data-title="{{item.name}}" data-id="{{item.id}}">
+                        {{item.name}}<input type="hidden" value="{{item.id}}" name="attribute[{{index}}].id"></dt>
+                    <dd data-required="{{item.required}}">
+                        <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle form-control" {{attribute_disabled}} style="text-align: left;">
+                            <span class="dropdown-label custom-dropdown-label js_custom_dropdown_label" data-id="{{item.id}}" id="label_{{item.id}}" data-text="" {{if !shelves}}contenteditable="true"{{/if}} data-placeholder="选择">选择</span>
+                            <span class="caret custom-dropdown-caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select dropdown-select-50 custom-select" id="{{item.id}}" data-type="{{if item.type == 'checkbox'}}checkbox{{else if item.type == 'radio'}}radio{{/if}}">
+                            {{if item.type == 'radio'}}
+                                <li><a href="javascript:;">
+                                    <input type="{{if item.type == 'checkbox'}}checkbox{{else if item.type == 'radio'}}radio{{/if}}" name="attribute[{{index}}].selected" value="" />选择</a></li>
+                            {{/if}}
+                            {{each item.list as zitem zindex}}  
+                            <li {{attribute_checked item.id zitem.id}}>
+                                <a href="javascript:;" {{if item.type == 'checkbox'}}data-hide="true"{{/if}}>
+                                {{if item.type == 'checkbox'}} <i class="fa fa-check-square text-primary"></i> <i class="fa fa-minus-square text-success"></i>{{/if}}
+                                <input type="{{if item.type == 'checkbox'}}checkbox{{else if item.type == 'radio'}}radio{{/if}}" name="attribute[{{index}}].selected" value="{{zitem.id}}" data-title="{{zitem.name}}" data-id="{{item.id}}" {{attribute_selected item.id zitem.id}}/>{{zitem.name}}</a> {{if zitem.custom}}<a href="javascript:;" class="custom-del-btn js_custom_del "><i class="fa fa-times text-muted"></i></a>{{/if}}</li>
+                            {{/each}}
+                            <li class="js_search_result hide"><a href="javascript:;" style="color:#999">未找到</a></li>
+                            <li class="js_custom_list hide">
+                                <p class="js_input_outer"><input type="text" data-id="{{item.id}}" class="form-control js_custom_input" data-limit="8"/><span class="js_limit"><em>0</em>/<span>8</span></span></p>
+                                <p>
+                                    <button type="button" data-name="attribute[{{index}}].selected" class="btn btn-primary btn-sm js_custom_list_save">确定</button>
+                                    <button type="button" class="btn btn-default btn-sm js_custom_list_cancel">取消</button>
+                                </p>
+                            </li>
+                            <li class="{{if item.custom}}js_custom_list{{else}}hide{{/if}}"><a class="js_custom_btn" href="javascript:;">自定义</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+                {{/each}}
+                <div class="line line-dashed line-lg pull-in"></div>
+            </div>
+        </div>
+
+
+    </script>
+
+<script type="text/html" id="customattrval_tem">
+        <li {{if checked}}class="active"{{/if}}><a href="javascript:;" {{if type == 'checkbox'}}data-hide="true"{{/if}}>
+            {{if type == 'checkbox'}} <i class="fa fa-check-square text-primary"></i> <i class="fa fa-minus-square text-success"></i> {{/if}}
+            <input type="{{if type == 'checkbox'}}checkbox{{else if type == 'radio'}}radio{{/if}}" name="{{name}}" data-title="{{title}}" value="{{attrvalid}}" data-id="{{attrid}}" {{if checked}}checked="checked"{{/if}}/>{{title}}</a><a href="javascript:;" class="custom-del-btn js_custom_del "><i class="fa fa-times text-muted"></i></a></li>
+    </script>
+
+<script type="text/html" id="specifications_template">
+        <div class="panel panel-default m-t bg-light" data-toggle="specifications">
+            <div class="panel-body lt">
+                {{if data.length<1}}
+                <span class="help-block js_nospe_tips">暂无规格数据，请先添加规格</span>
+                <div class="line line-dashed line-lg pull-in js_nospe_tips"></div>
+                {{/if}}
+                {{each data as item index}}
+                <div id="js_specifications_{{item.id}}">
+                     {{if !item.isEdit}}
+                        <p class="js_specifica" data-name="{{item.name}}" data-id="{{item.id}}"><strong>{{item.name}}</strong></p>
+                    {{else}}
+                        <p class="js_specifica" data-name="{{item.name}}" data-id="{{item.id}}"><strong>{{item.name}}</strong>
+                            <a href="javascript:;" class="m-l text-info js_specifica_edit"  data-id="{{item.id}}">编辑</a>
+                        </p>
+                     {{/if}}
+                    
+                    
+                    <div id="specvals_{{item.id}}" data-id="{{item.id}}" data-toggle="specvals" class="m-b">
+                        {{each item.all_val as zitem zindex}}
+                        <label class="checkbox-inline input-s-sm" id="spe_{{zitem.key}}">
+                            <input type="checkbox" value="{{zitem.key}}" title="{{zitem.val}}" {{specifications_checked item.id zitem.key}} />{{zitem.val}}
+                        </label>
+                        {{/each}}
+                    </div>
+                </div>
+                <div id="specvals_ed_{{item.id}}" class="hide js_enter_div">
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label"><strong>{{item.name}}</strong></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">规格值</label>
+                        <div class="col-sm-5">
+                            <p class="js_input_outer"><input type="text" data-limit="15" placeholder="输入回车即可直接添加" class="form-control js_custom_input"/><span class="js_limit"><em>0</em>/<span>15</span></span></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-default js_add_speval" data-id="{{item.id}}">添加</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-11 col-sm-offset-1 error m-t-n-md m-b-xs" id="specvals_error_{{item.id}}"></div>
+                    <div class="form-group" id="specvals_show_{{item.id}}">
+                        <div class="col-sm-11 col-sm-offset-1">
+                            {{each item.all_val as zitem zindex}}
+                                <span class="label label-default bg-light dker specvals-show js_specvals_show {{if  zitem.custom}}js_specvals_result{{/if}}" data-name="{{zitem.val}}">{{zitem.val}}
+                                {{if zitem.custom}}
+                                    <i class="fa fa-times text-muted m-l-xs js_del_specvals_val_list" data-speid="{{item.id}}" 
+                                    data-id="{{zitem.key}}"></i>
+                                {{/if}}
+                                </span>
+                             {{/each}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-11 col-sm-offset-1">
+                            <button type="button" class="btn btn-primary btn-sm js_specvals_val_save" data-id="{{item.id}}">确定</button>
+                            <button type="button" class="btn btn-default btn-sm js_specvals_val_cancel" data-id="{{item.id}}">取消</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line line-dashed line-lg pull-in"></div>
+                {{/each}}
+                
+                <div class="js_add_spe_form hide js_enter_div">
+                   
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">规格名称</label>
+                        <div class="col-sm-5">
+                            <p class="js_input_outer"><input type="text" class="form-control js_add_spe_input js_custom_input"  data-limit="5">
+                            <span class="js_limit"><em>0</em>/<span>5</span></span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">属性值</label>
+                        <div class="col-sm-5">
+                            <p class="js_input_outer"><input type="text" placeholder="输入回车即可直接添加" class="form-control js_add_spev_input js_custom_input"  data-limit="15">
+                            <span class="js_limit"><em>0</em>/<span>15</span></span>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-default js_spe_speval">添加</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-11 col-sm-offset-2 error m-t-n-md m-b-xs js_js_spe_spev_error" ></div>
+                    <div class="form-group">
+                        <div class="col-sm-11 col-sm-offset-2 js_spe_spev_show"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-5 col-sm-offset-1">
+                            <button type="button" class="btn btn-primary btn-sm js_add_spe_save">确定</button>
+                            <button type="button" class="btn btn-default btn-sm js_add_spe_cancel">取消</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </script>
+
+<script type="text/html" id="specv_tem">
+        {{each spevalList as item}}
+            <label class="checkbox-inline input-s-sm" id="spe_{{item.key}}">
+                <input type="checkbox" value="{{item.key}}" title="{{item.val}}" />{{item.val}}
+            </label>
+        {{/each}}
+    </script>
+
+<script type="text/html" id="delivery_city_tem">
+        <option value="{{id}}">{{name}}</option>
+    </script>
+
+    <script type="text/html" id="delivery_hai_tem">
+        <option value="{{id}}">{{name}}</option>
+    </script>
+
+    <script type="text/html" id="delivery_hai2_tem">
+        <option value="{{id}}">{{name}}</option>
+    </script>
+<script type="text/html" id="specv_show_tem">
+        <span class="label label-default bg-light dker specvals-show js_specvals_show js_specvals_temp" data-name="{{val}}">{{val}}
+            <i class="fa fa-times text-muted m-l-xs js_del_specvals_val_list" data-speid="{{speid}}" 
+            data-id="{{key}}"></i>
+        </span>
+    </script>
+
+<script type="text/html" id="specv_result_tem">
+        {{each spevalList as item}}
+        <span class="label label-default bg-light dker specvals-show js_specvals_show js_specvals_result" data-name="{{item.val}}">{{item.val}}
+            <i class="fa fa-times text-muted m-l-xs js_del_specvals_val_list" data-speid="{{speid}}" 
+            data-id="{{item.key}}"></i>
+        </span>
+        {{/each}}
+    </script>
+
+<script type="text/html" id="specifications_table_template">
+        <table class="table table-bordered bg-light">
+            <thead>
+                <tr>
+                    {{each ths as th index}}
+                    <th class="mn130">{{th.name}}
+                        <input type="hidden"  value="{{th.name}}" name="specifications[{{index}}].name"/>
+                         <input type="hidden"  value="{{th.id}}" name="specifications[{{index}}].id"/>
+                    </th>
+                    {{/each}}
+                    <th class="mn150">商家编码</th>
+                    <th class="mn130">销售价<span class="maroon">*</span></th>
+                    <th class="mn130">市场价<span class="maroon">*</span></th>
+                    <th class="mn130">库存<span class="maroon">*</span></th>
+                    <th  class="mn90">重量</th>
+                    <th  class="mn90">体积</th>
+                    <th  class="mn150">国际编码/商品条码</th>
+                    <th  class="mn130">HS编码</th>
+                    <th  class="mn130">商品备案号</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each trs as tr index}}
+                <tr class="lt">
+                    {{each tr.tds as td zindex}}
+                    {{if td.rowspan > 1 && tr.index % td.rowspan == 0}}
+                    <td rowspan="{{td.rowspan}}">{{td.val}}</td>
+                    {{/if}}
+                    {{if td.rowspan ==1}}
+                    <td>{{td.val}}</td>
+                    {{/if}}
+                    <td class="hd">
+                        <input type="hidden" name="Products[{{index}}].SpecVal[{{zindex}}].val" value="{{td.val}}" />
+                        <input type="hidden" name="Products[{{index}}].SpecVal[{{zindex}}].key" value="{{td.key}}" />
+                    </td>
+                    {{/each}}
+                    <td>
+                        <input type="text" class="form-control" name="Products[{{index}}].ProductSn" data-id="{{tr.key}}" data-name="ProductSn" value="{{tr.ProductSn}}"></td>
+                    <td>
+                        <input type="text" class="form-control js_commission_money_inputs" name="Products[{{index}}].Price" data-id="{{tr.key}}" data-name="Price" value="{{tr.Price}}" data-rule-ismoney="true" data-rule-required="true"></td>
+                    <td>
+                        <input type="text" class="form-control" name="Products[{{index}}].MarketPrice" data-id="{{tr.key}}" data-name="MarketPrice" value="{{tr.MarketPrice}}" data-rule-ismoney="true" data-rule-isGreatThanPrev2="ture" data-msg-isGreatThanPrev2="市场价不能低于销售价!" data-rule-required="true"></td>
+                    <td>
+                        <input type="text" class="form-control" name="Products[{{index}}].Store" data-id="{{tr.key}}" data-name="Store" value="{{tr.Store}}" data-rule-digits="true" data-rule-required="true"></td>
+                    <td>
+                        <input type="text" class="form-control" name="Products[{{index}}].Weight" data-id="{{tr.key}}" data-name="Weight" value="{{tr.Weight}}" data-rule-positive="true"></td>
+                    <td>
+                        <input type="text" class="form-control" name="Products[{{index}}].Volume" data-id="{{tr.key}}" data-name="Volume" value="{{tr.Volume}}" data-rule-positive="true"></td>
+                    <td>
+                        <input type="text" class="form-control js_no_auto_write" name="Products[{{index}}].Intecode" data-id="{{tr.key}}" data-name="Intecode" value="{{tr.Intecode}}" data-rule-number="true"></td>
+                    <td>
+                        <input type="text" class="form-control js_no_auto_write" name="Products[{{index}}].Hscode" data-id="{{tr.key}}" data-name="Hscode" value="{{tr.Hscode}}" data-rule-number="true" data-rule-maxlength="10"></td>
+                    <td>
+                        <input type="text" class="form-control js_no_auto_write" name="Products[{{index}}].Filing" data-id="{{tr.key}}" data-name="Filing" value="{{tr.Filing}}"></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <span class="help-block" style="margin-top:-10px">注：商品折扣=销售价/市场价X会员等级折扣率</span>
+    </script>
+<script>
+        window.goods_data = {
+           attributes: {"1075741875":"1079743126", "1075779646": "1079845232","1075780648":["1079847842","1079847843"],},
+           shelves:false,
+           specifications: { "1075741873": ["1079742340", "1079742350", "1079742356"], "1075741872": ["1079742279", "1079742256"] },
+           products: {
+               "1079742340:1079742279": {
+                   "ProductSn": "1079742340-1",
+                   "Price": 11.00,
+                   "MarketPrice": 16.00,
+                   "Store":99,
+                   "Weight": 101,
+                   "Volume":11,
+                   "Intecode":100,
+                   "Hscode":1234567,
+                   "Filing":129,
+               },
+               "1079742356:1079742279": {
+                   "ProductSn": "1079742340-2",
+                   "Price": 13.00,
+                   "MarketPrice": 18.00,
+                   "Store": 36,
+                   "Weight": 121,
+                   "Volume": 11,
+                   "Intecode":200,
+                   "Hscode":7654321,
+                   "Filing":666,
+               }
+           } 
+        }
+        window.goods_setting = {
+            attribute_path: "/plus/attribute.php?categoryid=537114627",
+            custom_attrvalue_path: "/plus/customattr.php?categoryid=537114627",
+            custom_attrvalue_del_path: "/plus/customattrdel.php?categoryid=537114627",
+            custom_attr_path: "/plus/attr.php?categoryid=537114627",
+            custom_attr_del_path: "/plus/attrdel.php?categoryid=537114627",
+            custom_spevalue_path:"/plus/spevalue.php?categoryid=537114627",
+            custom_spe_path:"/plus/spe.php?categoryid=537114627",
+            custom_spe_del_path:"/plus/spedel.php?categoryid=537114627",
+            custom_delspevalue_path:"/plus/delspevalue.php?categoryid=537114627",
+            specifications_path: "/plus/specifications.php?categoryid=537114627",
+            deliveryLocation_path: "/plus/deliveryLocation_type.php",
+            deliveryLocationHai_path: "/plus/deliveryHaiLocation_type.php",
+            deliveryLocationSub_path: "/plus/deliveryLocation_type.php",
+            deliveryLocationhaisub_path: "/plus/deliveryhai2Location_type.php"
+        }
+        window.extraFileUploadParams={id:11,key:"hxsq22dl"} //自定义编辑器上传参数
+    </script>
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/goodsv/init.js", "dist/pluploadv/init.js","dist/location/init.js","dist/commission/init.js"])
+    </script>
+
+</body>
+
+</html>

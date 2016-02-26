@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8">
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">已认证</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="module" value="1" />全部认证状态
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="module" value="2" />未认证
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                      </div>
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="输入店主ID/店主昵称" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="th-sortable">店主昵称</th>
+                                <th class="th-sortable">店主ID</th>
+                                <th class="th-sortable">合伙人</th>
+                                <th class="th-sortable">认证状态</th>
+                                <th class="th-sortable">认证说明</th>
+                                <th class="th-sortable">认证时间</th>
+                                <th style="text-align:center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img class="img-circle" src="../../Assets/images/dev/icon_avatar_default.png" style="max-width:30px;">
+                                    <span>乱世佳人</span></td>
+                                <td>22323232</td>
+                                <td>12</td>
+                                <td>已认证</td>
+                                <td>资深微商营销专家</td>
+                                <td>2015-6-15</td>
+                                <td style="text-align:center;">
+                                    <a href="javascript:;" data-remote="async/ed_shoper.html" data-toggle="ajaxModal" class="m-xs" title="认证">
+                                       <i class="fa fa-eye text-muted"></i>
+                                    </a>
+                                    <a href="javascript:;" data-remote="async/ed_meddle.html" data-toggle="ajaxModal" class="m-xs" title="人工干预">
+                                       <i class="fa fa-crosshairs text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+
+</body>
+
+</html>

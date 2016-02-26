@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/formwizard.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+         .files .pic{    margin: 0 auto;}
+         .files .pic .fa-upload{    font-size: 10em;}
+        .helpBtn,.files{text-align: center;}
+        .blue{color: #938bff;}
+    </style>
+</head>
+
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>淘宝搬家&nbsp;<a href="taobao_help.html" style="color: #0099cc;" >查看使用帮助>></a></p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i> </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <div class="process-bar">
+            <ul>
+              <li class="size3 on">
+                <span>1.上传淘宝数据包</span>
+              </li>
+              <li class="size3 next">
+                <span>2.批量设置商品信息</span>
+              </li>
+              <li class="size3 nnext last">
+                <span>3.等待搬家完成</span>
+              </li>
+            </ul>
+          </div>
+            <section class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="form-group files">
+                        <div id="file_id" class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="input-group pic">
+                                <div>
+                                    <i class="fa fa-upload fa-6"></i>
+                                    <p class="fileinput-filename"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-group files">
+                            <p>淘宝某某数据包.csv <span class="blue">&nbsp; ✔ 上传成功</span> </p>
+                        </div>
+                        <div class="form-group helpBtn">
+                            <button type="button" class="btn btn-default" data-toggle="back">重新上传</button>
+                            <!--<a href="tao4.html" id="tao_next_data" class="btn btn-primary" >下一步</a> &lt;!&ndash;非全球购&ndash;&gt;-->
+                            <a href="tao4_1.html" id="tao_next_data" class="btn btn-primary" >下一步</a> <!--全球购-->
+                        </div>
+
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js"])
+    </script>
+
+</body>
+
+</html>

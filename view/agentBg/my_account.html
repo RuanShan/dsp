@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <ul class="nav nav-pills m-t-xs">
+                <li class="active">
+                    <a href="my_account.html">收入账户</a>
+                </li>
+                <li>
+                    <a href="my_account2.html">推广账户</a>
+                </li>
+            </ul>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-5 b-r b-light">
+                            <dl class="dl-horizontal">
+                                <dt>企业名称</dt>
+                                <dd>上海晖硕科技信息有限公司</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>提现总额</dt>
+                                <dd>￥2,569,727.00元</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>已到账总额</dt>
+                                <dd>￥2,169,727.00元</dd>
+                            </dl>
+                            <hr />
+                            <!--支付宝方式-->
+                            <!-- 国内账户
+                            <dl class="dl-horizontal">
+                                <dt>提现方式</dt>
+                                <dd>支付宝</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>支付宝账号</dt>
+                                <dd>2234567@qq.com</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>姓名</dt>
+                                <dd>薛强</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>提现方式</dt>
+                                <dd>银行卡</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>开户名</dt>
+                                <dd>薛强</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>开户银行</dt>
+                                <dd>中国建设银行</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>支行名称</dt>
+                                <dd>上海宝山淞南支行</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>收款账号</dt>
+                                <dd>6227001345678</dd>
+                            </dl> -->
+
+                            <!-- 国际账户 -->
+                            <dl class="dl-horizontal">
+                                <dt>账户类型</dt>
+                                <dd>国际账户</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>姓名</dt>
+                                <dd>xueqiang</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>国家/地区</dt>
+                                <dd>United  Status (the)  美国</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>地址</dt>
+                                <dd>white house</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>银行</dt>
+                                <dd>BOFAUS3N Bank of America N.A</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>账号</dt>
+                                <dd>622718901234</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>swift code</dt>
+                                <dd>uirtyuio</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>提现币种</dt>
+                                <dd>美元</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-5 p-l m-t-xl">
+                            <dl>
+                                <dt>
+                                    待确认金额
+                                    <a href="javascript:;" data-toggle="popover" data-trigger="hover"  data-content='用户已支付但是还没有转入账户余额的金额,原因可能是微盟未审核，担保交易用户没有确认收货（或7天自动收货）'>[?]</a>
+                                </dt>
+                                <dd> <strong class="amount">￥400
+                                        <span class="fen">.70</span></strong> 
+                                    元
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    账户余额
+                                    <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content='达到最低提现金额门槛以后账户余额可申请提现'>[?]</a>
+                                    <a href="javascript:;" style="margin:15px 0px 0px 70px;" class="btn btn-danger" data-toggle="ajaxModal" data-remote="async/deposit.html?pid{0}">申请提现</a>
+                                </dt>
+                                <dd> <strong class="amount">￥1,800
+                                        <span class="fen">.70</span></strong> 
+                                    元
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    等待出账金额
+                                    <a href="javascript:;" data-toggle="popover" data-trigger="hover"  data-content='“等待出账金额”指的是商家已申请提现，且在出账中的金额'>[?]</a>
+                                    <a class="m-l-xl" href="financial_details.html">财务明细</a>
+                                    |
+                                    <a href="withdrawal_record.html">提现记录</a>
+
+                                </dt>
+                                <dd>
+                                    <strong class="amount">
+                                        ￥400
+                                        <span class="fen">.70</span>
+                                    </strong>
+                                    元
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    劳务费总额
+                                    <a href="javascript:;" data-toggle="popover" data-trigger="hover"  data-content='所有V客已到账的总佣金'>[?]</a>
+                                    <a class="m-l-xl" href="commision_details.html">劳务费明细</a>
+                                </dt>
+                                <dd>
+                                    <strong class="amount">
+                                        ￥1000
+                                        <span class="fen">.30</span>
+                                    </strong>
+                                    元
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>
+                                    优惠金额
+                                    <a class="m-l-xl" href="preferential_detail.html">优惠明细</a>
+                                </dt>
+                                <dd>
+                                    <strong class="amount">
+                                        ￥1000
+                                        <span class="fen">.30</span>
+                                    </strong>
+                                    元
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2 p-l m-t-sm">
+                            <div class="m-r-sm">
+                                <div class="clearfix">
+                                    <a href="javascript:;" class="text-blue pull-right m-r-sm m-b-sm js_withdrawal_set">设置</a>
+                                </div>
+                                只有账户余额为0的才可以设置全额提现；只有全额提现才能关联明细
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <div class="modal fade in js_withdrawal_set_modal"   tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+
+            <form class="form-horizontal form-validate form-modal"  method="post" action="/api/form/ajaxformurl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">提现设置</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">提现设置：</label>
+                            <div class="col-sm-9 js_withdrawal_set_select">
+                                <div>
+                                    <label class="radio-inline">
+                                        <input type="radio" data-rule-required="true" name="set" data-type="all" value="1"/>
+                                        全额提现
+                                    </label>
+                                    <label class="radio-inline js_tips hide" style="color:red">账户余额不为0，不能设置全额提现</label>
+                                </div>
+                                <div>
+                                    <label class="radio-inline">
+                                        <input type="radio" data-rule-required="true" name="set" data-type="part" value="2" />
+                                        部分提现
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary js_withdrawal_set_save js_withdrawal_set_save_all hide" data-loading-text="保存中..." data-path="/plus/balance.php">保存</button>
+                        <button type="submit" class="btn btn-primary js_withdrawal_set_save js_withdrawal_set_save_part" data-loading-text="保存中...">保存</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">seajs.use(["dist/application/app.js","dist/finance/init.js"]);</script>
+
+</body>
+
+</html>

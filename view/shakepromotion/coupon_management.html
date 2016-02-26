@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <ul class="nav nav-pills m-t-xs">
+                <li class="active">
+                    <a href="coupon_management.html">优惠券管理</a>
+                </li>
+                <li>
+                    <a href="promotionaccount.html">推广账户</a>
+                </li>
+            </ul>
+        </header>
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row">
+                    <div class="col-sm-10 m-t-sm">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-default" href="async/coupon_add.html" data-toggle="ajaxModal">
+                                <i class="fa fa-plus m-r-xs"></i>添加优惠券
+                            </a>
+                        </div>
+                        <div class="btn-group m-r">
+                            <a href="coupon_details.html" class="btn btn-sm btn-default">
+                                <i class="fa fa-search m-r-xs"></i>领取/核销查询
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                <span class="dropdown-label">全部类型</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="1" checked="checked">全部类型</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="2">折扣券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="3">代金券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="4">礼品券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="5">团购券</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="couponType" value="6">通用券</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 m-t">
+                        <a href="coupon_ed.html" style="text-decoration:underline;color:#4cc0c1;">
+                            什么是摇一摇?
+                        </a>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f" style="top:100px;">
+            <section class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th>优惠券名称</th>
+                                <th>类型</th>
+                                <th>有效期</th>
+                                <th>库存（张）</th>
+                                <th>状态</th>
+                                <th>投放时间</th>
+                                <th class="mn70">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8折优惠卡</td>
+                                <td>折扣券</td>
+                                <td>2015-7-1至2015-8-30</td>
+                                <td>/</td>
+                                <td>未提交</td>
+                                <td>/</td>
+                                <td>
+                                    <a href="coupon_ed1.html" class="m-xs" title="修改">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="coupon_select_goods.html" class="m-xs" title="选择商品">
+                                        <i class="fa fa-shopping-cart text-muted"></i>
+                                    </a>
+                                    <a href="coupon_settings.html" class="m-xs" title="投放设置">
+                                        <i class="fa fa-cog text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20元现金优惠券</td>
+                                <td>代金券</td>
+                                <td>领取1天后，30天内</td>
+                                <td>
+                                    100
+                                    <a href="coupon_add_number.html" class="m-xs" title="补充投放数量">
+                                        <i class="fa fa-plus text-black"></i>
+                                    </a>
+                                </td>
+                                <td>待投放</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>
+                                    <a href="coupon_details.html" class="m-xs" title="查看优惠券领取/核销情况">
+                                        <i class="fa fa-search-plus text-muted"></i>
+                                    </a>
+                                    <a href="javascript:;" class="m-xs" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否终止投放?" title="终止投放">
+                                        <i class="fa fa-times text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20元现金优惠券</td>
+                                <td>代金券</td>
+                                <td>领取1天后，30天内</td>
+                                <td>
+                                    100
+                                    <a href="coupon_add_number.html" class="m-xs" title="补充投放数量">
+                                        <i class="fa fa-plus text-black"></i>
+                                    </a>
+                                </td>
+                                <td>投放中</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>
+                                    <a href="coupon_details.html" class="m-xs" title="查看优惠券领取/核销情况">
+                                        <i class="fa fa-search-plus text-muted"></i>
+                                    </a>
+                                    <a href="javascript:;" class="m-xs" data-trigger="batch" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否终止投放?" title="终止投放">
+                                        <i class="fa fa-times text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8折优惠卡</td>
+                                <td>折扣券</td>
+                                <td>领取1天后，30天内</td>
+                                <td>50</td>
+                                <td>审核中</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>
+                                    <a href="coupon_ed1.html" class="m-xs" title="修改">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="coupon_select_goods.html" class="m-xs" title="选择商品">
+                                        <i class="fa fa-shopping-cart text-muted"></i>
+                                    </a>
+                                    <a href="coupon_settings.html" class="m-xs" title="投放设置">
+                                        <i class="fa fa-cog text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8折优惠卡</td>
+                                <td>代金券</td>
+                                <td>2015-7-1至2015-8-30</td>
+                                <td>50</td>
+                                <td>
+                                    审核未通过
+                                    <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="未通过原因" class="m-l-xs m-r-xs text-black" data-original-title="" title=""><strong>[?]</strong></a>
+                                </td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>
+                                    <a href="coupon_ed2.html" class="m-xs" title="修改">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="coupon_select_goods.html" class="m-xs" title="选择商品">
+                                        <i class="fa fa-shopping-cart text-muted"></i>
+                                    </a>
+                                    <a href="coupon_settings.html" class="m-xs" title="投放设置">
+                                        <i class="fa fa-cog text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20元现金优惠券</td>
+                                <td>代金券</td>
+                                <td>领取1天后，30天内</td>
+                                <td>20</td>
+                                <td>投放结束</td>
+                                <td>2015-8-1至2015-8-15</td>
+                                <td>
+                                    <a href="coupon_details.html" class="m-xs" title="查看优惠券领取/核销情况">
+                                        <i class="fa fa-search-plus text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除吗？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/coupon/init.js"]);
+    </script>
+
+</body>
+
+</html>

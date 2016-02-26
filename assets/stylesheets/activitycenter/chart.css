@@ -1,0 +1,13 @@
+@charset "utf-8";
+.chart .m-t-sm {
+  margin-bottom: 20px;
+}
+.chart tr td {
+  text-align: center;
+}
+.chart tr th {
+  text-align: center;
+}
+.chart .left {
+  text-align: left;
+}

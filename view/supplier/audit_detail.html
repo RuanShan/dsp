@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p class="pull-left">供货商概况</p>
+        </header>
+        <section class="scrollable  wrapper">
+            <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxformurl">
+                <div class="alert alert-warning">
+                    <h5>
+                        操作：
+                        <a class="btn btn-default btn-sm" href="javascript:;" data-remote="async/contractinfo_ed.html" data-toggle="ajaxModal" >录入合同信息</a>
+                        <a class="btn btn-default btn-sm" href="javascript:;" data-confirm="true" data-remote="/api/form/savePost" data-toggle="ajaxPost" data-msg="是否通过?">通过</a>
+                        <a class="btn btn-default btn-sm" href="javascript:;"   data-remote="async/refuseds.html" data-toggle="ajaxModal">驳回</a>
+                        <a class="btn btn-default btn-sm" href="javascript:;"   data-remote="" data-toggle="ajaxModal">一键下载所有资质</a>
+                        <a class="btn btn-default btn-sm" href="remark.html">备注</a>
+                        <a class="btn btn-default btn-sm" href="entering.html">录入授权</a>
+                        <a class="btn btn-default btn-sm" href="/view_service/supplier/aptitude_ed.html">编辑资质</a>
+                    </h5>
+                </div>
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#tabinfo" data-toggle="tab">基本信息</a>
+                            </li>
+                            <li>
+                                <a href="#contractinfo" data-toggle="tab">合同信息</a>
+                            </li>
+                            <li>
+                                <a href="#tabdescribe" data-toggle="tab">店铺信息</a>
+                            </li>
+                            <li>
+                                <a href="#tabspecifications" data-toggle="tab">企业执照</a>
+                            </li>
+                            <li>
+                                <a href="#logo" data-toggle="tab">商标授权</a>
+                            </li>
+                            <li>
+                                <a href="#bankinfo" data-toggle="tab">银行信息</a>
+                            </li>
+                            <li>
+                                <a href="#chargesinfo" data-toggle="tab">资费标准</a>
+                            </li>
+
+                            <li>
+                                <a href="#audithistory" data-toggle="tab">审核历史</a>
+                            </li>
+                            <li>
+                                <a href="#remark" data-toggle="tab">备注</a>
+                            </li>
+                            <li>
+                                <a href="#audit" data-toggle="tab">授权情况</a>
+                            </li>
+
+                           <!--  <li>
+                               <a href="#rateinfo" data-toggle="tab">微盟支付费率</a>
+                           </li>
+                           <li>
+                               <a href="#fashinfo" data-toggle="tab">操作记录</a>
+                           </li> -->
+                        </ul>
+                    </header>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabinfo">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">公司全称：</label>
+                                            <div class="col-sm-9 form-control-static">江苏XX开发有限公司</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">主营类目：</label>
+                                            <div class="col-sm-9 form-control-static">实物--综合商城--线上</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">主营商品：</label>
+                                            <div class="col-sm-9 form-control-static">服装</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">经营模式：</label>
+                                            <div class="col-sm-9 form-control-static">---</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">联系人：</label>
+                                            <div class="col-sm-9 form-control-static">--</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">联系电话：</label>
+                                            <div class="col-sm-9 form-control-static">12312312312</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">公司固话：</label>
+                                            <div class="col-sm-9 form-control-static">12312312312</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">邮箱地址：</label>
+                                            <div class="col-sm-9 form-control-static">---</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">企业所在地：</label>
+                                            <div class="col-sm-9 form-control-static">--</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">创建人 ：</label>
+                                            <div class="col-sm-9 form-control-static">李四（运营）</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">状态：</label>
+                                            <div class="col-sm-9 form-control-static">关闭  （含违禁商品已取消供货商V店功能）</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="contractinfo" style="overflow:hidden">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">合同签订日期：</label>
+                                    <div class="col-sm-9">
+                                        <p class=" form-control-static">2014-05-02</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">合同编号：</label>
+                                    <div class="col-sm-9">
+                                        <p class=" form-control-static">
+                                           xxxxx
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">备注：</label>
+                                    <div class="col-sm-9">
+                                        <p class=" form-control-static">
+                                            ＸＸ公司入驻合同
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tabdescribe" style="overflow:hidden">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">店铺名称：</label>
+                                            <div class="col-sm-9 form-control-static">XXX店铺</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">店铺LOGO：</label>
+                                            <div class="col-sm-9 form-control-static alert_big_imgs">
+                                                <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">入驻已有品牌：</label>
+                                            <div class="col-sm-9 form-control-static">
+                                                <span class="m-r-sm">apple/苹果</span>
+                                                <span class="m-r-sm">SAMSUNG/三星</span>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">店铺类型：</label>
+                                            <div class="col-sm-9 form-control-static">旗舰店</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">店铺服务热线：</label>
+                                            <div class="col-sm-9 form-control-static">400-000-8888</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">入驻未有品牌：</label>
+                                            <div class="col-sm-9 form-control-static">
+                                                <div class="m-b-sm">
+                                                    <span class="v-top">阿猫</span>
+                                                    <img class="m-l-sm" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    <a class="btn btn-default btn-sm m-l-sm" data-toggle="ajaxModal" href="async/add_brand_category.html" title="添加到品牌库">添加到品牌库</a>
+                                                </div>
+                                                <div class="m-b-sm">
+                                                    <span class="v-top">阿狗</span>
+                                                    <img class="m-l-sm" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    <a class="btn btn-default btn-sm m-l-sm" data-toggle="ajaxModal" href="async/add_brand_category.html" title="添加到品牌库">添加到品牌库</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tabspecifications">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">营业执照注册号：</label>
+                                            <div class="col-sm-8 form-control-static">----</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">营业执照影印件：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="/assets/images/avatar12.jpg" data-src="/assets/images/avatar12.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">法人或经办人扫描件：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">行业资质1：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">行业资质2：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">组织机构代码：</label>
+                                            <div class="col-sm-8 form-control-static">--</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">组织机构代码证扫描件：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                               <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">税务登记证扫描件：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="logo" style="overflow:hidden">
+                                <section class="scrollable wrapper w-f">
+                                    <section class="panel panel-default ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">品牌ID</th>
+                                                    <th style="text-align: center;">品牌名称</th>
+                                                    <th style="text-align: center;">商标注册证（或商标申请受理通知书）</th>
+                                                    <th style="text-align: center;">商标变更、续展证明文件</th>
+                                                    <th style="text-align: center;">商标授权书</th>
+                                                    <th style="text-align: center;">产品销售授权（或购销合同）</th>
+                                                    <th style="text-align: center;">产品生产授权书（或委托加工协议）</th>
+                                                    <th style="text-align: center;">采购发票</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="text-align: center;">123</td>
+                                                    <td style="text-align: center;">阿迪达斯</td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                    <td style="text-align: center;" class="alert_big_imgs">
+                                                        <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+
+                            <div class="tab-pane" id="bankinfo" style="overflow:hidden">
+                                <div class="col-sm-12">
+                                    <!-- 国内账户
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">开户城市：</label>
+                                            <div class="col-sm-9 form-control-static">---</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">银行账户：</label>
+                                            <div class="col-sm-9 form-control-static">--</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">开户名称：</label>
+                                            <div class="col-sm-9 form-control-static">---</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">开户银行（到支行）：</label>
+                                            <div class="col-sm-8 form-control-static">--</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">开户证明：</label>
+                                            <div class="col-sm-9 form-control-static">
+                                                <ul class="gallery" data-toggle="frescos">
+                                                    <li class="alert_big_imgs">
+                                                        <img src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" class="alert_big_img"  alt="" style="max-width:120px"/>
+                                                        <div class="extras">
+                                                            <div class="extras-inner"> <i class="fa fa-search"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul></div>
+                                        </div>
+                                    </div> -->
+                                    <!-- 国外账户 -->
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">账户类型：</label>
+                                            <div class="col-sm-9 form-control-static">国际账户</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">姓名：</label>
+                                            <div class="col-sm-9 form-control-static">xueqiang</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">国家/地区：</label>
+                                            <div class="col-sm-9 form-control-static">United  Status (the)  美国</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">地址：</label>
+                                            <div class="col-sm-9 form-control-static">white house</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">银行：</label>
+                                            <div class="col-sm-9 form-control-static">BOFAUS3N Bank of America N.A</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">账号：</label>
+                                            <div class="col-sm-9 form-control-static">622718901234</div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label">swift code：</label>
+                                            <div class="col-sm-9 form-control-static">usdf1234</div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label">收款人地址：</label>
+                                            <div class="col-sm-9 form-control-static">baigong</div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label">分区代号：</label>
+                                            <div class="col-sm-9 form-control-static">1234</div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label">手续费承担方：</label>
+                                            <input type="radio" name="bear" value="weimob">微盟
+                                            <input type="radio" name="bear" value="merchant">商户
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">结算币种：</label>
+                                            <div class="col-sm-9 form-control-static">美元</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="chargesinfo" style="overflow:hidden">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">诚信保证金：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                2000元
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">服务年限：</label>
+                                            <div class="col-sm-8 form-control-static">1年</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">最低提现费用：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                500元
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">技术服务费：</label>
+                                            <div class="col-sm-8 form-control-static">
+                                                6000元
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane" id="audithistory" style="overflow:hidden">
+                                <section class="scrollable wrapper w-f">
+                                    <section class="panel panel-default ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">操作</th>
+                                                    <th style="text-align: center;">操作时间</th>
+                                                    <th style="text-align: center;">操作人</th>
+                                                    <th style="text-align: center;">备注</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="text-align: center;">录入合同信息</td>
+                                                    <td style="text-align: center;">2015.08.01  17:00:00</td>
+                                                    <td style="text-align: center;">法务2号</td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">提交审核</td>
+                                                    <td style="text-align: center;">2015.08.01  16:00:00</td>
+                                                    <td style="text-align: center;">供货商1号</td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">驳回</td>
+                                                    <td style="text-align: center;">2015.08.01  17:00:00</td>
+                                                    <td style="text-align: center;">法务1号</td>
+                                                    <td style="text-align: center;">资质填写错误，请重填</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">提交审核</td>
+                                                    <td style="text-align: center;">2015.08.01  14:00:00</td>
+                                                    <td style="text-align: center;">供货商1号</td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+
+                            <div class="tab-pane" id="remark" style="overflow:hidden">
+                                <section class="scrollable wrapper w-f">
+                                    <section class="panel panel-default ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">备注类型</th>
+                                                    <th style="text-align: center;">备注时间</th>
+                                                    <th style="text-align: center;">操作人</th>
+                                                    <th style="text-align: center;">备注内容</th>
+                                                    <th style="text-align: center;">图片</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="text-align: center;">特批</td>
+                                                    <td style="text-align: center;">2015.08.01  17:00:00</td>
+                                                    <td style="text-align: center;">法务2号</td>
+                                                    <td style="text-align: center;">老板特批</td>
+                                                    <td style="text-align: center;">
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">提交审核</td>
+                                                    <td style="text-align: center;">2015.08.01  16:00:00</td>
+                                                    <td style="text-align: center;">供货商1号</td>
+                                                    <td style="text-align: center;"></td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">驳回</td>
+                                                    <td style="text-align: center;">2015.08.01  17:00:00</td>
+                                                    <td style="text-align: center;">法务1号</td>
+                                                    <td style="text-align: center;">资质填写错误，请重填</td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">提交审核</td>
+                                                    <td style="text-align: center;">2015.08.01  14:00:00</td>
+                                                    <td style="text-align: center;">供货商1号</td>
+                                                    <td style="text-align: center;"></td>
+                                                    <td style="text-align: center;"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+
+                            <div class="tab-pane" id="audit" style="overflow:hidden">
+                                <section class="scrollable wrapper w-f">
+                                    <section class="panel panel-default ">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped m-b-none">
+                                                <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">品牌ID</th>
+                                                    <th style="text-align: center;">品牌名称</th>
+                                                    <th style="text-align: center;">权利人名称</th>
+                                                    <th style="text-align: center;">经销商级别</th>
+                                                    <th style="text-align: center;">经销商公司名称</th>
+                                                    <th style="text-align: center;">凭证类型</th>
+                                                    <th style="text-align: center;">图片附件</th>
+                                                    <th style="text-align: center;">操作</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td style="text-align: center;">123</td>
+                                                    <td style="text-align: center;">阿迪达斯</td>
+                                                    <td style="text-align: center;">杨玉轩</td>
+                                                    <td style="text-align: center;">一级</td>
+                                                    <td style="text-align: center;">上海XXXXXX公司</td>
+                                                    <td style="text-align: center;">合同协议</td>
+                                                    <td style="text-align: center;">
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                        <span class="alert_big_imgs">
+                                                            <img class="alert_big_img" data-src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-width:60px">
+                                                        </span>
+                                                    </td>
+                                                    <td style="text-align: center;">
+                                                        <a href="entering.html">
+                                                            <i class="fa fa-edit text-muted"></i>
+                                                        </a>
+                                                        <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除该商品？" class="m-xs" title="删除">
+                                                            <i class="fa fa-trash-o text-muted"></i>
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div>
+
+
+                            <!--  <div class="tab-pane" id="rateinfo" style="overflow:hidden">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">微信支付：</label>
+                                            <div class="col-sm-9 form-control-static">费率  0.6%</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付宝：</label>
+                                            <div class="col-sm-9 form-control-static">费率  1.6%</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">银联支付：</label>
+                                            <div class="col-sm-9 form-control-static">费率  0.6%</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">财付通：</label>
+                                            <div class="col-sm-9 form-control-static">费率  0.6%</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">最低提现费用：</label>
+                                            <div class="col-sm-9 form-control-static">500元</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付周期：</label>
+                                            <div class="col-sm-9 form-control-static">T+3</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付周期：</label>
+                                            <div class="col-sm-9 form-control-static">T+3</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付周期：</label>
+                                            <div class="col-sm-9 form-control-static">T+3</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付周期：</label>
+                                            <div class="col-sm-9 form-control-static">T+3</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="tab-pane" id="fashinfo">
+                                <div class="col-sm-12 table-responsive">
+                                    <table class="table table-bordered table-striped m-b-xl">
+                                        <tbody>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>王二分配XX有限公司给李四</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>王二分配XX有限公司给李四</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>王二分配XX有限公司给李四</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>王二分配XX有限公司给李四</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2014-08-14 12:12:12</td>
+                                                <td>王二分配XX有限公司给李四</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            
+                                </div>
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                </section>
+
+            </form>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/supplier/init.js","dist/plupload/init.js","dist/audit_config/init.js"])
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>基本信息</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <!--编辑之后显示 -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公司名称</label>
+                            <div class="col-sm-8 "> 
+                               <p class="form-control-static">上海晖硕信息科技有限公司</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">主营类目</label>
+                            <div class="col-sm-8 "> 
+                               <p class="form-control-static">爱好>报纸/杂志</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">主营商品</label>
+                            <div class="col-sm-8 "> 
+                               <p class="form-control-static">文娱杂志，地理周刊</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">经营模式</label>
+                            <div class="col-sm-8 "> 
+                               <p class="form-control-static">生产厂家</p>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <!-- 结束-->
+
+                        <!--新增时 -->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">公司名称</label>
+                            <div class="col-sm-4"> 
+                               <input type="text" class="form-control" value="" id="company" placeholder="" data-rule-required="true"  name="company" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">主营类目</label>
+                            <div class="col-sm-4"> 
+                               <select class="form-control js_change_data" name="category" data-rule-required="true" data-url="/Plus/category1.php"> 
+                                   <option value="">请选择</option>
+                                   <option value="1">食品</option>
+                                   <option value="2">数码</option>
+                                   <option value="3">箱包</option>
+                                   <option value="4">鞋子</option>
+                                   <option value="5">服装</option>
+                                   <option value="6">生活</option>
+                                   <option value="7">饰品</option>
+                                   <option value="8">母婴</option>
+                                   <option value="9">爱好</option>
+                                   <option value="10">美妆</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="form-group js_change_box hide">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-8 js_append_box"> 
+                                
+                            </div>
+                            <script type="text/html" id="opt_tmp">
+                                {{each data as item index}}
+                                    <label class="checkbox-inline"><input type="checkbox" value="{{item.value}}" name="share[]" />{{item.title}}</label>
+                                {{/each}}
+                            </script>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">主营商品</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control" data-rule-required="true" name="designationsds" />
+                          </div>
+                          <div class="col-sm-3">
+                            <p class="form-control-static">
+                                <span class="help-inline">(多商品间以逗号分割）</span>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">经营模式</label>
+                            <div class="col-sm-8"> 
+                               <label class="radio-inline"><input type="radio" checked  name="pattern">生产厂家</label>
+                                <label class="radio-inline"><input type="radio"  name="pattern">经销批发</label>
+                                <label class="radio-inline"><input type="radio"  name="pattern">商业服务</label>
+                                <label class="radio-inline"><input type="radio"  name="pattern">招商代理</label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">联系人</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control" value="蒋小姐" name="contacts" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">手机</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control" value="13271842314" data-rule-mobile="true" value="13213421133" name="mobile " />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">公司固话：</label>
+                          <div class="col-sm-1">
+                            <input type="text" class="form-control" value="021" data-rule-number="true" data-rule-maxlength="4"  name="phone" />
+                          </div>
+                          <div class="col-sm-3">
+                            <input type="text" class="form-control" value="35353636" data-rule-number="true" data-rule-phone="true"  name="phone" />
+                          </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">邮箱地址</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control" value="peter.yang@weimob.com" data-rule-email="true"  name="email " />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">企业所在地</label>
+                          <div class="col-sm-10">
+                            <div class="form-inline" data-toggle="location">
+                              <div class="form-group ">
+                                <div class="col-lg-12">
+                                  <select class="form-control mn140" data-selected="310000"  name="provinces"  data-rule-required="true" data-location="provinces" ></select>
+                                </div>
+                              </div>
+                              <div class="form-group ">
+                                <div class="col-lg-12">
+                                  <select class="form-control mn140" data-selected="310100"  name="city"  data-rule-required="true" data-location="city"></select>
+                                </div>
+                              </div>
+                              <div class="form-group ">
+                                <div class="col-lg-12">
+                                  <select class="form-control mn140" data-selected="310113"  name="district"  data-rule-required="true" data-location="district"></select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" value="逸仙路2816号华子奔腾大厦" data-rule-email="true"  name="locality" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <!--结束-->
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/base/init.js"])
+    </script>
+
+</body>
+
+</html>

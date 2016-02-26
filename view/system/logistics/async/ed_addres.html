@@ -1,0 +1,87 @@
+﻿<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">编辑地址库</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">联系人</label>
+                    <div class="col-sm-7 must">
+                        <input type="text" class="form-control" data-rule-required="true" name="ContactPerson" />
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">地区</label>
+                    <div class="col-sm-10 must">
+
+                        <div class="form-inline">
+                      
+                            <div class="form-group ">
+                                        <div class="col-lg-12">
+                                <select class="form-control mn140"  name="provinces" id="provinces" data-rule-required="true" data-location="provinces" data-selected="110000"></select>
+                            </div></div>
+                            <div class="form-group ">
+                                  <div class="col-lg-12">
+                                <select class="form-control mn140"    name="city" id="city" data-rule-required="true" data-location="city" data-selected="110100" ></select></div>
+                            </div>
+                            <div class="form-group ">
+                                  <div class="col-lg-12">
+                                <select class="form-control mn140"    name="district" id="district" data-rule-required="true" data-location="district" data-selected="110103"></select></div>
+                            </div>
+                        </div>
+                 
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">详细地址</label>
+                    <div class="col-sm-7 must">
+                        <input type="text" class="form-control" data-rule-required="true" name="Address" data-rule-required="true"/>
+                    </div>
+                </div> 
+                   <div class="form-group">
+                    <label class="col-sm-2 control-label">电话</label>
+                    <div class="col-sm-10"> 
+                            <div class="form-group col-sm-3"> 
+                                 <input type="text" class="form-control"  name="phonearea" placeholder="区号" />
+                            </div> 
+                            <div class="col-sm-6"> 
+                                  <input type="text" class="form-control"  id="phone" name="phone" placeholder="固话" /> 
+                            </div> 
+                      
+                    </div>
+                </div> 
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">手机号码</label>
+                    <div class="col-sm-7 ">
+                        <input type="text" class="form-control"  name="mobile"  data-rule-requiredOne="#phone"/>
+                    </div>
+                    <p class="form-control-static" style="padding-top: 0px;">固定电话和手机号码请至少填写一项</p>
+                </div> 
+                   <div class="form-group">
+                    <label class="col-sm-2 control-label">公司名称</label>
+                    <div class="col-sm-7 ">
+                        <input type="text" class="form-control"  name="CompanyName" />
+                    </div>
+                </div> 
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                       <label class="checkbox-inline">
+                                    <input type="checkbox" name="ShipAddressDef" >设为默认发货地址
+                                </label>
+                        <label class="checkbox-inline">
+                                    <input type="checkbox" name="ReceivAddressDef" >设为默认退货地址
+                                </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+

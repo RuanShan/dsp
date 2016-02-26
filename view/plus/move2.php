@@ -1,0 +1,1 @@
+{"status":0,"message":"","url":"/view/goods/move_confirm.html"}

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p><i class="fa fa-edit text-muted m-r-xs"></i>添加角色</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">               
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">角色名</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="name" placeholder="请输入角色名。如：客服、售后、财务等" data-rule-required="true" data-rule-maxlength="10" />
+                            </div> 
+                            <div class="col-sm-3">
+                                <label class="control-label text-muted m-l-n">限10个汉字</label>
+                            </div>                 
+                        </div> 
+
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">可见权限</label>
+                            <div class="col-sm-9">
+                                <section class="panel panel-default ">
+                                   <div class="table-responsive">
+                                        <table class="table m-b-none">
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="6" class="b-r v-middle b-light"><label class="checkbox-inline"><input type="checkbox" id="first1" class="js_first" />商品管理</label></td>
+                                             
+                                                    <td rowspan="3" class="b-r v-middle b-light">
+                                                       <label class="checkbox-inline"><input type="checkbox" data-fid="first1" id="second1" class="js_first1 js_second" />分组管理</label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second1" class="js_second1 js_first1 js_third" />发布职位</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second1" class="js_second1 js_first1 js_third" />查看未读简历</label>
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>加赏</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>审核</label>
+                                                    </td>                                               
+                                                </tr>
+                                                 <tr>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second1"  class="js_second1 js_first1 js_third"/>调整最低额度</label>
+                                                    </td>
+                                                   
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="3" class="b-r b-light v-middle">
+                                                       <label class="checkbox-inline"><input type="checkbox" data-fid="first1" id="second2" class="js_first1 js_second"/>商品列表</label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />发布职位</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />查看未读简历</label>
+                                                    </td>                                                
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />加赏</label>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />审核</label>
+                                                    </td>                                            
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label class="checkbox-inline"><input type="checkbox" data-fid="second2" class="js_second2 js_first1 js_third" />调整最低额度</label>
+                                                    </td>                                            
+                                                </tr>
+                                                <tr>
+                                                    <td class="b-r b-light"><label class="checkbox-inline"><input type="checkbox" id="first2" class="js_first" />订单管理</label></td>
+                                             
+                                                    <td class="b-r b-light">
+                                                       <label class="checkbox-inline"><input type="checkbox" data-fid="first2" id="second3" class="js_first2 js_second" />订单管理</label>
+                                                    </td>  
+                                                    <td></td>                                             
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </section>
+                            </div>  
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>               
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/jurisdiction/init.js"]);
+    </script>
+
+
+</body>
+
+</html>

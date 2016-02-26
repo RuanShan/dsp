@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-12 m-b-xs">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                <i class="fa fa-refresh"></i>
+                            </button>
+                        
+
+                        </div>
+                        <a href="freight_ed.html" class="btn btn-sm btn-default"><i class="fa fa-plus m-r-xs"></i>新建运费模版</a>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="sort" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+         <section class="panel panel-default ">
+                <header class="panel-heading">
+                    <span class="m-r">西北</span><span class="pull-right"> 
+                           <span class="help-inline m-r">最后编辑时间：2014-06-17 13:06</span>
+                         <a href="/api/Form/ajaxPost/1" data-confirm="false" data-toggle="ajaxPost"  class="m-xs" title="复制">
+                            <i class="fa fa-copy text-muted"></i>
+                        </a>
+                        <a href="freight_ed.html" class="m-xs" title="编辑">
+                            <i class="fa fa-edit text-muted"></i>
+                        </a>
+                        <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxPost" data-remove="section" data-msg="确定删除 通用 模板" class="m-xs" title="删除">
+                            <i class="fa fa-trash-o text-muted"></i>
+                        </a>
+                    </span>
+                     
+                </header>
+                <div class="table-responsive">
+                    <table class="table   m-b-none">
+                        <thead>
+                            <tr>
+                               <th class="col-sm-1 mn130">运送方式</th>
+                                <th class="col-sm-3">运送到</th>
+                                <th>首体积(m³)</th>
+                                <th>运费(元)</th>
+                                <th>续体积(m³)</th>
+                                <th>运费(元)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>快递 
+                                </td>
+                                <td>全国</td>
+                                <td>12.0
+                                </td>
+                                <td>1.00
+                                </td>
+                                <td>0.10</td>
+                                <td>0.00</td>
+                            </tr>
+                            <tr>
+                                <td>快递 
+                                </td>
+                                <td>陕西,青海,甘肃,新疆,宁夏</td>
+                                <td>1
+                                </td>
+                                <td>0.00
+                                </td>
+                                <td>1</td>
+                                <td>0.00</td>
+                            </tr>
+                             
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+         <section class="panel panel-default ">
+                <header class="panel-heading">
+                    <span class="m-r">通用</span> <span class="pull-right"> 
+                        <span class="help-inline m-r">最后编辑时间：2014-06-17 13:06</span>
+                         <a href="/api/Form/ajaxPost/1" data-confirm="false" data-toggle="ajaxPost"  class="m-xs" title="复制">
+                            <i class="fa fa-copy text-muted"></i>
+                        </a>
+                        <a href="freight_ed.html" class="m-xs" title="编辑">
+                            <i class="fa fa-edit text-muted"></i>
+                        </a>
+                        <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxPost" data-remove="section" data-msg="确定删除 通用 模板" class="m-xs" title="删除">
+                            <i class="fa fa-trash-o text-muted"></i>
+                        </a>
+                    </span>
+                     
+                </header>
+                <div class="table-responsive">
+                    <table class="table   m-b-none">
+                        <thead>
+                            <tr>
+                               <th class="col-sm-1 mn130">运送方式</th>
+                                <th class="col-sm-3">运送到</th>
+                                <th>首件(个)</th>
+                                <th>运费(元)</th>
+                                <th>续件(个)</th>
+                                <th>运费(元)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>快递 
+                                </td>
+                                <td>全国</td>
+                                <td>1
+                                </td>
+                                <td>0.00
+                                </td>
+                                <td>1</td>
+                                <td>0.00</td>
+                            </tr>
+                          
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+       <!--      <section class="panel panel-default ">
+                 
+               <div class="panel-body">
+                   暂无数据...  
+               </div>
+            </section>-->
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共3条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="1" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use("dist/application/app.js")
+    </script>
+
+</body>
+
+</html>

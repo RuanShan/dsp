@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/datepicker/datepicker3.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <p>萌主统计</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable wrapper">
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#classify">萌主统计</a>
+                        </li>
+                        <li>
+                            <a href="distribution_attr.html">萌主属性</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <footer class="panel-footer bg-white no-padder m-t-sm">
+                        <div class="row text-center no-gutter bg-light lter">
+                            <div class="col-xs-4 b-r b-l b-b b-light">
+                                <span class="h4 font-bold m-t block">10,450</span>
+                                <div class="clearfix">
+                                    <span class="pull-right m-r-xl text-primary"> <i class="fa fa-long-arrow-down m-r-xs"></i>
+                                        10%
+                                    </span>
+                                </div> <strong class="m-b block">昨日新增萌主数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="昨日0-24时的新增萌主数">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a></strong> 
+                                <a href="away_list.html" class="text-muted pull-right m-r-sm m-t-n-md m-b-xs text-ul">查看明细</a>
+                            </div>
+                            <div class="col-xs-4 b-r b-b b-light">
+                                <span class="h4 font-bold m-t block">21,230</span>
+                                <div class="clearfix">
+                                    <span class="pull-right m-r-xl text-danger">
+                                        <i class="fa fa-long-arrow-up m-r-xs"></i>
+                                        25%
+                                    </span>
+                                </div> <strong class="m-b block">昨日流失萌主数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="昨日0-24时减少的萌主数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a></strong> 
+                                <a href="away_list.html" class="text-muted pull-right m-r-sm m-t-n-md m-b-xs text-ul">查看明细</a>
+                            </div>
+                            <div class="col-xs-4 b-r b-b b-light">
+                                <span class="h4 font-bold m-t block">7,230</span>
+                                <div class="clearfix">
+                                    <span class="pull-right m-r-xl text-danger">
+                                        <i class="fa fa-long-arrow-up m-r-xs"></i>
+                                        12%
+                                    </span>
+                                </div>
+                                <strong class="m-b block">
+                                    总萌主数
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止昨日24时的总萌主数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </strong>
+                                <a href="all_list.html" class="text-muted pull-right m-r-sm m-t-n-md m-b-xs text-ul">查看明细</a>
+                            </div>
+
+                        </div>
+                    </footer>
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="classify" style="overflow-x:hidden">
+                            <div class="row m-t">
+                                <div class="col-md-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading font-bold">统计图表</header>
+                                        <div class="panel-body">
+                                            <form class="talbe-horizontal" method="post" action="/api/Page/list">
+                                                <div class="row">
+                                                    <div class="col-sm-11">
+                                                        <div class="form-group">
+                                                            <a class="btn btn-default btn-sm " data-toggle="reportrangecount" data-change="submit">
+                                                                <i class="fa fa-calendar fa-lg"></i>
+                                                                <small>选择时间</small>
+                                                                <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                                                                <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+                                                <div class="row m-t-n-xs">
+                                                    <div class="col-sm-10">
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="0"  data-chartid="v_echarts" data-path="/plus/v_charts.php?page=2&type=0">新增萌主数</button>
+                                                            <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="1" data-chartid="v_echarts" data-path="/plus/v_charts.php?page=3&type=1">萌主减少数</button>
+                                                            <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="2" data-chartid="v_echarts" data-path="/plus/v_charts.php?page=2&type=2">萌主总数</button>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2 text-right">
+                                                        <button type="button" data-toggle="compare"  class="btn btn-default btn-sm">对比时段</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div id="v_echarts" style="height: 310px" data-path="/plus/v_charts.php?page=3&type=3">
+                                                <div class="load">数据加载中...</div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+
+                            </div>
+
+                            <div class="row m-t">
+                                <div class="col-md-12">
+                                    <section class="panel panel-default">
+                                        <header class="panel-heading font-bold">
+                                            萌主销售榜
+                                            <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                                                <i class="fa fa-cloud-download m-r-xs"></i>
+                                                导出csv文件
+                                            </a>
+                                        </header>
+                                        <div class="panel-body">
+                                            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                                                <div class="row ">
+                                                    <div class="col-sm-11 m-b-xs">
+                                                        <div class="form-group">
+                                                            <a class="btn btn-default btn-sm " data-toggle="reportrangecount" data-change="submit">
+                                                                <i class="fa fa-calendar fa-lg"></i>
+                                                                <small>选择时间</small>
+                                                                <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                                                                <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange2" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                                                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                                                <input type="hidden" name="order" id="order" value="" />
+
+                                            </form>
+                                            <section class="panel panel-default m-t-sm">
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped m-b-none">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>萌主昵称</th>
+                                                                <th>店铺名称</th>
+                                                                <th>所在地</th>
+                                                                <th>
+                                                                    成交额（元）
+                                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该店铺在该时段内的成交额。">
+                                                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                                    </a>
+                                                                </th>
+                                                                <th>
+                                                                    成交量（件）
+                                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该店铺在该时段内的成交量。">
+                                                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                                    </a>
+                                                                </th>
+                                                                <th>
+                                                                    成交总额（元）
+                                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该店铺为此供货商的带来的总成交额。">
+                                                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                                    </a>
+                                                                </th>
+                                                                <th>
+                                                                    成交总量（件）
+                                                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该店铺为此供货商的带来的总销量。">
+                                                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                                                    </a>
+                                                                </th>
+                                                                <th>
+                                                                    操作
+                                                                </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td>LP01</td>
+                                                                <td>良品铺子</td>
+                                                                <td>上海</td>
+                                                                <td>999</td>
+                                                                <td>99</td>
+                                                                <td>9999</td>
+                                                                <td>999</td>
+                                                                <td>
+                                                                    <a href="tendency.html" data-remote="async/sales.html" data-toggle="ajaxModal" class="m-xs" title="查看销售趋势图"> <i class="fa fa-bar-chart-o text-muted"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>LP02</td>
+                                                                <td>良品铺子</td>
+                                                                <td>上海</td>
+                                                                <td>999</td>
+                                                                <td>99</td>
+                                                                <td>9999</td>
+                                                                <td>999</td>
+                                                                <td>
+                                                                    <a href="tendency.html" data-remote="async/sales.html" data-toggle="ajaxModal" class="m-xs" title="查看销售趋势图"> <i class="fa fa-bar-chart-o text-muted"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- 
+                                     <tr>
+                                                            <td  colspan="8" class="nodata">暂无数据</td>
+                                                        </tr>
+                                                        -->
+                                                    </tbody>
+                                                </table>
+                                                <footer class="footer bg-white b-t">
+                                                    <div class="row text-center-xs">
+                                                        <div class="col-md-6 hidden-sm">
+                                                            <p class="text-muted m-t">总共321条 当前为第1页</p>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                                                            <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                                                        </div>
+                                                    </div>
+                                                </footer>
+
+                                            </div>
+                                        </section>
+
+                                    </div>
+
+                                </section>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+<div class="modal fade in js_compare_modal_time"   tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">对比时段</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">时间选择</label>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="date" data-rule-required="true"  readonly="readonly" value="" data-toggle="datepicker" data-pastdays="7"  data-end-date="now"/>
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group js_date_show hide">
+                        <label class="col-sm-2 control-label">已选择时间</label>
+                        <div class="col-sm-8">
+                            <p class="form-control-static"></p>
+                            <input type="hidden" name="datesave" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+                    <button type="submit" class="btn btn-primary"  data-loading-text="保存中...">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+
+<script type="text/javascript">seajs.use(["dist/application/app.js", "dist/count/init.js"])</script>
+
+</body>
+
+</html>

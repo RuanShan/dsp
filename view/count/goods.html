@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn btn-default btn-sm active" href="/api/Page/list?date=1&keyword=">昨日</a>
+                            <a class="btn btn-default btn-sm active" href="/api/Page/list?date=7&keyword=">最近7天</a>
+                            <a class="btn btn-default btn-sm " href="/api/Page/list?date=15&keyword=">最近15天</a>
+                            <a class="btn btn-default btn-sm " href="/api/Page/list?date=30&keyword=">最近30天</a>
+                            <a class="btn btn-default btn-sm" data-toggle="datepickersub" data-end-date="now" data-format="yyyy-MM"  data-change="submit" > <i class="fa fa-calendar fa-lg"></i>
+                                <small>选择月份</small>
+                                <span>2014-06</span> <b class="caret"></b>
+                                <input type="hidden" value="2014/06/1" id="datepickersub" name="datepickersub" />                        
+                            </a>
+                        </div>
+                        <span>2014-06-01至2014-06-30</span>
+                    </div>
+
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="请输入商品名称或编码"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="sales" />
+            </form>
+
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <col/>
+                        <col style="width:100px"/>
+                        <col style="width:120px;"/>
+                        <col style="width:120px"/>
+                        <col style="width:120px"/>
+                        <col style="width:120px"/>
+                        <col style="width:120px"/>
+                        <col style="width:120px"/>
+                        <col style="width:120px"/>
+                        <col style="width:90px"/>
+                        <thead>
+                            <tr>
+
+                                <th>商品名称</th>
+                                <th class="th-sortable" data-sort-name="sales">
+                                    成交额
+                                    <br/>
+                                    （元）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间范围内商品的成交金额，以支付为准。">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="sales">
+                                    成交量
+                                    <br/>
+                                    （件）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间范围内商品的成交量，以支付为准。">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="distritor">
+                                    成交萌主
+                                    <br/>
+                                    数（人）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间段内销售（支付）出该商品的所有萌主数，包括流失的萌主。">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="pv">
+                                    商品浏览
+                                    <br/>
+                                    量（pv）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间段内该商品页面浏览量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="uv">
+                                    商品访客
+                                    <br/>
+                                    数（uv）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间段内访问该商品的用户数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="conversion">
+                                    成交转化
+                                    <br/>
+                                    率（%）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="购买人数/访客数（UV）">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="stop">
+                                    页面停留
+                                    <br/>
+                                    时长（s）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间段该商品详情页的平均停留时长。">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th class="th-sortable" data-sort-name="transmit">
+                                    商品转化
+                                    <br/>
+                                    数（次）<a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="在该时间段该商品的转发数量">
+                                        <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                                    </a>
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                                            </div>
+                                            <small class="text-muted">
+                                                价格：
+                                                <span class="money">228.00</span>
+                                                <span class="m-l-sm">库存：20</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>
+                                    <a href="tendency.html" data-remote="async/tendency.html" data-toggle="ajaxModal" class="m-xs" title="产品销售趋势图">
+                                        <i class="fa fa-bar-chart-o text-muted"></i>
+                                    </a>
+                                    <a href="comment.html" class="m-xs" title="查看评论（12）">
+                                        <i class="fa fa-comments-o text-muted"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                        <div class="media-body">
+                                            <div>
+                                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                                            </div>
+                                            <small class="text-muted">
+                                                价格：
+                                                <span class="money">228.00</span>
+                                                <span class="m-l-sm">库存：20</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>99</td>
+                                <td>99</td>
+                                <td>10</td>
+                                <td>
+                                    <a href="tendency.html" data-remote="async/tendency.html" data-toggle="ajaxModal" class="m-xs" title="产品销售趋势图">
+                                        <i class="fa fa-bar-chart-o text-muted"></i>
+                                    </a>
+                                    <a href="comment.html" class="m-xs" title="查看评论（12）">
+                                        <i class="fa fa-comments-o text-muted"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                            <!--  <tr>
+                            <td  colspan="10" class="nodata">暂无数据</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+    <footer class="footer bg-white b-t">
+        <div class="row text-center-xs">
+            <div class="col-md-6 hidden-sm">
+                <p class="text-muted m-t">总共321条 当前为第1页</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="1" data-page-current="1"></ul>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use("dist/application/app.js") </script>
+
+</body>
+
+</html>

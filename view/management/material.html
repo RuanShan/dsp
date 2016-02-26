@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>V店</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/page/formwizard.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/select2/4.0.0/select2.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/management/material.min.css" rel="stylesheet" />
+
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>提交资料</p>
+
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-horizontal form-validate form-wizard form-wizard-step" method="post" action="/api/form/ajaxform">
+
+            <div class="step " id="firstStep">
+              <div class="process-bar">
+                <ul>
+                  <li class="size5 on">
+                    <span>完善企业信息</span>
+                  </li>
+                  <li class="size5 next">
+                    <span>填写店铺信息</span>
+                  </li>
+                  <li class="size5 nnext">
+                    <span>填写资质信息</span>
+                  </li>
+                  <li class="size5 nnext">
+                    <span>填写账户信息</span>
+                  </li>
+                  <li class="size5 nnext last">
+                    <span>确认提交</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="step-forms">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">公司名称：</label>
+                  <div class="col-sm-5 must">
+                    <input type="text" class="form-control" data-rule-required="true" name="Name" />
+                  </div>
+                  <div class="col-sm-5">
+                    <p class="form-control-static">
+                      <span class="help-inline">公司名称与营业执照上一致</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">主营类目：</label>
+                  <div class="col-sm-5 must" >
+                      <select name="classes1" class="form-control js_classes_select" data-rule-required="true">
+                        <option value="">请选择</option>
+                        <option value="1">美妆</option>
+                        <option value="6">食品</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-5" >&nbsp;</div>
+                  <div class="col-sm-8 col-sm-offset-2 js_classes_show js_classes_show_1 hide" >
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="11" />护理精油
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="12" />美发护发
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="13" />香水彩妆
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="14" />美容护肤
+                    </label>
+                  </div>
+                  <div class="col-sm-8 col-sm-offset-2 js_classes_show js_classes_show_6 hide" >
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="61" />地方特产
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="62" />保健养生
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="63" />生鲜水果
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="64" />红酒白酒
+                    </label>
+                    <label class="checkbox-inline">
+                       <input name="subindustry[]" type="checkbox" value="65" />牛奶饮料
+                    </label>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">主营商品：</label>
+                  <div class="col-sm-5 must">
+                    <input type="text" class="form-control" data-rule-required="true"  name="products" />
+
+                  </div>
+                  <div class="col-sm-5">
+                    <p class="form-control-static">
+                      <span class="help-inline">（多个主营商品以逗号间隔）</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">经营模式：</label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <input checked="checked" type="radio" name="mode" />
+                      生产厂家
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="mode" />
+                      经销批发
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="mode" />
+                      商业服务
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="mode" />
+                      招商代理
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="mode" />
+                      其他
+                    </label>
+
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">联系人：</label>
+                  <div class="col-sm-5 must">
+                    <input type="text" data-rule-required="true" class="form-control"  name="contacts" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">手机：</label>
+                  <div class="col-sm-5 must">
+                    <input type="text" class="form-control" data-rule-required="true" data-rule-Mobile="true"  name="mobile" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">公司固话：</label>
+                  <div class="col-sm-1">
+                    <input type="text" class="form-control" data-rule-required="true" data-rule-number="true" data-rule-maxlength="4"  name="phone" />
+                  </div>
+                  <div class="col-sm-4 must">
+                    <input type="text" class="form-control" data-rule-required="true" data-rule-phone="true"  name="phone2" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">邮箱地址：</label>
+                  <div class="col-sm-5 must">
+                    <input type="text" class="form-control" data-rule-required="true" data-rule-email="true"  name="email" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">企业所在地：</label>
+                  <div class="col-sm-10">
+                    <div class="form-inline" data-toggle="location">
+
+                      <div class="form-group">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140" data-selected="310000"  name="provinces"  data-rule-required="true" data-location="provinces" ></select>
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140" data-selected="310100"  name="city"  data-rule-required="true" data-location="city"></select>
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140" data-selected="310113"  name="district"  data-rule-required="true" data-location="district"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label"></label>
+                  <div class="col-sm-5 must">
+                    <input type="text"  placeholder="请输入具体地址" class="form-control" data-rule-required="true"  name="address" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+
+              </div>
+            </div>
+
+            <div class="step" id="secondStep" style="display:none">
+              <!-- 交互说明，切换li的class：
+                  1.根据步骤数添加样式size+n（n为步骤数）
+                  2.当前为on，前一个为prev，前一个之前的都为pprev，后一个为next，后一个之后的都为nnext，最后一个加last
+                  3.创建成功时，为其添加“hide”样式
+              -->
+              <div class="process-bar">
+                <ul>
+                  <li class="size5 prev">
+                    <span>填写企业信息</span>
+                  </li>
+                  <li class="size5 on">
+                    <span>填写店铺信息</span>
+                  </li>
+                  <li class="size5 next">
+                    <span>填写资质信息</span>
+                  </li>
+                  <li class="size5 nnext">
+                    <span>填写账户信息</span>
+                  </li>
+                  <li class="size5 nnext last">
+                    <span>完成提交</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="step-forms">
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">店铺类型：</label>
+                  <div class="col-sm-10">
+                    <label class="radio-inline">
+                      <input type="radio" name="sjfw1" value="1" checked="checked" data-toggle="specification-enable" data-enable="true" class="ui-wizard-content ui-helper-reset ui-state-default">旗舰店
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="sjfw1" value="1" data-toggle="specification-enable" data-enable="true">专卖店
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="sjfw1" value="1" data-toggle="specification-enable" data-enable="true">专营店
+                    </label>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">经营品牌:</label>
+                  <div class="col-sm-4 must">              
+                      <select name="lower" class="form-control js_add_label" multiple="multiple" data-remote="/plus/loadlower.php?type=1" data-rule-required="true" data-toggle="select2_4" data-placeholder="请输入品牌名称" style="width: 412px;">
+                        <!-- <option value="b" selected="">分销商BBB</option>
+                        <option value="2407161" selected="">分销商ddd</option> -->
+                      </select>                         
+                  </div>
+                  <div class="col-sm-3 form-control-static">
+                        <a style="color:#368ee0;  margin-left: 54px;" href="javascript:;" data-remote="async/brand_add.html" data-toggle="ajaxModal" title="添加品牌">未找到我要入驻的品牌</a>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">店铺名称：</label>
+                  <div class="col-sm-4 must">
+                    <div>
+                      <input type="text" class="form-control init" name="shopname" value="正品小店" data-rule-required="true" data-rule-restrictCharLength="[24,12]" data-rule-remote="/plus/ajaxvalidation.php" />
+                    </div>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">店铺LOGO：</label>
+                  <div class="col-sm-4">
+                    <input class="hide" type="text" data-rule-required="true" data-msg="请上传店铺LOGO" name="logo" value="">
+                    <button data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg">上传logo</button>
+                   
+                  </div>
+                  <div class="col-sm-6">
+                     <p class="form-control-static">建议尺寸320*320像素，文件大小不超过30K，文件格式为bmp、png、jpeg、jpg或gif</p>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">店铺服务热线：</label>
+                  <div class="col-sm-4 must">
+                    <input type="text" class="form-control" data-rule-required="true" data-rule-phone="true" name="vipphone" />
+                  </div>
+                  <div class="col-sm-5">
+                    <p class="form-control-static">该服务热线将用于销售您商品的V客与您进行联系</p>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">天猫店铺链接：</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" data-rule-url="true" name="tmall" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">京东店铺链接：</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" data-rule-url="true" name="jd" />
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+              </div>
+            </div>
+            <div class="step" id="thirdStep" style="display:none">
+              <div class="process-bar">
+                <ul>
+                  <li class="size5 pprev">
+                    <span>填写企业信息</span>
+                  </li>
+                  <li class="size5 prev">
+                    <span>填写店铺信息</span>
+                  </li>
+                  <li class="size5 on">
+                    <span>填写资质信息</span>
+                  </li>
+                  <li class="size5 next">
+                    <span>填写账户信息</span>
+                  </li>
+                  <li class="size5 nnext last">
+                    <span>完成提交</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="step-forms">
+                <div class="panel panel-default">
+                  <div class="panel-heading">基本资质信息</div>
+                  <div class="panel-body">
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">营业执照注册号：</label>
+                      <div class="col-sm-4 must">
+                        <input type="text" class="form-control" data-rule-required="true" name="registration" />
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">经营范围：</label>
+                      <div class="col-sm-4 must">
+                        <textarea name="companyrang"  rows="4" class="form-control" data-rule-required="true" data-rule-maxlength="200"></textarea>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                     <div class="form-group">
+                      <label class="col-sm-2 control-label">企业类型：</label>
+                      <div class="col-sm-4 must">
+                        <input type="text" name="companytype" class="form-control" data-rule-required="true" data-rule-maxlength="30" />
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">企业成立时间：</label>
+                      <div class="col-sm-4 must">
+                        <div class="input-group">
+                                <input type="text" class="form-control" name="date"   readonly="readonly"  value="2015-05-27"  data-end-date="now" data-toggle="datepicker" />                        
+                                <span class="input-group-addon" > <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">企业住所：</label>
+                      <div class="col-sm-4 must">
+                        <input type="text" name="companyaddress" class="form-control" data-rule-required="true" data-rule-maxlength="50" />
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">营业执照影印件：</label>
+                      <div class="col-sm-4">
+                         <p class="form-control-static">请上传证件清晰彩色原件扫描件或数码拍摄照片文件大小不超过2M，文件格式为bmp、png、jpeg、jpg或gif</p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <input class="hide" type="text" data-rule-required="true" data-msg="请上传营业执照影印件" name="certificate" value="">
+                        <button  data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg">上传文件</button>
+                      </div>
+                     
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">组织机构代码：</label>
+                      <div class="col-sm-4 must">
+                        <input type="text" class="form-control" data-rule-required="true" name="code" />
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">组织机构代码证扫描件：</label>
+                      <div class="col-sm-4">
+                        <img class="thumb_img" src="/Assets/images/element/dis-logo.jpg" style="max-height: 100px;">
+
+                        <input class="hide" type="text" data-rule-required="true" data-msg="请上传组织机构代码证扫描件" name="codeimg">
+                        <button class="btn btn-default" type="button" data-toggle="selectimg">上传文件</button>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">税务登记证扫描件：</label>
+                      <div class="col-sm-4">
+                        <input class="hide" type="text" data-rule-required="true" data-msg="请上传税务登记证扫描件" name="taximg">
+                        <button class="btn btn-default" type="button" data-toggle="selectimg">上传文件</button>
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">法人或经办人姓名：</label>
+                      <div class="col-sm-4 must">
+                        <input type="text" class="form-control ui-wizard-content ui-helper-reset ui-state-default" data-rule-required="true" name="code2" aria-required="true">
+                      </div>
+                    </div>
+                    <div class="line line-dashed line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">法人或经办人身份证扫描件：</label>
+                      <div class="col-sm-4 sfz_sp_sm0">
+                        <input class="hide" type="text" data-rule-required="true" data-msg="请上传法人或经办人身份证正面扫描件" name="humanimg2" value="">
+                        <button  data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg">上传证件正面</button>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <input class="hide" type="text" data-rule-required="true" data-msg="请上传法人或经办人身份证反面扫描件" name="humanimg3" value="">
+                        <button  data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg">上传证件反面</button>
+                      </div>
+                    </div>
+                  </div>
+                    
+                </div>
+                  
+                <div class="panel panel-default">
+                  <div class="panel-heading">商标及授权相关文件</div>
+                  <div class="panel-body js_trademark"></div>
+                    <script type="text/html" id="trademark_temp">
+                      <div class="trademark_list">
+                        <h4 class="js_title">{{text}}</h4>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">商标注册证（或商标申请受理通知书）：</label>
+                          <div class="col-sm-2 must">
+                            <input class="hide" type="text" data-rule-required="true" data-msg="请上传商标注册证" name="trademark[{{id}}][0]" value="">
+                            <button data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">商标变更、续展证明文件：</label>
+                          <div class="col-sm-2">
+                            <input class="hide" type="text" name="trademark[{{id}}][1]" value="">
+                            <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">商标授权书：</label>
+                          <div class="col-sm-2">
+                            <input class="hide" type="text" name="trademark[{{id}}][2]" value="">
+                            <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">产品销售授权（或购销合同）：</label>
+                          <div class="col-sm-2">
+                            <input class="hide" type="text" name="trademark[{{id}}][3]" value="">
+                            <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">产品生产授权书（或委托加工协议）：</label>
+                          <div class="col-sm-2">
+                            <input class="hide" type="text" name="trademark[{{id}}][4]" value="">
+                            <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 control-label">采购发票：</label>
+                          <div class="col-sm-2">
+                            <input class="hide" type="text" name="trademark[{{id}}][5]" value="">
+                            <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                      </div>
+                    </script>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">行政许可及产品质量相关文件</div>
+                  <div class="panel-body js_aptitude_div">
+                    <div class="padder m-b-md">请上传入驻所需的其他资质，详情请参考<a class="text-blue text-ul">《萌店招商标准》</a></div>
+
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">公司性质：</label>
+                      <div class="col-sm-10">
+                        <label class="radio-inline">
+                          <input type="radio" name="sjfw2" value="1" checked="checked" data-toggle="specification-enable" data-enable="true">品牌
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="sjfw2" value="1" data-toggle="specification-enable" data-enable="true">代理
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="sjfw2" value="1" data-toggle="specification-enable" data-enable="true">经销
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="sjfw2" value="1" data-toggle="specification-enable" data-enable="true">平台或其他
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="js_category"></div>
+                    <script type="text/html" id="category_temp">
+                      {{each items as value i}}
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">{{value.text}}：</label>
+                          <div class="col-sm-2 {{if value.is_must}}must{{/if}}">
+                            {{if value.img}}<img class="thumb_img" src="{{value.img}}" style="max-height: 100px;">{{/if}}
+                            <input class="hide" type="text" {{if value.is_must}}data-rule-required="true"{{/if}} data-msg="请上传商标注册证" name="category[{{value.id}}]" value="">
+                            <button data-rule-required="true" class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                          </div>
+                        </div>
+                      {{/each}}
+                    </script>
+
+                    <div class="js_aptitude_list" data-num="1">
+                      <div class="form-group">
+                      <label class="col-sm-2 control-label">资质<span class="js_number">1</span>：</label>
+                        <div class="col-sm-4">
+                          <input class="hide" type="text" name="aptitude[]" value="">                  
+                          <button class="btn btn-default" type="button" data-toggle="selectimg">上传文件</button>
+                        </div>
+                        <div class="col-sm-4 ">
+                          <button class="btn btn-default js_aptitude_del" type="button">删除</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <button class="btn btn-default js_add_aptitude" type="button">增加资质</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script type="text/html" id="js_js_aptitude_temp">
+                 <div class="js_aptitude_list" data-num="{{number}}">
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">资质<span class="js_number">{{number}}</span>：</label>
+                      <div class="col-sm-4">
+                        <input class="hide" type="text" name="aptitude[]" value="">
+                        <button class="btn btn-default" type="button" data-toggle="selectimg2">上传文件</button>
+                      </div>
+                      <div class="col-sm-4 ">
+                        <button class="btn btn-default js_aptitude_del" type="button">删除</button>
+                      </div>
+                    </div>
+                  </div>
+              </script>
+            </div>
+            <div class="step" id="fourStep" style="display:none">
+              <div class="process-bar">
+                <ul>
+                  <li class="size5 pprev">
+                    <span>填写企业信息</span>
+                  </li>
+                  <li class="size5 pprev">
+                    <span>填写店铺信息</span>
+                  </li>
+                  <li class="size5 prev">
+                    <span>填写资质信息</span>
+                  </li>
+                  <li class="size5 on">
+                    <span>填写账户信息</span>
+                  </li>
+                  <li class="size5 next last">
+                    <span>完成提交</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="step-forms">
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">账户类型：</label>
+                  <div class="col-sm-10">
+                    <div class="form-inline" data-toggle="location">
+
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select id="accountType" name="classes2" class="form-control ui-wizard-content ui-helper-reset ui-state-default" data-rule-required="true" aria-required="true" style="width:164px;">
+                            <option value="2">国内账户</option>
+                            <option value="1">国际账户</option>
+                          </select>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="gnzh"><!-- 国内账户 -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">提现方式：</label>
+                  <div class="col-sm-10">
+                    <div class="form-inline" data-toggle="location">
+
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select id="zffs" name="classes2" class="form-control ui-wizard-content ui-helper-reset ui-state-default" data-rule-required="true" aria-required="true" style="width:164px;">
+                            <option value="2">银行卡</option>
+                            <option value="1">支付宝</option>
+                          </select>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="zfb" >
+                  <div class="line line-dashed line-lg pull-in"></div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">支付宝账号：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="zfbzh"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">姓名：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="zfbxm"/>
+                    </div>
+                  </div>
+                  <div class="line line-dashed line-lg pull-in"></div>
+                </div>
+
+                <div class="yhk">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">开户城市：</label>
+                  <div class="col-sm-10">
+                    <div class="form-inline" data-toggle="location">
+
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140"  name="provinces1"  data-rule-required="true" data-location="provinces" ></select>
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140"  name="city2"  data-rule-required="true" data-location="city"></select>
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <div class="col-lg-12">
+                          <select class="form-control mn140" name="district3" data-rule-required="true" data-location="district"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">开户名称：</label>
+                  <div class="col-sm-4 must">
+                    <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">开户银行(到支行)：</label>
+                  <div class="col-sm-4 must">
+                    <input type="text"  placeholder="如：中国建设银行宝山支行" class="form-control" data-rule-required="true" name="accountbank "/>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                 <div class="form-group">
+                  <label class="col-sm-2 control-label">银行账户：</label>
+                  <div class="col-sm-4 must">
+                    <input type="text" placeholder="" class="form-control" data-rule-required="true" name="bank "/>
+                  </div>
+                </div>
+                <div class="line line-dashed line-lg pull-in"></div>
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">开户证明：</label>
+                  <div class="col-sm-8">
+                    <input class="hide" type="text" data-rule-required="true" data-msg-required="请上传开户证明" name="humanimg" value="">
+                    <button class="btn btn-default" type="button" data-toggle="selectimg">上传文件</button>
+                    <a href="" class="text-blue m-l">《开户证明模板》</a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-10 col-sm-offset-2">
+                    <p class="form-control-static">注：请认真准确的填写您的银行结算信息，该信息将用于V店与您的资金结算。</p>
+                  </div>
+                </div>
+                </div>
+                </div><!-- 国内账户END -->
+                <div class="gwzh" style="display:none;">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">姓名：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+
+                  <div class="form-group" data-toggle="overseas">
+                    <label class="col-sm-2 control-label">国家/地区：</label>
+                     <div class="controls">
+                          <div class="col-sm-10 ">
+                               <select name="data_continent" id="data_continent" class="form-control pull-left  m-r-xs" style="width:160px;">
+                              </select>
+                              <select name="data_country" id="data_country" class="form-control pull-left m-r-xs" style="width:160px;" >
+                              </select>
+                              <select name="data_city" id="data_city" class="form-control pull-left m-r-xs" style="width:160px;">
+                              </select>
+                          </div>
+
+                      </div>
+                    </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">地址：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">银行：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">账号：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">swift code：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">收款人地址：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">分区代号：</label>
+                    <div class="col-sm-4 must">
+                      <input type="text" class="form-control" data-rule-required="true" name="accountname "/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">结算币种：</label>
+                    <div class="col-sm-4 must">
+                      <select class="form-control mn140" name="state" >
+                        <option>美元</option>
+                        <option>人民币</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line line-dashed line-lg pull-in"></div>
+            </div>
+           <!--  <div class="step" id="fiveStep" style="display:none">
+             <div class="process-bar">
+               <ul>
+                 <li class="size5 pprev">
+                   <span>填写企业信息</span>
+                 </li>
+                 <li class="size5 pprev">
+                   <span>填写店铺信息</span>
+                 </li>
+                 <li class="size5 pprev">
+                   <span>填写资质信息</span>
+                 </li>
+                 <li class="size5 prev">
+                   <span>填写账户信息</span>
+                 </li>
+                 <li class="size5 on last">
+                   <span>确认提交</span>
+                 </li>
+               </ul>
+             </div>
+             <div class="step-forms">
+               <div class="form-group">
+                 <div class="col-sm-10 col-sm-offset-2">
+                   <h5 class="fa-2x">辛苦啦，您已完成所有信息填写~</h5>
+                 </div>
+               
+               </div>
+               <div class="form-group">
+                 <div class="col-sm-10 col-sm-offset-2">
+                   <h5  class="fa-2x">我们将会在1个工作日内完成您信息的审核！</h5>
+                 </div>
+               
+               </div>
+               
+           
+             </div>
+           </div> -->
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <input type="reset" class="btn btn-default" value="Back" id="back" />
+                <input type="submit" class="btn btn-primary" value="Submit" id="next" />
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+  <script src="/assets/javascripts/seajs_config.js"></script>
+
+  <script type="text/javascript">
+    window.select_level3_data = {
+        "0": {
+            "1": "分类1",
+            "2": "分类2"
+        },
+        "0,1": {
+            "3": "分类1.1"  
+        },
+        "0,1,3": {
+            "5": "分类0.1.3"
+        },
+        "0,2": {
+            "4": "分类2.1"
+        },
+        "0,2,4": {
+            "6": "分类0.2.3"
+        }
+    };
+    window.path = "/plus/material.php";
+
+    seajs.use(["dist/application/app.js","dist/aptitude/init.js","dist/supplier/init.js","dist/management/material.js", "dist/form/data_country.js"]);
+        
+
+  </script>
+
+</body>
+
+</html>

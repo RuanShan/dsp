@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script> 
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>消息提醒</p>
+        </header>
+        <section class="scrollable  wrapper ">
+            <section class="panel panel-default">
+                <div class="panel-body">
+
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="table-responsive ">
+
+                        <table class="table b-a b-lt">
+                        <thead>
+                            <tr class="bg-light">
+                                <th>消息类别</th>
+                                <th>消息内容</th>
+                                <!--<th>APP提醒 <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="click" data-html="true" data-content="免费，<a href='http://www.weimob.com/topic/wmapp' target='_blank' class='text-info'>点击下载微盟APP</a>" class="text-muted"><i class="fa fa-question fa-lg m-l-xs"></i></a></th>-->
+                                <th>网站提醒<a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="click"  data-content="免费，每5分钟更新一次" class="text-muted"><i class="fa fa-question fa-lg m-l-xs"></i></a></th>
+                                <!--<th>短信提醒<a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="click" data-content="非免费，需购买短信增值包" class="text-muted"><i class="fa fa-question fa-lg m-l-xs"></i></a></th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="6" class="v-middle b-r b-light lt">
+                                    订单消息
+                                </td>
+                                <td>
+                                    订单提交提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app"/>
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                             <tr>
+                                
+                                <td>
+                                    订单支付提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app" checked="checked" />
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                            <tr>
+                                
+                                <td>
+                                    订单确认收货提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app" checked="checked"/>
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                           
+                            <tr>
+                                
+                                <td>
+                                    维权申请提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app" checked="checked"/>
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                            <tr>
+                                
+                                <td>
+                                    商家评价提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app"/>
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                            <tr>
+                                
+                                <td>
+                                    商品审核不通过提醒
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-app"/>
+                                </td>-->
+                                 <td>
+                                    <input type="checkbox" name="sub-line-web" checked="checked"/>
+                                </td>
+                                <!--<td>
+                                    <input type="checkbox" name="sub-line-message"/>
+                                </td>-->
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                    </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." data-remote="/api/form/ajaxformurl">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+   <div class="modal fade in" id="js_news_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal form-validate form-modal" method="post" action="/plus/phone.php">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">编辑手机</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-1">
+                                <input type="text" class="form-control" id="js_phone_input" placeholder="请输入手机号"/>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-default js_add_phone">添加</button>
+                            </div>
+                            <div class="col-sm-11 col-sm-offset-1 m-t-sm js_add_phone_show">
+                               
+                            </div>
+                            <script type="text/html" id="js_phone_list_tem">
+                                {{each phoneArr as value }}
+                                    <button type="button" data-name="{{value}}" class="btn btn-default btn-sm m-b-sm">{{value}}<i class="fa fa-times m-l-xs js_phone_del_{{flag}}"></i><input type="hidden" name="phone[].{{flag}}" value="{{value}}"/></button>
+                                {{/each}}
+                            </script>
+
+                        </div>
+                        <input type="hidden" name="id" value="1"/>  
+                        <input type="text" class="hide"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="js_phone_save">确认</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/newstips/init.js"])
+    </script>
+
+</body>
+
+</html>

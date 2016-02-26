@@ -1,0 +1,91 @@
+﻿html{}
+
+.calendar {
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    td {
+        text-align: center;
+        border: none !important;
+        padding: 0 !important;
+    }
+    .header {
+        td.year {
+            width: 72%;
+        }
+        i {
+            font-size: 14px;
+            padding: 10px 0;
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+    .prev_month {
+        float: left;
+    }
+    .next_month {
+        float: right;
+    }
+    .year {
+        text-align: center;
+        font-weight: 500;
+    }
+    .week_days {
+        font-weight: 500;
+    }
+    .table {
+        margin: 0;
+        td {
+            position: relative;
+            padding: 0;
+            border: none;
+            a {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                line-height: 27px;
+            }
+            span {
+                width: 4px;
+                height: 4px;
+                border-radius: 10px;
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                margin-left: -2px;
+                bottom: 4px;
+            }
+        }
+        td.event {
+            a {
+                border: 1px solid rgba(255,255,255,.2);
+                background-color: rgba(0,0,0,.05);
+                border-radius: 30px;
+            }
+            a:hover {
+                background-color: rgba(0,0,0,.15);
+            }
+        }
+    }
+    .popover {
+        .popover-title {
+            white-space: nowrap;
+        }
+    }
+}
+.noborder, .noborder .calendar, .noborder .calendar * {
+    border: none !important;
+}
+.dropdown-menu {
+    .calendar {
+        td {
+            a {
+                padding: 0px;
+            }
+        }
+    }
+}
+.calendar .popover, .calendar .popover a {
+    color: #666 !important;
+}

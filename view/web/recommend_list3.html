@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <a href="recommend_list3_ed.html" class="btn btn-default btn-sm"> <i class="fa fa-plus m-r-xs"></i>
+                新增案例
+            </a>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th>顺序</th>
+                                <th>案例</th>
+                                <th>类型</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>凯琳斯蒂1</td>
+                                <td>图文</td>
+                                <td>上架</td>
+                                <td>
+                                    <a href="recommend_list3_ed.html" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxPost" data-msg="确定 下架？" class="m-xs" title="下架">
+                                        <i class="fa fa-stop text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>凯琳斯蒂12</td>
+                                <td>图文</td>
+                                <td>下架</td>
+                                <td>
+                                    <a href="recommend_list3_ed.html" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxPost" data-msg="确定 上架？" class="m-xs" title="上架">
+                                        <i class="fa fa-play text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use("dist/application/app.js")
+    </script>
+
+</body>
+
+</html>

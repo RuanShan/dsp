@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/chosen/chosen.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <style type="text/css">
+    .courier-container {
+        width: 766px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #dde9f5;
+    }
+    .courier-container .close {
+        position: absolute;
+        right: 1px;
+    }
+    .courier-container .item {
+        line-height: 20px;
+        float: left;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        color: #666666;
+        overflow: hidden;
+        word-wrap: break-word;
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        opacity: 0.8;
+        border: 1px dotted #999999;
+        background: #f6fafd;
+    }
+    .courier-container .selected {
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        opacity: 1;
+        border: 1px dotted #1450A0;
+    }
+    .courier-container pre {
+        height: 100%;
+        float: left;
+        cursor: move;
+        width: 100%;
+        border: none;
+        background: none;
+    }
+    .courier-container textarea {
+        padding-left: 0px;
+        margin: 0px;
+        font-size: 12px;
+        resize: none;
+        outline: none;
+        overflow: hidden;
+        border: none;
+    }
+    .courier-container .resize {
+        height: 6px;
+        width: 6px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        overflow: hidden;
+        cursor: nw-resize;
+        background-color: #aaaaaa;
+    }
+    </style>
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>新增运单模版</p><a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">使用系统模版</label>
+                            <div class="col-sm-3">
+                                <select class="form-control js_sys_templet" data-toggle="chosen">
+                                    <option value="">请选择系统模板</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=100550001">龙邦速递</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=423171">联昊通</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=375532">海航天天快递）</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=375486">全峰代收</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=375480">全峰快递</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=277316">港中达能</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=238">汇通快运</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=237">CCES</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=236">圆通速递</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=235">顺丰速运</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=234">宅急送</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=233">星晨急便COD</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=232">EMS</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=231">星晨急便</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=230">韵达快运</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=229">中通速递</option>
+                                    <option value="/view/system/courier/courier_ed.html?templateId=159">申通E物流</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">模板名称</label>
+                            <div class="col-sm-3 must">
+                                <input type="text" class="form-control" data-rule-required="true" name="Name" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">快递公司</label>
+                            <div class="col-sm-3 must">
+                                <select class="form-control" name="courierCompany" data-rule-required="true" data-toggle="chosen">
+                                    <option value="">请选择快递</option>
+                                    <option value="21000052004">燕文上海</option>
+                                    <option value="21000052006">燕文深圳</option>
+                                    <option value="21000053045">递四方深圳仓</option>
+                                    <option value="21000051006">燕文义乌</option>
+                                    <option value="21000052038">递四方厦门仓</option>
+                                    <option value="21000051029">递四方上海仓</option>
+                                    <option value="21000056003">递四方新邮</option>
+                                    <option value="21000056005">递四方广州仓</option>
+                                    <option value="1216">全峰快递</option>
+                                    <option value="1259">全一快递</option>
+                                    <option value="1269">广东EMS</option>
+                                    <option value="3">EMS经济快递</option>
+                                    <option value="2">EMS</option>
+                                    <option value="101">圆通速递</option>
+                                    <option value="1121">飞远(爱彼西)配送</option>
+                                    <option value="103">宅急送</option>
+                                    <option value="106">联邦快递</option>
+                                    <option value="505">顺丰速运</option>
+                                    <option value="1195">龙邦速递</option>
+                                    <option value="1204">快捷快递</option>
+                                    <option value="1185">黑猫宅急便</option>
+                                    <option value="1192">能达速递</option>
+                                    <option value="1207">优速快递</option>
+                                    <option value="-1">其他</option>
+                                    <option value="507">亚风</option>
+                                    <option value="511">长宇</option>
+                                    <option value="512">大田</option>
+                                    <option value="513">长发</option>
+                                    <option value="1137">东方汇</option>
+                                    <option value="1138">首业</option>
+                                    <option value="1139">远长</option>
+                                    <option value="1237">发网</option>
+                                    <option value="200427">飞远配送</option>
+                                    <option value="204897">测试服务商</option>
+                                    <option value="204926">贝海国际速递</option>
+                                    <option value="21000007003">美国速递</option>
+                                    <option value="21000007007">天猫商家测试香港01</option>
+                                    <option value="21000007011">邮科院</option>
+                                    <option value="21000007013">中通速递BJ</option>
+                                    <option value="21000007015">递四方</option>
+                                    <option value="21000007017">上邮函件</option>
+                                    <option value="21000019013">buyfine海外旗舰店</option>
+                                    <option value="21000019015">sneakerhead海外店</option>
+                                    <option value="21000019017">天竣购物海外旗舰店</option>
+                                    <option value="21000019019">香港卓悦官方旗舰店</option>
+                                    <option value="21000019021">玉山台湾美食旗舰店</option>
+                                    <option value="21000019023">shirohato海外旗舰店</option>
+                                    <option value="21000019025">thejany海外旗舰店</option>
+                                    <option value="21000019027">stylenanda海外旗舰店</option>
+                                    <option value="21000019029">miamasvin海外旗舰店</option>
+                                    <option value="21000019031">youngdream海外旗舰店</option>
+                                    <option value="21000019033">luxidream海外旗舰店</option>
+                                    <option value="21000020006">洋码头海外旗舰店</option>
+                                    <option value="21000020008">axonus海外旗舰店</option>
+                                    <option value="21000020010">大都会海外旗舰店</option>
+                                    <option value="21000020012">草莓网海外旗舰店</option>
+                                    <option value="21000020014">东森严选海外旗舰店</option>
+                                    <option value="21000020016">jkos海外旗舰店</option>
+                                    <option value="21000020018">kenko海外旗舰店</option>
+                                    <option value="21000020020">moximoxi海外旗舰店</option>
+                                    <option value="21000020022">nissen海外旗舰店</option>
+                                    <option value="21000020024">sohoo海外旗舰店</option>
+                                    <option value="21000020028">thejamy海外旗舰店</option>
+                                    <option value="21000020030">天猫海外测试日本01</option>
+                                    <option value="21000035003">派易-电商海外转运</option>
+                                    <option value="21000035009">4px进口业务咨询</option>
+                                    <option value="21000035020">skyshop海外专营店</option>
+                                    <option value="21000037002">4px转运服务店</option>
+                                    <option value="21000038002">派易国际物流77</option>
+                                    <option value="21000046013">A.J World Wide</option>
+                                    <option value="21000046015">美联华</option>
+                                    <option value="21000046017">日本邮局</option>
+                                    <option value="21000046019">ChinzLogistics</option>
+                                    <option value="21000046021">EFS</option>
+                                    <option value="21000046023">上海邮政速递</option>
+                                    <option value="21000046025">速达快递</option>
+                                    <option value="21000046027">同舟速递</option>
+                                    <option value="21000046029">香港骏辉物流</option>
+                                    <option value="21000046031">新干线快递</option>
+                                    <option value="21000046033">新亚物流</option>
+                                    <option value="21000046035">易达通快递</option>
+                                    <option value="21000046037">中国邮政集团公司</option>
+                                    <option value="21000046039">法国邮政</option>
+                                    <option value="21000046041">飞洋快递</option>
+                                    <option value="21000046043">富腾达快递</option>
+                                    <option value="21000046045">联通快递</option>
+                                    <option value="21000046047">晋越</option>
+                                    <option value="21000047006">xchange海外专营店</option>
+                                    <option value="21000047008">qqg海外旗舰店</option>
+                                    <option value="21000047013">明大快递</option>
+                                    <option value="21000047015">日本邮政EMS</option>
+                                    <option value="21000047017">EMS日本</option>
+                                    <option value="21000047019">順豐速遞（台湾）</option>
+                                    <option value="21000047021">順豐速運（香港）</option>
+                                    <option value="21000047023">新西兰邮政</option>
+                                    <option value="21000047025">银河快递</option>
+                                    <option value="21000047027">royalmail</option>
+                                    <option value="21000047029">长江国际速递</option>
+                                    <option value="21000047031">中华邮政</option>
+                                    <option value="21000047033">澳邮中国快运</option>
+                                    <option value="21000047035">比利时邮政</option>
+                                    <option value="21000047037">方舟速递</option>
+                                    <option value="21000047039">POSTNL</option>
+                                    <option value="21000047041">华通快运</option>
+                                    <option value="21000047043">联纵国际快递</option>
+                                    <option value="21000047045">DHL</option>
+                                    <option value="21000048010">君美氏海外专营店</option>
+                                    <option value="21000048020">美亚/AAE</option>
+                                    <option value="21000048022">AustralianPost</option>
+                                    <option value="21000048024">申通快递</option>
+                                    <option value="21000048026">TNT</option>
+                                    <option value="21000048028">新顺丰国际速递</option>
+                                    <option value="21000048030">UBX</option>
+                                    <option value="21000048032">UCSAustralia</option>
+                                    <option value="21000048034">亚瑟仕国际快递</option>
+                                    <option value="21000048036">UPS</option>
+                                    <option value="21000048038">安创</option>
+                                    <option value="21000048040">中华快递</option>
+                                    <option value="21000048042">程光快递</option>
+                                    <option value="21000049013">平安快递</option>
+                                    <option value="21000049015">秦远国际物流</option>
+                                    <option value="21000049017">台灣万丰国际货运</option>
+                                    <option value="21000049019">万泰国际物流</option>
+                                    <option value="21000049021">GSMNtoN</option>
+                                    <option value="21000049023">香港邮政</option>
+                                    <option value="21000049025">SG-post</option>
+                                    <option value="21000049027">海顺物流</option>
+                                    <option value="21000049029">英中物流</option>
+                                    <option value="21000049031">永杰物流</option>
+                                    <option value="21000049033">傲世速递</option>
+                                    <option value="21000049035">畅灵国际物流</option>
+                                    <option value="21000049037">德尔速递</option>
+                                    <option value="21000049039">广联</option>
+                                    <option value="21000049041">美通快递</option>
+                                    <option value="21000049043">美联快递</option>
+                                    <option value="21000050002">美国购物网海外旗舰店</option>
+                                    <option value="21000050004">德浩洋行海外专营店</option>
+                                    <option value="21000051021">晋越快递</option>
+                                    <option value="21000052018">环球e站海外专营店</option>
+                                    <option value="21000052032">hanjinexpress</option>
+                                    <option value="21000052034">epost</option>
+                                    <option value="21000053015">payeasy海外旗舰店</option>
+                                    <option value="21000053037">保宏物流</option>
+                                    <option value="21000054012">康美化妆品海外专营店</option>
+                                    <option value="21000057002">我买网</option>
+                                    <option value="21000066003">斑马物联网</option>
+                                    <option value="1262">城市100</option>
+                                    <option value="500">中通快递</option>
+                                    <option value="102">韵达快递</option>
+                                    <option value="504">天天快递</option>
+                                    <option value="502">百世汇通</option>
+                                    <option value="100">申通快递</option>
+                                    <option value="21000009040">德邦快递</option>
+                                    <option value="202857">凡宇速递</option>
+                                    <option value="1214">联昊通</option>
+                                    <option value="201174">速尔</option>
+                                    <option value="1056">佳吉快递</option>
+                                    <option value="105">百世物流</option>
+                                    <option value="108">华强物流</option>
+                                    <option value="1152">中铁物流</option>
+                                    <option value="1016">中铁快运</option>
+                                    <option value="202855">信丰物流</option>
+                                    <option value="1191">天地华宇</option>
+                                    <option value="200734">邮政国内小包</option>
+                                    <option value="1186">新邦物流</option>
+                                    <option value="1208">增益速递</option>
+                                    <option value="200143">国通快递</option>
+                                    <option value="107">德邦物流</option>
+                                    <option value="200740">E速宝</option>
+                                    <option value="204838">卡行天下</option>
+                                    <option value="203104">安能物流</option>
+                                    <option value="100005">佳吉快运</option>
+                                    <option value="100006">佳怡物流</option>
+                                    <option value="100007">远成物流</option>
+                                    <option value="100008">优速物流</option>
+                                    <option value="100009">龙邦物流</option>
+                                    <option value="1000010">USPS</option>
+                                    <option value="1000011">邮政国内</option>
+                                    <option value="1000012">邮政国际</option>
+                                    <option value="1000013">自有物流</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">模板尺寸</label>
+                            <div class="col-sm-2">
+                                <div class="input-group m-b">
+                                    <span class="input-group-addon">宽</span>
+                                    <input type="text" class="form-control" data-rule-required="true" name="width" id="width" maxlength="4" value="300" />
+                                    <span class="input-group-addon">mm</span>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-2">
+                             <div class="input-group m-b">
+                                    <span class="input-group-addon">高</span>
+                                 <input type="text" class="form-control" data-rule-required="true" name="height" id="height" maxlength="4" value="200" />
+                                    <span class="input-group-addon">mm</span>
+                                </div>
+                              
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">运单图片</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="background" name="background" />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" data-toggle="selectimg" data-insert="false" data-input="true">选择图片</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">选择打印项</label>
+                            <div class="col-sm-8 js_size_all">
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item1" name="print_item1" value="1" class="js_print_item" data-text="订单编号" data-size="14">订单编号&nbsp;&nbsp;&nbsp;
+                                        <input type="hidden" value="14" name="item_size1">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                               <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.name" id="print_item2" name="print_item2" value="1" class="js_print_item" data-text="发件人姓名" data-size="14">发件人姓名
+                                        <input type="hidden" value="14" name="item_size2">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.sex" id="print_item3" name="print_item3" value="1" class="js_print_item" data-text="发件人电话" data-size="14">发件人电话
+                                        <input type="hidden" value="14" name="item_size3">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item4" name="print_item4" value="1" class="js_print_item" data-text="备 注" data-size="14">备 注
+                                        <input type="hidden" value="14" name="item_size4">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item5" name="print_item5" value="1" class="js_print_item" data-text="发件人公司" data-size="14">发件人公司
+                                        <input type="hidden" value="14" name="item_size5">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item6" name="print_item6" value="1" class="js_print_item" data-text="发件人地址" data-size="14">发件人地址
+                                        <input type="hidden" value="14" name="item_size6">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item7" name="print_item7" value="1" class="js_print_item" data-text="发件人邮编" data-size="14">发件人邮编
+                                        <input type="hidden" value="14" name="item_size7">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item8" name="print_item8" value="1" class="js_print_item" data-text="收件人姓名" data-size="14">收件人姓名
+                                        <input type="hidden" value="14" name="item_size8">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item9" name="print_item9" value="1" class="js_print_item" data-text="收件人电话" data-size="14">收件人电话
+                                        <input type="hidden" value="14" name="item_size9">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item10" name="print_item10" value="1" class="js_print_item" data-text="收件人地址" data-size="14">收件人地址
+                                        <input type="hidden" value="14" name="item_size10">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item11" name="print_item11" value="1" class="js_print_item" data-text="收件人邮编" data-size="14">收件人邮编
+                                        <input type="hidden" value="14" name="item_size11">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item12" name="print_item12" value="1" class="js_print_item" data-text="代收金额" data-size="14">代收金额
+                                        <input type="hidden" value="14" name="item_size12">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item13" name="print_item13" value="1" class="js_print_item" data-text="货到付款物流编号" data-size="14">货到付款物流编号
+                                        <input type="hidden" value="14" name="item_size13">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item14" name="print_item14" value="1" class="js_print_item" data-text="卖家备注" data-size="14">卖家备注
+                                        <input type="hidden" value="14" name="item_size14">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item15" name="print_item15" value="1" class="js_print_item" data-text="商品名称" data-size="14">商品名称
+                                        <input type="hidden" value="14" name="item_size15">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item16" name="print_item16" value="1" class="js_print_item" data-text="商家编码" data-size="14">商家编码
+                                        <input type="hidden" value="14" name="item_size16">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                                <div class="inline js_size m-r">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" data-value="@deliveryCenter.area_store" id="print_item17" name="print_item17" value="1" class="js_print_item" data-text="商品数量" data-size="14">商品数量
+                                        <input type="hidden" value="14" name="item_size17">
+                                    </label>
+                                    <a href="javascript:;" class="js_font_add btn btn-xs btn-default"><i class="fa fa-plus text-muted"></i></a>
+                                    <a href="javascript:;" class="js_font_cut btn btn-xs btn-default"><i class="fa fa-minus text-muted"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">内容
+                                <input type="hidden" id="content" name="content" />
+                            </label>
+                            <div class="col-sm-10 scroll-x">
+                                <div class="courier-container js_container">
+                                    <img width="766" height="510" src="http://img02.taobaocdn.com/bao/uploaded/i2/T1VRtuXeJGXXcuhVjX.JPG" class="jsimg">
+                                    <div class="item" style="width: 171px; height: 41px; z-index: 3; top: 188px; left: 105px;" data-id="print_item12" id="item_print_item12">
+                                        <a href="javascript:;" class="close">×</a><pre>代收金额</pre>
+                                        <div class="resize"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">偏移量X</label>
+                            <div class="col-sm-2 must">
+                                <input type="text" class="form-control" data-rule-required="true" name="offsetX" id="offsetX" maxlength="4" value="0" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">偏移量Y</label>
+                            <div class="col-sm-2 must">
+                                <input type="text" class="form-control" data-rule-required="true" name="offsetY" id="offsetY" maxlength="4" value="0" />
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="isDefault" value="1" />设为默认运单模版
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in "></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js", "dist/system/init.js"]);
+    </script>
+</body>
+
+</html>

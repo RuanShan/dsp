@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-12 m-b-xs">
+                        <a href="shopping_message_add.html" class="btn btn-default btn-sm">新建群发</a>
+                        <a href="shopping_message_disabled.html" class="btn btn-default btn-sm">群发禁用</a>
+                        <div class="btn-group m-l">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                <i class="fa fa-refresh"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled="">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </div>
+                        <!--<span class="m-l text-info" data-toggle="popover" data-placement="auto" data-trigger="hover" data-content="
+                        1、订阅号（认证用户、非认证用户）在1天只能群发1条消息（每天0点更新，次数不会累加）；<br />
+                        2、服务号（认证用户、非认证用户），1个月（按自然月）内可发送4条群发消息，超出4条也可发送成功，但用户无法收到。（每月月底0点更新，次数不会累加）；<br />
+                        3、群发内容字数上限为600个字符、或600个汉字。<br />
+                        注： 公众平台群发消息目前只支持中文和英文，暂时不支持其他语言。" data-container="body" data-html="true" style="position:relative;top:3px;">群发规则？</span>-->
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="sort" />
+            </form>
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th>消息</th>
+                                <th>发送对象</th>
+                                <th>发送时间</th>
+                                <th>发送状态
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover" data-content="待发送：尚未发送的定时消息<br/>排队中：正在等待系统发送的消息<br/>已发送：发送完成的消息<br/>发送失败：未能成功发送的消息">
+                                        <i class="fa fa-question-circle fa-lg m-l-xs"></i>
+                                    </a>
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+                                </td>
+                                <td class="col-sm-4">
+                                    <img class="pull-left" src="/assets/images/page/shopping/u52.png" style="width:80px;height:auto;" />
+                                    <span class="pull-left col-sm-8">
+                                        [图文消息]消息标题标题标题标题标题标题标题标题标题标题标题
+                                    </span>
+                                </td>
+                                <td>
+                                    <p class="m-b-none">
+                                        分组一分组一
+                                        <span class="m-l-sm text-muted">
+                                            <i class="fa fa-lg fa-caret-down pointer js_show_more"></i>
+                                        </span>
+                                    </p>
+                                    <p class="m-b-none">分组一分组二</p>
+                                    <p class="m-b-none">分组一分组三</p>
+                                    <p class="m-b-none">分组一分组四</p>
+                                    <p class="m-b-none hide">分组一分组五</p>
+                                    <p class="m-b-none hide">分组一分组六</p>
+                                    <p class="m-b-none hide">分组一分组七</p>
+                                </td>
+                                <td>2016-12-14 11:28</td>
+                                <td>待发送</td>
+                                <td>
+                                    <a href="shopping_message_add.html?id=1" class="m-xs" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定 删除该群发消息？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+                                </td>
+                                <td class="col-sm-4">
+                                    <img class="pull-left" src="/assets/images/page/shopping/u74.png" style="width:80px;height:auto;" />
+                                    <span class="pull-left col-sm-8">
+                                        [图文消息]消息标题标题标题标题标题标题标题标题标题标题标题
+                                    </span>
+                                </td>
+                                <td>
+                                    <p class="m-b-none">全部粉丝</p>
+                                </td>
+                                <td>2015-12-14 11:28</td>
+                                <td>排队中
+                                    <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover" data-content="正在排队等候系统发送，可能需要10-20分钟">
+                                        <i class="fa fa-question-circle fa-lg m-l-xs"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定 删除该群发消息？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="3" />
+                                </td>
+                                <td class="col-sm-4">
+                                    <img class="pull-left" src="/assets/images/page/shopping/u76.jpg" style="width:80px;height:auto;" />
+                                    <span class="pull-left col-sm-8">
+                                        [图文消息]消息标题标题标题标题标题标题标题标题标题标题标题
+                                    </span>
+                                </td>
+                                <td>
+                                    <p class="m-b-none">分组一分组一</p>
+                                    <p class="m-b-none">分组一分组二</p>
+                                    <p class="m-b-none">分组一分组三</p>
+                                    <p class="m-b-none">分组一分组四</p>
+                                </td>
+                                <td>2014-12-14 11:28</td>
+                                <td>已发送</td>
+                                <td>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定 删除该群发消息？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="4" />
+                                </td>
+                                <td class="col-sm-4">
+                                    <img class="pull-left" src="/assets/images/page/shopping/u157.jpeg" style="width:80px;height:auto;" />
+                                    <span class="pull-left col-sm-8">
+                                        [图文消息]消息标题标题标题标题标题标题标题标题标题标题标题
+                                    </span>
+                                </td>
+                                <td><p class="m-b-none">仅萌主</p></td>
+                                <td>2013-12-14 11:28</td>
+                                <td>发送失败</td>
+                                <td>
+                                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定 删除该群发消息？" class="m-xs" title="删除">
+                                        <i class="fa fa-trash-o text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+    
+    <script type="text/html" id="add_groups_tmp">
+        <div class="js_tag_list hide">
+            <div class="row m-b-sm">
+                <div class="col-sm-12">
+                    <label class="checkbox-inline">
+                        <input class="js_select_all_group" type="checkbox" name="allgroup" />全部分组
+                    </lable>
+                </div>
+            </div>
+            <div class="row js_group_lists" style="border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding-bottom:8px;height:210px;overflow:auto;">
+                {{each list as val}}
+                    <div class="col-sm-6">
+                        <label class="checkbox-inline">
+                            <input class="js_select_group" data-groupid="{{val.groupId}}" data-label="{{val.label}}" type="checkbox" name="group" />{{val.label}}
+                        </lable>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="row m-t-sm">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-sm btn-primary pull-right js_close_group_dialog">确定</button>
+                </div>
+            </div>
+
+        </div>
+    </script>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/shopping/init.js"]);
+    </script>
+
+</body>
+
+</html>

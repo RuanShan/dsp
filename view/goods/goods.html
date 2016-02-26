@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/admin.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .copy-success{
+            position: absolute;
+            right:65px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled> <i class="fa fa-trash-o"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" data-trigger="batch" disabled>
+                                批量操作
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-confirm="true"   data-remote="/api/Form/ajaxShelves/1" data-toggle="ajaxPost" data-msg="是否上架？" >上架</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch"  data-confirm="true" data-remote="/api/Form/ajaxShelves/2" data-toggle="ajaxPost" data-msg="是否下架？" >下架</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <a href="add_goods_ed.html" class="btn btn-sm btn-default m-r">
+                            <i class="fa fa-plus m-r-xs"></i>
+                            新增商品
+                        </a>
+                        <div class="btn-group">
+                            <select name="classifyId" class="hd" style="width: 200px;" data-toggle="select2" data-placeholder="按自定义分类筛选" data-chang="submit">
+                                <option value=""></option>
+                                <optgroup label="服装鞋包">
+                                    <option value="1">男装</option>
+                                    <option value="2">流行男鞋</option>
+                                    <option value="3">女装</option>
+                                    <option value="4">女鞋</option>
+                                </optgroup>
+                                <optgroup label="家用电器">
+                                    <option value="5">大家电</option>
+                                    <option value="6">影音电器</option>
+                                    <option value="7">生活电器</option>
+                                    <option value="8">厨房电器</option>
+                                    <option value="9">个人护理</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <a href="new/move1.html" class="btn btn-sm btn-default m-r">店铺搬家助手</a>
+
+                    </div>
+                    <!--<div class="col-sm-4 m-b-xs">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" name="keyword" placeholder="商品名称/商品编号" data-rule-required="true" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                -->
+                <div class="col-sm-4 m-b-xs">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <span class="dropdown-label">商品名称</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-select">
+                                <li class="active">
+                                    <a href="#">
+                                        <input type="radio" value="0" name="searchBy" checked="checked" />
+                                        商品名称
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <input type="radio" value="1" name="searchBy" />
+                                        商家编码
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                <i class="fa fa-search"></i>
+                            </button>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+            <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+            <input type="hidden" name="order" id="order" value="date" />
+        </form>
+    </header>
+    <section class="scrollable wrapper w-f">
+        <section class="panel panel-default ">
+            <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                    <thead>
+                        <tr>
+                            <th class="with-checkbox">
+                                <input type="checkbox" />
+                            </th>
+                            <th class="col-sm-2">商品名称</th>
+                            <th>所属分类</th>
+                            <th class="th-sortable mn100" data-sort-name="price">价格</th>
+                            <th class="th-sortable mn100" data-sort-name="commission">佣金比例</th>
+                            <th class="th-sortable mn100" data-sort-name="stores">总库存</th>
+                            <th class="th-sortable mn100" data-sort-name="sales">总销量</th>
+                            <th class="th-sortable mn100" data-sort-name="date">上架/下架时间</th>
+                            <th class="mn70">
+                                上架
+                                <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content="点击可直接将商品上/下架" class="text-muted">
+                                    <i class="fa fa-question m-l-xs"></i>
+                                </a>
+                            </th>
+                            <th class="mn70">
+                                审核状态
+                                <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content="审核状态说明" class="text-muted">
+                                    <i class="fa fa-question m-l-xs"></i>
+                                </a>
+                            </th>
+                            <th class="mn90">正在参与的活动</th>
+                            <th class="col-sm-1 mn70">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="2"></td>
+
+                            <td>
+                                <span class="pull-left thumb-sm m-r-xs">
+                                    <img style="height:36px" src="/assets/images/goods/2.jpg" alt="John said"></span>
+                                <div class="media-body">
+                                    <div>
+                                        <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                                    </div>
+
+                                </div>
+                            </td>
+                            <td>
+                                <span data-toggle="dropdown">
+                                    商务服务
+                                    <i class="fa fa-angle-right m-xs"></i>
+                                    公司注册
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                            更多[2]
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    商务服务
+                                                    <i class="fa fa-angle-right m-xs"></i>
+                                                    财务服务
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    商务服务
+                                                    <i class="fa fa-angle-right m-xs"></i>
+                                                    代理记账
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </span>
+
+                            </td>
+                            <td>
+                                <span class="money">199800.00</span>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                            </td>
+                            <td>
+                                20%
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                            </td>
+                            <td>
+                                100
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                            </td>
+                            <td>22</td>
+                            <td>2014-05-30 17:40:23</td>
+                            <td>
+                                <a href="#" data-remote="/api/Form/ajaxShelves/1" class="active" data-fun="shelves" data-toggle="class" data-ajax="true">
+                                    <i class="fa fa-check text-success text-active"></i>
+                                    <i class="fa fa-times text-danger text"></i>
+                                </a>
+                            </td>
+                            <td>未提交审核</td>
+                            <td>
+                                佣金推广：高佣金计划
+                                <div class="btn-group m-l-xs">
+                                    <a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        更多[2]
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="javascript:;">
+                                                佣金推广
+                                                <i class="fa fa-angle-right m-xs"></i>
+                                                高佣金计划
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                佣金推广
+                                                <i class="fa fa-angle-right m-xs"></i>
+                                                高佣金计划
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="goods_ed.html?{0}" class="m-xs js_edit_search" title="编辑">
+                                    <i class="fa fa-edit text-muted"></i>
+                                </a>
+                                <!--<span class="js_copy_text copy_text" title="复制" data-icon="true">
+                                <span class="hd">http://www.weimob.com</span>
+                            </span>
+                            -->
+                            <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 服饰 规格" class="m-xs" title="删除">
+                                <i class="fa fa-trash-o text-muted"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" value="2"></td>
+
+                        <td>
+                            <span class="pull-left thumb-sm m-r-xs">
+                                <img style="height:36px" src="/assets/images/goods/2.jpg" alt="John said"></span>
+                            <div class="media-body">
+                                <div>
+                                    <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <span data-toggle="dropdown">
+                                商务服务
+                                <i class="fa fa-angle-right m-xs"></i>
+                                公司注册
+                                <div class="btn-group">
+                                    <a class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        更多[1]
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="javascript:;">
+                                                商务服务
+                                                <i class="fa fa-angle-right m-xs"></i>
+                                                财务服务
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+
+                        </td>
+                        <td>
+                            <span class="money">1998.00</span>
+                            <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                <i class="fa fa-pencil text-muted"></i>
+                            </a>
+                        </td>
+                        <td>
+                            20%
+                            <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                <i class="fa fa-pencil text-muted"></i>
+                            </a>
+                        </td>
+                        <td>
+                            100
+                            <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                                <i class="fa fa-pencil text-muted"></i>
+                            </a>
+                        </td>
+                        <td>22</td>
+                        <td>2014-05-30 17:40:23</td>
+                        <td>
+                            <a href="#" data-remote="/api/Form/ajaxShelves/1" data-fun="shelves" data-toggle="class" data-ajax="true">
+                                <i class="fa fa-check text-success text-active"></i>
+                                <i class="fa fa-times text-danger text"></i>
+                            </a>
+                        </td>
+
+                        <td>待审核</td>
+                        <td>--</td>
+                        <td>
+                            <a href="goods_ed.html?{0}" class="m-xs js_edit_search" title="编辑">
+                                <i class="fa fa-edit text-muted"></i>
+                            </a>
+                            <!--<span class="js_copy_text copy_text" title="复制" data-icon="true">
+                            <span class="hd">http://www.weimob.com</span>
+                        </span>
+                        -->
+                        <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 服饰 规格" class="m-xs" title="删除">
+                            <i class="fa fa-trash-o text-muted"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="2"></td>
+
+                    <td>
+                        <span class="pull-left thumb-sm m-r-xs">
+                            <img style="height:36px" src="/assets/images/goods/2.jpg" alt="John said"></span>
+                        <div class="media-body">
+                            <div>
+                                <a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口</a>
+                            </div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <span data-toggle="dropdown">
+                            商务服务
+                            <i class="fa fa-angle-right m-xs"></i>
+                            公司注册
+                        </span>
+
+                    </td>
+                    <td>
+                        <span class="money">199800.00</span>
+                        <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store_mul.html">
+                            <i class="fa fa-pencil text-muted"></i>
+                        </a>
+                    </td>
+                    <td>
+                        20%
+                        <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store.html">
+                            <i class="fa fa-pencil text-muted"></i>
+                        </a>
+                    </td>
+                    <td>
+                        100
+                        <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/price_store_mul.html">
+                            <i class="fa fa-pencil text-muted"></i>
+                        </a>
+                    </td>
+                    <td>22</td>
+                    <td>2014-05-30 17:40:23</td>
+                    <td>
+                        <a href="#" data-remote="/api/Form/ajaxShelves/1" class="active" data-fun="shelves" data-toggle="class" data-ajax="true">
+                            <i class="fa fa-check text-success text-active"></i>
+                            <i class="fa fa-times text-danger text"></i>
+                        </a>
+                    </td>
+                    <td>审核通过</td>
+                    <td>--</td>
+                    <td>
+                        <a href="goods_ed.html?{0}" class="m-xs js_edit_search" title="编辑">
+                            <i class="fa fa-edit text-muted"></i>
+                        </a>
+                        <!--<span class="js_copy_text copy_text" title="复制" data-icon="true">
+                        <span class="hd">http://www.weimob.com</span>
+                    </span>
+                    -->
+                    <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 服饰 规格" class="m-xs" title="删除">
+                        <i class="fa fa-trash-o text-muted"></i>
+                    </a>
+                </td>
+            </tr>
+            <!-- 
+                                     <tr>
+            <td  colspan="7" class="nodata">暂无规格</td>
+        </tr>
+        -->
+    </tbody>
+</table>
+</div>
+</section>
+</section>
+<footer class="footer bg-white b-t">
+<div class="row text-center-xs">
+<div class="col-md-6 hidden-sm">
+<p class="text-muted m-t">总共321条 当前为第1页</p>
+</div>
+<div class="col-md-6 col-sm-12 text-right text-center-xs">
+<ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+</div>
+</div>
+</footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/goodsv/init.js","dist/commission/init.js"])
+    </script>
+
+</body>
+
+</html>

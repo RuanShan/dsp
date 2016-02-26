@@ -1,0 +1,30 @@
+{
+	"status":0,
+	"message":"添加成功",
+	"data": [
+		{
+			"id":1316,
+			"url":"http://stc.weimob.com/img/template/lib/home-150150.jpg",
+			"title":"查询商品5",
+			"price":200000000000
+		},
+		{
+			"id":1316,
+			"url":"http://stc.weimob.com/img/template/lib/home-150150.jpg",
+			"title":"查询商品6",
+			"price":300
+		},
+		{
+			"id":1317,
+			"url":"http://stc.weimob.com/img/template/lib/home-150150.jpg",
+			"title":"查询商品7",
+			"price":400
+		},
+		{
+			"id":1318,
+			"url":"http://stc.weimob.com/img/template/lib/home-150150.jpg",
+			"title":"查询商品8",
+			"price":500
+		}
+	]
+}

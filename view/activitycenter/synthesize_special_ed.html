@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/activitycenter/admin.min.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+</head>
+
+<body>
+
+
+    <section class="vbox actCenter">
+        <header class="header bg-white b-b b-light">
+            <p><i class="fa fa-edit text-muted m-r-xs"></i>新增专场活动</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+            <a href="javascript:;" data-remote="async/more.html" data-toggle="ajaxModal" class="btn_sore">
+                专场活动使用指南
+            </a>
+
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动名称：</label>
+                            <div class="col-sm-3 must">
+                                <input type="text" class="form-control" data-rule-rangelength="[2,30]" data-rule-required="true" name="name" />
+                            </div>
+                            <div class="col-sm-5"><p class="form-control-static"><span class="help-block" style="margin-top:-5px">本次活动的宣传名称，支持2-30字</span></p></div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动时间：</label>
+                            <div class="col-sm-4 must">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="date" data-rule-required="true" readonly="readonly" id="solddate" data-toggle="daterangepicker" aria-required="true"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div>
+
+                            </div>
+                            <div class="col-sm-5">
+                                <!--<p class="form-control-static"><span class="help-inline">活动开始时间需小于活动结束时间</span></p>-->
+                            </div>
+                        </div>
+                       <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">报名时间：</label>
+                            <div class="col-sm-4 must">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="date" data-rule-required="true" readonly="readonly" id="solddate" data-toggle="daterangepicker" aria-required="true"><span class="input-group-addon"><i class="fa fa-calendar"></i></span></div>
+
+                            </div>
+                            <div class="col-sm-5">
+                                <!--<p class="form-control-static"><span class="help-inline">活动开始时间需小于活动结束时间</span></p>-->
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">收费类型</label>-->
+                            <!--<div class="col-sm-10">-->
+                                <!--<div class="input-group">-->
+                                    <!--<label class="radio-inline">-->
+                                        <!--<input type="radio" name="shoufei" value="0" checked="checked" data-toggle="specification-enable" data-enable="false">免费-->
+                                    <!--</label>-->
+                                    <!--<label class="radio-inline">-->
+                                        <!--<input class="sp_radio" type="radio" name="shoufei" value="1" data-toggle="specification-enable" data-enable="true">每个商家收取<input type="text" data-rule-ismoney="true" class="text form-control"/><span>费用</span>-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                             <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="line line-dashed line-lg pull-in"></div>-->
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动介绍:</label>
+                            <div class="col-sm-10">
+                                <textarea maxlength="1000" class="area" data-rule-rangelength="[0,1000]" ></textarea>
+                                <span class="moreTxt">最多1000字</span>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品类目范围</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input type="radio" class="sjfw" name="sjfw" value="0" checked="checked"  data-enable="false">全部
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" class="sjfw" name="sjfw" value="1"  data-enable="true">指定类目商品
+                                </label>
+                                <div id="sjfw" class="hide" >
+                                    <div class="panel panel-default m-t bg-light">
+                                        <div class="panel-body lt">
+                                            <div class="form-group">
+                                                <label class="pull-left m-l-sm m-t-xs"><strong>一级类目</strong></label>
+                                                <div class="col-sm-10 js_firstclassfy_list" data-path="/plus/loadchild.php">
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" name="firstclassfy[0]" data-title="食品" data-index="0" value="12345" checked="checked">食品
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" name="firstclassfy[1]" data-title="美妆" data-index="1" value="22345">美妆
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" name="firstclassfy[2]" data-title="饰品" data-index="2" value="32345">饰品
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-12 js_secondclassfy_div">
+                                                    <div id="second_show_12345" class="second_classfy_list">
+                                                        <h5><strong>食品</strong></h5>
+                                                        <div>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" value="" class="js_all_second">全部
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" class="js_scond_classfy" name="secondclassfy[12345][0]" value="s12345">保健养生
+                                                            </label>
+                                                            <label class="checkbox-inline">
+                                                                <input type="checkbox" class="js_scond_classfy" name="secondclassfy[12345][1]" value="s22345">休闲零食
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/html" id="second_templete">
+                            <div id="second_show_{{fid}}" class="second_classfy_list">
+                                <h5> <strong>{{title}}</strong>
+                                </h5>
+                                <div>
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="" class="js_all_second">全部</label>
+                                    {{each data as item}}
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" class="js_scond_classfy" name="secondclassfy[{{fid}}][0]" value="{{item.id}}">{{item.title}}
+                                        </label>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </script>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">店铺类型</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline check">
+                                    <input type="checkbox"  class="checkbox-inline" name="sjzz" value="0"  data-toggle="specification-enable" data-enable="true">旗舰店
+                                </label>
+                                <label class="radio-inline check">
+                                    <input  type="checkbox"  class="checkbox-inline" name="sjzz" value="1" data-toggle="specification-enable" data-enable="true">专卖店
+                                </label>
+                                <label class="radio-inline check">
+                                    <input  type="checkbox"  class="checkbox-inline" name="sjzz" value="1" data-toggle="specification-enable" data-enable="true">专营店
+                                </label>
+                                <label class="radio-inline check">
+                                    <input  type="checkbox"  class="checkbox-inline" name="sjzz" value="1" data-toggle="specification-enable" data-enable="true">未认证店铺
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">自动拒绝时间</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input checked="checked" type="radio" name="zdjjsj" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                    活动开始
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="zdjjsj" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                    活动结束
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+
+                        <div class="form-group kucfw kucfw">
+                            <label class="col-sm-2 control-label">商品库存</label>
+                            <div class="col-sm-10">
+
+                                <div class="input-group">
+                                    <label class="radio-inline check">
+                                        库存范围<input type="text"  name="wp_6"  data-rule-moreTo=".kucfw .kucfw_1"  data-rule-required="true"  data-rule-positiveInteger="true"  class="text form-control kucfw_0"/>件 ~
+                                        <input type="text"  name="wp_6" data-rule-lessTo=".kucfw .kucfw_0"   data-rule-required="true" data-rule-positiveInteger="true" class="text form-control kucfw_1"/>件
+                                        <!--<p class="tixin tixinSp">可选，根据最近一个月销量来判断；<br/>设置后，商家报名时不能选择低于此销量的商品</p>-->
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">商品销量</label>
+                            <div class="col-sm-10">
+
+                                <div class="input-group">
+                                <label class="radio-inline check">
+                                    该商品总销量至少达到<input type="text"  name="wp_7"  data-rule-required="true" data-rule-digits="true" class="text form-control"/>件
+
+                                </label>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">运费设置</label>
+                            <div class="col-sm-10">
+                                <label class="radio-inline">
+                                    <input checked="checked" type="radio" name="yfsz" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                    无
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="yfsz" class="ui-wizard-content ui-helper-reset ui-state-default">
+                                    活动期间包邮
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动价格规则</label>
+                            <div class="col-sm-10" id="hdjggz">
+                                <div class="input-group">
+                                    <label class="radio-inline">
+                                        <input checked="checked" type="radio" name="hdjggz" class="ui-wizard-content ui-helper-reset ui-state-default sp_radio">
+                                        无
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="hdjggz" style="margin-top: 8px;" class="ui-wizard-content ui-helper-reset ui-state-default sp_radio">
+                                        活动价需在<input type="text"  name="wp_9"   data-rule-required="true"  data-rule-positiveInteger="true" class="text form-control hdjg_1"/>天内最低
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">其他</label>
+                            <div class="col-sm-10">
+
+                                <div class="input-group">
+                                    <label class="radio-inline check">
+                                        <input type="checkbox"  class="checkbox-inline spxl" name="spxl" value="0"  data-toggle="specification-enable" data-enable="true">向符合条件店铺推送消息
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">活动规则</label>
+                            <div class="col-sm-10">
+                                <!--<div class="rules">-->
+                                    <!--<p>1.商品类目范围：食品、箱包、数码。</p>-->
+                                    <!--<p>2.店铺类型：旗舰店、专卖店、专营店。</p>-->
+                                    <!--<p>3.店铺可报商品数：至少报名1件商品。</p>-->
+                                    <!--<p>4.限制店铺数：本次活动只允许X家店铺参与。</p>-->
+                                    <!--<p>5.秒杀设置：每件商品活动价不高于X元。</p>-->
+                                    <!--<p>6.商品库存：每件商品库存至少X件。</p>-->
+                                    <!--<p>7.审核已通过后至该商品秒杀结束不可修改商品信息。</p>-->
+                                    <!--<p>8.15分钟后自动关闭未及时付款订单</p>-->
+                                    <!--<p>9.用户每件商品限购1件。</p>-->
+                                <!--</div>-->
+                                <div class="rww">
+                                    <textarea placeholder='上面规则会自动生，请输入活动规则补充' maxlength="1000" class="area"  data-rule-rangelength="[0,1000]"></textarea>
+                                    <span class="moreTxt">最多1000字</span>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <!--<a href="next_task_ed.html" class="btn btn-primary">下一步</a>-->
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">确定</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+
+            
+        </section>
+    </section>
+    <script type="text/javascript">
+        window.cfg = {
+            "url":"/Plus/choose.php"
+        }
+    </script>
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js",'dist/activitycenter/init.js'])
+    </script>
+
+
+</body>
+
+</html>

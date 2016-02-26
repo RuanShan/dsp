@@ -1,0 +1,28 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">通过</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <p class="form-control-static">商家意向活动时间为2015-08-25，请选择秒杀日期：</p>
+                    </div>
+                     <div class="col-sm-10 col-sm-offset-1">
+                        <div id="calendar" data-default="2015-08-25" data-start="2015-08-21" data-end="2015-08-30" data-msg="请选择在2015-08-21至2015-08-30范围内的日期" data-target="#js_date_activity" data-path="/plus/calendar_event.php?ids=1,2,3"></div>
+                        <span class="error js_date_error help-block" style="margin-top:-40px"></span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="date" value="" id="js_date_activity"/>
+                <input type="hidden" name="goodsids" value="1,2,3" />
+                <button type="submit" class="btn btn-primary js_agree_btn_save" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

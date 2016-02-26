@@ -1,0 +1,54 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">认证详情</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">店主ID：</label>
+                    <div class="col-sm-7">
+                        <p class="m-t-sm">flower21</p>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">店主信息：</label>
+                    <div class="col-sm-7" id="shoperInfo">
+                        <img src="../../Assets/images/dev/icon_avatar_default.png" class="img-circle" style="max-width:30px;">乱室佳人
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">认证状态：</label>
+                    <div class="col-sm-7" id="stutas">
+                        <p class="m-t-sm">未认证</p>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">是否认证：</label>
+                    <div class="col-sm-7" id="isCheck">
+                        <label class="checkbox-inline"><input type="checkbox" class="condition" name="gift"/> 认证为大V</label>
+                    </div>
+                </div> 
+                <!-- <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-7" id="shoperInfo">
+                        <input id="onattest" class="btn btn-default" type="button" value="认证成为大V">
+                        <input id="offattest" class="btn btn-default hidden" type="button" value="取消认证">
+                    </div>
+                </div> --> 
+                <div id="info" class="form-group">
+                    <label class="col-sm-2 control-label">认证说明：</label>
+                    <div class="col-sm-7">
+                        <input type="text" id="onattest" class="form-control" data-rule-required="false" name="info" data-rule-maxlength="20" placeholder="20字以内"/>
+                        <input type="text" id="offattest" class="form-control hidden" data-rule-required="true" data-rule-maxlength="20" name="info" placeholder="20字以内"/>
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

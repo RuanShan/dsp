@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/page/recruitment.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body> 
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+                <!--<div class="col-sm-3 m-t-sm m-l-n">
+                   <a id="js_new" href="javascript:;" class="btn btn-default btn-sm m-n js_trigger">待审核内容</a>
+                   <a id="js_old" href="javascript:;" class="btn btn-default btn-sm m-n js_trigger">已审核内容</a>
+                   <a id="js_compare" href="javascript:;" class="btn btn-default btn-sm m-n js_trigger">内容对比</a>
+                </div>-->
+               <p class="m-l-none">商铺名称 : 司马小店<span class="m-l-md"> 联系方式 : 11233454556</span></p>
+               <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-sm-6 js_compare js_content hide">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <iframe src="http://m.weimob.com/buyer/goods/detail?sid=27&gid=30000267690" width="320" height="540" frameborder="0"></iframe>
+                        </div>
+                        <div class="col-sm-5">
+                            <iframe src="http://m.weimob.com/buyer/goods/detail?sid=27&gid=30000267690" width="320" height="540" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 js_old js_content hide">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <iframe src="http://m.weimob.com/buyer/goods/detail?sid=27&gid=30000267690" width="640" height="540" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 js_new js_content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <iframe src="http://m.weimob.com/buyer/goods/detail?sid=27&gid=30000267690" width="640" height="540" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-1 m-r-n-lg">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="pull-left">
+                                <a href="javascript:;" class="btn btn-primary m-r-xs" data-confirm="true" data-remote="/plus/callbackfun.php" data-toggle="ajaxPost" data-msg="是否通过?">通过</a>
+                                <a href="javascript:;" data-remote="async/check_refuse.html" data-toggle="ajaxModal" class="btn btn-danger m-r-xs js_refuse" >拒绝</a>
+                                <a href="javascript:;" data-remote="async/check_close.html" data-toggle="ajaxModal" class="btn btn-warning m-r-xs">关闭</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="table-responsive">
+                            <h4 class="m-l">内容对比</h4>
+                            <table class="table table-striped m-b-none">
+                                <thead>
+                                    <tr>
+                                        <th width="33%">对比项</th>
+                                        <th width="33%">待审核</th>
+                                        <th width="34%">已审核</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>类目</td>
+                                        <td>奶粉</td>
+                                        <td>衣服</td>
+                                    </tr>
+                                    <tr>
+                                        <td>名称</td>
+                                        <td>阿斯顿发</td>
+                                        <td>阿斯顿发生</td>
+                                    </tr>
+                                    <tr>
+                                        <td>规格</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="table-responsive">
+                        <h4 class="m-l">审核记录</h4>
+                        <table class="table table-striped m-b-none">
+                            <thead>
+                                <tr>
+                                    <th width="20%">审核人</th>
+                                    <th width="20%">审核操作</th>
+                                    <th width="30%">操作理由</th>
+                                    <th width="20%">操作时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>张三</td>
+                                    <td>通过</td>
+                                    <td>无</td>
+                                    <td>2015/2/28  13:23:00</td>
+                                </tr>
+                                <tr>
+                                    <td>李四</td>
+                                    <td>拒绝</td>
+                                    <td>图片不清晰</td>
+                                    <td>2015/2/28  13:23:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+     
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js", "dist/goods/init.js"]);
+    </script>
+
+</body>
+
+</html>

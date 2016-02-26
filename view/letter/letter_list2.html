@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .form-group .m-t-sm{margin-left: 20px;}
+        .form-group .btnsa{color:#007aff;}
+        .fa{font-size: 18px;margin-left: 10px;}
+        .letter_sign{font-style: normal;font-size: 18px;}
+        .readtip-12{color: #2e3e4e}
+    </style>
+</head>
+
+<body>
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>消息中心</p>
+            <a  class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"><i class="fa fa-reply"></i></a>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="letter_list.html">订单消息<span class="text-danger">(13)</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="#classify">商品消息<span class="text-danger">(13)</span></a>
+                        </li>
+                        <li>
+                            <a href="letter_list3.html">公告<span class="text-muted">(0)</span></a>
+                        </li>
+                        <li>
+                            <a href="letter_list4.html">其他消息<span class="text-muted">(0)</span></a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <form class="talbe-search" method="post" action="/api/Page/list">
+                        <div class="entity-panel-body form-horizontal js_lett">
+                            <div class="form-group padding-left">
+                                <div class="col-sm-12">
+                                    <div class="btn-group">
+                                        <button title="全部标为已读" class="btn btn-sm btn-default js_all_read" data-id="10" data-remote="/plus/succes.php" type="button">全部标为已读</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="col-sm-12">
+                                <div class="js_read_show">
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="1">
+                                        <div class="col-sm-12"> <em class="letter_sign text-danger">●</em>
+                                            <a href="javascript:;" class="js_mess_read">
+                                                【警告】您的商品 中国移动 话费 100元 中，规格 河南 无可用渠道，请留意。
+                                                <a href="javascript:;" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="1">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign text-danger">●</em>
+                                            <a href="javascript:;" class="js_mess_read">
+                                                【活动商品审核】恭喜您，您的商品 李霁虹测试用商品1 报名了活动 李霁虹测试用活动1，现已审核通过。
+                                                <a href="javascript:;" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="2">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign text-danger">●</em>
+                                            <a href="letter_detail.html" class="js_mess_read">
+                                                【活动商品审核】恭喜您，您的商品 李霁虹测试用商品1 报名了活动 李霁虹测试用活动1，现已审核通过。
+                                                <a href="letter_detail.html" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                    <div class="form-group padding-left" data-cid="3">
+                                        <div class="col-sm-12">
+                                            <em class="letter_sign">●</em>
+                                            <a href="letter_detail.html" class="js_mess_read">
+                                                【活动商品审核】恭喜您，您的商品 李霁虹测试用商品1 报名了活动 李霁虹测试用活动1，现已审核通过。
+                                                <a href="letter_detail.html" class="btnsa m-l-sm js_mess_read">查看详情</a>
+                                            </a>
+                                            <span class="pull-right m-t-xs">2015-09-01 10:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed line-lg"></div>
+                                </div>
+                            </table>
+                        </div>
+                        <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                        <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                        <input type="hidden" name="order" id="order" value="" />
+                    </form>  
+                </div>
+            </section> 
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共123条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+    <script src="/assets/javascripts/seajs_config.js"></script>
+    <script type="text/javascript">
+        window.msg_paths = "/Plus/goLetter.php";
+        seajs.use(["dist/application/app.js","dist/sys_msg/init.js"])
+    </script>
+
+</body>
+
+</html>

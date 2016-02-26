@@ -1,0 +1,69 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">拒绝理由</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-1">
+                        <div class="input-group">
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="refuse" value="1" data-rule-required="true"/>
+                                    定价过高
+                                </label>
+                            </div>
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="refuse" value="3" data-rule-required="true"/>
+                                    佣金过低
+                                </label>
+                            </div>
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="refuse" value="5" data-rule-required="true"/>
+                                    不符合活动规则
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="refuse" value="2" data-rule-required="true"/>
+                                    活动库存过低
+                                </label>
+                            </div>
+                            <div>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="refuse" value="4" data-rule-required="true"/>
+                                    报名名额已满
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-11 col-sm-offset-1">
+                        <div class="input-group">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" class="js_refuse_other" name="refuse" value="7" data-rule-required="true"/>                        
+                                其它
+                            </label>
+                            <label class="checkbox-inline">
+                                <textarea class="form-control" name="refusetext" data-rule-required="true" placeholder="详细理由..." disabled="disabled" rows="4" style="width:300px"></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

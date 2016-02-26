@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>新建营销人群</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/uploadify/uploadify.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+                www_version = 1201405081146;
+    </script>
+    <style>
+        .left{    margin: 10px 0 0 21%;}
+        .form-group .area{    width: 480px;height: 90px;}
+    </style>
+</head>
+
+<body>
+
+<section class="vbox">
+    <header class="header bg-white b-b b-light">
+        <p>新建营销人群</p>
+    </header>
+    <section class="scrollable  wrapper">
+        <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxform">
+        <section class="panel panel-default">
+            <div class="panel-body">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label must">人群名称：</label>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" name="wpms_2" data-rule-urls="true" placeholder="请输入人群名称，10字以内" class="form-control pull-left" style="width:360px" data-rule-required="true" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label must">圈人方式：</label>
+                        <div class="col-sm-8">
+                            <label class="radio-inline hide">
+                                <input class="js_select_url_type condselect" type="radio"   name="msss0" value="1">按条件圈人
+                            </label>
+                            <label class="radio-inline">
+                                    <input class="js_select_url_type mobselect"  type="radio" checked="true" name="msss0" value="2">上传手机号
+                            </label>
+                        </div>
+                    </div>
+
+            </div>
+        </section>
+
+        <section class="panel panel-default">
+            <div class="panel-body condsbody" style="display: none">
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;注册信息：</label></div>
+                    <div class="form-group form_sel" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">注册时间：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                               <input class="js_select_url_type" type="radio" name="msss1" value="1">全部
+                            </label>
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss1" value="1">
+                            </label>
+                                <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                                    </div>&nbsp;&nbsp;天</div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group form_sel" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">激活状态：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss2" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss2" value="1">未激活
+                            </label>
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss2" value="1">已激活
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天</div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;登录类型：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">常用登录类型：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss3" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss3" value="1">手机号
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss3" value="1">微信
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss3" value="1">QQ
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss3" value="1">微博
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">APP登录行为：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss4" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss4" value="1">只登录过H5登录过APP
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;登录类型：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">绑定项(历史)：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>身份证</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>银行卡</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>手机号</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>微信</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>QQ</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>微博</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">未绑定项(历史)：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>身份证</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>银行卡</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;购买行为（只包含直销和代销）：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label must">全球购：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss5" value="1" data-rule-required="true">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss5" value="1" data-rule-required="true">不包含全球购
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss5" value="1" data-rule-required="true">只包含全球购
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">购买内容(最近30天)：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>购买过直销</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>购买过代销</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>购买过自营</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">未购买内容(最近30天)：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>未购买过直销</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>未购买过代销</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>未购买过自营</label>
+                        </div>
+                    </div>
+                <div class="form_sel">
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">购买偏好：</label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss6" value="1">最近
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
+                                </select>
+                            </div>&nbsp;&nbsp;成功支付订单</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss6" value="1">最近
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天&nbsp;&nbsp;消费额
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1000+">1000+</option>
+                                </select>
+                            </div>&nbsp;&nbsp;元</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10"> <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss6" value="1">最近
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天&nbsp;&nbsp;每单平均消费额
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="1000+">1000+</option>
+                                </select>
+                            </div>&nbsp;&nbsp;元</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                                <div style="display: inline-block;vertical-align: top;">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss6" value="1">最近
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="1">1</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天</div>
+                                <div class="addmaark" style="display: inline-block;margin-left: 20px;">
+                                    <div class="form-group">
+                                    &nbsp;&nbsp;购买了
+                            <div class="btn-group">
+                                <select class="form-control form_sr" name="goumai[0]" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="服饰">服饰</option>
+                                    <option value="美妆">美妆</option>
+                                </select>
+                                <!--<i class="icon-plus-sign"></i>-->
+                            </div>&nbsp;&nbsp;商品
+                            <!--&nbsp;&nbsp;<i class="fa fa-times-circle"></i>-->
+                            &nbsp;&nbsp;<a class="js_add_freetax a_goumai" data-tempid="freetaxDistrict" data-sname="goumai" style="cursor: pointer;display: none" ><i class="fa fa-plus-circle"></i></a>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+               </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;浏览行为：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">全球购：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss10" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss10" value="1">不包含全球购
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss10" value="1">只包含全球购
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form_sel">
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">活跃度：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                全部<input class="js_select_url_type" type="radio" name="msss11" value="1">
+                            </label>
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss11" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天&nbsp;&nbsp;活跃
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天
+                           </div>
+                        </div>
+                    </div></div>
+
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">浏览偏好：</label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                                <div style="display: inline-block;vertical-align: top;">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss12" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天</div>
+                                <div class="addmaark" style="display: inline-block;margin-left: 20px;">
+                                    <div class="form-group">
+                                &nbsp;&nbsp;浏览过
+                            <div class="btn-group">
+                                <select class="form-control form_sr" name="xingwei[0]" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="js_add_freetax a_xingwei" data-tempid="freetaxDistrictxingwei" data-sname="xingwei" style="cursor: pointer;display: none"><i class="fa fa-plus-circle"></i></a>
+                                        </div>
+                                    </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;收藏行为：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">全球购：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss13" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss13" value="1">不包含全球购
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss13" value="1">只包含全球购
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form_sel">
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">收藏偏好：</label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                                <div style="display: inline-block;vertical-align: top;">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss14" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天</div>
+                                <div class="addmaark" style="display: inline-block;margin-left: 20px;">
+                                    <div class="form-group">
+                                &nbsp;&nbsp;收藏过
+                            <div class="btn-group">
+                                <select class="form-control form_sr" name="pianhao[0]" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="js_add_freetax a_pianhao" data-tempid="freetaxDistrictpianhao" data-sname="pianhao" style="cursor: pointer;display: none"><i class="fa fa-plus-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label must"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                                <div style="display: inline-block;vertical-align: top;">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss14" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天</div>
+                                <div class="addmaark" style="display: inline-block;margin-left: 20px;">
+                                    <div class="form-group">
+                                    &nbsp;&nbsp;收藏了
+                            <div class="radio-inline">
+                                <input type="text" name="pianhao2[0]" class="form_sr" data-rule-urls="true" disabled="disabled" placeholder="请输入店铺ID" class="form-control pull-left"  >
+                            </div>&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="js_add_freetax a_pianhao2" data-tempid="freetaxDistrictpianhao2" data-sname="pianhao2" style="cursor: pointer;display: none"><i class="fa fa-plus-circle"></i></a>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;代销行为：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">全球购：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss16" value="1">全部
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss16" value="1">不包含全球购
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss16" value="1">只包含全球购
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">当前代销的商品：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss17" value="1">是
+                            </label>
+                            <label class="radio-inline">
+                                <input class="js_select_url_type" type="radio" name="msss17" value="1">否
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="addmaark">
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">代销商品：</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <!--<input class="js_select_url_type" type="radio" name="msss18" value="1">-->
+                                目前有代销
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control form_sr" name="shangp[0]" >
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="js_add_freetax a_shangp" data-tempid="freetaxDistrictshangp" data-sname="shangp" style="cursor: pointer;"><i class="fa fa-plus-circle"></i></a>
+
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="form_sel">
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">代销能力：</label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss19" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天&nbsp;&nbsp;卖出代销商品
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="50">50</option>
+                                    <option value="50+">50+</option>
+                                </select>
+                            </div>&nbsp;&nbsp;件</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group" style="display: inline-block">
+                            <label class="radio-inline">
+                                最近<input class="js_select_url_type" type="radio" name="msss19" value="1">
+                            </label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天&nbsp;&nbsp;代销商品金额
+                            <div class="btn-group">
+                                <select class="form-control" name="city" disabled="disabled">
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="0">0</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2000+">2000+</option>
+                                </select>
+                            </div>&nbsp;&nbsp;元</div>
+                        </div>
+                    </div>
+                        </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;支付偏好：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">偏好支付方式(历史支付订单笔数)：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>全部</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>支付宝</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>微信</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>银行卡</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label"><b>·</b>&nbsp;&nbsp;红包情况：</label></div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label">红包状态：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>全部</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>无红包</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>有未激活红包</label>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-left: 60px;">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="checkbox"/>有未失效的红包</label>
+                            <label class="checkbox-inline"><input type="checkbox"/>有距失效时间</label>
+                            <div class="btn-group">
+                                <select class="form-control" name="city" >
+                                    <option value="" checked="checked">请选择</option>
+                                    <option value="7">7</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>&nbsp;&nbsp;天的红包
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" id="sub_btn" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                            <button type="button" class="btn btn-default mark_btn-default" data-toggle="back">取消</button>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="panel-body mobsbody" style="display: block">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label must">批量上传：</label>
+                    <div class="col-sm-4">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="input-group">
+                                <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                    <span class="fileinput-filename"></span>
+                                </div>
+                                        <span class="input-group-addon btn btn-default btn-file">
+                                            <span class="fileinput-new">上传文件</span>
+                                            <span class="fileinput-exists">更改</span>
+                                            <input type="file" name="files" />
+                                        </span>
+                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">移除</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" id="sub_btn" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                        <button type="button" class="btn btn-default mark_btn-default" data-toggle="back">取消</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        </form>
+    </section>
+</section>
+<!--<script type="text/html" id="delivery_city_tem">-->
+    <!--{{each data as item}}-->
+    <!--<option value="{{item.id}}" {{if item.id==selected}}selected="selected"{{/if}}>{{item.name}}</option>-->
+    <!--{{/each}}-->
+<!--</script>-->
+
+<script type="text/html" id="freetaxDistrict">
+    <div class="form-group">
+         购买了
+        <div class="btn-group">
+            <select class="form-control form_sr" name="{{name}}[{{size}}]" >
+                <option value="" checked="checked">请选择</option>
+                <option value="服饰">服饰</option>
+                <option value="美妆">美妆</option>
+            </select>
+            <!--<i class="icon-plus-sign"></i>-->
+        </div>&nbsp;&nbsp;商品
+            &nbsp;&nbsp;<a href="javascript:;" class="js_del_freetax a_goumai" data-sname="goumai"  title="删除"><i class="fa fa-times-circle"></i></a>
+            &nbsp;&nbsp;<a class="js_add_freetax a_goumai" data-tempid="freetaxDistrict" data-sname="goumai" style="cursor: pointer"><i class="fa fa-plus-circle"></i></a>
+</div>
+</script>
+
+<script type="text/html" id="freetaxDistrictxingwei">
+
+        <div class="form-group">
+            &nbsp;&nbsp;浏览过
+            <div class="btn-group">
+                <select class="form-control form_sr" name="{{name}}[{{size}}]">
+                    <option value="" checked="checked">请选择</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                </select>
+            </div>&nbsp;&nbsp;商品
+            &nbsp;&nbsp;<a href="javascript:;" class="js_del_freetax a_xingwei" data-sname="xingwei"  title="删除"><i class="fa fa-times-circle"></i></a>
+            &nbsp;&nbsp;<a class="js_add_freetax a_xingwei" data-tempid="freetaxDistrictxingwei" data-sname="xingwei" style="cursor: pointer"><i class="fa fa-plus-circle"></i></a>
+        </div>
+
+</script>
+
+<script type="text/html" id="freetaxDistrictpianhao">
+
+    <div class="form-group">
+        &nbsp;&nbsp;收藏过
+        <div class="btn-group">
+            <select class="form-control form_sr" name="{{name}}[{{size}}]">
+                <option value="" checked="checked">请选择</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="5">5</option>
+            </select>
+        </div>&nbsp;&nbsp;商品
+        &nbsp;&nbsp;<a href="javascript:;" class="js_del_freetax a_pianhao" data-sname="pianhao" title="删除"><i class="fa fa-times-circle"></i></a>
+        &nbsp;&nbsp;
+        <a class="js_add_freetax a_pianhao" data-tempid="freetaxDistrictpianhao" data-sname="pianhao" style="cursor: pointer"><i class="fa fa-plus-circle"></i></a>
+    </div>
+
+</script>
+
+<script type="text/html" id="freetaxDistrictpianhao2">
+
+    <div class="form-group">
+        &nbsp;&nbsp;收藏了
+        <div class="radio-inline">
+            <input type="text" class="form_sr" name="{{name}}[{{size}}]" data-rule-urls="true"  placeholder="请输入店铺ID" class="form-control pull-left"  >
+        </div>&nbsp;&nbsp;商品
+        &nbsp;&nbsp;<a href="javascript:;" class="js_del_freetax a_pianhao2" data-sname="piaanhao2"  title="删除"><i class="fa fa-times-circle"></i></a>
+        &nbsp;&nbsp;
+        <a class="js_add_freetax a_pianhao2" data-tempid="freetaxDistrictpianhao2" data-sname="piaanhao2" style="cursor: pointer"><i class="fa fa-plus-circle"></i></a>
+    </div>
+
+</script>
+
+<script type="text/html" id="freetaxDistrictshangp">
+
+    <div class="form-group" style="margin-left: 60px;">
+        <label class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <label class="radio-inline">
+                目前有代销
+            </label>
+            <div class="btn-group">
+                <select class="form-control form_sr" name="{{name}}[{{size}}]">
+                    <option value="" checked="checked">请选择</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="5">5</option>
+                </select>
+            </div>&nbsp;&nbsp;商品&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:;" class="js_del_freetax a_shangp" data-sname="shangp" title="删除"><i class="fa fa-times-circle"></i></a>
+            &nbsp;&nbsp;
+            <a class="js_add_freetax a_shangp" data-tempid="freetaxDistrictshangp" data-sname="shangp" style="cursor: pointer"><i class="fa fa-plus-circle"></i></a>
+
+        </div>
+    </div>
+
+</script>
+
+
+
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/cupid/init.js"]);
+</script>
+
+</body>
+</html>

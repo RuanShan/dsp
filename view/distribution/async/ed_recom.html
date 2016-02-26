@@ -1,0 +1,39 @@
+<form id="recom" class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">添加推荐师傅</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">店主ID：</label>
+                    <div class="col-sm-7 must">
+                        <input id="shoperid" data-path="/Plus/recom.php" type="text" class="form-control" data-rule-required="true" name="id" />
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">店主信息：</label>
+                    <div class="col-sm-7 must" id="shoperInfo">
+                        暂无
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">展示顺序：</label>
+                    <div class="col-sm-7 must">
+                        <input id="sort" type="text" class="form-control" data-rule-required="true" name="sort" />
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button id="subBtn" data-path="/Plus/recom.php" type="button" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/html" id="shoperCont">
+    <img src="{{imgSrc}}" class="img-circle" style="max-width:30px;">
+    {{name}}
+</script>
+

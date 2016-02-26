@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+                www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .tgfs_select .select2-arrow b:after{
+            color: rgb(113,113,113) !important;
+        }
+        .tgfs_select a .select2-chosen{
+            color: rgb(113,113,113);
+        }
+        .tgfs_select a.select2-choice{
+            border-color: rgb(218,218,218);
+            background-color: rgb(250,250,250);
+        }
+    </style>
+
+</head>
+<body>
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+
+            <div class="row m-t-sm">
+                <div class="col-sm-9 m-b-xs">
+                    <div class="btn-group">
+                        <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                            <i class="fa fa-refresh"></i>
+                        </button>
+                        <a href="event_ed.html" class="btn btn-sm btn-default"> <i class="fa fa-plus m-r-xs"></i>
+                            新建优惠券
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-3 m-b-xs">
+                   <a  href="javascript:;"  style="color:#368ee0" data-toggle="ajaxModal" data-remote="async/explain.html" class="text-blue text-ul pull-right m-t-xs">活动规则说明</a>
+                </div>
+            </div>
+
+        </header>
+
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default">
+                <header class="panel-heading bg-light">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#classify">店铺券</a>
+                        </li>
+                        <li>
+                            <a  href="commodity.html">商品券</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="classify" style="overflow-x:hidden;min-height:230px">
+                            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                                <div class="row">
+                                    <div class="col-sm-9 m-b-xs">
+                                        <div class="btn-group m-r-xs">
+                                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                                            </button>
+                                        </div>
+                                        <div class="btn-group m-r-xs">
+                                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                                <span class="dropdown-label">全部面值</span>
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-select dropdown-select-50 mhx250" data-change="submit">
+                                                <li class="active">
+                                                    <a href="javascript:;">
+                                                        <input type="radio" checked="" name="activitytype" value="" />
+                                                        全部面额
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitytype" value="1" />
+                                                        0-20元
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitytype" value="2" />
+                                                        20-50元
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitytype" value="3" />
+                                                        50-100元
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitytype" value="4" />
+                                                        >100元
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r-xs">
+                                            <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                                <span class="dropdown-label">全部状态</span>
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-select dropdown-select-50 mhx250" data-change="submit">
+                                                <li class="active">
+                                                    <a href="javascript:;">
+                                                        <input type="radio" checked="" name="activitystatus" value="" />
+                                                        全部状态
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitystatus" value="1" />
+                                                        未开始
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitystatus" value="2" />
+                                                        领取中
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitystatus" value="3" />
+                                                        已领完
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitystatus" value="4" />
+                                                        已结束
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <input type="radio" name="activitystatus" value="5" />
+                                                        已失效
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r-xs">
+                                            <select name="classifyId" class="hd tgfs_select" style="width: 120px;" data-toggle="select2" data-placeholder="推广方式" data-chang="submit">
+                                                <option value=""></option>
+                                                <optgroup label="买家领取">
+                                                    <option value="1">无门槛</option>
+                                                    <option value="2">分享送</option>
+                                                </optgroup>
+                                                <optgroup label="卖家发放">
+                                                    <option value="5">满就送</option>
+                                                    <option value="6">粉丝管理</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group m-r-xs">
+                                            <a class="btn btn-default btn-sm " data-toggle="reportrange" data-change="submit">
+                                                <i class="fa fa-calendar fa-lg"></i>
+                                                <small>时间</small>
+                                                <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                                                <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange" />
+                                            </a>
+                                        </div>
+
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm" title="导出订单">
+                                                <i class="fa fa-cloud-download"></i>
+                                                导出
+                                            </button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-3 m-b-xs">
+
+                                        <div class="input-group">
+
+                                            <input type="text" class="input-sm form-control" name="keyword" placeholder="搜索优惠券名称"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                                <input type="hidden" name="order" id="order" value="" />
+                            </form>
+                            <section class="panel panel-default m-t-xs">
+                                <div class="table-responsive">
+                                    <table class="table table-striped m-b-none">
+                                        <thead>
+                                            <tr>
+
+                                                <th>名称</th>
+                                                <th>创建时间</th>
+                                                <th>领取时间</th>
+                                                <th>使用时间</th>
+                                                <th>条件</th>
+                                                <th>面值</th>
+                                                <th>推广方式</th>
+                                                <th>发行量</th>
+                                                <th>已领/发</th>
+                                                <th>已使用</th>
+                                                <th>状态</th>
+                                                <th class="mn100">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>满50减3</td>
+                                                <td>2015/08/07</td>
+
+                                                <!-- <td>免费</td>
+                                            -->
+                                            <td>
+                                                起2016/01/01 0:00
+                                                <br>止2016/03/01 24:00</td>
+                                            <td>
+                                                起2016/01/01 0:00
+                                                <br>止2016/03/01 24:00</td>
+                                            <td>满50元</td>
+                                            <td>3元</td>
+                                            <td>买家领取-无门槛</td>
+                                            <td>1000</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>未开始</td>
+                                            <td>
+                                                <a class="m-xs" href="dianpuDetails.html" title="查看详情">
+                                                    <i class="fa fa-search-plus text-muted"></i>
+                                                </a>
+                                                <a class="m-xs" href="spread_details.html" title="编辑">
+                                                    <i class="fa fa-edit text-muted"></i>
+                                                </a>
+                                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定删除 此专题？" class="m-xs" title="删除">
+                                                    <i class="fa fa-trash-o text-muted"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>满50减3</td>
+                                            <td>2015/08/07</td>
+
+                                            <!-- <td>免费</td>
+                                        -->
+                                        <td>
+                                            起2016/01/01 0:00
+                                            <br>止2016/03/01 24:00</td>
+                                        <td>
+                                            起2016/01/01 0:00
+                                            <br>止2016/03/01 24:00</td>
+                                        <td>满50元</td>
+                                        <td>3元</td>
+                                        <td>买家领取-无门槛</td>
+                                        <td>1000</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>领取中</td>
+                                        <td>
+                                            <a class="m-xs" href="good_details.html" title="查看详情">
+                                                <i class="fa fa-search-plus text-muted"></i>
+                                            </a>
+                                            <a class="m-xs" href="spread_details.html" title="编辑">
+                                                <i class="fa fa-edit text-muted"></i>
+                                            </a>
+                                            <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxPost" data-msg="确定结束领取？" data-confirm="true" class="m-xs" title="结束领取">
+                                                <i class="fa fa-stop text-muted"></i>
+                                            </a>
+                                            <span class="js_copy_text copy_text" title="复制链接" data-icon="true">
+                                                <span class="hd">http://www.weimob.com</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>满50减3</td>
+                                        <td>2015/08/07</td>
+
+                                        <!-- <td>免费</td>
+                                    -->
+                                    <td>
+                                        起2016/01/01 0:00
+                                        <br>止2016/03/01 24:00</td>
+                                    <td>
+                                        起2016/01/01 0:00
+                                        <br>止2016/03/01 24:00</td>
+                                    <td>满50元</td>
+                                    <td>3元</td>
+                                    <td>买家领取-无门槛</td>
+                                    <td>1000</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>领取中</td>
+                                    <td>
+                                        <a class="m-xs" href="good_details.html" title="查看详情">
+                                            <i class="fa fa-search-plus text-muted"></i>
+                                        </a>
+                                        <a class="m-xs" href="spread_details.html" title="编辑">
+                                            <i class="fa fa-edit text-muted"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td>满50减3</td>
+                                    <td>2015/08/07</td>
+
+                                    <!-- <td>免费</td>
+                                -->
+                                <td>
+                                    起2016/01/01 0:00
+                                    <br>止2016/03/01 24:00</td>
+                                <td>
+                                    起2016/01/01 0:00
+                                    <br>止2016/03/01 24:00</td>
+                                <td>满50元</td>
+                                <td>3元</td>
+                                <td>买家领取-无门槛</td>
+                                <td>1000</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>已领完</td>
+                                <td>
+                                    <a class="m-xs" href="good_details.html" title="查看详情">
+                                        <i class="fa fa-search-plus text-muted"></i>
+                                    </a>
+                                    <a class="m-xs" href="spread_details.html" title="编辑">
+                                        <i class="fa fa-edit text-muted"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td>满50减3</td>
+                                <td>2015/08/07</td>
+
+                                        <!-- <td>免费</td> -->
+                                        <td>起2016/01/01 0:00<br>止2016/03/01 24:00</td>
+                                        <td>起2016/01/01 0:00<br>止2016/03/01 24:00</td>
+                                        <td>满50元</td>
+                                        <td>3元</td>
+                                        <td>买家领取-无门槛</td>
+                                        <td>1000</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>已失效</td>
+                                        <td>
+                                            <a class="m-xs" href="good_details.html" title="查看详情">
+                                                <i class="fa fa-search-plus text-muted"></i>
+                                            </a>
+                                            <a class="m-xs" href="spread_details.html"  title="复制信息新建">
+                                                <i class="fa fa-file-text-o"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+
+                        <!--
+                                    <tr>
+                        <td  colspan="7" class="nodata">暂无数据</td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+
+<footer class="footer bg-white b-t">
+<div class="row text-center-xs">
+<div class="col-md-6 hidden-sm">
+<p class="text-muted m-t">总共321条 当前为第1页</p>
+</div>
+<div class="col-md-6 col-sm-12 text-right text-center-xs">
+<ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="8" data-page-current="1"></ul>
+</div>
+</div>
+</footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use("dist/application/app.js");</script>
+
+</body>
+</html>

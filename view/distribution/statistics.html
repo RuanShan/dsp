@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店运营后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-7">
+                    <p style="margin-top: 8px;">
+                        统计图表
+                        </p>
+                        
+                      </div>
+                    <div class="col-sm-5 m-b-xs">
+                        <a class="text-muted pull-right pointer" style="margin-top:8px;" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+                        </a>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        
+        <section class="scrollable wrapper w-f">
+            <div class="col-md-12">
+                <section class="panel panel-default">
+                    <header class="panel-heading font-bold">统计图表</header>
+                    <div class="panel-body">
+                        <form class="talbe-horizontal" method="post" action="/api/Page/list">
+                            <div class="row">
+                                <div class="col-sm-11">
+                                    <div class="col-sm-11 m-b-xs">
+                                        <div class="form-group">
+                                            <div class="btn-group">
+                                                <a class="btn btn-default btn-sm btn-s-sm active" href="">近一周</a>
+                                                <a class="btn btn-default btn-sm btn-s-sm" href="">近一月</a>
+                                            </div>
+                                            <span class="m-l">2014-06-01至2014-06-30</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+                            <div class="row m-t-n-xs">
+                                <div class="col-sm-10">
+                                    <div class="btn-group">
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts active">被分享次数</button>
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts">访问人数</a>
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts">新增app用户数</button>
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts">有效APP用户数</button>
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts">分享者领取红包数</button>
+                                        <button type="button" data-path="/plus/register3.php?page=2&type=0" class="btn btn-default btn-sm js_interact_echarts">被分享者领取红包数</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="type" value="0" class="js_search_form" />
+                            <input type="hidden" name="type" value="7" class="js_search_data" />
+                        </form>
+                        <div class="text-center m-b-n m-t-sm">
+                            <div id="js_turnover" style="height: 200px" data-path="/Plus/register3.php"><i class="fa fa-spinner fa-spin"></i></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/distribution/init.js"])
+    </script>
+
+</body>
+
+</html>

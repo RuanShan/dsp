@@ -1,0 +1,46 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">人工干预—合伙人</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">店主ID：</label>
+                    <div class="col-sm-7">
+                        flower21
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">店主信息：</label>
+                    <div class="col-sm-7" id="shoperInfo">
+                        <img src="../../Assets/images/dev/icon_avatar_default.png" class="img-circle" style="max-width:30px;">乱室佳人
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">已有合伙人：</label>
+                    <div class="col-sm-7">
+                        <span id="count-now">20</span> 个
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">人工干预值：</label>
+                    <div class="col-sm-7">
+                        <input id="conut-var" type="text" class="form-control" data-rule-number="true" name="info" placeholder="输入正负数即为加、减"/>
+                    </div>
+                </div> 
+                <div id="info" class="form-group">
+                    <label class="col-sm-3 control-label">现有合伙人：</label>
+                    <div class="col-sm-7">
+                        <span id="count-all">20</span> 个
+                    </div>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/4.0.0/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+    <style>
+        .form-modal .input-group-addon{padding: 2px;background: none;border:0;}
+    </style>
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-5 m-b-xs">
+                        <div class="input-group">
+                              <div class="input-group-btn">
+                                  <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                      <span class="dropdown-label">搜商户全称</span>
+                                      <span class="caret"></span>
+                                  </button>
+                                  <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                                    <li>
+                                        <a href="javascript:;" class="active">
+                                            <input type="radio" name="orderType3" value="1">搜商户全称</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="orderType3" value="2">搜商户ID</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="orderType3" value="3">用户名</a>
+                                    </li>
+                                </ul>
+                              </div>
+                              <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" placeholder="供货商名称" />
+                              <span class="input-group-btn">
+                                  <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                      <i class="fa fa-search"></i>
+                                  </button>
+                              </span>
+                          </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="date" />
+            </form>
+        </header>
+
+    <section class="scrollable wrapper">
+        <section class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>搜索结果：<span>上海晖硕信息科技有限公司</span></label>
+                </div>
+                <form class="form-horizontal form-validate" action="/api/form/ajaxform" method="post" novalidate="novalidate">
+                    <div class="panel panel-default table-responsive">
+                        <table class="table m-b-none">
+                            <tbody>
+                                <tr>
+                                    <td class="col-sm-1 b-r v-middle b-light">
+                                       <label class="checkbox-inline"><input type="checkbox" class="js_all" />美妆</label>
+                                    </td>
+                                    <td>
+                                        <label class="checkbox-inline"><input type="checkbox"/>美容护肤</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="b-r v-middle b-light">
+                                       <label class="checkbox-inline"><input type="checkbox" class="js_all" />食品</label>
+                                    </td>
+                                    <td>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="b-r v-middle b-light">
+                                       <label class="checkbox-inline"><input type="checkbox" class="js_all" />母婴</label>
+                                    </td>
+                                    <td>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                        <label class="checkbox-inline"><input type="checkbox"/>checkbox</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">经营品牌:</label>
+                        <div class="col-sm-4">              
+                            <select name="lower" class="form-control" multiple="multiple" data-remote="/plus/loadlower.php?type=1" data-rule-required="true"  data-toggle="select2_4" data-placeholder="请输入品牌名称" data-placeboolean="false" style="width: 320px;">
+                                <!--<option selected="" value="a">分销商AAA</option>
+                                <option selected="" value="b">分销商bbb</option>-->
+                            </select>                         
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-1">
+                            <button class="btn btn-primary" data-loading-text="保存中..." type="submit">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+
+
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+    seajs.use(["dist/application/app.js","dist/supplier/init.js"])
+    </script>
+
+</body>
+
+</html>

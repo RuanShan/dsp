@@ -1,0 +1,853 @@
+﻿
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-8 m-b-xs">
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新">
+                                    <i class="fa fa-refresh"></i>
+                                </button>
+                                <!--<button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled>
+                                    <i class="fa fa-trash-o"></i>
+                                </button>-->
+
+                            </div>
+
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">20</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="10" />10
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="20" checked="checked" />20
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="50" />50
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="pageSize" value="100" />100
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">全部状态</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />全部状态
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />退款中
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="2" />退货中
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />已退款
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" />商家同意退货
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" /> 维权发货
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" /> 已维权已退款
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" /> 已维权已退货
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <input type="radio" name="state" value="1" /> 拒绝
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <!--<div class="btn-group">
+
+                                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                    <span class="dropdown-label">维权订单</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                                    <li class="active">
+                                        <a href="javascript:;">
+                                            <input type="radio" name="activist" checked="" value="1" />普通订单
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>-->
+                             
+                        </div>
+
+                        <div class="form-group">
+                            <a class="btn btn-default btn-sm " data-toggle="reportrangebus" data-change="submit" data-format="YYYY/MM/DD HH:mm" data-time-picker-increment="1">
+                                <i class="fa fa-calendar fa-lg"></i>
+                                <small>申请时间</small>
+                                <span>2014/06/1 12:00 - 2014/06/30 12:00</span> <b class="caret"></b>
+                                <input type="hidden" value="2014/06/1 12:00 - 2014/06/30 12:00" name="reportrange" />
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="javascript:;" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" title="导出筛选条件内的维权单，建议每次导出维权单的筛选时长不超过1个月">
+                                导出
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-select-50">
+                                <li>
+                                    <a href="javascript:;" data-toggle="download" data-set="download" data-action="/api/Page/list" class="" title="维权单">维权单</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 m-b-xs">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    <span class="dropdown-label">订单编号</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-select">
+                                    <li class="active">
+                                        <a href="#">
+                                            <input type="radio" value="0" name="searchBy" checked="checked" />订单编号
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="2" name="searchBy" />商品名称
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="3" name="searchBy" />维权单号
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <input type="radio" value="4" name="searchBy" />订单编号
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </button>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                <input type="hidden" name="order" id="order" value="Name" />
+            </form>
+        </header>
+        <section class="scrollable wrapper w-f">
+            <section class="panel panel-default ">
+                <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th class="with-checkbox">
+                                    <input type="checkbox" />
+                                </th>
+                                <th>商品信息</th>
+                                <!--<th>粉丝</th>-->
+                                <th class="col-sm-1 mn70">支付方式</th>
+                                <th class="col-sm-2 ">维权类型</th>
+                                <th class="col-sm-2">操作&状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x1
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退款 <!--<button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦"><i class="fa fa-bullhorn"></i></button>-->
+                                    </p>
+                                    <!--<small class="text-muted">金额： <span class="money">228.00</span> </small>-->
+                                </td>
+
+                                <td>
+                                    <a href="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-confirm="true" data-msg="退款失败，可能您的证书和密码不正确，请从新上传或填写" class="btn btn-xs btn-primary">确认退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x1
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退款 <!--<button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦"><i class="fa fa-bullhorn"></i></button>-->
+                                    </p>
+                                    <!--<small class="text-muted">金额： <span class="money">228.00</span> </small>-->
+                                </td>
+
+                                <td>
+                                    <!--<a href="javascript:;" data-remote="async/shipments.html" data-confirm-msg="<p style='margin-top:20px;'>确认退款后，（￥222.00现金、￥100.00积分、￥10.00红包）将会退到买家账户，请再次确认。</p>" data-confirm="true" data-toggle="ajaxModal" class="btn btn-xs btn-primary" data-confirm-text="确认退款" title="确认退款">确认退款</a>-->
+                                    <a href="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-msg="你还没有配置自有方式退款，请到支付方式管理配置" data-confirm="true" class="btn btn-xs btn-primary">确认退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a>
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x1
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退款 <!--<button type="button" class="btn btn-default btn-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="太差了，一收到就发现屏幕显示质量有问题，返换慢得很，心烦"><i class="fa fa-bullhorn"></i></button>-->
+                                    </p>
+                                    <!--<small class="text-muted">金额： <span class="money">228.00</span> </small>-->
+                                </td>
+
+                                <td>
+                                    <a href="javascript:;" data-remote="async/shipments.html" data-confirm-msg="<p style='margin-top:20px;'>确认退款后，（￥222.00现金、￥100.00积分、￥10.00红包）将会退到买家账户，请再次确认。</p>" data-confirm="true" data-toggle="ajaxModal" class="btn btn-xs btn-primary" data-confirm-text="确认退款" title="确认退款">确认退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x1
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>支付宝</td>
+                                <td>
+                                    <p>
+                                        退款 
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <a href="javascript:;" data-remote="async/tips.html" data-confirm-msg="<p style='margin-top:20px;'>确认退款后，（￥222.00现金、￥100.00积分、￥10.00红包）将会退到买家账户，请再次确认。</p>" data-confirm="true" data-toggle="ajaxModal" class="btn btn-xs btn-primary" data-confirm-text="确认退款" title="确认退款">确认退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x2
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退货退款
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <a href="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-msg="<p style='margin-top:20px;'>该商品不支持线上退款，<span style='color:red'>请先将￥100.00现金手动转账给买家提供的账户再进行确认退款操作，</span>确认退款后，￥100.00积分、￥10.00红包会自动退还到买家账户。</p>" data-confirm="true" class="btn btn-xs btn-primary">已收货，确认退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/1.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x1
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                            <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退款
+                                    </p>
+                                </td>
+
+                                <td>
+                                    已拒绝<button type="button" class="btn btn-default btn-xs  m-l-xs" data-html="true" data-container="body" data-toggle="popover" data-placement="bottom" data-content="哥就是不想退给你"><i class="fa fa-bookmark"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95133</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+                                    
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x2
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>财付通</td>
+                                <td>
+                                    <div>
+                                        退货退款
+                                    </div>
+                                </td>
+
+                                <td>
+                                    已维权退款 
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="5" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95136</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x2
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <div>
+                                        退货退款
+                                    </div>
+                                </td>
+
+                                <td>
+                                    已维权退货 
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="6" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95137</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <div class="media">
+                                        <span class="pull-left thumb-sm">
+                                            <img src="/assets/images/goods/2.jpg" alt="John said">
+                                        </span>
+                                        <div class="pull-right">
+                                            x2
+                                        </div>
+                                        <div class="media-body">
+                                            <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                            <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <!--<td>
+                                    <p class="m-b-xs mx80">wechatID</p>
+                                    <a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a>
+                                </td>-->
+                                <td>微支付</td>
+                                <td>
+                                    <div>
+                                        退货退款
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <a href="async/refused1.html" data-toggle="ajaxModal" class="btn btn-xs btn-primary">同意退货</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a> 
+                                </td>
+                            </tr>
+                                <!--<tr>
+                                        <td  colspan="7" class="nodata">暂无维权信息</td>
+                                    </tr>-->
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" />
+
+                                </td>
+                                <td colspan="7">
+                                    <span class="m-r">订单编号：95136</span>
+                                    <span class="m-r">申请时间：2014-04-24 14:39:44</span>
+
+                                    <a href="order_details.html" class="btn btn-default btn-xs pull-right" title="订单详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>订单详情
+                                    </a>
+                                    <a href="rights_details.html" class="btn btn-default btn-xs pull-right m-r-xs" title="维权详情">
+                                        <i class="fa fa-search text-muted m-r-xs"></i>维权详情
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group no-borders">
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/1.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">Apple 苹果 iPhone 5s (A1530 )16G版 银色 4G </a></div>
+                                                    <small class="text-muted">单价： <span class="money">199800.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span></small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                                    <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/3.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">迎馨 床品家纺被芯 双人馨雅型玉米纤维春秋被子200*230cm 米黄色</a></div>
+                                                    <small class="text-muted">单价： <span class="money">228.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span> </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/4.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">Sharp 夏普 LCD-40DS10A-BK 40英寸 LED液晶电视</a></div>
+                                                    <small class="text-muted">单价： <span class="money">228.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span> </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item item1 hide">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/2.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right">
+                                                    x2
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">Somic 硕美科 G909 7.1声道 游戏耳麦 头戴式 USB接口 </a></div>
+                                                    <small class="text-muted">单价： <span class="money">228.00</span> </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item item1 hide">
+                                            <div class="media">
+                                                <span class="pull-left thumb-sm">
+                                                    <img src="/assets/images/goods/3.jpg" alt="John said">
+                                                </span>
+                                                <div class="pull-right m-t-sm">
+                                                    x1
+                                                </div>
+                                                <div class="media-body">
+                                                    <div><a href="#">迎馨 床品家纺被芯 双人馨雅型玉米纤维春秋被子200*230cm 米黄色</a></div>
+                                                    <small class="text-muted">单价： <span class="money">228.00</span><span class="m-l-xs">[颜色：水晶银  发动机：V10]</span> </small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href=".item1" class="btn btn-xs btn-default pull-left" data-toggle="class:show">
+                                                <i class="fa fa-plus text"></i>
+                                                <span class="text">全部</span>
+                                                <i class="fa fa-minus text-active"></i>
+                                                <span class="text-active">收起</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </td>
+                                 <!--<td><p class="m-b-xs mx80">wechatIwechatIDwechatIDwechatIDwechatIDwechatIDwechatIDwechatIDwechatIDD</p><a href="javascript:;" class="btn btn-default btn-xs"><i class="fa fa-comments-o m-r-xs"></i>微客服</a></td>-->
+                                 <td>微支付</td>
+                                <td>
+                                    <p>
+                                        退款
+                                    </p>
+                                </td>
+                                
+                                <td>
+                                    <a href="/api/Form/ajaxPost/1" data-toggle="ajaxPost" data-msg="<p style='margin-top:20px;'>该商品不支持线上退款，<span style='color:red'>请先将￥100.00现金手动转账给买家提供的账户再进行确认退款操作，</span>确认退款后，￥100.00积分、￥10.00红包会自动退还到买家账户。</p>" class="btn btn-xs btn-primary">同意退款</a>
+
+                                    <a href="async/refused.html" data-toggle="ajaxModal" data-msg="确认拒绝该维权申请" class="btn btn-xs btn-default" title="拒绝">拒绝</a> 
+                                </td>
+                            </tr>
+ 
+                        </tbody>
+
+                    </table>
+                </div>
+            </section>
+        </section>
+        <footer class="footer bg-white b-t">
+            <div class="row text-center-xs">
+                <div class="col-md-6 hidden-sm">
+                    <p class="text-muted m-t">总共321条 当前为第1页</p>
+                </div>
+                <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                    <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+    <script type="text/javascript">
+        seajs.use("dist/application/app.js", function () {
+            window.wm.lang.confirmRefundGoods = '<p><b>同意退款退货</b></p><p>退货地址：宋玉杰，18217328644，上海市宝山区逸仙路2816号</p>';
+        });
+    </script>
+
+</body>
+
+</html>

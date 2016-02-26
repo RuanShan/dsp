@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/select2/select2.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+    <section class="vbox">
+
+        <header class="header bg-white b-b clearfix">
+            <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row m-t-sm">
+                    <div class="col-sm-9 m-b-xs">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default" title="删除" data-toggle="batch" data-href="/api/Form/allRemove" disabled> <i class="fa fa-trash-o"></i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" data-trigger="batch" disabled>
+                                批量操作
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-toggle="ajaxModal" data-remote="async/commissions.html">设置佣金比例</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch" data-confirm="true"   data-remote="/api/Form/ajaxShelves/1" data-toggle="ajaxPost" data-msg="开启推广?" >开启推广</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" data-trigger="batch"  data-confirm="true" data-remote="/api/Form/ajaxShelves/2" data-toggle="ajaxPost" data-msg="温馨提示：一旦停止推广，那么推广中的商品将不再进行分佣。<br/>
+                                    <div class='m-t-xs'> <strong>确定要停止推广吗？</strong>
+                                    </div>
+                                    " >关闭推广
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                            <span class="dropdown-label">推广状态</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                            <li class="active">
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" checked="" value="1" />
+                                    全部
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" value="1" />
+                                    待推广
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" value="2" />
+                                    推广中
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" value="3" />
+                                    暂停
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" value="4" />
+                                    推广结束
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="activist" value="5" />
+                                    已删除
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                            <span class="dropdown-label">审核状态</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                            <li class="active">
+                                <a href="javascript:;">
+                                    <input type="radio" name="autid" checked="" value="1" />
+                                    全部
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="autid" value="1" />
+                                    待审核
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="autid" value="2" />
+                                    审核通过
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="autid" value="3" />
+                                    审核不通过
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="autid" value="4" />
+                                    关闭
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <a href="goods_ed.html" class="btn btn-sm btn-default">
+                        <i class="fa fa-plus m-r-xs"></i>
+                        添加商品
+                    </a>
+                </div>
+
+                <div class="col-sm-3 m-b-xs">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" name="keyword" placeholder="商品名称" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+            <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+            <input type="hidden" name="order" id="order" value="status" />
+        </form>
+    </header>
+    <section class="scrollable wrapper w-f">
+        <section>
+            <p class="text-blue"> <strong class="m-r-sm">五一促销计划</strong>
+                推广时间：2015-02-01至2015-02-28
+            </p>
+        </section>
+        <section class="panel panel-default ">
+            <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                    <thead>
+                        <tr>
+                            <th class="with-checkbox">
+                                <input type="checkbox" />
+                            </th>
+                            <th style="width:200px">商品名称</th>
+                            <th>商品状态</th>
+                            <th>所属计划</th>
+                            <th>价格</th>
+                            <th style="width:70px">库存</th>
+                            <th style="width:80px">
+                                佣金比例
+                                 <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover" data-title="佣金设置"  data-content="<p>您可以设置一个总的佣金比例，萌店平台会把这个佣金比例拆成三份，60%，20%，20%
+当萌主代销你的产品后，他可以拿到佣金的60%，萌主的一级合伙人拿佣金的20%，萌主的二级合伙人拿佣金的20%。佣金分配也仅限于在两级合伙人内，超过则不分生分佣。若该萌主没有一级或二级合伙人，则对应的40%或20%佣金不会被分出去，依然归供货商所有
+</p><p><strong>例如您上架了一个商品，销售价为300元，你设置佣金比例为33.3%，当萌主以及他的合伙人看到的商品时只显示佣金的60%，即300*33.3%*60%=60元，如果萌主的二级合伙人卖了一件你的商品，则萌主的二级合伙人拿60元佣金，萌主和萌主的一级合伙人各拿20元佣金，而你一件商品300元最终付出了100元的佣金，佣金比例是33.3%。
+</strong></p>"><i class="fa fa-question-circle fa-lg m-l-xs" style="color:#000;"></i></a>
+
+                                <!-- <a href="javascript:;" data-toggle="ajaxModal" data-remote="async/commissions.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a> -->
+                            </th>
+                            <th style="width:70px">佣金</th>
+                            <th>V客上架数</th>
+                            <th>商品点击数</th>
+                            <th >推广交易量</th>
+                            <th>审核状态</th>
+                            <th>推广状态</th>
+                            <th class="col-sm-1 mn70">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="1"></td>
+
+                            <td>                              
+                                <div class="media">
+                                    <span class="pull-left thumb-sm">
+                                        <img src="/assets/images/goods/1.jpg" alt="John said">
+                                    </span>
+                                    <div class="pull-right">
+                                        <a href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                            <i class="fa fa-pencil text-muted"></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        Somic 硕美科 G909 7.1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>上架中</td>
+                            <td>五一促销</td>
+                            <td>
+                                <span class="money">100.00</span>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                            </td>
+                            <td>1000</td>
+
+                            <td>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                                <a href="javascript:;" class="text-blue"  data-toggle="popover" data-html="true" data-placement="right" data-trigger="click"  data-content="<div  class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>总佣金比例：</strong>20.00%</div><div class='pull-left'><strong>佣金总额：</strong>10.00~20.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>一级分拥比例：</strong>12.00%</div><div class='pull-left'><strong>佣金：</strong>12.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div>" data-title="佣金比例">5%</a>
+                            </td>
+                            <td>
+                                <span class="money">22</span>
+                            </td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td><a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content="商家使用微盟支付服务时，此处显示的是微盟后台>微盟支付>财务明细中的支付单号，未使用微盟支付服务时，此处的支付单号可以暂时忽略商家使用微盟支付服务时，此处显示的是微盟后台>">审核不通过</a></td>
+                            <td>待推广</td>
+                            <td>
+                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="温馨提示：一旦停止推广，那么推广中的商品将不再进行分佣。<br/>
+                                <div class='m-t-xs'>
+                                    <strong>确定要停止推广吗？</strong>
+                                </div>
+                                "  class="m-xs" title="停止推广">
+                                    <i class="fa fa-stop text-muted"></i>
+                                </a>
+                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定要删除这个推广商品吗？一定删除，所有数据将无法回复！" class="m-xs" title="删除">
+                                    <i class="fa fa-trash-o text-muted"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="2"></td>
+
+                            <td>
+                                <div class="media">
+                                    <span class="pull-left thumb-sm">
+                                        <img src="/assets/images/goods/1.jpg" alt="John said">
+                                    </span>
+                                    <div class="pull-right">
+                                        <a href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission2.html">
+                                            <i class="fa fa-pencil text-muted"></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        Somic 硕美科 G909 7.1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>上架中</td>
+                            <td>五一促销</td>
+                            <td>
+                                <span class="money">100.00</span>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission2.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                            </td>
+                            <td>1000</td>
+
+                            <td>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission2.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                                <a href="javascript:;" class="text-blue"  data-toggle="popover" data-html="true" data-placement="right" data-trigger="click"  data-content="<div  class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>总佣金比例：</strong>20.00%</div><div class='pull-left'><strong>佣金总额：</strong>10111111.00~20111111.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>一级分拥比例：</strong>12.00%</div><div class='pull-left'><strong>佣金：</strong>12.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div>" data-title="佣金比例">5%</a>
+                            </td>
+                            <td>
+                                <span class="money">5.00</span>
+                            </td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>待审核</td>
+                            <td>待推广</td>
+                            <td>
+                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定开启推广？" class="m-xs" title="开启推广">
+                                    <i class="fa fa-play text-muted"></i>
+                                </a>
+                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定要删除这个推广商品吗？一定删除，所有数据将无法回复！" class="m-xs" title="删除">
+                                    <i class="fa fa-trash-o text-muted"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" value="2"></td>
+
+                            <td>
+                                <div class="media">
+                                    <span class="pull-left thumb-sm">
+                                        <img src="/assets/images/goods/1.jpg" alt="John said">
+                                    </span>
+                                    <div class="pull-right">
+                                        <a href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                            <i class="fa fa-pencil text-muted"></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        Somic 硕美科 G909 7.1
+                                    </div>
+                                </div>
+                            </td>
+                            <td>上架中</td>
+                            <td>五一促销</td>
+                            <td>
+                                <span class="money">100.00</span>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                                
+                            </td>
+                            <td>1000</td>
+
+                            <td>
+                                <a class="pull-right" href="javascript:;" data-toggle="ajaxModal" data-remote="async/commission.html">
+                                    <i class="fa fa-pencil text-muted"></i>
+                                </a>
+                                <a href="javascript:;" class="text-blue"  data-toggle="popover" data-html="true" data-placement="right" data-trigger="click"  data-content="<div  class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>总佣金比例：</strong>20.00%</div><div class='pull-left'><strong>佣金总额：</strong>10.00~20.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>一级分拥比例：</strong>12.00%</div><div class='pull-left'><strong>佣金：</strong>12.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div><div class='clearfix m-b-xs'><div class='pull-left' style='width:145px'><strong>二级分拥比例：</strong>4.00%</div><div class='pull-left'><strong>佣金：</strong>4.00</div></div>" data-title="佣金比例">5%</a>
+                            </td>
+                            <td>
+                                <span class="money">5.00</span>
+                            </td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>250</td>
+                            <td>待审核</td>
+                            <td>待推广</td>
+                            <td>
+                                <a href="javascript:;" data-toggle="alert" data-msg="您的商品已被关闭，请联系V店运营人员开启" class="m-xs" title="开启推广">
+                                    <i class="fa fa-play text-muted"></i>
+                                </a>
+                                <a href="/api/Form/ajaxRemove/1" data-toggle="ajaxRemove" data-msg="确定要删除这个推广商品吗？一定删除，所有数据将无法回复！" class="m-xs" title="删除">
+                                    <i class="fa fa-trash-o text-muted"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    <!-- 
+                                     <tr>
+                    <td  colspan="11" class="nodata">暂无数据</td>
+                </tr>
+                -->
+            </tbody>
+        </table>
+    </div>
+</section>
+</section>
+<footer class="footer bg-white b-t">
+<div class="row text-center-xs">
+    <div class="col-md-6 hidden-sm">
+        <p class="text-muted m-t">总共321条 当前为第1页</p>
+    </div>
+    <div class="col-md-6 col-sm-12 text-right text-center-xs">
+        <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+    </div>
+</div>
+</footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/commission/init.js"])</script>
+
+</body>
+
+</html>

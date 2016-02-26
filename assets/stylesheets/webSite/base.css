@@ -1,0 +1,206 @@
+@charset "utf-8";
+/*
+本CSS定义了全部站点的通用样式
+[警告]不允许将其他非通用样式定义在此文件中。
+违反者洗干净了丢给SEEYA爆菊3日
+*/
+
+/* 
+author:brian
+重写浏览器
+=========================*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	*font-size: 63%;
+}
+
+body {
+	font-size: 1.2em;
+	line-height: 1.5;
+	font-family: \5b8b\4f53;
+	-webkit-text-size-adjust: none;
+	color: #333;
+	font-family: "\5FAE\8F6F\96C5\9ED1", "\5b8b\4f53", sans-serif;
+	overflow-y: scroll;
+	*overflow-y: visible;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+fieldset,img {
+	border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+del,ins {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+sup {
+	vertical-align: baseline;
+}
+
+sub {
+	vertical-align: baseline;
+}
+
+legend {
+	color: #000000;
+}
+
+input,button,textarea,select,optgroup,option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+input,button,textarea,select {
+	font-size: inherit;
+	*font-size: 100%;
+	font-family: inherit;
+}
+
+address,cite,dfn,em,code,var,caption,th {
+	font-style: normal;
+	font-weight: normal;
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+figure {
+	margin: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+wbr:after {
+	content: '\00200b';
+}
+
+img {
+	*-ms-interpolation-mode: bicubic;
+}
+
+.Clear {
+	clear: both;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix {
+	display: block;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "\0020";
+	clear: both;
+	height: 0;
+}
+
+* html.clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+a {
+	text-decoration: none;
+	color: #005ea7;
+}
+
+a:hover {
+	text-decoration: none;
+	_text-decoration: none;
+	color: #005ea7;
+}
+
+.bodyer:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "\0020";
+	clear: both;
+	height: 0;
+}
+
+.bodyer {
+	*zoom: 1;
+}
+
+/* 
+author:magic-lee
+date:2013-3-16
+CSS通用元素定义
+=========================*/
+/*段落定义*/
+p {
+	line-height: 20px;
+	margin: 0 0 15px;
+}
+/*着重显示*/
+strong {
+	font-weight: 600;
+}
+/* 缩略语 */
+abbr[title],abbr[data-original-title] {
+	cursor: help;
+	border-bottom: 1px dotted #ff6600;
+	margin: 0px 5px;
+}
+/* 斜体 */
+em {
+	font-style: italic;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="/assets/javascripts/ie8/inie8.min.js"></script><![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+            www_version = 1201405081146;
+    </script>
+
+</head>
+
+<body>
+
+
+    <section class="vbox">
+        <header class="header bg-white b-b b-light">
+            <p>新增案例</p>
+            <a class="text-muted pull-right m-t pointer" data-toggle="back" title="返回"> <i class="fa fa-reply"></i>
+            </a>
+        </header>
+        <section class="scrollable  wrapper">
+            <section class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal form-validate" method="post" action="/api/form/ajaxformarr">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">案例名称：</label>
+                            <div class="col-sm-3 must">
+                                <input type="text" name="title" class="form-control"  data-rule-required="true"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">排序：</label>
+                            <div class="col-sm-3 must">
+                                <input type="text" name="sort" class="form-control"  data-rule-required="true" data-rule-digits="true" />
+                            </div>
+                        </div> 
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">案例Logo：</label>
+                            <div class="col-sm-8">
+                                <img class="thumb_img" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-height: 100px;" />
+                                <input class="hide" type="text" name="logo" value="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" />
+                                <button class="btn btn-default" type="button" data-toggle="selectimg">上传图片</button>
+                                <span class="help-inline">图片尺寸：720*406 大小：小于2M</span>
+                            </div>
+                        </div>
+                        
+                        <div class="js_example_list">
+                            <div class="form-group js_example">
+                                <label class="col-sm-2 control-label">示例图片1：</label>
+                                <div class="col-sm-8">
+                                    <img class="thumb_img" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-height: 100px;" />
+                                    <input class="hide" type="text" name="example[0]" value="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" />
+                                    <button class="btn btn-default" type="button" data-toggle="selectimg">上传图片</button>
+                                    <span class="help-inline">图片尺寸：720*406 大小：小于2M</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <a href="javascript:;" class="btn btn-default btn-sm js_add_example"><i class="fa fa-plus m-r-xs"></i>新增示例图片</a><span class="help-inline m-l-sm">最多能添加5个示例图片</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script type="text/html" id="js_more_example">
+                            <div class="form-group js_example">
+                                <label class="col-sm-2 control-label">示例图片<span class="num">{{num}}</span>：</label>
+                                <div class="col-sm-8">
+                                    <img class="thumb_img" src="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" style="max-height: 100px;" />
+                                    <input class="hide" type="text" name="example[{{index}}]" value="http://www.weimob.com/templates/kindeditor/attached/c3/e8/78/image/20130816/20130816220610_88488.jpg" />
+                                    <button class="btn btn-default" type="button" data-toggle="selectimg2">上传图片</button>
+                                    <span class="help-inline">图片尺寸：720*406 大小：小于2M</span>
+                                    <a href="javascript:;" class="btn btn-default m-l-xl js_del_example">删除</a>
+                                </div>
+                            </div>
+                        </script>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">介绍：</label>
+                            <div class="col-sm-6 must">
+                                <textarea rows="5" name="introduce" class="form-control"></textarea>                            
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary" data-loading-text="保存中...">保存</button>
+                                <button type="button" class="btn btn-default" data-toggle="back">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+    <script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script> 
+    <script type="text/javascript">
+        seajs.use(["dist/application/app.js","dist/recommend/init.js"]);
+    </script>
+
+
+
+</body>
+
+</html>

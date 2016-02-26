@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>微商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+                www_version = 1201405081146;
+    </script>
+
+    <style>
+        .form-modal .input-group-addon{padding: 2px;background: none;border:0;}
+        .left{    margin: 10px 0 0 21%;}
+        .form-group .area{    width: 480px;height: 90px;}
+    </style>
+</head>
+
+<body>
+
+<section class="vbox">
+
+    <header class="header bg-white b-b clearfix">
+        <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+            <div class="row m-t-sm">
+                <div class="col-sm-6">
+                    <div class="btn-group">
+                        <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                            <span class="dropdown-label">已通过</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                            <li class="active">
+                                <a href="javascript:;" class="active">
+                                    <input type="radio" name="orderType2" value="1">待审核</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="orderType2" value="2">已通过</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="orderType2" value="3">已驳回</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <input type="radio" name="orderType2" value="4">全部</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-6 m-b-xs">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <span class="dropdown-label">账号</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-select dropdown-select-50">
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <input type="radio" name="orderType3" value="1">账号</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="orderType3" value="2">公司名称</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="orderType3" value="3">联系人</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <input type="radio" name="orderType3" value="4">供货商ID</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <input type="text" class="input-sm form-control" name="keyword1" data-rule-required="true" />
+                              <span class="input-group-btn">
+                                  <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                      <i class="fa fa-search"></i>
+                                  </button>
+                              </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+            <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+            <input type="hidden" name="order" id="order" value="Name" />
+        </form>
+    </header>
+    <section class="scrollable wrapper w-f">
+        <section class="panel panel-default ">
+            <div class="table-responsive">
+                <table class="table table-striped m-b-none">
+                    <thead>
+                    <tr>
+                        <!--<th>
+                          <input type="checkbox">
+                        </th>-->
+                        <th>供货方ID</th>
+                        <th>公司名称</th>
+                        <th>联系人</th>
+                        <th>联系方式</th>
+                        <th>商品数</th>
+                        <th>提现方式</th>
+                        <th>状态</th>
+                        <th class="mn70">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1023</td>
+                        <td>上海晖硕信息科技有限公司</td>
+                        <td>萌店</td>
+                        <td>13000000011</td>
+                        <td>100</td>
+                        <td>银行卡</td>
+                        <td>待审核</td>
+                        <td>
+                            <a class="m-xs" href="addself_supply.html" title="编辑"><i class="fa fa-edit text-muted"></i></a>
+                            <a class="m-xs" href="selfsupply_manage2.html" title="查看详情"> <i class="fa fa-search-plus text-muted"></i></a>
+                            <a class="m-xs" href="javascript:;" data-remote="async/self_info_ed.html" data-toggle="ajaxModal"  title="分配">
+                                <i class="fa fa-asterisk text-muted"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1023</td>
+                        <td>上海晖硕信息科技有限公司</td>
+                        <td>萌店</td>
+                        <td>13000000011</td>
+                        <td>100</td>
+                        <td>银行卡</td>
+                        <td>
+                            <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content="商品内容不详细" class="text-muted">
+                                已驳回
+                            </a>
+                        </td>
+                        <td>
+                            <a class="m-xs" href="addself_supply.html" title="编辑"><i class="fa fa-edit text-muted"></i></a>
+                            <a class="m-xs" href="selfsupply_manage2.html" title="查看详情"> <i class="fa fa-search-plus text-muted"></i></a>
+                            <a class="m-xs" href="javascript:;" data-remote="async/self_info_ed.html" data-toggle="ajaxModal"  title="分配">
+                                <i class="fa fa-asterisk text-muted"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1023</td>
+                        <td>上海晖硕信息科技有限公司</td>
+                        <td>萌店</td>
+                        <td>13000000011</td>
+                        <td>100</td>
+                        <td>银行卡</td>
+                        <td>已通过</td>
+                        <td>
+                            <a class="m-xs" href="addself_supply.html" title="编辑"><i class="fa fa-edit text-muted"></i></a>
+                            <a class="m-xs" href="selfsupply_manage2.html" title="查看详情"> <i class="fa fa-search-plus text-muted"></i></a>
+                            <a class="m-xs" href="javascript:;" data-remote="async/self_info_ed.html" data-toggle="ajaxModal"  title="分配">
+                                <i class="fa fa-asterisk text-muted"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>1023</td>
+                        <td>上海晖硕信息科技有限公司</td>
+                        <td>萌店</td>
+                        <td>13000000011</td>
+                        <td>100</td>
+                        <td>银行卡</td>
+                        <td>
+                            <a href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="hover"  data-content="商品内容不详细商品内容不详细商品内容不详细商品内容不详细商品内容不详细" class="text-muted">
+                                已驳回
+                            </a>
+                        </td>
+                        <td>
+                            <a class="m-xs" href="addself_supply.html" title="编辑"><i class="fa fa-edit text-muted"></i></a>
+                            <a class="m-xs" href="selfsupply_manage2.html" title="查看详情"> <i class="fa fa-search-plus text-muted"></i></a>
+                            <a class="m-xs" href="javascript:;" data-remote="async/self_info_ed.html" data-toggle="ajaxModal"  title="分配">
+                                <i class="fa fa-asterisk text-muted"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <!--
+                             <tr>
+                    <td  colspan="8" class="nodata">暂无数据</td>
+                </tr>
+                -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+    <footer class="footer bg-white b-t">
+        <div class="row text-center-xs">
+            <div class="col-md-6 hidden-sm">
+                <p class="text-muted m-t">总共321条 当前为第1页</p>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+            </div>
+        </div>
+    </footer>
+
+</section>
+
+
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use("dist/application/app.js")</script>
+
+</body>
+
+</html>

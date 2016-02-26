@@ -1,0 +1,35 @@
+<form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">修改运费</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">收货地址</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static">某某国家某某省某某市某某区某某街道某某号</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">当前运费</label>
+                    <div class="col-sm-8">
+                        <p class="form-control-static money">20.00</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">修改后运费</label>
+                    <div class="col-sm-5 must">
+                        <input type="text" class="form-control" data-rule-required="true" data-rule-min="0" data-rule-number="true" data-rule-decimal="2" name="postages" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" value="12306" name="id" />
+                <button type="submit" class="btn btn-primary" data-loading-text="保存中..." disabled>保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</form>

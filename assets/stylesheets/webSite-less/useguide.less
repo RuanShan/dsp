@@ -1,0 +1,91 @@
+.borderRadius(@radius:5px) { 
+ -moz-border-radius: @radius; 
+ -webkit-border-radius: @radius; 
+ border-radius: @radius; 
+ }
+
+.bodyer-p{
+	font-family: "微软雅黑";
+	.bodyer-asideLeft{
+		width: 280px;
+		overflow: hidden;
+		height: 1000px;
+		position: relative;
+		float: left;
+		margin-top: 20px;
+		.sidebar-link-list{
+			position:relative;width: 280px;
+			li{border-bottom:solid 1px #e5e5e5;background-color:#fff;
+				.link-con{display: block;line-height: 25px;padding: 12px 8px;font-size: 16px;cursor: pointer;color: #666;
+					i.ico-chevron-right{width:6px;height:11px;background-position:0 0;font-style: inherit;float: right;display: block;margin-top: 10px;background: #ececec;background:url(/assets/images/website/i-union.gif) 0 0 no-repeat;}
+				}
+				.link-con-active{color: #f24d36;font-weight: bold;}
+			}
+		}
+		.sb-link-list-2{
+			display: none;position:absolute;left:100%;top: 0;width: 280px;
+			.ico-back{display: inline-block ; vertical-align:middle; width: 16px;height: 12px;background:url(/assets/images/website/i-union.gif) 0 -40px no-repeat;margin-right: 4px;}
+		}
+		.open-sidebar{
+			left: -280px;
+			.sb-link-show{display: block;}
+		}
+	}
+	.box-article-empty{
+		width: 800px;float: right;overflow:hidden;margin-top: 20px;margin-bottom: 20px;
+		p.tind1{margin-top: 20px;font-size: 20px;}
+	}
+	.bodyer-mainRight{
+		width: 800px;float: right;overflow:hidden;margin-top: 20px;margin-bottom: 20px;
+		.details-hd{
+			.tind2{text-indent: 2em;font-size: 14px;}
+			.tind3{text-indent: 3em;}
+			img{width: 780px;}
+		}
+		.details-link{
+			a{display: block;padding: 5px 0px;font-size: 16px;}
+		}
+		.details-tit1{
+			h3{font-size: 18px;margin: 12px 0 20px;color: #333;}
+			a{.borderRadius(4px); background-color: #1283ff; line-height: 27px; color: #fff; margin:12px 0 20px; padding:0 10px;}
+		}
+		.video{
+			clear: both;
+			h3{ float: left;}
+			a{ float: right;}
+			&:after{
+				clear: both;
+			    content: " ";
+			    display: block;
+			    font-size: 0;
+			    height: 0;
+			    visibility: hidden;
+			}
+		}
+		.box-article-main{border-top: dashed 1px #e5e5e5;
+			.box-ele{border-bottom: dashed 1px #e5e5e5;padding:12px 10px;
+				.box-ele-tit{line-height: 22px;font-size: 16px;color:#06c;cursor:pointer;
+					.ico{display:inline-block;width: 16px;height: 16px;overflow: hidden;vertical-align: middle;background:url(/assets/images/website/i-union.gif) no-repeat;}
+					.ico-arrow{width:10px;margin-right:4px;background-position:0 -20px;height:8px;}
+					a{color: #06c;}
+				}
+				.box-ele-con{display: none;text-align: center;
+					p{margin-bottom:5px;color:#333;font-family: "微软雅黑";font-size: 14px;text-align: left;}
+					.tind1{ font-size: 16px;}
+					.tind2{text-indent: 2em;}
+					.tind3{text-indent: 3em;}
+					img.imgs{width: 780px;}
+					.red{ color: red;}
+				}
+			}
+			.box-ele-open{
+				.box-ele-tit{font-weight: bold;color: #f24d36;
+					.ico-arrow{height:5px;background-position:0 -30px;}
+					a{color: #f24d36;}
+				}
+				.box-ele-con{display: block;margin-top: 8px;}
+			}
+		}
+	}
+	
+}

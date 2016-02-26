@@ -1,0 +1,314 @@
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+    <meta charset="utf-8" />
+    <title>V店</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+    <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var _speedMark = new Date(),
+                www_version = 1201405081146;
+    </script>
+    <style type="text/css">
+        .panel .table td, .panel .table th {
+            padding: 6px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="vbox">
+
+<header class="header bg-white b-b clearfix">
+    <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+        <div class="row m-t-sm">
+            <div class="col-sm-8 m-b-xs">
+                <div class="btn-group" style="float: left;margin-right: 5px;">
+                    <button type="button" data-toggle="refresh" class="btn btn-sm btn-default" title="刷新"> <i class="fa fa-refresh"></i>
+                    </button>
+                </div>
+
+                <div class="input-group" style="width: 260px;float: left;margin-right: 5px;">
+                <div class="input-group-btn">
+                    <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                        <span class="dropdown-label">提现时间</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-select">
+                        <li>
+                            <a href="#">
+                                <input type="radio" value="0" name="searchBydata" checked="checked" />提现时间
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <input type="radio" value="1" name="searchBydata" />打款时间
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-default btn-sm" data-toggle="reportrange" data-change="submit">
+                        <i class="fa fa-calendar fa-lg"></i>
+                        <span>2014/06/1 - 2014/08/2</span> <b class="caret"></b>
+                        <input type="hidden" value="2014/06/1 - 2014/08/2" id="reportrange" name="reportrange" />
+                    </a>
+                </div>
+                </div>
+
+
+                <div class="btn-group">
+                    <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                        <span class="dropdown-label">打款状态</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                        <li class="active">
+                            <a href="javascript:;">
+                                <input type="radio" name="state" value="1" />
+                                打款状态
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <input type="radio" name="state" value="1" />
+                                待处理
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <input type="radio" name="state" value="2" />
+                                已完成
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <input type="radio" name="state" value="2" />
+                                打款失败
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default input-sm" title="导出订单"> <i class="fa fa-cloud-download"></i>
+                        导出
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-sm-4 m-b-xs">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                            <span class="dropdown-label">财务账号</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-select">
+                            <li>
+                                <a href="#">
+                                    <input type="radio" value="0" name="searchBy" checked="checked" />财务账号
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <input type="radio" value="1" name="searchBy" />公司名称
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <input type="radio" value="2" name="searchBy" />收款姓名
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="text" class="input-sm form-control" name="keyword" data-rule-required="true"  />
+                    <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="submit" title="搜索">
+                                <i class="fa fa-search"></i>
+                            </button>
+
+                        </span>
+                </div>
+
+            </div>
+
+
+        </div>
+        <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+        <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+        <input type="hidden" name="order" id="order" value="Name" />
+    </form>
+
+</header>
+
+
+
+
+
+<section class="scrollable wrapper w-f" style="padding-top: 0px;">
+
+
+<footer class="panel-footer bg-white no-padder m-t-sm" style="border: 0px;background-color: transparent;">
+    <div class="row m-t-sm">
+        <div class="col-sm-12 m-b-xs">
+            <div class="row text-left no-gutter">
+                <div class="col-xs-12 b-light">
+                    <span class="h5 font-bold m-t  block" style="text-indent: 1em;">提现金额：￥10000.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="row m-t">
+<div class="col-md-12">
+<section class="panel panel-default">
+
+        <div class="table-responsive">
+        <table class="table table-striped m-b-none">
+        <thead>
+        <tr >
+            <th class="v-middle">提现申请单号</th>
+            <th class="v-middle">提现金额</th>
+            <th class="v-middle">财务账号</th>
+            <th class="v-middle">公司名称</th>
+            <th class="v-middle">收款信息</th>
+            <th class="v-middle">收款姓名</th>
+            <th class="v-middle">打款时间</th>
+            <th class="v-middle">状态</th>
+            <th class="v-middle">备注</th>
+        </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>待处理</td>
+                    <td>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>已完成</td>
+                    <td>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>打款失败</td>
+                    <td>
+                        失败理由
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>待处理</td>
+                    <td>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>已完成</td>
+                    <td>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>201500123</td>
+                    <td>1.00</td>
+                    <td>18707</td>
+                    <td>微盟</td>
+                    <td>中国建设银行</td>
+                    <td>微盟</td>
+                    <td>2014-12-11</td>
+                    <td>打款失败</td>
+                    <td>
+                        失败理由
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+        </table>
+        </div>
+        </section>
+        </div>
+        </div>
+
+
+</section>
+
+<footer class="footer bg-white b-t">
+    <div class="row text-center-xs">
+        <div class="col-md-6 hidden-sm">
+            <p class="text-muted m-t">总共321条 当前为第1页</p>
+        </div>
+        <div class="col-md-6 col-sm-12 text-right text-center-xs">
+            <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+        </div>
+    </div>
+</footer>
+
+</section>
+
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js?v=1201405081146"></script>
+<script src="/assets/javascripts/seajs_config.js?v=1201405081146"></script>
+<script type="text/javascript">seajs.use("dist/application/app.js")</script>
+
+</body>
+
+</html>

@@ -1,0 +1,693 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="cn" class="app fadeInUp animated">
+
+<head>
+  <meta charset="utf-8" />
+  <title>微商城</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link href="/assets/stylesheets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/animate.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/style.min.css" rel="stylesheet" />
+  <link href="/assets/stylesheets/plugins/daterangepicker/daterangepicker-bs3.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <script src="/assets/javascripts/ie8/inie8.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+    var _speedMark = new Date(),
+        www_version = 1201405081146;
+    </script>
+  <style type="text/css">
+      .mag_r{margin-right: 10px;}
+      .js_qst_modal_time .modal-dialog{width: 900px;}
+      .js_qst_modal_time .col-sm-10{width: 88%;}
+      .js_qst_modal_time .col-md-2{    width: 12%;}
+      .form-horizontal .times{margin-left:15px;}
+      .js_yyqst_modal_time .modal-dialog{    width: 900px;}
+    </style>
+</head>
+
+<body>
+
+  <section class="vbox">
+    <header class="header bg-white b-b b-light">
+      <p>类目明细</p>
+    </header>
+    <section class="scrollable  wrapper">
+      <section class="panel panel-default">
+        <div class="panel-body">
+          <form class="talbe-horizontal" method="post" action="/api/Page/list">
+            <div class="panel panel-default">
+
+              <div class="panel-heading font-bold">
+                <label>选择类目：</label>
+                <div class="btn-group mag_r">
+                <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                  选择类目
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                  <li>
+                    <a href="javascript:;">
+                      <input type="radio" name="orderType" value="1" checked="checked">母婴</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <input type="radio" name="orderType" value="2" checked="checked">食品</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <input type="radio" name="orderType" value="3" checked="checked">美妆</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <input type="radio" name="orderType" value="4" checked="checked">服装</a>
+                  </li>
+                </ul>
+              </div>
+                <div class="btn-group">
+                  <a data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                    选择二级类目
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-select dropdown-select-50" data-change="submit">
+                    <li>
+                      <a href="javascript:;">
+                        <input type="radio" name="orderType" value="1" checked="checked">美容护肤</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <input type="radio" name="orderType" value="2" checked="checked">香水彩妆</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <input type="radio" name="orderType" value="3" checked="checked">美发护发</a>
+                    </li>
+                    <li>
+                      <a href="javascript:;">
+                        <input type="radio" name="orderType" value="4" checked="checked">个人护理</a>
+                    </li>
+                  </ul>
+                </div>
+                <a href="javascript:;" class="btn-link-color" style="margin-left: 10px;"  >查看全球购数据</a>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+            <div class="panel-heading font-bold">
+              运营数据：
+              <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                <i class="fa fa-cloud-download m-r-xs"></i>
+                导出csv文件
+              </a>
+            </div>
+
+            <div class="panel-body">
+
+              <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                <div class="row">
+                  <div class="col-sm-11">
+                    <div class="form-group">
+                      <label>数据展示截止时间：</label>
+                      <a class="btn btn-default btn-sm" data-toggle="datepickersub" data-end-date="now" data-format="yyyy-MM-dd"  data-change="submit" > <i class="fa fa-calendar fa-lg"></i>
+                        <small>选择月份</small>
+                        <span>2014-06</span> <b class="caret"></b>
+                        <input type="hidden" value="2014-06" name="datepickersub" />
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0">
+              </form>
+              <section class="panel panel-default ">
+                <div class="table-responsive">
+                  <table class="table table-striped m-b-none">
+                    <thead>
+                    <tr>
+                      <th style="width: 15%;">下级类目名称</th>
+                      <th style="width: 8%;">
+                        商家数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该类目下的商家总数。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 8%;">
+                        收藏商家数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止该时段内，该类目下的被收藏的商家数">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 9%;">
+                        上架SPU数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该类目处于上架中的SPU数量。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 9%;">
+                        推广SPU数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该类目在推广计划中的SPU数量。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 10%;">
+                        萌主代销SPU数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该类目中被萌主代销的SPU数量。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 10%;">
+                        被浏览SPU数（个）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止该时段内，该类目中被萌主代销的SPU数量。">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width:10%;">
+                        上架SPU均价（元）
+                        <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="截止该时段内，被浏览过的SPU数量">
+                          <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                        </a>
+                      </th>
+                      <th style="width: 25%;">
+                        操作
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                      <td>美容护肤</td>
+                      <td>100</td>
+                      <td>50</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>70</td>
+                      <td>1000</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="qst" class="btn btn-link-herf btn-link-color">
+                          查看趋势图
+                        </a>
+                        <a href="category.html" class="btn btn-link-herf btn-link-color">
+                          查看商家
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>香水彩妆</td>
+                      <td>100</td>
+                      <td>50</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>70</td>
+                      <td>900</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="qst" class="btn btn-link-herf btn-link-color">
+                          查看趋势图
+                        </a>
+                        <a href="category.html" class="btn btn-link-herf btn-link-color">
+                          查看商家
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>美发护发</td>
+                      <td>100</td>
+                      <td>50</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>70</td>
+                      <td>800</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="qst" class="btn btn-link-herf btn-link-color">
+                          查看趋势图
+                        </a>
+                        <a href="category.html" class="btn btn-link-herf btn-link-color">
+                          查看商家
+                        </a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>个人护理</td>
+                      <td>100</td>
+                      <td>50</td>
+                      <td>100</td>
+                      <td>90</td>
+                      <td>80</td>
+                      <td>70</td>
+                      <td>600</td>
+                      <td>
+                        <a href="javascript:;"  data-toggle="qst" class="btn btn-link-herf btn-link-color">
+                          查看趋势图
+                        </a>
+                        <a href="category.html" class="btn btn-link-herf btn-link-color">
+                          查看商家
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <footer class="footer bg-white b-t">
+                    <div class="row text-center-xs">
+                      <div class="col-md-6 hidden-sm">
+                        <p class="text-muted m-t">总共321条 当前为第1页</p>
+                      </div>
+                      <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                        <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </section>
+
+            </div>
+
+              <div class="panel-heading font-bold">
+                销售数据：
+                <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                  <i class="fa fa-cloud-download m-r-xs"></i>
+                  导出csv文件
+                </a>
+              </div>
+              <div class="panel-body">
+
+                <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                  <div class="row ">
+                    <div class="col-sm-11 m-b-xs">
+                      <div class="form-group">
+                        <a class="btn btn-default btn-sm " data-toggle="reportrangecount" data-change="submit">
+                          <i class="fa fa-calendar fa-lg"></i>
+                          <small>选择时间</small>
+                          <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                          <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="pageNumber" id="pageNumber2" value="1" />
+                  <input type="hidden" name="orderBy" id="orderBy2" value="desc" />
+                  <input type="hidden" name="order" id="order2" value="" />
+
+                </form>
+                <section class="panel panel-default ">
+                  <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                      <thead>
+                      <tr>
+                        <th style="width: 10.5%;">下级类目名称</th>
+                        <th style="width: 10.5%;">
+                          已支付订单额（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目已完成支付的订单总金额。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 9%;">
+                          订单数（笔）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目下所有已下单的订单总数。含未支付订单。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 10.5%;">
+                          已支付订单数（笔）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目下所有已支付的订单总数。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 10.5%;">
+                          已支付订单均价（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目下所有已支付订单的平均价格。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 8%;">
+                          销售额（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目所有订单的总金额。含未支付订单">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 8%;">
+                          佣金额（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目所有订单的总金额。含未支付订单。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 8%;">
+                          退单数（笔）
+                        </th>
+                        <th style="width: 8%;">
+                          退款额（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该类目所有退款总金额。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 16%;">
+                          操作
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr>
+                        <td>香水彩妆</td>
+                        <td>99</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>99</td>
+                        <td>999</td>
+                        <td>9
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="1级分佣金额：4<br/>2级分佣金额：3<br/>3级分佣金额：2">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>
+                          <a href="javascript:;" data-toggle="yyqst" class="btn btn-link-herf btn-link-color">
+                            查看趋势图
+                          </a>
+                          <a href="category2.html" class="btn btn-link-herf btn-link-color">
+                            查看商家
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>美容护肤</td>
+                        <td>88</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>99</td>
+                        <td>999</td>
+                        <td>9
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="1级分佣金额：4<br/>2级分佣金额：3<br/>3级分佣金额：2">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>
+                          <a href="javascript:;"  data-toggle="yyqst" class="btn btn-link-herf btn-link-color">
+                            查看趋势图
+                          </a>
+                          <a href="category2.html" class="btn btn-link-herf btn-link-color">
+                            查看商家
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>美发护发</td>
+                        <td>88</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>99</td>
+                        <td>999</td>
+                        <td>9
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="1级分佣金额：4<br/>2级分佣金额：3<br/>3级分佣金额：2">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>
+                          <a href="javascript:;"  data-toggle="yyqst"  class="btn btn-link-herf btn-link-color">
+                            查看趋势图
+                          </a>
+                          <a href="category2.html" class="btn btn-link-herf btn-link-color">
+                            查看商家
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>个人护理</td>
+                        <td>77</td>
+                        <td>10</td>
+                        <td>1</td>
+                        <td>99</td>
+                        <td>999</td>
+                        <td>9
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="1级分佣金额：4<br/>2级分佣金额：3<br/>3级分佣金额：2">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>
+                          <a href="javascript:;"  data-toggle="yyqst" class="btn btn-link-herf btn-link-color">
+                            查看趋势图
+                          </a>
+                          <a href="category2.html" class="btn btn-link-herf btn-link-color">
+                            查看商家
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <footer class="footer bg-white b-t">
+                      <div class="row text-center-xs">
+                        <div class="col-md-6 hidden-sm">
+                          <p class="text-muted m-t">总共321条 当前为第1页</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12 text-right text-center-xs">
+                          <ul class="pagination pagination-sm m-t-sm m-b-none" data-pages-total="20" data-page-current="1"></ul>
+                        </div>
+                      </div>
+                    </footer>
+                  </div>
+                </section>
+
+              </div>
+              <div class="panel-heading font-bold">
+                热销商家榜（Top10）：
+                <a class="btn btn-default btn-sm pull-right m-t-n-xs" href="javascript:;" >
+                  <i class="fa fa-cloud-download m-r-xs"></i>
+                  导出csv文件
+                </a>
+              </div>
+              <div class="panel-body">
+
+                <form class="talbe-search form-inline" method="post" action="/api/Page/list">
+                  <div class="row ">
+                    <div class="col-sm-11 m-b-xs">
+                      <div class="form-group">
+                        <a class="btn btn-default btn-sm " data-toggle="reportrangecount" data-change="submit">
+                          <i class="fa fa-calendar fa-lg"></i>
+                          <small>选择时间</small>
+                          <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                          <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange2" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="pageNumber" id="pageNumber" value="1" />
+                  <input type="hidden" name="orderBy" id="orderBy" value="desc" />
+                  <input type="hidden" name="order" id="order" value="" />
+
+                </form>
+                <section class="panel panel-default ">
+                  <div class="table-responsive">
+                    <table class="table table-striped m-b-none">
+                      <thead>
+                      <tr>
+                        <th style="width: 25%;">商家名称</th>
+                        <th style="width: 25%;">
+                          所属类目
+                        </th>
+                        <th style="width: 25%;">
+                          已支付订单额（元）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该商家已完成支付的订单总金额。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                        <th style="width: 25%;">
+                          订单数（笔）
+                          <a href="javascript:;" data-toggle="popover" data-html="true" data-placement="bottom" data-trigger="hover"  data-content="该时段内，该商家所有已下单的订单总数。含未支付订单。">
+                            <i class="fa fa-question-circle text-muted fa-lg m-l-xs" ></i>
+                          </a>
+                        </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      <tr>
+                        <td>良品铺子</td>
+                        <td>食品-休闲零食</td>
+                        <td>100</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>上元美妆</td>
+                        <td>美妆-香水彩妆</td>
+                        <td>90</td>
+                        <td>5</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+
+              </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </section>
+</section>
+
+  <div class="modal fade in js_qst_modal_time"   tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" >运营趋势图&nbsp;&nbsp;【美妆-美妆护肤】</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-11 times">
+                <div class="form-group">
+                  <a class="btn btn-default btn-sm" data-toggle="reportrangecount">
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <small>选择时间</small>
+                    <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                    <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="0"  data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=0">商家数</button>
+                  <button type="button" class="btn btn-default btn-sm  js_interact_echarts" data-type="2" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=1">收藏商家数</button>
+                  <button type="button" class="btn btn-default btn-sm  js_interact_echarts" data-type="3" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=2">上架SPU数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="4" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=2">推广SPU数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="5" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=3">萌主代销SPU数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="6" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=4">被浏览SPU数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="7" data-chartid="sales_charts" data-path="/plus/v_charts.php?page=2&type=4">上架SPU均价</button>
+                 </div>
+              </div>
+              <div class="col-md-2 text-right">
+                <button type="button" data-toggle="compare"  class="btn btn-default btn-sm">对比时段</button>
+              </div>
+            </div>
+            <div id="sales_charts" style="height: 310px" data-path="/plus/v_charts.php?page=2">
+              <div class="load">数据加载中...</div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal fade in js_yyqst_modal_time"   tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" >运营趋势图&nbsp;&nbsp;【美妆-美妆护肤】</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-11 times">
+                <div class="form-group">
+                  <a class="btn btn-default btn-sm" data-toggle="reportrangecount">
+                    <i class="fa fa-calendar fa-lg"></i>
+                    <small>选择时间</small>
+                    <span>2014/06/1 - 2014/06/30</span> <b class="caret"></b>
+                    <input type="hidden" value="2014/06/1 - 2014/06/30" name="reportrange">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts active" data-type="0"  data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=0">已支付订单额</button>
+                  <button type="button" class="btn btn-default btn-sm  js_interact_echarts" data-type="2" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=1">订单数</button>
+                  <button type="button" class="btn btn-default btn-sm  js_interact_echarts" data-type="3" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=2">已支付订单数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="4" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=2">已支付订单均价</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="5" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=3">已支付商品均价</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="6" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=4">销售额</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="7" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=4">佣金额</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="8" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=4">退单数</button>
+                  <button type="button" class="btn btn-default btn-sm js_interact_echarts" data-type="9" data-chartid="sales_charts2" data-path="/plus/v_charts.php?page=2&type=4">退款额</button>
+                </div>
+              </div>
+              <div class="col-md-2 text-right">
+                <button type="button" data-toggle="compare"  class="btn btn-default btn-sm">对比时段</button>
+              </div>
+            </div>
+            <div id="sales_charts2" style="height: 310px" data-path="/plus/v_charts.php?page=2">
+              <div class="load">数据加载中...</div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal fade in js_compare_modal_time"   tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form class="form-horizontal form-validate form-modal" method="post" action="/api/form/ajaxformurl">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">对比时段</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">时间选择</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="groundingdate"  readonly="readonly"  value=""  data-toggle="datepicker" data-format="yyyy-mm-dd" data-end-date="now" data-rule-notEqual="2015-06"/>
+                <span class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- <div class="form-group js_date_show hide">
+            <label class="col-sm-2 control-label">已选择时间</label>
+            <div class="col-sm-8">
+              <p class="form-control-static"></p>
+              <input type="hidden" name="datesave" />
+            </div>
+          </div>
+          -->
+          </div>
+          <div class="modal-footer">
+            <input type="hidden" name="echarttype" class="js_on_echarts_type" value="0"/>
+            <button type="submit" class="btn btn-primary"  data-loading-text="保存中...">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+<script src="/assets/javascripts/sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+<script src="/assets/javascripts/seajs_config.js"></script>
+<script type="text/javascript">seajs.use(["dist/application/app.js","dist/datastatistics/init.js"])</script>
+
+</body>
+
+</html>
